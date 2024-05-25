@@ -1,0 +1,79 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    direction: rtl;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    height: 40px;
+    margin-left: 1rem;
+  }
+  
+  .navbar-search input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    margin-left: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-profile {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  
+  .navbar-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+  }
+  
+  .navbar-login {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 1rem;
+  }
+  
+  .navbar-cart {
+    text-decoration: none;
+    color: #007bff;
+  }
