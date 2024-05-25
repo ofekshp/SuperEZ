@@ -1,11 +1,27 @@
-const express = require('express')
-const path = require('path')
+const express = require('express');
+const path = require('path');
+var connectDB = require('./db');
+var dotenv = require('dotenv');
 
-const app =express()
+const app = express();
+const PORT = process.env.PORT || 3001;
 
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, 'build')));
 
-app.use(express.static(path.join(__dirname + "/public")))
+// Handle GET requests to the API
+app.get('/api', (req, res) => {
+  res.json({ message: 'Hello from the server!' });
+});
 
-const PORT = process.env.PORT || 5000
+// Connect to the database
+connectDB();
 
-app.listen(PORT) 
+// All other GET requests not handled before will return the React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(dirname, 'build', 'index.html'));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
