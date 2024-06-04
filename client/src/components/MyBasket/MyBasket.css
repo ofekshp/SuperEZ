@@ -1,0 +1,146 @@
+.my-basket {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Heebo', sans-serif;
+    direction: rtl;
+  }
+  
+  .my-basket__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .my-basket__logo {
+    height: 40px;
+  }
+  
+  .my-basket__title-container {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  
+  .my-basket__title {
+    font-size: 2rem;
+    margin: 0 1rem 0 0;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+  
+  
+  .basket-list-container {
+    border: 1px dashed #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+  
+  .basket-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .basket-item__image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-left: 1rem;
+  }
+  
+  .basket-item__details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    flex-grow: 1;
+  }
+  
+  .basket-item__name-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .basket-item__name {
+    margin: 0 0.5rem 0 0;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .basket-item__quantity {
+    font-size: 0.8rem;
+  }
+  
+  .my-basket__form-container {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .my-basket__address-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    text-align: right;
+  }
+  
+  .my-basket__form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .my-basket__form-input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .my-basket__login-prompt {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .my-basket__login-link {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 0.5rem;
+  }
+  
+  .my-basket__footer-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .my-basket__footer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .my-basket__checkout-button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .my-basket__add-item {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+ 
