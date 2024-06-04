@@ -11,9 +11,8 @@ function App() {
     <Router>
     <Navbar />
     <div className="app-container"></div>
-    
     <Routes>
-      <Route exact path="/" component={LandingPage} />
+    <Route path="/" element={<LandingPage />} />
     </Routes>
   </Router>
   );
