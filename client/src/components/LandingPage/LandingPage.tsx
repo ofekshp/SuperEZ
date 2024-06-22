@@ -5,7 +5,7 @@ const LandingPage = () => {
   return (
     <div className="landing-page">
       <h1 className="main-heading">!ברוכים הבאים לסופר איזי</h1>
-      <h2 className="second-header">אנחנו הפלטפורמה היחידה בארץ שמאפרת להשוות מחיר סל קניות בין סופרים שונים וגם לקצר את תהליך הקנייה בו זמנית בארבעה שלבים פשוטים!</h2>
+      <h2 className="second-header">אנחנו הפלטפורמה היחידה בארץ שמאפשרת להשוות מחיר סל קניות בין סופרים שונים וגם לקצר את תהליך הקנייה בו זמנית בארבעה שלבים פשוטים!</h2>
       
       <div className="sections-container">
         <section className="section">

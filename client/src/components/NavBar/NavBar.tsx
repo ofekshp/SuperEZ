@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link to="/meat-fish" className="navbar-link">
+            <Link to="/MeatFish" className="navbar-link">
               בשר/דגים
             </Link>
           </li>
