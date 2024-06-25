@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import logo from '../../assets/logo_super_ez.jpeg';
+import logo from "../../assets/logo_super_ez.jpeg";
 import defaultProfileImage from '../../assets/placeholder.png';
 
 const Navbar: React.FC = () => {
