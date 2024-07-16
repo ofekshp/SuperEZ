@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/NavBar/NavBar.tsx';
 import LandingPage from './components/LandingPage/LandingPage.tsx';
 import MyBasket from './components/MyBasket/MyBasket.tsx';
-import FruitsAndVegetablesPage from './pages/FruitsAndVegetablesPage.tsx';
+import FruitsAndVegetablesPage from './components/FruitVegetable/FruitsAndVegetablesPage.tsx';
 import MeatFish from './components/MeatFish/MeatFish.tsx';
 
 function App() {
