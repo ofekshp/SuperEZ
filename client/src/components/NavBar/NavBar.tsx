@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import logo from '../../assets/logo_super_ez.jpeg';
-import defaultProfileImage from '../../assets/placeholder.png';
+
+const importImage = (imageName: string) => {
+  try {
+    return require(`../../assets/${imageName}`);
+  } catch (error) {
+    return null;
+  }
+};
 
 const Navbar: React.FC = () => {
   return (
@@ -10,7 +16,7 @@ const Navbar: React.FC = () => {
       <div className="navbar-container">
         <div className="navbar-left">
           <Link to="/" className="navbar-logo">
-            <img src={logo} alt="SuperEZ Logo" />
+            <img src={importImage('logo_super_ez.jpeg')} alt="SuperEZ Logo" />
           </Link>
           <div className="navbar-search">
             <input type="text" placeholder="חיפוש" />
@@ -33,7 +39,7 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link to="/beverages" className="navbar-link">
+            <Link to="/Drinks" className="navbar-link">
               שתייה
             </Link>
           </li>
@@ -65,7 +71,7 @@ const Navbar: React.FC = () => {
         </ul>
         <div className="navbar-right">
           <div className="navbar-profile">
-            <img src={defaultProfileImage} alt="Default Profile" />
+            <img src={importImage('placeholder.png')} alt="Default Profile" />
             <Link to="/login" className="navbar-login">
               התחברות
             </Link>
