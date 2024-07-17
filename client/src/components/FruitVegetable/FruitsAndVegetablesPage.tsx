@@ -1,52 +1,59 @@
 import React from "react";
-import imgProduct from "./../../assets/placeholder.png";
 import ProductsPage from "../ProductCard/ProductsPage";
 import '../ProductCard/ProductsPage.css';
+
+const importImage = (imageName: string) => {
+  try {
+    return require(`../../assets/${imageName}`);
+  } catch (error) {
+    return null;
+  }
+};
 
 const FruitsAndVegetablesPage: React.FC = () => {
   const initialFruits = [
     {
       name: "תפוח",
-      image: imgProduct,
+      image: importImage(`placeholder.png`),
     },
     {
       name: "אגס",
-      image: imgProduct,
+      image: importImage(`placeholder.png`),
     },
     {
       name: "אפרסק",
-      image: imgProduct,
+      image: importImage(`placeholder.png`),
     },
     {
       name: "בננה",
-      image: imgProduct,
+      image: importImage(`placeholder.png`),
     },
     {
       name: "תפוח",
-      image: imgProduct,
+      image: importImage(`placeholder.png`),
     },
     {
       name: "אגס",
-      image: imgProduct,
+      image: importImage(`placeholder.png`),
     },
     {
       name: "אפרסק",
-      image: imgProduct,
+      image: importImage(`placeholder.png`),
     },
     {
       name: "בננה",
-      image: imgProduct,
+      image: importImage(`placeholder.png`),
     },
   ];
 
-  const [fruits, setFruits] = React.useState<{ name: string; image: any; }[]>(initialFruits);
+  const [fruits] = React.useState<{ name: string; image: any; }[]>(initialFruits);
 
   return (
     <div>
       <ProductsPage
         products={fruits}
         categoryTitle="פירות וירקות"
-        icon={<img alt="" src={imgProduct} />}
+        icon={<img alt="" src={importImage('')} />}
       />
     </div>
   );
