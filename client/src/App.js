@@ -7,6 +7,7 @@ import FruitsAndVegetablesPage from './components/FruitVegetable/FruitsAndVegeta
 import MeatFish from './components/MeatFish/MeatFish.tsx';
 import Drinks from './components/Drinks/DrinksPage.tsx';
 import Can_Dry_Page from './components/Can_Dry/Can_Dry_Page.tsx';
+import Baking_Page from './components/Baking/Baking_Page.tsx';
 
 function App() {
  
@@ -20,6 +21,7 @@ function App() {
     <Route path="/MeatFish" element={<MeatFish />} />
     <Route path="/Drinks" element={<Drinks />} />
     <Route path="/Can_Dry" element={<Can_Dry_Page />} />
+    <Route path="/Baking" element={<Baking_Page />} />
     <Route path="/fruits-vegetables" element={<FruitsAndVegetablesPage />} />
     </Routes>
   </Router>
