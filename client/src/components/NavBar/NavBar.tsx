@@ -49,8 +49,8 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link to="/dry-goods" className="navbar-link">
-              יבשים
+            <Link to="/Can_Dry" className="navbar-link">
+              יבשים/שימורים
             </Link>
           </li>
           <li>
