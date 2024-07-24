@@ -1,0 +1,41 @@
+.basket-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .basket-item__image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 16px;
+  }
+  
+  .basket-item__name-quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .basket-item__name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .basket-item__quantity {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .basket-item__remove-button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
