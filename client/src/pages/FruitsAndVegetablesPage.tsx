@@ -1,13 +1,15 @@
 import React from "react";
 import imgProduct from "../assets/placeholder.png";
+import imgRedApple from "../assets/FruitsAndVegetables/red_apple.jpeg"
+import imgGreenApple from "../assets/FruitsAndVegetables/green_apple.jpeg"
 import './products/ProductsPage.css';
 import ProductsPage from "./products/ProductsPage";
 
 const FruitsAndVegetablesPage: React.FC = () => {
   const initialFruits = [
     {
-      name: "תפוח",
-      image: imgProduct,
+      name: "קילו תפוח עץ אדום",
+      image: imgRedApple,
     },
     {
       name: "אגס",
@@ -22,8 +24,8 @@ const FruitsAndVegetablesPage: React.FC = () => {
       image: imgProduct,
     },
     {
-      name: "תפוח",
-      image: imgProduct,
+      name: "קילו תפוח עץ ירוק",
+      image: imgGreenApple,
     },
     {
       name: "אגס",
