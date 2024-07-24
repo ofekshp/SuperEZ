@@ -3,6 +3,8 @@ const path = require('path');
 var connectDB = require('./db');
 var dotenv = require('dotenv');
 
+dotenv.config();
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -19,7 +21,7 @@ connectDB();
 
 // All other GET requests not handled before will return the React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT, () => {
