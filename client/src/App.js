@@ -8,7 +8,7 @@ import MeatFish from './components/MeatFish/MeatFish.tsx';
 import Drinks from './components/Drinks/DrinksPage.tsx';
 import Can_Dry_Page from './components/Can_Dry/Can_Dry_Page.tsx';
 import Baking_Page from './components/Baking/Baking_Page.tsx';
-
+import DeliPage from './components/Deli/DeliPage.tsx';
 function App() {
  
   return (
@@ -23,6 +23,7 @@ function App() {
     <Route path="/Can_Dry" element={<Can_Dry_Page />} />
     <Route path="/Baking" element={<Baking_Page />} />
     <Route path="/fruits-vegetables" element={<FruitsAndVegetablesPage />} />
+    <Route path="/dairy-products" element={<DeliPage />} />
     </Routes>
   </Router>
   );  
