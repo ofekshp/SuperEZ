@@ -29,6 +29,7 @@ const MeatFish: React.FC = () => {
       image: importImage('File_Medome.png'),
     }
   ];
+  initialMeat.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const initialFish = [
     {
@@ -44,6 +45,7 @@ const MeatFish: React.FC = () => {
       image: importImage('tuna.png'),
     }
   ];
+  initialFish.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const [meats, setMeats] = React.useState<{ name: string; image: string | null; }[]>(initialMeat);
   const [fishes, setFishes] = React.useState<{ name: string; image: string | null; }[]>(initialFish);
