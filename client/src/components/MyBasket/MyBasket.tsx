@@ -72,6 +72,9 @@ const MyBasket: React.FC = () => {
   const [floorNumber, setFloorNumber] = useState('');
   const [apartmentNumber, setApartmentNumber] = useState('');
 
+  // New state for price comparison
+  const [comparison, setComparison] = useState<any>(null);
+
   const handleAddItem = (item: BasketItemProps) => {
     setBasketItems([...basketItems, item]);
   };
@@ -80,6 +83,23 @@ const MyBasket: React.FC = () => {
     const newItems = [...basketItems];
     newItems.splice(index, 1);
     setBasketItems(newItems);
+  };
+
+  // New function to handle price comparison
+  const handleComparePrice = async () => {
+    try {
+      const response = await fetch('/api/compare-prices', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ items: basketItems.map(item => item.name) }),
+      });
+      const comparisonData = await response.json();
+      setComparison(comparisonData);
+    } catch (error) {
+      console.error('Error comparing prices:', error);
+    }
   };
 
   return (
@@ -94,7 +114,7 @@ const MyBasket: React.FC = () => {
           </div>
           <div className="my-basket__form-container">
             <div className="my-basket__address-form">
-              <div>
+            <div>
                 <label htmlFor="email" className="my-basket__form-label">
                 </label>
                 <input
@@ -179,6 +199,8 @@ const MyBasket: React.FC = () => {
                 />
               </div>
             </div>
+
+
             <div className="my-basket__login-prompt">
               <span>רוצים לשמור את הסל שלכם? </span>
               <a href="#" className="my-basket__login-link">
@@ -189,9 +211,28 @@ const MyBasket: React.FC = () => {
         </div>
         <div className="my-basket__footer-container">
           <div className="my-basket__footer">
-            <button className="my-basket__checkout-button">השוואה מחירים </button>
+            <button className="my-basket__checkout-button" onClick={handleComparePrice}>השוואת מחירים</button>
           </div>
         </div>
+        {comparison && (
+          <div className="price-comparison">
+            <h3>השוואת מחירים:</h3>
+            {comparison.map((item: any) => (
+              <div key={item.name}>
+                <h4>{item.name}</h4>
+                {item.prices ? (
+                  <ul>
+                    {Object.entries(item.prices).map(([supermarket, price]) => (
+                      <li key={supermarket}>{supermarket}: ₪{price}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>אין מידע על מחירים זמין</p>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </BasketContext.Provider>
   );
