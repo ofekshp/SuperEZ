@@ -11,6 +11,8 @@ import Baking_Page from './components/Baking/Baking_Page.tsx';
 import DeliPage from './components/Deli/DeliPage.tsx';
 import FrozenPage from './components/Frozen/FrozenPage.tsx';
 import CleaningDisposablePage from './components/CleaningDisposable/CleaningDisposablePage.tsx';
+import FarmHomePage from './components/FarmHome/FarmHomePage.tsx';
+
 function App() {
  
   return (
@@ -28,6 +30,7 @@ function App() {
     <Route path="/dairy-products" element={<DeliPage />} />
     <Route path="/frozen" element={<FrozenPage />} />
     <Route path="/cleaning" element={<CleaningDisposablePage />} />
+    <Route path="/pharm" element={<FarmHomePage />} />
     </Routes>
   </Router>
   );  
