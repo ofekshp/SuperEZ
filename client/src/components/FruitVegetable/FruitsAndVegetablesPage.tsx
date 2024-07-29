@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
+import ProductCartService from "../../services/products-service.ts";
 import '../ProductCard/ProductsPage.css';
+import './FruitsAndVegetablesPage.css';
 
 const importImage = (imageName: string) => {
   try {
@@ -107,10 +109,7 @@ const FruitsAndVegetablesPage: React.FC = () => {
     },
 
   ];
-
-  initialFruits.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-
-
+ 
   const initialVegetables = [
     {
       name: "לימון",
@@ -243,10 +242,36 @@ const FruitsAndVegetablesPage: React.FC = () => {
   ];
 
   initialVegetables.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialFruits.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-  const [fruits] = React.useState<{ name: string; image: any; }[]>(initialFruits);
-  const [vegetables] = React.useState<{ name: string; image: any; }[]>(initialVegetables);
+  const [fruits, setFruits] = useState<{ name: string; image: any; count: number }[]>(initialFruits.map(fruit => ({ ...fruit, count: 0 })));
+  const [vegetables, setVegetables] = useState<{ name: string; image: any; count: number }[]>(initialVegetables.map(vegetable => ({ ...vegetable, count: 0 })));
 
+  const handleIncrement = (name: string) => {
+    setFruits(fruits.map(fruit =>
+      fruit.name === name ? { ...fruit, count: fruit.count + 1 } : fruit
+    ));
+    
+    setVegetables(vegetables.map(vegetable =>
+      vegetable.name === name ? { ...vegetable, count: vegetable.count + 1 } : vegetable
+    ));
+  };
+
+  const handleDecrement = (name: string) => {
+    setFruits(fruits.map(fruit =>
+      fruit.name === name && fruit.count > 0 ? { ...fruit, count: fruit.count - 1 } : fruit
+    ));
+    setVegetables(vegetables.map(vegetable =>
+      vegetable.name === name && vegetable.count > 0 ? { ...vegetable, count: vegetable.count - 1 } : vegetable
+    ));
+  };
+
+  const handleSave = () => {
+    const fruitsToSave = fruits.filter(fruit => fruit.count > 0);
+    const vegetablesToSave = vegetables.filter(vegetable => vegetable.count > 0);
+    console.log("Fruits to Save:", fruitsToSave);
+    console.log("Vegetables to Save:", vegetablesToSave);
+  };
 
   return (
     <div>
@@ -255,6 +280,8 @@ const FruitsAndVegetablesPage: React.FC = () => {
           products={fruits}
           categoryTitle="פירות"
           icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
         />
       </div>
       <div>
@@ -262,10 +289,14 @@ const FruitsAndVegetablesPage: React.FC = () => {
           products={vegetables}
           categoryTitle="ירקות"
           icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
         />
       </div>
+      <div className="button-group">
+        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
+      </div>
     </div>
-
   );
 };
 
