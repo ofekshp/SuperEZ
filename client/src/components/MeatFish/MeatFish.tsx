@@ -56,15 +56,13 @@ const MeatFish: React.FC = () => {
         <ProductsPage
           products={meats}
           categoryTitle="בשר"
-          icon={<img alt="" src={importImage('')} />}
-        />
+          icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}        />
       </div>
       <div>
         <ProductsPage
           products={fishes}
           categoryTitle="דגים"
-          icon={<img alt="" src={importImage('')} />}
-        />
+          icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}        />
       </div>
     </div>
   );

@@ -76,36 +76,31 @@ const FrozenPage: React.FC = () => {
               <ProductsPage
                 products={vegetables}
                 categoryTitle="ירקות קפואים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={doughs_pizzas_pastries}
                 categoryTitle="בצקים, פיצות ומאפים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={prepared_foods}
                 categoryTitle="מאכלים מוכנים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={herbs_spices}
                 categoryTitle="עשבי תיבול ותבלינים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={fruit}
                 categoryTitle="פירות קפואים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
           </div>
       

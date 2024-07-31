@@ -42,15 +42,13 @@ const Can_Dry_Page: React.FC = () => {
         <ProductsPage
           products={cans}
           categoryTitle="שימורים"
-          icon={<img alt="" src={importImage('')} />}
-        />
+          icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}        />
       </div>
       <div>
         <ProductsPage
           products={drys}
           categoryTitle="יבשים"
-          icon={<img alt="" src={importImage('')} />}
-        />
+          icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}        />
       </div>
     </div>
   );

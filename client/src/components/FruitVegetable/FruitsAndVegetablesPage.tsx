@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
-import ProductCartService from "../../services/products-service.ts";
+import ProductCartService from "../../services/products-service";
 import '../ProductCard/ProductsPage.css';
 import './FruitsAndVegetablesPage.css';
 
@@ -20,7 +20,7 @@ const FruitsAndVegetablesPage: React.FC = () => {
       image: importImage(`banana.jpeg`),
     },
     {
-      name: "אבטיח שלם",
+      name: "אבטיח",
       image: importImage(`watermelon.jpeg`),
     },
     {
@@ -266,12 +266,18 @@ const FruitsAndVegetablesPage: React.FC = () => {
     ));
   };
 
-  const handleSave = () => {
-    const fruitsToSave = fruits.filter(fruit => fruit.count > 0);
-    const vegetablesToSave = vegetables.filter(vegetable => vegetable.count > 0);
-    console.log("Fruits to Save:", fruitsToSave);
-    console.log("Vegetables to Save:", vegetablesToSave);
-  };
+  const handleSave = async () => {
+    const fruitsToSave = fruits.filter(fruit => fruit.count > 0).map(fruit => ({ ...fruit, quantity: fruit.count }));
+    const vegetablesToSave = vegetables.filter(vegetable => vegetable.count > 0).map(vegetable => ({ ...vegetable, quantity: vegetable.count }));
+    const productCartService = new ProductCartService();
+    try {
+        const response = await productCartService.uploadProducts(fruitsToSave, vegetablesToSave);
+        console.log('Products saved successfully:', response);
+    } catch (error) {
+        console.error('Error saving products:', error);
+    }
+};
+
 
   return (
     <div>

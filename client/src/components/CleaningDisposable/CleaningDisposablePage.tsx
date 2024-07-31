@@ -144,78 +144,67 @@ const CleaningDisposablePage: React.FC = () => {
               <ProductsPage
                 products={paper}
                 categoryTitle="נייר ומוצריו"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={laundryproducts}
                 categoryTitle="מוצרי כביסה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={cleaningproducts}
                 categoryTitle="ניקוי כלים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={kitchencleaning}
                 categoryTitle="ניקוי מטבח"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={generalcleaning}
                 categoryTitle="ניקוי כללי"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={floorcleaning}
                 categoryTitle="ניקוי רצפה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={bathroomtoilecleaning}
                 categoryTitle="ניקוי אמבטיה ושירותים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={pesticideproducts}
                 categoryTitle="מוצרי הדברה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={Cleaningaccessories}
                 categoryTitle="אביזרי ניקוי"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={disposableproducts}
                 categoryTitle="מוצרים חד פעמיים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={bagspackagingproducts}
                 categoryTitle="שקיות ומוצרי אריזה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
           </div>
       
