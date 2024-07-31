@@ -42,15 +42,13 @@ const DrinksPage: React.FC = () => {
         <ProductsPage
           products={sweets}
           categoryTitle="שתייה מתוקה"
-          icon={<img alt="" src={importImage('')} />}
-        />
+          icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}        />
       </div>
       <div>
         <ProductsPage
           products={alcohols}
           categoryTitle="שתייה חריפה"
-          icon={<img alt="" src={importImage('')} />}
-        />
+          icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}        />
       </div>
     </div>
   );

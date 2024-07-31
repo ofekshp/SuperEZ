@@ -42,15 +42,13 @@ const DeliPage: React.FC = () => {
               <ProductsPage
                 products={milk}
                 categoryTitle="חלב ומשקאות חלב"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={softCheese}
                 categoryTitle="גבינות רכות"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
           </div>
       

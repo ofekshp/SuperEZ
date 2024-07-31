@@ -3,9 +3,15 @@ const path = require('path');
 var connectDB = require('./db');
 var dotenv = require('dotenv');
 const priceComparisonRoutes = require('./routes/priceComparison');
+const productCartRoute = require('./routes/productCart'); // Make sure this matches the filename
+
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+app.use(cors());
+app.use(express.json());
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'build')));
@@ -14,7 +20,10 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.get('/api', (req, res) => {
   res.json({ message: 'Hello from the server!' });
 });
+
 app.use('/api', priceComparisonRoutes);
+app.use('/api', productCartRoute);
+
 app.post('/api/compare-prices', async (req, res) => {
   try {
     const { items } = req.body;
@@ -46,7 +55,7 @@ connectDB();
 
 // All other GET requests not handled before will return the React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(PORT, () => {

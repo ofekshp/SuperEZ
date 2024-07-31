@@ -219,127 +219,109 @@ const FarmHomePage: React.FC = () => {
               <ProductsPage
                 products={Shampoo}
                 categoryTitle="שמפו"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={conditioner}
                 categoryTitle="מרכך"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={bathsoap}
                 categoryTitle="סבון רחצה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={deodorantforwomen}
                 categoryTitle="דאודורנט לאישה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={deodorantformen}
                 categoryTitle="דאודורנט לגבר"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={sunprotection}
                 categoryTitle="מוצרי הגנה מהשמש"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={shavingpreparationsaccessories}
                 categoryTitle="תכשירים ואביזרים לגילוח"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={toothpastesmouthwash}
                 categoryTitle="משחות שיניים ומי פה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={toothbrushesdentalaccessories}
                 categoryTitle="מברשות שיניים ואביזרים דנטליים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={cosmeticsfacialcare}
                 categoryTitle="קוסמטיקה וטיפוח הפנים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={haircarestyling}
                 categoryTitle="טיפוח ועיצוב שיער"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={femininehygieneabsorbentproducts}
                 categoryTitle="היגיינה נשית ומוצרי ספיגה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={careaccessories}
                 categoryTitle="אביזרי טיפוח"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={bodycare}
                 categoryTitle="טיפוח הגוף"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={firstaid}
                 categoryTitle="עזרה ראשונה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={vitaminsnutritionalsupplements}
                 categoryTitle="ויטמינים ותוספי תזונה"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={airperfume}
                 categoryTitle="בישום אוויר"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
             <div>
               <ProductsPage
                 products={candlesmatches}
                 categoryTitle="נרות וגפרורים"
-                icon={<img alt="" src={importImage('')} />}
-              />
+                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
             </div>
           </div>
       

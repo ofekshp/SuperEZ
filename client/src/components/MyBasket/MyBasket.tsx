@@ -223,7 +223,7 @@ const MyBasket: React.FC = () => {
                 {item.prices ? (
                   <ul>
                     {Object.entries(item.prices).map(([supermarket, price]) => (
-                      <li key={supermarket}>{supermarket}: ₪{price}</li>
+                      <li key={supermarket}>{supermarket}: ₪{price as string}</li>
                     ))}
                   </ul>
                 ) : (
