@@ -7,13 +7,11 @@ const reverseString = (str) => {
 const addToCart = async (req, res) => {
     const { fruitsToSave, vegetablesToSave } = req.body;
     try {
-        const productsToSave = [...fruitsToSave, ...vegetablesToSave];
-                
+        const productsToSave = [...fruitsToSave, ...vegetablesToSave];        
         const reversedProducts = productsToSave.map(product => ({
             ...product,
             name: reverseString(product.name)
         }));
-        console.log("Products to save:", JSON.stringify(reversedProducts, null, 1));
 
         const foundProducts = [];
         for (const product of reversedProducts) {
@@ -24,7 +22,6 @@ const addToCart = async (req, res) => {
         }
         res.status(200).json(foundProducts);
     } catch (err) {
-        console.log("didnt find products");
         res.status(500).send(err.message);
     }
 };
