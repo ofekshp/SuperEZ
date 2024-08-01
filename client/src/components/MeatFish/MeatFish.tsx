@@ -92,6 +92,7 @@ const MeatFish: React.FC = () => {
           icon={<img alt="" src={importImage('meat_icon.png')} />} // Add appropriate icon
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -101,10 +102,8 @@ const MeatFish: React.FC = () => {
           icon={<img alt="" src={importImage('fish_icon.png')} />} // Add appropriate icon
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
-      <div className="button-group">
-        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 import React from "react";
 import "../Card/Card.css";
 
-const ProductCard = ({ image, name, count, onIncrement, onDecrement }) => {
+const ProductCard = ({ image, name, count, onIncrement, onDecrement, onSave }) => {
   return (
     <div className="card">
       <img src={image} alt={name} />
@@ -41,6 +41,25 @@ const ProductCard = ({ image, name, count, onIncrement, onDecrement }) => {
               strokeLinecap="round"
               strokeWidth={2}
               d="M12 19V5m7 7H5"
+            ></path>
+          </svg>
+        </div>
+        <div className="save-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            onClick={onSave}
+            className="buttonAction"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 13l4 4L19 7"
             ></path>
           </svg>
         </div>

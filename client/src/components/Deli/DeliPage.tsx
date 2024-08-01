@@ -71,6 +71,7 @@ const DeliPage: React.FC = () => {
           icon={<img alt="" src={importImage('milk_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -80,10 +81,8 @@ const DeliPage: React.FC = () => {
           icon={<img alt="" src={importImage('cheese_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
-      <div className="button-group">
-        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
       </div>
     </div>
   );

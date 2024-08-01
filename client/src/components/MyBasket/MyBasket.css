@@ -37,7 +37,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
-  align-items: right;
+  align-items: center; /* Change from right to center */
 }
 
 .product-name {
@@ -49,9 +49,10 @@
 .product-quantity {
   font-size: 14px;
   color: #666;
+  margin-right: 10px; /* Add margin for spacing */
 }
 
-.product-remove-button {
+.delete-button {
   padding: 8px 12px;
   font-size: 14px;
   background-color: #ff4c4c;
@@ -60,9 +61,12 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.product-remove-button:hover {
+.delete-button:hover {
   background-color: #e60000;
 }
 

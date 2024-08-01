@@ -57,10 +57,8 @@ const BakingPage: React.FC = () => {
           icon={<img alt="" src={importImage('baking_icon.png')} />} // Assuming baking_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
-      <div className="button-group">
-        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
       </div>
     </div>
   );

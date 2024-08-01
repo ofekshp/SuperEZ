@@ -1,5 +1,4 @@
-// BasketContext.tsx
-import React, { createContext, useState, ReactNode } from 'react';
+import React, { createContext, useState, ReactNode, useEffect } from 'react';
 
 interface Product {
   name: string;
@@ -9,20 +8,28 @@ interface Product {
 interface BasketContextType {
   basketProducts: Product[];
   addProduct: (product: Product) => void;
+  removeProduct: (productName: string) => void; 
 }
 
 const BasketContext = createContext<BasketContextType | undefined>(undefined);
 
 export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [basketProducts, setBasketProducts] = useState<Product[]>([]);
+  // Initialize state with data from local storage
+  const [basketProducts, setBasketProducts] = useState<Product[]>(() => {
+    const savedBasket = localStorage.getItem('basketProducts');
+    return savedBasket ? JSON.parse(savedBasket) : [];
+  });
+
+  // Save to local storage whenever basketProducts changes
+  useEffect(() => {
+    localStorage.setItem('basketProducts', JSON.stringify(basketProducts));
+  }, [basketProducts]);
 
   const addProduct = (product: Product) => {
     setBasketProducts(prevProducts => {
-      // Check if the product already exists in the basket
       const existingProductIndex = prevProducts.findIndex(p => p.name === product.name);
 
       if (existingProductIndex > -1) {
-        // If it exists, update the quantity
         const updatedProducts = [...prevProducts];
         updatedProducts[existingProductIndex] = {
           ...updatedProducts[existingProductIndex],
@@ -30,14 +37,17 @@ export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         };
         return updatedProducts;
       } else {
-        // If it doesn't exist, add it to the basket
         return [...prevProducts, product];
       }
     });
   };
 
+  const removeProduct = (productName: string) => {
+    setBasketProducts(prevProducts => prevProducts.filter(product => product.name !== productName));
+  };
+
   return (
-    <BasketContext.Provider value={{ basketProducts, addProduct }}>
+    <BasketContext.Provider value={{ basketProducts, addProduct , removeProduct }}>
       {children}
     </BasketContext.Provider>
   );

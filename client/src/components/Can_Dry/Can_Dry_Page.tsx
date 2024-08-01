@@ -85,6 +85,7 @@ const Can_Dry_Page: React.FC = () => {
           icon={<img alt="" src={importImage('can_icon.png')} />} // Assuming can_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -94,10 +95,8 @@ const Can_Dry_Page: React.FC = () => {
           icon={<img alt="" src={importImage('dry_icon.png')} />} // Assuming dry_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
-      <div className="button-group">
-        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
       </div>
     </div>
   );
