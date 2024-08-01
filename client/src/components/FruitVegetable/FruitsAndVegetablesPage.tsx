@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
-import ProductCartService from "../../services/products-service";
+import { useBasket } from "../MyBasket/BasketContext";
 import '../ProductCard/ProductsPage.css';
 import './FruitsAndVegetablesPage.css';
 
@@ -13,6 +13,9 @@ const importImage = (imageName: string) => {
 };
 
 const FruitsAndVegetablesPage: React.FC = () => {
+
+  const { addProduct } = useBasket();
+
   const initialFruits = [
 
     {
@@ -269,13 +272,11 @@ const FruitsAndVegetablesPage: React.FC = () => {
   const handleSave = async () => {
     const fruitsToSave = fruits.filter(fruit => fruit.count > 0).map(fruit => ({ ...fruit, quantity: fruit.count }));
     const vegetablesToSave = vegetables.filter(vegetable => vegetable.count > 0).map(vegetable => ({ ...vegetable, quantity: vegetable.count }));
-    const productCartService = new ProductCartService();
-    try {
-        const response = await productCartService.uploadProducts(fruitsToSave, vegetablesToSave);
-        console.log('Products saved successfully:', response);
-    } catch (error) {
-        console.error('Error saving products:', error);
-    }
+
+    const allItems = [...fruitsToSave, ...vegetablesToSave];
+    allItems.forEach(item => addProduct(item));
+    setFruits(fruits.map(item => ({ ...item, count: 0 })));
+    setVegetables(vegetables.map(item => ({ ...item, count: 0 })));
 };
 
 
