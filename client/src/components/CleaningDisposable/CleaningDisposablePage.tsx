@@ -214,6 +214,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('paper_icon.png')} />} // Assuming paper_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -223,6 +224,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('laundry_icon.png')} />} // Assuming laundry_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -232,6 +234,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('cleaning_icon.png')} />} // Assuming cleaning_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -241,6 +244,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('kitchen_cleaning_icon.png')} />} // Assuming kitchen_cleaning_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -250,6 +254,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('general_cleaning_icon.png')} />} // Assuming general_cleaning_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -259,6 +264,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('floor_cleaning_icon.png')} />} // Assuming floor_cleaning_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -268,6 +274,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('bathroom_cleaning_icon.png')} />} // Assuming bathroom_cleaning_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -277,6 +284,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('pesticide_icon.png')} />} // Assuming pesticide_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -286,6 +294,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('cleaning_accessories_icon.png')} />} // Assuming cleaning_accessories_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -295,6 +304,7 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('disposable_icon.png')} />} // Assuming disposable_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -304,10 +314,8 @@ const CleaningDisposablePage: React.FC = () => {
           icon={<img alt="" src={importImage('bag_packaging_icon.png')} />} // Assuming bag_packaging_icon.png is available
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
-      <div className="button-group">
-        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
       </div>
     </div>
   );

@@ -180,172 +180,150 @@ const PharmPage: React.FC = () => {
   };
   return (
     <div>
-      {/* Shampoo Section */}
       <ProductsPage
         products={shampoo}
         categoryTitle="שמפו"
-        icon={<img alt="" src={importImage('shampoo_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('shampoo_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Conditioner Section */}
       <ProductsPage
         products={conditioner}
         categoryTitle="מרכך"
-        icon={<img alt="" src={importImage('conditioner_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('conditioner_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Bath Soap Section */}
       <ProductsPage
         products={bathsoap}
         categoryTitle="תחליב רחצה"
-        icon={<img alt="" src={importImage('bathsoap_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('bathsoap_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Deodorant for Women Section */}
       <ProductsPage
         products={deodorantforwomen}
         categoryTitle="דאודורנט לנשים"
-        icon={<img alt="" src={importImage('deodorantforwomen_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('deodorantforwomen_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Deodorant for Men Section */}
       <ProductsPage
         products={deodorantformen}
         categoryTitle="דאודורנט לגברים"
-        icon={<img alt="" src={importImage('deodorantformen_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('deodorantformen_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Sun Protection Section */}
       <ProductsPage
         products={sunprotection}
         categoryTitle="הגנה מהשמש"
-        icon={<img alt="" src={importImage('sunprotection_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('sunprotection_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Shaving Preparations & Accessories Section */}
       <ProductsPage
         products={shavingpreparationsaccessories}
         categoryTitle="אביזרי גילוח"
-        icon={<img alt="" src={importImage('shavingpreparationsaccessories_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('shavingpreparationsaccessories_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Toothpaste & Mouthwash Section */}
       <ProductsPage
         products={toothpastesmouthwash}
         categoryTitle="משחות שיניים ומי פה"
-        icon={<img alt="" src={importImage('toothpastesmouthwash_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('toothpastesmouthwash_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Toothbrushes & Dental Accessories Section */}
       <ProductsPage
         products={toothbrushesdentalaccessories}
         categoryTitle="מברשות שיניים ואביזרי שיניים"
-        icon={<img alt="" src={importImage('toothbrushesdentalaccessories_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('toothbrushesdentalaccessories_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Cosmetics & Facial Care Section */}
       <ProductsPage
         products={cosmeticsfacialcare}
         categoryTitle="קוסמטיקה וטיפוח הפנים"
-        icon={<img alt="" src={importImage('cosmeticsfacialcare_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('cosmeticsfacialcare_icon.png')} />} 
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Hair Care & Styling Section */}
       <ProductsPage
         products={haircarestyling}
         categoryTitle="טיפוח ועיצוב שיער"
-        icon={<img alt="" src={importImage('haircarestyling_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('haircarestyling_icon.png')} />} 
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Feminine Hygiene & Absorbent Products Section */}
       <ProductsPage
         products={femininehygieneabsorbentproducts}
         categoryTitle="היגיינה נשית ומוצרי ספיגה"
-        icon={<img alt="" src={importImage('femininehygieneabsorbentproducts_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('femininehygieneabsorbentproducts_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Care Accessories Section */}
       <ProductsPage
         products={careaccessories}
         categoryTitle="אביזרי טיפוח"
-        icon={<img alt="" src={importImage('careaccessories_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('careaccessories_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Body Care Section */}
       <ProductsPage
         products={bodycare}
         categoryTitle="טיפוח גוף"
-        icon={<img alt="" src={importImage('bodycare_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('bodycare_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* First Aid Section */}
       <ProductsPage
         products={firstaid}
         categoryTitle="ערכות עזרה ראשונה"
-        icon={<img alt="" src={importImage('firstaid_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('firstaid_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Vitamins & Nutritional Supplements Section */}
       <ProductsPage
         products={vitaminsnutritionalsupplements}
         categoryTitle="ויטמינים ותוספי תזונה"
-        icon={<img alt="" src={importImage('vitaminsnutritionalsupplements_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('vitaminsnutritionalsupplements_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Air Fresheners Section */}
       <ProductsPage
         products={airperfume}
         categoryTitle="מבעים לאוויר"
-        icon={<img alt="" src={importImage('airperfume_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('airperfume_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Candles & Matches Section */}
       <ProductsPage
         products={candlesmatches}
         categoryTitle="נרות ותואמי הדלקה"
-        icon={<img alt="" src={importImage('candlesmatches_icon.png')} />} // Add the relevant icon image
+        icon={<img alt="" src={importImage('candlesmatches_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onSave={handleSave}
       />
-
-      {/* Save Button */}
-      <div className="button-group">
-        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
-      </div>
     </div>
   );
 }

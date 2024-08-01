@@ -1,29 +1,16 @@
 import React, { useState } from 'react';
 import { useBasket } from '../MyBasket/BasketContext';
 import './MyBasket.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 interface Product {
   name: string;
   quantity: number;
 }
 
 const MyBasket: React.FC = () => {
-  // const [products, setProducts] = useState<Product[]>([
-  //   { name: 'Apple', quantity: 2 },
-  //   { name: 'Banana', quantity: 3 },
-  //   { name: 'Orange', quantity: 5 },
-  // ]);
-
-  // const addProduct = (newProduct: Product) => {
-  //   setProducts([...products, newProduct]);
-  // };
-
-  // const removeProduct = (productName: string) => {
-  //   setProducts(products.filter((product) => product.name !== productName));
-  // };
-
-  const { basketProducts, addProduct } = useBasket();
-
+  
+  const { basketProducts , addProduct , removeProduct} = useBasket();
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [fullName, setFullName] = useState('');
@@ -43,6 +30,13 @@ const MyBasket: React.FC = () => {
             <div className="product-item" key={index}>
               <span className="product-name">{product.name}</span>
               <span className="product-quantity">כמות: {product.quantity}</span>
+              <button
+                className="delete-button"
+                onClick={() => removeProduct(product.name)}
+                aria-label={`Remove ${product.name}`}
+              >
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
             </div>
           ))}
         </div>

@@ -119,6 +119,7 @@ const FrozenPage: React.FC = () => {
           icon={<img alt="" src={importImage('vegetables_icon.png')} />} // Add appropriate icon
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -128,6 +129,7 @@ const FrozenPage: React.FC = () => {
           icon={<img alt="" src={importImage('doughs_icon.png')} />} // Add appropriate icon
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -137,6 +139,7 @@ const FrozenPage: React.FC = () => {
           icon={<img alt="" src={importImage('prepared_foods_icon.png')} />} // Add appropriate icon
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -146,6 +149,7 @@ const FrozenPage: React.FC = () => {
           icon={<img alt="" src={importImage('herbs_spices_icon.png')} />} // Add appropriate icon
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -155,10 +159,8 @@ const FrozenPage: React.FC = () => {
           icon={<img alt="" src={importImage('fruit_icon.png')} />} // Add appropriate icon
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
-      <div className="button-group">
-        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
       </div>
     </div>
   );

@@ -289,6 +289,7 @@ const FruitsAndVegetablesPage: React.FC = () => {
           icon={<img alt="" src={importImage('')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -298,10 +299,8 @@ const FruitsAndVegetablesPage: React.FC = () => {
           icon={<img alt="" src={importImage('')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
-      <div className="button-group">
-        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
       </div>
     </div>
   );

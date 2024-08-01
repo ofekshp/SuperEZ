@@ -21,6 +21,10 @@ const Products = ({ initialProducts }) => {
     ));
   };
 
+  const handleSave = async () => {
+    await onSave();
+  }; 
+
   return (
     <div className="product-list">
       {products.map((product) => (
@@ -31,6 +35,7 @@ const Products = ({ initialProducts }) => {
           count={product.count}
           onIncrement={() => handleIncrement(product.name)}
           onDecrement={() => handleDecrement(product.name)}
+          onSave={() => handleSave}
         />
       ))}
     </div>

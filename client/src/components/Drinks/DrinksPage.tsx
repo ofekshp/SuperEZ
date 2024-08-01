@@ -78,6 +78,7 @@ const DrinksPage: React.FC = () => {
           icon={<img alt="" src={importImage('sweet_drinks_icon.png')} />} // Add appropriate icon
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -87,11 +88,9 @@ const DrinksPage: React.FC = () => {
           icon={<img alt="" src={importImage('alcohol_drinks_icon.png')} />} // Add appropriate icon
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
-      <div className="button-group">
-        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
-      </div>
+      </div>    
     </div>
   );
 };
