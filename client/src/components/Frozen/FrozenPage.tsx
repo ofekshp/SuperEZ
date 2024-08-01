@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
+import { useBasket } from "../MyBasket/BasketContext";
 import '../ProductCard/ProductsPage.css';
 
 const importImage = (imageName: string) => {
@@ -11,100 +12,156 @@ const importImage = (imageName: string) => {
 };
 
 const FrozenPage: React.FC = () => {
-        const initialvegetables = [
-          {
-            name: "שעועית ירוקה",
-            image: importImage(`green_beans.jpeg`),
-          },
+  const { addProduct } = useBasket();
 
-        ];
-      
-        initialvegetables.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  const initialVegetables = [
+    {
+      name: "שעועית ירוקה",
+      image: importImage('green_beans.jpeg'),
+    },
+  ];
 
-        const initialdoughs_pizzas_pastries = [
-            {
-              name: "בצק פילו",
-              image: importImage(`phyllo_dough.jpeg`),
-            },
-  
-          ];
-        
-          initialdoughs_pizzas_pastries.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  const initialDoughsPizzasPastries = [
+    {
+      name: "בצק פילו",
+      image: importImage('phyllo_dough.jpeg'),
+    },
+  ];
 
+  const initialPreparedFoods = [
+    {
+      name: "שניצלונים עוף טוב",
+      image: importImage('schnitzels_oftov.jpeg'),
+    },
+  ];
 
-        const initialprepared_foods = [
-            {
-              name: "שניצלונים עוף טוב",
-              image: importImage(`schnitzels_oftov.jpeg`),
-            },
-  
-          ];
-        
-          initialprepared_foods.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  const initialHerbsSpices = [
+    {
+      name: "שום כתוש",
+      image: importImage('minced_garlic.jpeg'),
+    },
+  ];
 
-          const initialherbs_spices = [
-            {
-              name: "שום כתוש",
-              image: importImage(`minced_garlic.jpeg`),
-            },
-  
-          ];
-        
-          initialherbs_spices.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  const initialFruit = [
+    {
+      name: "פירות יער מוקפאים",
+      image: importImage('frozen_berries.jpeg'),
+    },
+  ];
 
-          const initialfruit = [
-            {
-              name: "פירות יער מוקפאים",
-              image: importImage(`frozen_berries.jpeg`),
-            },
-  
-          ];
-        
-          initialfruit.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  const [vegetables, setVegetables] = useState<{ name: string; image: string | null; count: number }[]>(initialVegetables.map(product => ({ ...product, count: 0 })));
+  const [doughsPizzasPastries, setDoughsPizzasPastries] = useState<{ name: string; image: string | null; count: number }[]>(initialDoughsPizzasPastries.map(product => ({ ...product, count: 0 })));
+  const [preparedFoods, setPreparedFoods] = useState<{ name: string; image: string | null; count: number }[]>(initialPreparedFoods.map(product => ({ ...product, count: 0 })));
+  const [herbsSpices, setHerbsSpices] = useState<{ name: string; image: string | null; count: number }[]>(initialHerbsSpices.map(product => ({ ...product, count: 0 })));
+  const [fruit, setFruit] = useState<{ name: string; image: string | null; count: number }[]>(initialFruit.map(product => ({ ...product, count: 0 })));
 
-      
-        const [vegetables] = React.useState<{ name: string; image: any; }[]>(initialvegetables);
-        const [doughs_pizzas_pastries] = React.useState<{ name: string; image: any; }[]>(initialdoughs_pizzas_pastries);
-        const [prepared_foods] = React.useState<{ name: string; image: any; }[]>(initialprepared_foods);
-        const [herbs_spices] = React.useState<{ name: string; image: any; }[]>(initialherbs_spices);
-        const [fruit] = React.useState<{ name: string; image: any; }[]>(initialfruit);
-      
-      
-        return (
-          <div>
-            <div>
-              <ProductsPage
-                products={vegetables}
-                categoryTitle="ירקות קפואים"
-                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
-            </div>
-            <div>
-              <ProductsPage
-                products={doughs_pizzas_pastries}
-                categoryTitle="בצקים, פיצות ומאפים"
-                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
-            </div>
-            <div>
-              <ProductsPage
-                products={prepared_foods}
-                categoryTitle="מאכלים מוכנים"
-                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
-            </div>
-            <div>
-              <ProductsPage
-                products={herbs_spices}
-                categoryTitle="עשבי תיבול ותבלינים"
-                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
-            </div>
-            <div>
-              <ProductsPage
-                products={fruit}
-                categoryTitle="פירות קפואים"
-                icon={<img alt="" src={importImage('')} />} onIncrement={undefined} onDecrement={undefined}              />
-            </div>
-          </div>
-      
-        );
-      };
-      
+  const handleIncrement = (name: string) => {
+    setVegetables(vegetables.map(product =>
+      product.name === name ? { ...product, count: product.count + 1 } : product
+    ));
+    setDoughsPizzasPastries(doughsPizzasPastries.map(product =>
+      product.name === name ? { ...product, count: product.count + 1 } : product
+    ));
+    setPreparedFoods(preparedFoods.map(product =>
+      product.name === name ? { ...product, count: product.count + 1 } : product
+    ));
+    setHerbsSpices(herbsSpices.map(product =>
+      product.name === name ? { ...product, count: product.count + 1 } : product
+    ));
+    setFruit(fruit.map(product =>
+      product.name === name ? { ...product, count: product.count + 1 } : product
+    ));
+  };
+
+  const handleDecrement = (name: string) => {
+    setVegetables(vegetables.map(product =>
+      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    ));
+    setDoughsPizzasPastries(doughsPizzasPastries.map(product =>
+      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    ));
+    setPreparedFoods(preparedFoods.map(product =>
+      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    ));
+    setHerbsSpices(herbsSpices.map(product =>
+      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    ));
+    setFruit(fruit.map(product =>
+      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    ));
+  };
+
+  const handleSave = async () => {
+    const allProducts = [
+      ...vegetables.filter(product => product.count > 0),
+      ...doughsPizzasPastries.filter(product => product.count > 0),
+      ...preparedFoods.filter(product => product.count > 0),
+      ...herbsSpices.filter(product => product.count > 0),
+      ...fruit.filter(product => product.count > 0)
+    ].map(product => ({ ...product, quantity: product.count }));
+
+    allProducts.forEach(product => addProduct(product));
+
+    // Reset quantities after saving
+    setVegetables(vegetables.map(product => ({ ...product, count: 0 })));
+    setDoughsPizzasPastries(doughsPizzasPastries.map(product => ({ ...product, count: 0 })));
+    setPreparedFoods(preparedFoods.map(product => ({ ...product, count: 0 })));
+    setHerbsSpices(herbsSpices.map(product => ({ ...product, count: 0 })));
+    setFruit(fruit.map(product => ({ ...product, count: 0 })));
+  };
+
+  return (
+    <div>
+      <div>
+        <ProductsPage
+          products={vegetables}
+          categoryTitle="ירקות קפואים"
+          icon={<img alt="" src={importImage('vegetables_icon.png')} />} // Add appropriate icon
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={doughsPizzasPastries}
+          categoryTitle="בצקים, פיצות ומאפים"
+          icon={<img alt="" src={importImage('doughs_icon.png')} />} // Add appropriate icon
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={preparedFoods}
+          categoryTitle="מאכלים מוכנים"
+          icon={<img alt="" src={importImage('prepared_foods_icon.png')} />} // Add appropriate icon
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={herbsSpices}
+          categoryTitle="עשבי תיבול ותבלינים"
+          icon={<img alt="" src={importImage('herbs_spices_icon.png')} />} // Add appropriate icon
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={fruit}
+          categoryTitle="פירות קפואים"
+          icon={<img alt="" src={importImage('fruit_icon.png')} />} // Add appropriate icon
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+        />
+      </div>
+      <div className="button-group">
+        <button className="btn btn-primary" onClick={handleSave}>SAVE</button>
+      </div>
+    </div>
+  );
+};
+
 export default FrozenPage;
