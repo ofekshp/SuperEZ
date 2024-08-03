@@ -14,7 +14,6 @@ const importImage = (imageName: string) => {
 const PharmPage: React.FC = () => {
   const { addProduct } = useBasket();
 
-  // Initial product data
   const initialShampoo = [
     { name: "שמפו לשיער רגיל", image: importImage('shampoo_for_normal_hair.jpeg') },
   ];
@@ -70,7 +69,6 @@ const PharmPage: React.FC = () => {
     { name: "נר נשמה 26 שעות", image: importImage('26_hour_soul_candle.jpeg') },
   ];
 
-  // State management
   const [shampoo, setShampoo] = useState(initialShampoo.map(item => ({ ...item, count: 0 })));
   const [conditioner, setConditioner] = useState(initialConditioner.map(item => ({ ...item, count: 0 })));
   const [bathsoap, setBathsoap] = useState(initialBathsoap.map(item => ({ ...item, count: 0 })));
@@ -158,7 +156,6 @@ const PharmPage: React.FC = () => {
 
     itemsToSave.forEach(item => addProduct(item));
 
-    // Reset counts
     setShampoo(shampoo.map(item => ({ ...item, count: 0 })));
     setConditioner(conditioner.map(item => ({ ...item, count: 0 })));
     setBathsoap(bathsoap.map(item => ({ ...item, count: 0 })));

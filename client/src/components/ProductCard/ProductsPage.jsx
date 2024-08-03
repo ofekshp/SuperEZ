@@ -1,4 +1,3 @@
-// ProductsPage.jsx
 import React from "react";
 import ProductCard from "../Card/Card";
 import "./ProductsPage.css";
@@ -13,7 +12,7 @@ const ProductsPage = ({ products, categoryTitle, icon, onIncrement, onDecrement,
       <div className="product-list">
         {products.map(product => (
           <ProductCard
-            key={product.name} // Added key for better performance
+            key={product.name}
             image={product.image}
             name={product.name}
             count={product.count}

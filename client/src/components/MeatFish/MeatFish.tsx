@@ -78,7 +78,6 @@ const MeatFish: React.FC = () => {
     const allItems = [...meatsToSave, ...fishesToSave];
     allItems.forEach(item => addProduct(item));
 
-    // Reset quantities after saving
     setMeats(meats.map(item => ({ ...item, count: 0 })));
     setFishes(fishes.map(item => ({ ...item, count: 0 })));
   };
@@ -89,7 +88,7 @@ const MeatFish: React.FC = () => {
         <ProductsPage
           products={meats}
           categoryTitle="בשר"
-          icon={<img alt="" src={importImage('meat_icon.png')} />} // Add appropriate icon
+          icon={<img alt="" src={importImage('meat_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -99,7 +98,7 @@ const MeatFish: React.FC = () => {
         <ProductsPage
           products={fishes}
           categoryTitle="דגים"
-          icon={<img alt="" src={importImage('fish_icon.png')} />} // Add appropriate icon
+          icon={<img alt="" src={importImage('fish_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}

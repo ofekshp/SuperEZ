@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const BakingPage: React.FC = () => {
-  const { addProduct } = useBasket(); // Get addProduct from the basket context
+  const { addProduct } = useBasket(); 
 
   const initialBaking = [
     {
@@ -44,8 +44,8 @@ const BakingPage: React.FC = () => {
   const handleSave = async () => {
     const itemsToSave = baking.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
 
-    itemsToSave.forEach(item => addProduct(item)); // Use addProduct to save items to the basket
-    setBaking(baking.map(item => ({ ...item, count: 0 }))); // Reset counts
+    itemsToSave.forEach(item => addProduct(item));
+    setBaking(baking.map(item => ({ ...item, count: 0 })));
   };
 
   return (
@@ -54,7 +54,7 @@ const BakingPage: React.FC = () => {
         <ProductsPage
           products={baking}
           categoryTitle="אפייה"
-          icon={<img alt="" src={importImage('baking_icon.png')} />} // Assuming baking_icon.png is available
+          icon={<img alt="" src={importImage('baking_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}

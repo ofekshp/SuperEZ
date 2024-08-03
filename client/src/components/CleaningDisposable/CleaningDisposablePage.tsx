@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const CleaningDisposablePage: React.FC = () => {
-  const { addProduct } = useBasket(); // Get addProduct from the basket context
+  const { addProduct } = useBasket(); 
 
   const initialPaper = [
     {
@@ -190,7 +190,7 @@ const CleaningDisposablePage: React.FC = () => {
       ...bagspackagingproductsToSave
     ];
 
-    allItemsToSave.forEach(item => addProduct(item)); // Use addProduct to save items to the basket
+    allItemsToSave.forEach(item => addProduct(item));
 
     setPaper(paper.map(item => ({ ...item, count: 0 })));
     setLaundryproducts(laundryproducts.map(item => ({ ...item, count: 0 })));
@@ -211,7 +211,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={paper}
           categoryTitle="נייר ומוצריו"
-          icon={<img alt="" src={importImage('paper_icon.png')} />} // Assuming paper_icon.png is available
+          icon={<img alt="" src={importImage('paper_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -221,7 +221,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={laundryproducts}
           categoryTitle="מוצרי כביסה"
-          icon={<img alt="" src={importImage('laundry_icon.png')} />} // Assuming laundry_icon.png is available
+          icon={<img alt="" src={importImage('laundry_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -231,7 +231,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={cleaningproducts}
           categoryTitle="ניקוי כלים"
-          icon={<img alt="" src={importImage('cleaning_icon.png')} />} // Assuming cleaning_icon.png is available
+          icon={<img alt="" src={importImage('cleaning_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -241,7 +241,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={kitchencleaning}
           categoryTitle="ניקוי מטבח"
-          icon={<img alt="" src={importImage('kitchen_cleaning_icon.png')} />} // Assuming kitchen_cleaning_icon.png is available
+          icon={<img alt="" src={importImage('kitchen_cleaning_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -251,7 +251,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={generalcleaning}
           categoryTitle="ניקוי כללי"
-          icon={<img alt="" src={importImage('general_cleaning_icon.png')} />} // Assuming general_cleaning_icon.png is available
+          icon={<img alt="" src={importImage('general_cleaning_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -261,7 +261,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={floorcleaning}
           categoryTitle="ניקוי רצפה"
-          icon={<img alt="" src={importImage('floor_cleaning_icon.png')} />} // Assuming floor_cleaning_icon.png is available
+          icon={<img alt="" src={importImage('floor_cleaning_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -271,7 +271,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={bathroomtoilecleaning}
           categoryTitle="ניקוי אמבטיה ושירותים"
-          icon={<img alt="" src={importImage('bathroom_cleaning_icon.png')} />} // Assuming bathroom_cleaning_icon.png is available
+          icon={<img alt="" src={importImage('bathroom_cleaning_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -281,7 +281,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={pesticideproducts}
           categoryTitle="מוצרי הדברה"
-          icon={<img alt="" src={importImage('pesticide_icon.png')} />} // Assuming pesticide_icon.png is available
+          icon={<img alt="" src={importImage('pesticide_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -291,7 +291,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={cleaningaccessories}
           categoryTitle="אביזרי ניקוי"
-          icon={<img alt="" src={importImage('cleaning_accessories_icon.png')} />} // Assuming cleaning_accessories_icon.png is available
+          icon={<img alt="" src={importImage('cleaning_accessories_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -301,7 +301,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={disposableproducts}
           categoryTitle="מוצרים חד פעמיים"
-          icon={<img alt="" src={importImage('disposable_icon.png')} />} // Assuming disposable_icon.png is available
+          icon={<img alt="" src={importImage('disposable_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -311,7 +311,7 @@ const CleaningDisposablePage: React.FC = () => {
         <ProductsPage
           products={bagspackagingproducts}
           categoryTitle="שקיות ומוצרי אריזה"
-          icon={<img alt="" src={importImage('bag_packaging_icon.png')} />} // Assuming bag_packaging_icon.png is available
+          icon={<img alt="" src={importImage('bag_packaging_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}

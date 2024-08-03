@@ -3,10 +3,6 @@ import { useBasket } from '../MyBasket/BasketContext';
 import './MyBasket.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-interface Product {
-  name: string;
-  quantity: number;
-}
 
 const MyBasket: React.FC = () => {
   
@@ -21,9 +17,7 @@ const MyBasket: React.FC = () => {
   
   return (
     <div className="my-basket" dir="rtl">
-      <div className="my-basket__header">
-        <h2 className="my-basket__title">פרטי התקשרות</h2>
-      </div>
+      <h1 className="my-basket__title">הסל שלי</h1>
       <div className="my-basket__content">
         <div className="my-basket__product-list">
           {basketProducts.map((product, index) => (
@@ -40,6 +34,7 @@ const MyBasket: React.FC = () => {
             </div>
           ))}
         </div>
+        <h1 className="my-basket__title">פרטי משלוח</h1>
         <div className="my-basket__form-container">
           <div className="my-basket__address-form">
             <div>
