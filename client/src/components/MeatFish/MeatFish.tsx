@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
+import { useBasket } from "../MyBasket/BasketContext";
 import '../ProductCard/ProductsPage.css';
 
 const importImage = (imageName: string) => {
@@ -11,7 +12,10 @@ const importImage = (imageName: string) => {
 };
 
 const MeatFish: React.FC = () => {
+  const { addProduct } = useBasket();
+
   const initialChickenproducts = [
+
     {
       name: "כנפיים עוף",
       image: importImage("chicken_wings_cleaned.jpeg"),
@@ -479,60 +483,41 @@ const MeatFish: React.FC = () => {
   ];
   initialFrozenfish.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-  const [chickenproducts] = React.useState<{ name: string; image: string | null; }[]>(initialChickenproducts);
-  const [indiaproducts] = React.useState<{ name: string; image: string | null; }[]>(initialIndiaproducts);
-  const [beeflamb] = React.useState<{ name: string; image: string | null; }[]>(initialBeeflamb);
-  const [frozenbeefchicken] = React.useState<{ name: string; image: string | null; }[]>(initialFrozenbeefchicken);
-  const [freshfish] = React.useState<{ name: string; image: string | null; }[]>(initialFreshfish);
-  const [frozenfish] = React.useState<{ name: string; image: string | null; }[]>(initialFrozenfish);
+  const [chickenproducts,setChickenProducts] = useState<{ name: string; image: string | null; count: number }[   
+  ]>(initialChickenproducts.map(item => ({ ...item, count: 0 })));
 
+  const handleIncrement = (name: string) => {
+    setChickenProducts(chickenproducts.map(item =>   item.name === name ? { ...item, count: item.count + 1 } : item ));};
+
+  const handleDecrement = (name: string) => {
+    setChickenProducts(chickenproducts.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  };
+
+  const handleSave = async () => {
+    const chickenToSave = chickenproducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    
+    const allItems = [...chickenToSave];
+    allItems.forEach(item => addProduct(item));
+
+    setChickenProducts(chickenproducts.map(item => ({ ...item, count: 0 })));
+  };
 
   return (
     <div>
       <div>
-        <ProductsPage
+        <ProductsPage   
           products={chickenproducts}
           categoryTitle="מוצרי עוף"
           icon={<img alt="" src={importImage('')} />}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={indiaproducts}
-          categoryTitle="מוצרי הודו"
-          icon={<img alt="" src={importImage('')} />}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={beeflamb}
-          categoryTitle="בשר בקר וכבש"
-          icon={<img alt="" src={importImage('')} />}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={frozenbeefchicken}
-          categoryTitle="בשר בקר ועוף קפוא"
-          icon={<img alt="" src={importImage('')} />}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={freshfish}
-          categoryTitle="דגים טריים"
-          icon={<img alt="" src={importImage('')} />}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={frozenfish}
-          categoryTitle="דגים קפואים"
-          icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
     </div>
   );
-}
+};
 
 export default MeatFish;
