@@ -102,7 +102,6 @@ const FrozenPage: React.FC = () => {
 
     allProducts.forEach(product => addProduct(product));
 
-    // Reset quantities after saving
     setVegetables(vegetables.map(product => ({ ...product, count: 0 })));
     setDoughsPizzasPastries(doughsPizzasPastries.map(product => ({ ...product, count: 0 })));
     setPreparedFoods(preparedFoods.map(product => ({ ...product, count: 0 })));
@@ -116,7 +115,7 @@ const FrozenPage: React.FC = () => {
         <ProductsPage
           products={vegetables}
           categoryTitle="ירקות קפואים"
-          icon={<img alt="" src={importImage('vegetables_icon.png')} />} // Add appropriate icon
+          icon={<img alt="" src={importImage('vegetables_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -126,7 +125,7 @@ const FrozenPage: React.FC = () => {
         <ProductsPage
           products={doughsPizzasPastries}
           categoryTitle="בצקים, פיצות ומאפים"
-          icon={<img alt="" src={importImage('doughs_icon.png')} />} // Add appropriate icon
+          icon={<img alt="" src={importImage('doughs_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -136,7 +135,7 @@ const FrozenPage: React.FC = () => {
         <ProductsPage
           products={preparedFoods}
           categoryTitle="מאכלים מוכנים"
-          icon={<img alt="" src={importImage('prepared_foods_icon.png')} />} // Add appropriate icon
+          icon={<img alt="" src={importImage('prepared_foods_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -146,7 +145,7 @@ const FrozenPage: React.FC = () => {
         <ProductsPage
           products={herbsSpices}
           categoryTitle="עשבי תיבול ותבלינים"
-          icon={<img alt="" src={importImage('herbs_spices_icon.png')} />} // Add appropriate icon
+          icon={<img alt="" src={importImage('herbs_spices_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -156,7 +155,7 @@ const FrozenPage: React.FC = () => {
         <ProductsPage
           products={fruit}
           categoryTitle="פירות קפואים"
-          icon={<img alt="" src={importImage('fruit_icon.png')} />} // Add appropriate icon
+          icon={<img alt="" src={importImage('fruit_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}

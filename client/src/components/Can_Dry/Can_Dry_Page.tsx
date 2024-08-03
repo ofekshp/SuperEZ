@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const Can_Dry_Page: React.FC = () => {
-  const { addProduct } = useBasket(); // Get addProduct from the basket context
+  const { addProduct } = useBasket();
 
   const initialCan = [
     {
@@ -36,7 +36,6 @@ const Can_Dry_Page: React.FC = () => {
     }
   ];
 
-  // State for products with count management
   const [cans, setCans] = useState<{ name: string; image: string | null; count: number }[]>(
     initialCan.map(can => ({ ...can, count: 0 }))
   );
@@ -45,7 +44,6 @@ const Can_Dry_Page: React.FC = () => {
     initialDry.map(dry => ({ ...dry, count: 0 }))
   );
 
-  // Increment and decrement handlers
   const handleIncrement = (name: string) => {
     setCans(cans.map(can =>
       can.name === name ? { ...can, count: can.count + 1 } : can
@@ -64,14 +62,13 @@ const Can_Dry_Page: React.FC = () => {
     ));
   };
 
-  // Save function
   const handleSave = async () => {
     const cansToSave = cans.filter(can => can.count > 0).map(can => ({ ...can, quantity: can.count }));
     const drysToSave = drys.filter(dry => dry.count > 0).map(dry => ({ ...dry, quantity: dry.count }));
 
     const allItems = [...cansToSave, ...drysToSave];
-    allItems.forEach(item => addProduct(item)); // Use addProduct to save items to the basket
-    // Reset counts
+    allItems.forEach(item => addProduct(item));
+
     setCans(cans.map(can => ({ ...can, count: 0 })));
     setDrys(drys.map(dry => ({ ...dry, count: 0 })));
   };
@@ -82,7 +79,7 @@ const Can_Dry_Page: React.FC = () => {
         <ProductsPage
           products={cans}
           categoryTitle="שימורים"
-          icon={<img alt="" src={importImage('can_icon.png')} />} // Assuming can_icon.png is available
+          icon={<img alt="" src={importImage('can_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -92,7 +89,7 @@ const Can_Dry_Page: React.FC = () => {
         <ProductsPage
           products={drys}
           categoryTitle="יבשים"
-          icon={<img alt="" src={importImage('dry_icon.png')} />} // Assuming dry_icon.png is available
+          icon={<img alt="" src={importImage('dry_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}

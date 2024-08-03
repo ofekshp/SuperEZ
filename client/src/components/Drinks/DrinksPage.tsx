@@ -64,7 +64,6 @@ const DrinksPage: React.FC = () => {
     const allDrinks = [...sweetDrinksToSave, ...alcoholDrinksToSave];
     allDrinks.forEach(drink => addProduct(drink));
 
-    // Reset quantities after saving
     setSweets(sweets.map(drink => ({ ...drink, count: 0 })));
     setAlcohols(alcohols.map(drink => ({ ...drink, count: 0 })));
   };
@@ -75,7 +74,7 @@ const DrinksPage: React.FC = () => {
         <ProductsPage
           products={sweets}
           categoryTitle="שתייה מתוקה"
-          icon={<img alt="" src={importImage('sweet_drinks_icon.png')} />} // Add appropriate icon
+          icon={<img alt="" src={importImage('sweet_drinks_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -85,7 +84,7 @@ const DrinksPage: React.FC = () => {
         <ProductsPage
           products={alcohols}
           categoryTitle="שתייה חריפה"
-          icon={<img alt="" src={importImage('alcohol_drinks_icon.png')} />} // Add appropriate icon
+          icon={<img alt="" src={importImage('alcohol_drinks_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}

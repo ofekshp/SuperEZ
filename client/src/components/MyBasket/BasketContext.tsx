@@ -14,16 +14,13 @@ interface BasketContextType {
 const BasketContext = createContext<BasketContextType | undefined>(undefined);
 
 export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Initialize state with data from local storage
+
   const [basketProducts, setBasketProducts] = useState<Product[]>(() => {
     const savedBasket = localStorage.getItem('basketProducts');
     return savedBasket ? JSON.parse(savedBasket) : [];
   });
 
-  // Save to local storage whenever basketProducts changes
-  useEffect(() => {
-    localStorage.setItem('basketProducts', JSON.stringify(basketProducts));
-  }, [basketProducts]);
+  useEffect(() => {  localStorage.setItem('basketProducts', JSON.stringify(basketProducts)); }, [basketProducts]);
 
   const addProduct = (product: Product) => {
     setBasketProducts(prevProducts => {
