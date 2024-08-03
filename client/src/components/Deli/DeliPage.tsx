@@ -1243,8 +1243,6 @@ const DeliPage: React.FC = () => {
   const [eggs] = React.useState<{ name: string; image: any; }[]>(initialEggs);
 
 
-
-
   return (
     <div>
       <div>
