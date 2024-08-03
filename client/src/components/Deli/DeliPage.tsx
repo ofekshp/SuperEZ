@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
+import { useBasket } from "../MyBasket/BasketContext";
 import '../ProductCard/ProductsPage.css';
 
 const importImage = (imageName: string) => {
@@ -11,6 +12,9 @@ const importImage = (imageName: string) => {
 };
 
 const DeliPage: React.FC = () => {
+
+  const { addProduct } = useBasket();
+
   const initialMilk = [
     { 
       name: "חלב בקרטון 3% , 1 ל׳", 
@@ -1230,20 +1234,154 @@ const DeliPage: React.FC = () => {
   ];
   initialEggs.sort((a, b) => a.name.localeCompare(b.name, 'he'));
     
-  const [milk] = React.useState<{ name: string; image: any; }[]>(initialMilk);
-  const [yogurtdelicacies] = React.useState<{ name: string; image: any; }[]>(initialYogurtdelicacies);
-  const [yogurtdrinking] = React.useState<{ name: string; image: any; }[]>(initialinitialYogurtdrinking);
-  const [milkdelicaciesdesserts] = React.useState<{ name: string; image: any; }[]>(initialMilkdelicaciesdesserts);
-  const [softcheeses] = React.useState<{ name: string; image: any; }[]>(initialSoftcheeses);
-  const [semihardcheeses] = React.useState<{ name: string; image: any; }[]>(initialSemihardcheeses);
-  const [yellowhardcheeses] = React.useState<{ name: string; image: any; }[]>(initialYellowhardcheeses);
-  const [buttermargarine] = React.useState<{ name: string; image: any; }[]>(initialButtermargarine);
-  const [creamwhippedcreamcookingbaking] = React.useState<{ name: string; image: any; }[]>(initialCreamwhippedcreamcookingbaking);
-  const [chilledpasta] = React.useState<{ name: string; image: any; }[]>(initialChilledpasta);
-  const [eggs] = React.useState<{ name: string; image: any; }[]>(initialEggs);
 
+  const [milk, setMilk] = useState<{ name: string; image: any; count: number }[]>( initialMilk.map(item => ({ ...item, count: 0 })) );
+  const [yogurtDelicacies, setYogurtDelicacies] = useState<{ name: string; image: any; count: number }[]>( initialYogurtdelicacies.map(item => ({ ...item, count: 0 })) );
+  const [yogurtDrink, setYogurtDrink] = useState<{ name: string; image: any; count: number }[]>(initialinitialYogurtdrinking.map(item => ({ ...item, count: 0 }))); 
+  const [milkDelicaciesDesserts, setMilkDelicaciesDesserts] = useState<{ name: string; image: any; count: number }[]>(initialMilkdelicaciesdesserts.map(item => ({ ...item, count: 0 }))); 
+  const [softCheese, setSoftCheese] = useState<{ name: string; image: any; count: number }[]>(initialSoftcheeses.map(item => ({ ...item, count: 0 }))); 
+  const [semiHardCheese, setSemiHardCheese] = useState<{ name: string; image: any; count: number }[]>(initialSemihardcheeses.map(item => ({ ...item, count: 0 })));
+  const [yellowHardCheese, setYellowHardCheese] = useState<{ name: string; image: any; count: number }[]>( initialYellowhardcheeses.map(item => ({ ...item, count: 0 })) ); 
+  const [butterMargarine, setButterMargarine] = useState<{ name: string; image: any; count: number }[]>( initialButtermargarine.map(item => ({ ...item, count: 0 })) ); 
+  const [creamWhippedCreamCookingBaking, setCreamWhippedCreamCookingBaking] = useState<{ name: string; image: any; count: number }[]>( initialCreamwhippedcreamcookingbaking.map(item => ({ ...item, count: 0 })) );
+  const [chilledPasta, setChilledPasta] = useState<{ name: string; image: any; count: number }[]>(  initialChilledpasta.map(item => ({ ...item, count: 0 })) );
+  const [eggs, setEggs] = useState<{ name: string; image: any; count: number }[]>(  initialEggs.map(item => ({ ...item, count: 0 })) );
 
+  const handleIncrement = (name: string) => {
+    setMilk(milk.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+    
+    setYogurtDelicacies(yogurtDelicacies.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  
+    setYogurtDrink(yogurtDrink.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  
+    setMilkDelicaciesDesserts(milkDelicaciesDesserts.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  
+    setSoftCheese(softCheese.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  
+    setSemiHardCheese(semiHardCheese.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  
+    setYellowHardCheese(yellowHardCheese.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  
+    setButterMargarine(butterMargarine.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  
+    setCreamWhippedCreamCookingBaking(creamWhippedCreamCookingBaking.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  
+    setChilledPasta(chilledPasta.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  
+    setEggs(eggs.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+  };
+  
+  const handleDecrement = (name: string) => {
+    setMilk(milk.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+    
+    setYogurtDelicacies(yogurtDelicacies.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  
+    setYogurtDrink(yogurtDrink.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  
+    setMilkDelicaciesDesserts(milkDelicaciesDesserts.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  
+    setSoftCheese(softCheese.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  
+    setSemiHardCheese(semiHardCheese.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  
+    setYellowHardCheese(yellowHardCheese.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  
+    setButterMargarine(butterMargarine.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  
+    setCreamWhippedCreamCookingBaking(creamWhippedCreamCookingBaking.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  
+    setChilledPasta(chilledPasta.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  
+    setEggs(eggs.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+  };
+  
 
+  const handleSave = async () => {
+    const milkToSave = milk.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const yogurtDelicaciesToSave = yogurtDelicacies.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const yogurtDrinkToSave = yogurtDrink.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const milkDelicaciesDessertsToSave = milkDelicaciesDesserts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const softCheeseToSave = softCheese.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const semiHardCheeseToSave = semiHardCheese.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const yellowHardCheeseToSave = yellowHardCheese.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const butterMargarineToSave = butterMargarine.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const creamWhippedCreamCookingBakingToSave = creamWhippedCreamCookingBaking.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const chilledPastaToSave = chilledPasta.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const eggsToSave = eggs.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+  
+    const allItems = [
+      ...milkToSave,
+      ...yogurtDelicaciesToSave,
+      ...yogurtDrinkToSave,
+      ...milkDelicaciesDessertsToSave,
+      ...softCheeseToSave,
+      ...semiHardCheeseToSave,
+      ...yellowHardCheeseToSave,
+      ...butterMargarineToSave,
+      ...creamWhippedCreamCookingBakingToSave,
+      ...chilledPastaToSave,
+      ...eggsToSave
+    ];
+  
+    allItems.forEach(item => addProduct(item));
+  
+    setMilk(milk.map(item => ({ ...item, count: 0 })));
+    setYogurtDelicacies(yogurtDelicacies.map(item => ({ ...item, count: 0 })));
+    setYogurtDrink(yogurtDrink.map(item => ({ ...item, count: 0 })));
+    setMilkDelicaciesDesserts(milkDelicaciesDesserts.map(item => ({ ...item, count: 0 })));
+    setSoftCheese(softCheese.map(item => ({ ...item, count: 0 })));
+    setSemiHardCheese(semiHardCheese.map(item => ({ ...item, count: 0 })));
+    setYellowHardCheese(yellowHardCheese.map(item => ({ ...item, count: 0 })));
+    setButterMargarine(butterMargarine.map(item => ({ ...item, count: 0 })));
+    setCreamWhippedCreamCookingBaking(creamWhippedCreamCookingBaking.map(item => ({ ...item, count: 0 })));
+    setChilledPasta(chilledPasta.map(item => ({ ...item, count: 0 })));
+    setEggs(eggs.map(item => ({ ...item, count: 0 })));
+  };
+  
 
   return (
     <div>
@@ -1251,82 +1389,112 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={milk}
           categoryTitle="חלב ומשקאות חלב"
-          icon={<img alt="" src={importImage('')} />}
+          icon={<img alt="Milk Icon" src={importImage('milk_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
-          products={yogurtdelicacies}
-          categoryTitle="מעדני יוגורט"
-          icon={<img alt="" src={importImage('')} />}
+          products={yogurtDelicacies}
+          categoryTitle="יוגורטים ודליקטסים"
+          icon={<img alt="Yogurt Delicacies Icon" src={importImage('yogurt_delicacies_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
-          products={yogurtdrinking}
-          categoryTitle="יוגורט לשתיה"
-          icon={<img alt="" src={importImage('')} />}
+          products={yogurtDrink}
+          categoryTitle="יוגורטים לשתייה"
+          icon={<img alt="Yogurt Drink Icon" src={importImage('yogurt_drink_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
-          products={milkdelicaciesdesserts}
-          categoryTitle="מעדני חלב וקינוחים"
-          icon={<img alt="" src={importImage('')} />}
+          products={milkDelicaciesDesserts}
+          categoryTitle="דליקטסים וקינוחים מחלב"
+          icon={<img alt="Milk Delicacies Desserts Icon" src={importImage('milk_delicacies_desserts_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
-          products={softcheeses}
+          products={softCheese}
           categoryTitle="גבינות רכות"
-          icon={<img alt="" src={importImage('')} />}
+          icon={<img alt="Soft Cheese Icon" src={importImage('cheese_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
-          products={semihardcheeses}
+          products={semiHardCheese}
           categoryTitle="גבינות חצי קשות"
-          icon={<img alt="" src={importImage('')} />}
+          icon={<img alt="Semi-Hard Cheese Icon" src={importImage('semi_hard_cheese_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
-          products={yellowhardcheeses}
-          categoryTitle="גבינות צהובות וקשות"
-          icon={<img alt="" src={importImage('')} />}
+          products={yellowHardCheese}
+          categoryTitle="גבינות קשות צהובות"
+          icon={<img alt="Yellow Hard Cheese Icon" src={importImage('yellow_hard_cheese_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
-          products={buttermargarine}
+          products={butterMargarine}
           categoryTitle="חמאה ומרגרינה"
-          icon={<img alt="" src={importImage('')} />}
+          icon={<img alt="Butter Margarine Icon" src={importImage('butter_margarine_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
-          products={creamwhippedcreamcookingbaking}
-          categoryTitle="שמנת, קצפת, בישול ואפיה"
-          icon={<img alt="" src={importImage('')} />}
+          products={creamWhippedCreamCookingBaking}
+          categoryTitle="שמנת, קצפת, בישול ואפייה"
+          icon={<img alt="Cream Whipped Cream Cooking Baking Icon" src={importImage('cream_whipped_cream_cooking_baking_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
-          products={chilledpasta}
-          categoryTitle="פסטות מצוננות"
-          icon={<img alt="" src={importImage('')} />}
+          products={chilledPasta}
+          categoryTitle="פסטות קפואות"
+          icon={<img alt="Chilled Pasta Icon" src={importImage('chilled_pasta_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
           products={eggs}
           categoryTitle="ביצים"
-          icon={<img alt="" src={importImage('')} />}
+          icon={<img alt="Eggs Icon" src={importImage('eggs_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
     </div>
-
   );
 };
-      
-export default DeliPage;

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
+import { useBasket } from "../MyBasket/BasketContext";
 import '../ProductCard/ProductsPage.css';
+import './FruitsAndVegetablesPage.css';
 
 const importImage = (imageName: string) => {
   try {
@@ -11,6 +13,9 @@ const importImage = (imageName: string) => {
 };
 
 const FruitsAndVegetablesPage: React.FC = () => {
+
+  const { addProduct } = useBasket();
+
   const initialFruits = [
 
     {
@@ -18,7 +23,7 @@ const FruitsAndVegetablesPage: React.FC = () => {
       image: importImage(`banana.jpeg`),
     },
     {
-      name: "אבטיח שלם",
+      name: "אבטיח",
       image: importImage(`watermelon.jpeg`),
     },
     {
@@ -107,9 +112,6 @@ const FruitsAndVegetablesPage: React.FC = () => {
     },
 
   ];
-
-  initialFruits.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-
 
   const initialVegetables = [
     {
@@ -242,8 +244,6 @@ const FruitsAndVegetablesPage: React.FC = () => {
     },
   ];
 
-  initialVegetables.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-
   const initialPackagedpickedvegetables = [
     { 
       name: "חסה לאליק",
@@ -359,8 +359,6 @@ const FruitsAndVegetablesPage: React.FC = () => {
       image: importImage('cooked_red_beans.jpg') 
     },
   ];
-
-  initialPackagedpickedvegetables.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const initialHerbssproutsmushrooms = [
     {
@@ -521,8 +519,6 @@ const FruitsAndVegetablesPage: React.FC = () => {
     },
   ];
 
-  initialHerbssproutsmushrooms.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-
   const initialPackagedfruit = [
     { 
       name: "קיווי ירוק ארוז", 
@@ -566,22 +562,89 @@ const FruitsAndVegetablesPage: React.FC = () => {
     },
   ];
 
+  initialVegetables.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialFruits.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialPackagedpickedvegetables.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialHerbssproutsmushrooms.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialPackagedfruit.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-  const [fruits] = React.useState<{ name: string; image: any; }[]>(initialFruits);
-  const [vegetables] = React.useState<{ name: string; image: any; }[]>(initialVegetables);
-  const [packagedpickedvegetables] = React.useState<{ name: string; image: any; }[]>(initialPackagedpickedvegetables);
-  const [herbssproutsmushrooms] = React.useState<{ name: string; image: any; }[]>(initialHerbssproutsmushrooms);
-  const [packagedfruit] = React.useState<{ name: string; image: any; }[]>(initialPackagedfruit);
+  const [fruits, setFruits] = useState<{ name: string; image: any; count: number }[]>(initialFruits.map(fruit => ({ ...fruit, count: 0 })));
+  const [vegetables, setVegetables] = useState<{ name: string; image: any; count: number }[]>(initialVegetables.map(vegetable => ({ ...vegetable, count: 0 })));
+  const [packagedpickedvegetables, setPackagedpickedvegetables] = useState<{ name: string; image: any; count: number }[]>(initialPackagedpickedvegetables.map(packagedpickedvegetable => ({ ...packagedpickedvegetable, count: 0 })));
+  const [herbssproutsmushrooms, setHerbssproutsmushrooms] = useState<{ name: string; image: any; count: number }[]>(initialHerbssproutsmushrooms.map(herbssproutsmushroom => ({ ...herbssproutsmushroom, count: 0 })));
+  const [packagedfruit, setPackagedfruit] = useState<{ name: string; image: any; count: number }[]>(initialPackagedfruit.map(packagedfruit => ({ ...packagedfruit, count: 0 })));
 
+  const handleIncrement = (name: string) => {
+    setFruits(fruits.map(fruit =>  fruit.name === name ? { ...fruit, count: fruit.count + 1 } : fruit )); 
+
+    setVegetables(vegetables.map(vegetable =>   vegetable.name === name ? { ...vegetable, count: vegetable.count + 1 } : vegetable ));
+
+    setPackagedpickedvegetables(packagedpickedvegetables.map(packagedpickedvegetable =>
+      packagedpickedvegetable.name === name ? { ...packagedpickedvegetable, count: packagedpickedvegetable.count + 1 } : packagedpickedvegetable ));
+
+    setHerbssproutsmushrooms(herbssproutsmushrooms.map(herbssproutsmushroom => herbssproutsmushroom.name === name ? 
+      { ...herbssproutsmushroom, count: herbssproutsmushroom.count + 1 } : herbssproutsmushroom ));  
+
+    setPackagedfruit(packagedfruit.map(packagedfruit => packagedfruit.name === name ? { ...packagedfruit, count: packagedfruit.count + 1 } : packagedfruit ));  
+  };
+
+  const handleDecrement = (name: string) => {
+    setFruits(fruits.map(fruit =>
+      fruit.name === name && fruit.count > 0 ? { ...fruit, count: fruit.count - 1 } : fruit
+    ));
+    setVegetables(vegetables.map(vegetable =>
+      vegetable.name === name && vegetable.count > 0 ? { ...vegetable, count: vegetable.count - 1 } : vegetable
+    ));
+    setPackagedpickedvegetables(packagedpickedvegetables.map(packagedpickedvegetable =>
+      packagedpickedvegetable.name === name && packagedpickedvegetable.count > 0 ? { ...packagedpickedvegetable, count: packagedpickedvegetable.count - 1 } : packagedpickedvegetable
+    ));
+    setHerbssproutsmushrooms(herbssproutsmushrooms.map(herbssproutsmushroom =>
+      herbssproutsmushroom.name === name && herbssproutsmushroom.count > 0 ? { ...herbssproutsmushroom, count: herbssproutsmushroom.count - 1 } : herbssproutsmushroom
+    ));
+    setPackagedfruit(packagedfruit.map(packagedfruit =>
+      packagedfruit.name === name && packagedfruit.count > 0 ? { ...packagedfruit, count: packagedfruit.count - 1 } : packagedfruit
+    ));
+  };
+
+  const handleSave = async () => {
+    const fruitsToSave = fruits.filter(fruit => fruit.count > 0).map(fruit => ({ ...fruit, quantity: fruit.count }));
+    const vegetablesToSave = vegetables.filter(vegetable => vegetable.count > 0).map(vegetable => ({ ...vegetable, quantity: vegetable.count }));
+    const packagedpickedvegetablesToSave = packagedpickedvegetables.filter(packagedpickedvegetable => packagedpickedvegetable.count > 0).map(packagedpickedvegetable => 
+      ({ ...packagedpickedvegetable, quantity: packagedpickedvegetable.count }));
+    const herbssproutsmushroomsToSave = herbssproutsmushrooms.filter(herbssproutsmushroom => herbssproutsmushroom.count > 0).map(herbssproutsmushroom =>
+      ({ ...herbssproutsmushroom, quantity: herbssproutsmushroom.count }));
+    const packagedfruitToSave = packagedfruit.filter(packagedfruit => packagedfruit.count > 0).map(packagedfruit =>
+      ({ ...packagedfruit, quantity: packagedfruit.count }));
+
+    const allItems = [...fruitsToSave, ...vegetablesToSave , ...packagedpickedvegetablesToSave , ...herbssproutsmushroomsToSave , ...packagedfruitToSave];
+    allItems.forEach(item => addProduct(item));
+    setFruits(fruits.map(item => ({ ...item, count: 0 })));
+    setVegetables(vegetables.map(item => ({ ...item, count: 0 })));
+    setPackagedpickedvegetables(packagedpickedvegetables.map(item => ({ ...item, count: 0 })));
+    setHerbssproutsmushrooms(herbssproutsmushrooms.map(item => ({ ...item, count: 0 })));
+    setPackagedfruit(packagedfruit.map(item => ({ ...item, count: 0 })));
+};
 
   return (
     <div>
+      <div>
+        <ProductsPage
+          products={fruits}
+          categoryTitle="פירות"
+          icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
        <div>
         <ProductsPage
           products={vegetables}
           categoryTitle="ירקות"
           icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -589,6 +652,9 @@ const FruitsAndVegetablesPage: React.FC = () => {
           products={packagedpickedvegetables}
           categoryTitle="ירקות ארוזים"
           icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
@@ -596,24 +662,22 @@ const FruitsAndVegetablesPage: React.FC = () => {
           products={herbssproutsmushrooms}
           categoryTitle="עשבי תיבול, נבטים ופטריות"
           icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
-      <div>
-        <ProductsPage
-          products={fruits}
-          categoryTitle="פירות"
-          icon={<img alt="" src={importImage('')} />}
-        />
-      </div>
+      </div>   
       <div>
         <ProductsPage
           products={packagedfruit}
           categoryTitle="פירות ארוזים"
           icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
     </div>
-
   );
 };
 
