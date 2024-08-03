@@ -483,25 +483,63 @@ const MeatFish: React.FC = () => {
   ];
   initialFrozenfish.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-  const [chickenproducts,setChickenProducts] = useState<{ name: string; image: string | null; count: number }[   
-  ]>(initialChickenproducts.map(item => ({ ...item, count: 0 })));
+  const [chickenproducts, setChickenProducts] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialChickenproducts.map(item => ({ ...item, count: 0 }))
+  );
+  const [indiaProducts, setIndiaProducts] = useState(
+    initialIndiaproducts.map(item => ({ ...item, count: 0 }))
+  );
+  
+  const [beefLambProducts, setBeefLambProducts] = useState(
+    initialBeeflamb.map(item => ({ ...item, count: 0 }))
+  );
+  
+  const [frozenBeefChickenProducts, setFrozenBeefChickenProducts] = useState(
+    initialFrozenbeefchicken.map(item => ({ ...item, count: 0 }))
+  );
+  
+  const [freshFishProducts, setFreshFishProducts] = useState(
+    initialFreshfish.map(item => ({ ...item, count: 0 }))
+  );
+  
+  const [frozenFishProducts, setFrozenFishProducts] = useState(
+    initialFrozenfish.map(item => ({ ...item, count: 0 }))
+  );
 
   const handleIncrement = (name: string) => {
-    setChickenProducts(chickenproducts.map(item =>   item.name === name ? { ...item, count: item.count + 1 } : item ));};
+    setChickenProducts(chickenproducts.map(item =>   item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setIndiaProducts(indiaProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setBeefLambProducts(beefLambProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setFreshFishProducts(freshFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setFrozenFishProducts(frozenFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+  };
 
   const handleDecrement = (name: string) => {
-    setChickenProducts(chickenproducts.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
+    setChickenProducts(chickenproducts.map(item =>  item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
+    setIndiaProducts(indiaProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
+    setBeefLambProducts(beefLambProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
+    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
+    setFreshFishProducts(freshFishProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
+    setFrozenFishProducts(frozenFishProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count- 1 } : item ));
   };
 
   const handleSave = async () => {
     const chickenToSave = chickenproducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    
-    const allItems = [...chickenToSave];
+    const indiaToSave = indiaProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const beefLambToSave = beefLambProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const frozenBeefChickenToSave = frozenBeefChickenProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const freshFishToSave = freshFishProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const frozenFishToSave = frozenFishProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const allItems = [...chickenToSave, ...indiaToSave, ...beefLambToSave, ...frozenBeefChickenToSave, ...freshFishToSave, ...frozenFishToSave];
     allItems.forEach(item => addProduct(item));
 
     setChickenProducts(chickenproducts.map(item => ({ ...item, count: 0 })));
+    setIndiaProducts(indiaProducts.map(item => ({ ...item, count: 0 })));
+    setBeefLambProducts(beefLambProducts.map(item => ({ ...item, count: 0 })));
+    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => ({ ...item, count: 0 })));
+    setFreshFishProducts(freshFishProducts.map(item => ({ ...item, count: 0 })));
+    setFrozenFishProducts(frozenFishProducts.map(item => ({ ...item, count: 0 })));
   };
 
   return (
@@ -516,7 +554,57 @@ const MeatFish: React.FC = () => {
           onSave={handleSave}
         />
       </div>
+      <div>
+        <ProductsPage
+          products={indiaProducts}
+          categoryTitle="מוצרי הודו"
+          icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
     </div>
+    <div>
+      <ProductsPage
+        products={beefLambProducts}
+        categoryTitle="בשר בקר וכבש"
+        icon={<img alt="" src={importImage('')} />}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onSave={handleSave}
+      />
+    </div>
+    <div>
+      <ProductsPage
+        products={frozenBeefChickenProducts}
+        categoryTitle="בשר בקר ועוף קפוא"
+        icon={<img alt="" src={importImage('')} />}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onSave={handleSave}
+      />
+    </div>
+    <div>
+      <ProductsPage
+        products={freshFishProducts}
+        categoryTitle="דגים טריים"
+        icon={<img alt="" src={importImage('')} />}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onSave={handleSave}
+      />
+    </div>
+    <div>
+      <ProductsPage
+        products={frozenFishProducts}
+        categoryTitle="דגים קפואים"
+        icon={<img alt="" src={importImage('')} />}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onSave={handleSave}
+      />
+    </div>
+  </div>
   );
 };
 

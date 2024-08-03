@@ -1382,13 +1382,14 @@ const DeliPage: React.FC = () => {
     setEggs(eggs.map(item => ({ ...item, count: 0 })));
   };
   
+
   return (
     <div>
-      <div>
+      <div> 
         <ProductsPage
           products={milk}
           categoryTitle="חלב ומשקאות חלב"
-          icon={<img alt="Milk Icon" src={importImage('milk_icon.png')} />}
+          icon={<img alt="" src={importImage('milk_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1398,7 +1399,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={yogurtDelicacies}
           categoryTitle="יוגורטים ודליקטסים"
-          icon={<img alt="Yogurt Delicacies Icon" src={importImage('yogurt_delicacies_icon.png')} />}
+          icon={<img alt="" src={importImage('yogurt_delicacies_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1408,7 +1409,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={yogurtDrink}
           categoryTitle="יוגורטים לשתייה"
-          icon={<img alt="Yogurt Drink Icon" src={importImage('yogurt_drink_icon.png')} />}
+          icon={<img alt="" src={importImage('yogurt_drink_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1418,7 +1419,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={milkDelicaciesDesserts}
           categoryTitle="דליקטסים וקינוחים מחלב"
-          icon={<img alt="Milk Delicacies Desserts Icon" src={importImage('milk_delicacies_desserts_icon.png')} />}
+          icon={<img alt="" src={importImage('milk_delicacies_desserts_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1428,7 +1429,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={softCheese}
           categoryTitle="גבינות רכות"
-          icon={<img alt="Soft Cheese Icon" src={importImage('cheese_icon.png')} />}
+          icon={<img alt="" src={importImage('cheese_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1438,7 +1439,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={semiHardCheese}
           categoryTitle="גבינות חצי קשות"
-          icon={<img alt="Semi-Hard Cheese Icon" src={importImage('semi_hard_cheese_icon.png')} />}
+          icon={<img alt="" src={importImage('semi_hard_cheese_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1448,7 +1449,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={yellowHardCheese}
           categoryTitle="גבינות קשות צהובות"
-          icon={<img alt="Yellow Hard Cheese Icon" src={importImage('yellow_hard_cheese_icon.png')} />}
+          icon={<img alt="" src={importImage('yellow_hard_cheese_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1458,7 +1459,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={butterMargarine}
           categoryTitle="חמאה ומרגרינה"
-          icon={<img alt="Butter Margarine Icon" src={importImage('butter_margarine_icon.png')} />}
+          icon={<img alt="" src={importImage('butter_margarine_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1468,7 +1469,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={creamWhippedCreamCookingBaking}
           categoryTitle="שמנת, קצפת, בישול ואפייה"
-          icon={<img alt="Cream Whipped Cream Cooking Baking Icon" src={importImage('cream_whipped_cream_cooking_baking_icon.png')} />}
+          icon={<img alt="" src={importImage('cream_whipped_cream_cooking_baking_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1478,7 +1479,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={chilledPasta}
           categoryTitle="פסטות קפואות"
-          icon={<img alt="Chilled Pasta Icon" src={importImage('chilled_pasta_icon.png')} />}
+          icon={<img alt="" src={importImage('chilled_pasta_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
@@ -1488,7 +1489,7 @@ const DeliPage: React.FC = () => {
         <ProductsPage
           products={eggs}
           categoryTitle="ביצים"
-          icon={<img alt="Eggs Icon" src={importImage('eggs_icon.png')} />}
+          icon={<img alt="" src={importImage('eggs_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
