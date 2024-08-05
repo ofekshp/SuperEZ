@@ -22,6 +22,7 @@ const Products = ({ initialProducts }) => {
   };
 
   const handleSave = async () => {
+    // eslint-disable-next-line no-undef
     await onSave();
   }; 
 

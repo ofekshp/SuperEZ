@@ -1,5 +1,5 @@
 import React from 'react';
-import BasketItem from '../BasketItem/BasketItem';
+import BasketItem from '../BasketItem/BasketItem.tsx';
 import './BasketList.css';
 
 interface BasketItemProps {
