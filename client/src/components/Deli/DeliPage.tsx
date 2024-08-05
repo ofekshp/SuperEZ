@@ -1233,6 +1233,463 @@ const DeliPage: React.FC = () => {
     },
   ];
   initialEggs.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+
+  const initialSausagespastrami = [
+    {
+      name: "קורנדביף",
+      image: importImage("premium_corned_beef_zoglowek.jpeg"),
+    },
+    {
+      name: "רוסטביף",
+      image: importImage("premium_roast_beef_zoglowek.jpeg"),
+    },
+    {
+      name: "סלמי סרוולט",
+      image: importImage("servelat_salami_yachiam.jpeg"),
+    },
+    {
+      name: "סלמי הרץ",
+      image: importImage("hertz_salami_yachiam.jpeg"),
+    },
+    {
+      name: "כתף בקר מפולפל",
+      image: importImage("peppered_beef_shoulder_yachiam.jpeg"),
+    },
+    {
+      name: "סרוולט בסגנון הונגרי",
+      image: importImage("hungarian_style_servelat_yachiam.jpeg"),
+    },
+    {
+      name: "סלמי בסגנון צרפתי",
+      image: importImage("french_style_salami_yachiam.jpeg"),
+    },
+    {
+      name: "פסטרמה של פעם",
+      image: importImage("traditional_pastrami_yachiam.jpeg"),
+    },
+    {
+      name: "פרושטו בקר",
+      image: importImage("beef_prosciutto_yachiam.jpeg"),
+    },
+    {
+      name: "גלילית על האש",
+      image: importImage("grilled_galilit_yachiam.jpeg"),
+    },
+    {
+      name: "גלילית עם דבש",
+      image: importImage("honey_glazed_galilit_yachiam.jpeg"),
+    },
+    {
+      name: "סלמי תה",
+      image: importImage("tea_salami_yachiam.jpeg"),
+    },
+    {
+      name: "פסטרמה של פעם מרכיבים טבעיים",
+      image: importImage("traditional_pastrami_natural_ingredients_yachiam.jpeg"),
+    },
+    {
+      name: "קבנוס פפרוני",
+      image: importImage("pepperoni_kabanos_yachiam.jpeg"),
+    },
+    {
+      name: "קבנוס קלאסי",
+      image: importImage("classic_kabanos_yachiam.jpeg"),
+    },
+    {
+      name: "נשנושי קבנוס",
+      image: importImage("kabanos_snacks_yachiam.jpeg"),
+    },
+    {
+      name: "סלמי מעושן",
+      image: importImage("smoked_salami_yachiam.jpeg"),
+    },
+    {
+      name: "קבנוס",
+      image: importImage("kabanos_zoglowek.jpeg"),
+    },
+    {
+      name: "קבנוס מעודן",
+      image: importImage("mild_kabanos_zoglowek.jpeg"),
+    },
+    {
+      name: "פסטרמה מעושנת",
+      image: importImage("extra_smoked_thin_sliced_pastrami_zoglowek.jpeg"),
+    },
+    {
+      name: "פסטרמה בדבש",
+      image: importImage("honey_pastrami_zoglowek.jpeg"),
+    },
+    {
+      name: "מארז סלמי תה מעושן + פסטרמה חרמון הודו ועוף",
+      image: importImage("smoked_tea_salami_hermon_turkey_chicken_package_zoglowek.jpeg"),
+    },
+    {
+      name: "מארז חרמון הודו ועוף ברביקיו + הודו ועוף בדבש",
+      image: importImage("hermon_bbq_honey_turkey_chicken_package_zoglowek.jpeg"),
+    },
+    {
+      name: "פסטרמה תבור",
+      image: importImage("tabor_pastrami_zoglowek.jpeg"),
+    },
+    {
+      name: "פסטרמה גחלים",
+      image: importImage("coals_pastrami_zoglowek.jpeg"),
+    },
+    {
+      name: "פסטרמה ברביקיו",
+      image: importImage("bbq_pastrami_zoglowek.jpeg"),
+    },
+    {
+      name: "חזה בקר פרוס",
+      image: importImage("thin_sliced_beef_breast_zoglowek.jpeg"),
+    },
+    {
+      name: "סלמי קוניאק",
+      image: importImage("cognac_salami_zoglowek.jpeg"),
+    },
+    {
+      name: "סלמי בסגנון איטלקי",
+      image: importImage("italian_salami_zoglowek.jpeg"),
+    },
+    {
+      name: "סלמי בשן",
+      image: importImage("beshan_salami_zoglowek.jpeg"),
+    },
+    {
+      name: "כתף בקר מעושנת",
+      image: importImage("smoked_beef_shoulder_zoglowek.jpeg"),
+    },
+    {
+      name: "סלמי תה מעושן פרוס",
+      image: importImage("smoked_tea_salami_sliced_zoglowek.jpeg"),
+    },
+    {
+      name: "הודו אפוי",
+      image: importImage("thin_sliced_baked_turkey_zoglowek.jpeg"),
+    },
+    {
+      name: "סלמי בסגנון איטלקי מפולפל",
+      image: importImage("peppered_italian_salami_yachiam.jpeg"),
+    },
+    {
+      name: "סלמי מעושן בסגנון איטלקי",
+      image: importImage("smoked_italian_salami_yachiam.jpeg"),
+    },
+    {
+      name: "פסטרמה מהגריל",
+      image: importImage("grilled_chicken_pastrami_oftov.jpeg"),
+    },
+    {
+      name: "פסטרמה מהמעשנה",
+      image: importImage("smoked_chicken_pastrami_oftov.jpeg"),
+    },
+    {
+      name: "פסטרמה מקורמלת",
+      image: importImage("caramelized_chicken_pastrami_oftov.jpeg"),
+    },
+    {
+      name: "צלעות אסאדו מעושנות",
+      image: importImage("smoked_asado_ribs_zoglowek_premium.jpeg"),
+    },
+  
+  ];
+  initialSausagespastrami.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+
+  const initialSalads = [
+    {
+      name: "חומוס עם טחינה",
+      image: importImage("hummus_with_tahini_achla_strauss.jpeg"),
+    },
+    {
+      name: "חומוס גלילי",
+      image: importImage("galilee_hummus_achla_strauss.jpeg"),
+    },
+    {
+      name: "חומוס עם זעתר",
+      image: importImage("hummus_with_zaatar_achla_strauss.jpeg"),
+    },
+    {
+      name: "חומוס עם צנוברים",
+      image: importImage("hummus_with_pine_nuts_achla_strauss.jpeg"),
+    },
+    {
+      name: "חומוס עם חריף",
+      image: importImage("hummus_with_spicy_achla_strauss.jpeg"),
+    },
+    {
+      name: "חומוס גלילי במרקם ותיבול מעודן",
+      image: importImage("galilee_hummus_achla_strauss_600g.jpeg"),
+    },
+    {
+      name: "טחינה",
+      image: importImage("tahini_achla_strauss_500g.jpeg"),
+    },
+    {
+      name: "טחינה לבנה",
+      image: importImage("white_tahini_achla_strauss.jpeg"),
+    },
+    {
+      name: "חומוס",
+      image: importImage("hummus_achla_strauss_400g.jpeg"),
+    },
+    {
+      name: "חומוס עשיר ב 30% טחינה גולמית",
+      image: importImage("rich_hummus_30percent_tahini_achla_strauss.jpeg"),
+    },
+    {
+      name: "חומוס עשיר ב 40% טחינה גולמית",
+      image: importImage("rich_hummus_40percent_tahini_achla_strauss.jpeg"),
+    },
+    {
+      name: "טחינה ירוקה עם פטרוזיליה",
+      image: importImage("green_tahini_with_parsley_mashani.jpeg"),
+    },
+    {
+      name: "חומוס מסעדות בתוספת לימון",
+      image: importImage("restaurant_hummus_with_lemon_mashani.jpeg"),
+    },
+    {
+      name: "חומוס אבו גוש",
+      image: importImage("hummus_abu_gosh_shamir_200g.jpeg"),
+    },
+    {
+      name: "חומוס אבו גוש עם חריף",
+      image: importImage("hummus_abu_gosh_with_spicy_shamir.jpeg"),
+    },
+    {
+      name: "חומוס מסבחה",
+      image: importImage("masabacha_hummus_shamir_500g.jpeg"),
+    },
+    {
+      name: "חומוס עשיר ב- 50% טחינה גולמית",
+      image: importImage("rich_hummus_50percent_tahini_achla_strauss.jpeg"),
+    },
+    {
+      name: "סלט כרוב סגול במיונז",
+      image: importImage("purple_cabbage_mayo_achla.jpeg"),
+    },
+    {
+      name: "סלט חציל פיקנטי",
+      image: importImage("spicy_eggplant_achla.jpeg"),
+    },
+    {
+      name: "סלט חצילים בטעם כבד",
+      image: importImage("eggplant_liver_flavor_achla.jpeg"),
+    },
+    {
+      name: "סלט מטבוחה",
+      image: importImage("matbucha_salad_achla.jpeg"),
+    },
+    {
+      name: "סלט חצילים במיונז",
+      image: importImage("eggplant_mayo_achla.jpeg"),
+    },
+    {
+      name: "סלט קוביות סלק",
+      image: importImage("diced_beet_salad_achla.jpeg"),
+    },
+    {
+      name: "סלט מטבוחה חריפה אש",
+      image: importImage("spicy_matbucha_fire_achla.jpeg"),
+    },
+    {
+      name: "סלט טורקי",
+      image: importImage("turkish_salad_achla.jpeg"),
+    },
+    {
+      name: "סלט חציל קלוי עם שמן זית",
+      image: importImage("grilled_eggplant_olive_oil_achla.jpeg"),
+    },
+    {
+      name: "סלט קולסלאו",
+      image: importImage("coleslaw_salad_achla.jpeg"),
+    },
+    {
+      name: "גוואקמולי",
+      image: importImage("guacamole_achla.jpeg"),
+    },
+    {
+      name: "ממרח גוואקמולי חריף אש",
+      image: importImage("spicy_guacamole_achla.jpeg"),
+    },
+    {
+      name: "סחוג ירוק פלפלים",
+      image: importImage("green_schug_pepper_salad_mashani.jpeg"),
+    },
+    {
+      name: "סלט גזר חריף במיץ לימון",
+      image: importImage("spicy_carrot_lemon_juice_salad_mashani.jpeg"),
+    },
+    {
+      name: "סלט תפוחי אדמה במיונז",
+      image: importImage("potato_mayo_salad_mashani.jpeg"),
+    },
+    {
+      name: "סלט עגבניות סלסה חריף",
+      image: importImage("spicy_tomato_salsa_salad_mashani.jpeg"),
+    },
+    {
+      name: "סלט פלפלים מרוקאי חריף",
+      image: importImage("spicy_moroccan_pepper_salad_mashani.jpeg"),
+    },
+    {
+      name: "סלט חצילים על האש בטחינה",
+      image: importImage("grilled_eggplant_tahini_salad_mashani.jpeg"),
+    },
+    {
+      name: "סלט ביצים במיונז",
+      image: importImage("egg_mayo_salad_mashani.jpeg"),
+    },
+    {
+      name: "סלט כרוב קולסלאו בסגנון אמריקאי",
+      image: importImage("american_style_coleslaw_salad_mashani.jpeg"),
+    },
+    {
+      name: "סחוג אדום פלפלים",
+      image: importImage("red_schug_pepper_salad_mashani.jpeg"),
+    },
+    {
+      name: "סלט טונה במיונז",
+      image: importImage("tuna_mayo_salad_mashani.jpeg"),
+    },
+    {
+      name: "סלט פלפל צ'ומה",
+      image: importImage("pepper_chuma_salad_mashani.jpeg"),
+    },
+    {
+      name: "סחוג תימני חריף",
+      image: importImage("yemeni_schug_spicy_biton.jpeg"),
+    },
+    {
+      name: "חציל קלוי על האש",
+      image: importImage("grilled_eggplant_sera.jpeg"),
+    },
+    {
+      name: "לימון בלאדי ביתי",
+      image: importImage("homemade_baladi_lemon_olechem.jpeg"),
+    },
+    {
+      name: "אריסה חריפה",
+      image: importImage("spicy_harissa_pita_olechem.jpeg"),
+    },
+    {
+      name: "ממרח לימון כבוש",
+      image: importImage("preserved_lemon_spread_olechem.jpeg"),
+    },
+    {
+      name: "ממרח עגבניות מיובשות",
+      image: importImage("sun_dried_tomato_spread_olechem.jpeg"),
+    },
+    {
+      name: "טפנד זיתי קלמטה",
+      image: importImage("kalamata_olive_tapenade_olechem.jpeg"),
+    },
+    {
+      name: "ממרח ארטישוק",
+      image: importImage("artichoke_spread_olechem.jpeg"),
+    },
+    {
+      name: "ממרח שום",
+      image: importImage("garlic_spread_olechem.jpeg"),
+    },
+    {
+      name: "ממרח פלפלים קלויים",
+      image: importImage("roasted_pepper_spread_olechem.jpeg"),
+    },
+    {
+      name: "פסטו ביתי",
+      image: importImage("homemade_pesto_olechem.jpeg"),
+    },
+    {
+      name: "אריסה פיקנטית",
+      image: importImage("spicy_harissa_olivia.jpeg"),
+    },
+    {
+      name: "אריסה חריפה",
+      image: importImage("hot_harissa_olivia.jpeg"),
+    },
+    {
+      name: "אריסה",
+      image: importImage("harissa_perg.jpeg"),
+    },
+    {
+      name: "אריסה בטעם ביתי חריף פיקנטי",
+      image: importImage("homemade_spicy_harissa_biton.jpeg"),
+    },
+    {
+      name: "אריסה מתוקה",
+      image: importImage("sweet_harissa_biton.jpeg"),
+    },
+    {
+      name: "טפנד זיתים ירוקים ועשבי תיבול",
+      image: importImage("green_olive_tapenade_olechem.jpeg"),
+    },
+    {
+      name: "לימון בלאדי - סלט לימון כבוש",
+      image: importImage("baladi_lemon_salad_biton.jpeg"),
+    },
+    {
+      name: "ממרח חציל עם נגיעות עגבניה",
+      image: importImage("eggplant_tomato_spread_olechem.jpeg"),
+    },
+    {
+      name: "ממרח שיפקה כבוש חריף",
+      image: importImage("spicy_pickled_schifka_biton.jpeg"),
+    },
+    {
+      name: "סלט אבוקדו עם ביצים",
+      image: importImage("avocado_egg_salad_shamir.jpeg"),
+    },
+    {
+      name: "סלט חזרת",
+      image: importImage("horseradish_salad_biton.jpeg"),
+    },
+    {
+      name: "סלט חמוצים סיני",
+      image: importImage("chinese_pickled_salad_shamir.jpeg"),
+    },
+    {
+      name: "סלט טונה עם ירקות",
+      image: importImage("tuna_vegetable_salad_shamir.jpeg"),
+    },
+    {
+      name: "סלט פלפלים חריף",
+      image: importImage("spicy_pepper_salad_shamir.jpeg"),
+    },
+    {
+      name: "סלט שום כתוש",
+      image: importImage("crushed_garlic_salad_biton.jpeg"),
+    },
+    {
+      name: "עגבניות מיובשות בשמן זית",
+      image: importImage("sun_dried_tomatoes_olive_oil_parag.jpeg"),
+    },
+    {
+      name: "עמבה",
+      image: importImage("amba_biton.jpeg"),
+    },
+    {
+      name: "פלפל צ'ומה",
+      image: importImage("pepper_chuma_parag.jpeg"),
+    },
+    {
+      name: "פלפל צ'ומה חריף פיקנטי",
+      image: importImage("spicy_pepper_chuma_biton.jpeg"),
+    },
+    {
+      name: "פלפל רצועות קלוי / מטוגן",
+      image: importImage("roasted_fried_pepper_strips_shamir.jpeg"),
+    },
+    {
+      name: "פסטו קלאסי",
+      image: importImage("classic_pesto_fresco.jpeg"),
+    },
+    {
+      name: "שום כתוש",
+      image: importImage("crushed_garlic_parag.jpeg"),
+    },
+  ];
+  initialSalads.sort((a, b) => a.name.localeCompare(b.name, 'he'));
     
 
   const [milk, setMilk] = useState<{ name: string; image: any; count: number }[]>( initialMilk.map(item => ({ ...item, count: 0 })) );
@@ -1246,6 +1703,8 @@ const DeliPage: React.FC = () => {
   const [creamWhippedCreamCookingBaking, setCreamWhippedCreamCookingBaking] = useState<{ name: string; image: any; count: number }[]>( initialCreamwhippedcreamcookingbaking.map(item => ({ ...item, count: 0 })) );
   const [chilledPasta, setChilledPasta] = useState<{ name: string; image: any; count: number }[]>(  initialChilledpasta.map(item => ({ ...item, count: 0 })) );
   const [eggs, setEggs] = useState<{ name: string; image: any; count: number }[]>(  initialEggs.map(item => ({ ...item, count: 0 })) );
+  const [sausagesPastrami, setSausagespastrami] = useState<{ name: string; image: any; count: number }[]>(  initialSausagespastrami.map(item => ({ ...item, count: 0 })) );
+  const [salads, setSalads] = useState<{ name: string; image: any; count: number }[]>(  initialSalads.map(item => ({ ...item, count: 0 })) );
 
   const handleIncrement = (name: string) => {
     setMilk(milk.map(item =>
@@ -1289,6 +1748,14 @@ const DeliPage: React.FC = () => {
     ));
   
     setEggs(eggs.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+
+    setSausagespastrami(sausagesPastrami.map(item =>
+      item.name === name ? { ...item, count: item.count + 1 } : item
+    ));
+
+    setSalads(salads.map(item =>
       item.name === name ? { ...item, count: item.count + 1 } : item
     ));
   };
@@ -1337,6 +1804,14 @@ const DeliPage: React.FC = () => {
     setEggs(eggs.map(item =>
       item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
     ));
+
+    setSausagespastrami(sausagesPastrami.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
+
+    setSalads(salads.map(item =>
+      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
+    ));
   };
   
 
@@ -1352,6 +1827,8 @@ const DeliPage: React.FC = () => {
     const creamWhippedCreamCookingBakingToSave = creamWhippedCreamCookingBaking.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const chilledPastaToSave = chilledPasta.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const eggsToSave = eggs.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const sausagesPastramiToSave = sausagesPastrami.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const saladsToSave = salads.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
   
     const allItems = [
       ...milkToSave,
@@ -1364,7 +1841,9 @@ const DeliPage: React.FC = () => {
       ...butterMargarineToSave,
       ...creamWhippedCreamCookingBakingToSave,
       ...chilledPastaToSave,
-      ...eggsToSave
+      ...eggsToSave,
+      ...sausagesPastramiToSave,
+      ...saladsToSave,
     ];
   
     allItems.forEach(item => addProduct(item));
@@ -1380,6 +1859,8 @@ const DeliPage: React.FC = () => {
     setCreamWhippedCreamCookingBaking(creamWhippedCreamCookingBaking.map(item => ({ ...item, count: 0 })));
     setChilledPasta(chilledPasta.map(item => ({ ...item, count: 0 })));
     setEggs(eggs.map(item => ({ ...item, count: 0 })));
+    setSausagespastrami(sausagesPastrami.map(item => ({ ...item, count: 0 })));
+    setSalads(salads.map(item => ({ ...item, count: 0 })));
   };
   
 
@@ -1490,6 +1971,26 @@ const DeliPage: React.FC = () => {
           products={eggs}
           categoryTitle="ביצים"
           icon={<img alt="" src={importImage('eggs_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={sausagesPastrami}
+          categoryTitle="נקניקים ופסטרמה"
+          icon={<img alt="" src={importImage('sausages_pastrami_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={salads}
+          categoryTitle="סלטים"
+          icon={<img alt="" src={importImage('salads_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}

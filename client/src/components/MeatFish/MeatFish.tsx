@@ -411,6 +411,67 @@ const MeatFish: React.FC = () => {
   ];
   initialFrozenbeefchicken.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
+  const initialSausage = [
+    {
+      name: "נקניקיות עוף והודו",
+      image: importImage("turkey_chicken_sausage_oftov.jpeg"),
+    },
+    {
+      name: "נקניקיות עוף",
+      image: importImage("chicken_sausage_zoglowek.jpeg"),
+    },
+    {
+      name: "נקניקיות פרגית",
+      image: importImage("pargit_sausage_zoglowek.jpeg"),
+    },
+    {
+      name: "נקניקיות חריפות",
+      image: importImage("spicy_sausage_zoglowek.jpeg"),
+    },
+    {
+      name: "נקניקיות וינר",
+      image: importImage("wiener_sausage_zoglowek.jpeg"),
+    },
+    {
+      name: "נקניקיות עוף 1 ק\"ג",
+      image: importImage("chicken_sausage_1kg_zoglowek.jpeg"),
+    },
+    {
+      name: "נקניקיות וינר 1 ק\"ג",
+      image: importImage("wiener_sausage_1kg_zoglowek.jpeg"),
+    },
+    {
+      name: "נקניקיות ביס",
+      image: importImage("bite_sized_sausage_yachiam.jpeg"),
+    },
+    {
+      name: "נקניקיות וינר ללא חומרים משמרים",
+      image: importImage("preservative_free_wiener_sausage_yachiam.jpeg"),
+    },
+    {
+      name: "נקניקיות צ'ופר",
+      image: importImage("choper_sausage_yachiam.jpeg"),
+    },
+    {
+      name: "נקניקיות עוף 1.5 ק\"ג",
+      image: importImage("jumbo_chicken_sausage_1.5kg_zoglowek.jpeg"),
+    },
+    {
+      name: "נקניקיות עוף ובקר",
+      image: importImage("bockwurst_chicken_beef_sausage_zoglowek.jpeg"),
+    },
+    {
+      name: "צ'וריסו",
+      image: importImage("chorizo_sausage_premium_zoglowek.jpeg"),
+    },
+    {
+      name: "קנקרס",
+      image: importImage("knackers_turkey_chicken_sausage_zoglowek.jpeg"),
+    },
+  ];
+
+  initialSausage.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+
   const initialFreshfish = [
     {
       name: "דג אמנון טרי",
@@ -497,6 +558,10 @@ const MeatFish: React.FC = () => {
   const [frozenBeefChickenProducts, setFrozenBeefChickenProducts] = useState(
     initialFrozenbeefchicken.map(item => ({ ...item, count: 0 }))
   );
+
+  const [sausageProducts, setsausageProducts] = useState(
+    initialSausage.map(item => ({ ...item, count: 0 }))
+  );
   
   const [freshFishProducts, setFreshFishProducts] = useState(
     initialFreshfish.map(item => ({ ...item, count: 0 }))
@@ -506,11 +571,13 @@ const MeatFish: React.FC = () => {
     initialFrozenfish.map(item => ({ ...item, count: 0 }))
   );
 
+
   const handleIncrement = (name: string) => {
     setChickenProducts(chickenproducts.map(item =>   item.name === name ? { ...item, count: item.count + 1 } : item ));
     setIndiaProducts(indiaProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
     setBeefLambProducts(beefLambProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
     setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setsausageProducts(sausageProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
     setFreshFishProducts(freshFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
     setFrozenFishProducts(frozenFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
   };
@@ -520,6 +587,7 @@ const MeatFish: React.FC = () => {
     setIndiaProducts(indiaProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
     setBeefLambProducts(beefLambProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
     setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
+    setsausageProducts(sausageProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count- 1 } : item ));
     setFreshFishProducts(freshFishProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
     setFrozenFishProducts(frozenFishProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count- 1 } : item ));
   };
@@ -529,15 +597,17 @@ const MeatFish: React.FC = () => {
     const indiaToSave = indiaProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const beefLambToSave = beefLambProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const frozenBeefChickenToSave = frozenBeefChickenProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const sausageToSave = sausageProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const freshFishToSave = freshFishProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const frozenFishToSave = frozenFishProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const allItems = [...chickenToSave, ...indiaToSave, ...beefLambToSave, ...frozenBeefChickenToSave, ...freshFishToSave, ...frozenFishToSave];
+    const allItems = [...chickenToSave, ...indiaToSave, ...beefLambToSave, ...frozenBeefChickenToSave,...sausageToSave, ...freshFishToSave, ...frozenFishToSave];
     allItems.forEach(item => addProduct(item));
 
     setChickenProducts(chickenproducts.map(item => ({ ...item, count: 0 })));
     setIndiaProducts(indiaProducts.map(item => ({ ...item, count: 0 })));
     setBeefLambProducts(beefLambProducts.map(item => ({ ...item, count: 0 })));
     setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => ({ ...item, count: 0 })));
+    setsausageProducts(sausageProducts.map(item => ({ ...item, count: 0 })));
     setFreshFishProducts(freshFishProducts.map(item => ({ ...item, count: 0 })));
     setFrozenFishProducts(frozenFishProducts.map(item => ({ ...item, count: 0 })));
   };
@@ -578,6 +648,16 @@ const MeatFish: React.FC = () => {
       <ProductsPage
         products={frozenBeefChickenProducts}
         categoryTitle="בשר בקר ועוף קפוא"
+        icon={<img alt="" src={importImage('')} />}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onSave={handleSave}
+      />
+    </div>
+    <div>
+      <ProductsPage
+        products={sausageProducts}
+        categoryTitle="נקניקיות"
         icon={<img alt="" src={importImage('')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
