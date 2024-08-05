@@ -1,21 +1,27 @@
 import React from "react";
-import Products from "./Products";
+import ProductCard from "../Card/Card";
 import "./ProductsPage.css";
 
-const ProductsPage = ({ categoryTitle, products, icon }) => {
+const ProductsPage = ({ products, categoryTitle, icon, onIncrement, onDecrement, onSave }) => {
   return (
-    <div className="products">
+    <div className="products-page">
       <div className="header">
-        {/* <button onClick={onGoBack}>חזרה</button> */}
         <h1>{categoryTitle}</h1>
         <div className="icon">{icon}</div>
       </div>
-      <Products
-        products={products}
-        categoryTitle={categoryTitle}
-        icon={icon}
-        //   products, categoryTitle, icon
-      />
+      <div className="product-list">
+        {products.map(product => (
+          <ProductCard
+            key={product.name}
+            image={product.image}
+            name={product.name}
+            count={product.count}
+            onIncrement={() => onIncrement(product.name)}
+            onDecrement={() => onDecrement(product.name)}     
+            onSave={() => onSave()}      
+          />
+        ))}
+      </div>
     </div>
   );
 };

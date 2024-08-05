@@ -4,16 +4,17 @@ const connectDB = require('./db');
 const dotenv = require('dotenv');
 const cors = require('cors'); 
 const usersRouter = require('./routes/users');
+const priceComparisonRoutes = require('./routes/priceComparison');
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// CORS Configuration
+// CORS 
 const corsOptions = {
-  origin: 'http://localhost:3000', // Your React app's URL
-  credentials: true, // Allow credentials (cookies)
+  origin: 'http://localhost:3000', 
+  credentials: true, 
 };
 
 // Use CORS middleware with options
@@ -30,7 +31,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 // Log the route initialization
 console.log('Setting up routes');
 
-// Use the users router
 app.use('/users', usersRouter);
 
 // All other GET requests not handled before will return the React app
