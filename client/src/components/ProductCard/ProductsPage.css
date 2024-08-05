@@ -12,3 +12,21 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.products-page {
+  padding: 100px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  direction: rtl;
+}
+
+
+

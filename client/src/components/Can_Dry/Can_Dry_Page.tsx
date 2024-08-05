@@ -1,5 +1,6 @@
-import React from "react";
-import ProductsPage from "../ProductCard/ProductsPage";
+import React, { useState } from "react";
+import ProductsPage from "../ProductCard/ProductsPage.jsx";
+import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
 
 const importImage = (imageName: string) => {
@@ -11,6 +12,8 @@ const importImage = (imageName: string) => {
 };
 
 const Can_Dry_Page: React.FC = () => {
+  const { addProduct } = useBasket();
+
   const initialCan = [
     {
       name: "זיתים ירוקים",
@@ -33,8 +36,42 @@ const Can_Dry_Page: React.FC = () => {
     }
   ];
 
-  const [cans] = React.useState<{ name: string; image: string | null; }[]>(initialCan);
-  const [drys] = React.useState<{ name: string; image: string | null; }[]>(initialDry);
+  const [cans, setCans] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialCan.map(can => ({ ...can, count: 0 }))
+  );
+
+  const [drys, setDrys] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialDry.map(dry => ({ ...dry, count: 0 }))
+  );
+
+  const handleIncrement = (name: string) => {
+    setCans(cans.map(can =>
+      can.name === name ? { ...can, count: can.count + 1 } : can
+    ));
+    setDrys(drys.map(dry =>
+      dry.name === name ? { ...dry, count: dry.count + 1 } : dry
+    ));
+  };
+
+  const handleDecrement = (name: string) => {
+    setCans(cans.map(can =>
+      can.name === name && can.count > 0 ? { ...can, count: can.count - 1 } : can
+    ));
+    setDrys(drys.map(dry =>
+      dry.name === name && dry.count > 0 ? { ...dry, count: dry.count - 1 } : dry
+    ));
+  };
+
+  const handleSave = async () => {
+    const cansToSave = cans.filter(can => can.count > 0).map(can => ({ ...can, quantity: can.count }));
+    const drysToSave = drys.filter(dry => dry.count > 0).map(dry => ({ ...dry, quantity: dry.count }));
+
+    const allItems = [...cansToSave, ...drysToSave];
+    allItems.forEach(item => addProduct(item));
+
+    setCans(cans.map(can => ({ ...can, count: 0 })));
+    setDrys(drys.map(dry => ({ ...dry, count: 0 })));
+  };
 
   return (
     <div>
@@ -42,14 +79,20 @@ const Can_Dry_Page: React.FC = () => {
         <ProductsPage
           products={cans}
           categoryTitle="שימורים"
-          icon={<img alt="" src={importImage('')} />}
+          icon={<img alt="" src={importImage('can_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
           products={drys}
           categoryTitle="יבשים"
-          icon={<img alt="" src={importImage('')} />}
+          icon={<img alt="" src={importImage('dry_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
     </div>
