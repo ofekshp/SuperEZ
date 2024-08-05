@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
-import { useBasket } from "../MyBasket/BasketContext";
+import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
 
 const importImage = (imageName: string) => {
