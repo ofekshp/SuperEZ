@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
 import { useBasket } from "../MyBasket/BasketContext";
 import '../ProductCard/ProductsPage.css';
-import './FruitsAndVegetablesPage.css';
 
 const importImage = (imageName: string) => {
   try {
@@ -627,16 +626,6 @@ const FruitsAndVegetablesPage: React.FC = () => {
 
   return (
     <div>
-      <div>
-        <ProductsPage
-          products={fruits}
-          categoryTitle="פירות"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
        <div>
         <ProductsPage
           products={vegetables}
@@ -667,6 +656,16 @@ const FruitsAndVegetablesPage: React.FC = () => {
           onSave={handleSave}
         />
       </div>   
+      <div>
+        <ProductsPage
+          products={fruits}
+          categoryTitle="פירות"
+          icon={<img alt="" src={importImage('')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
       <div>
         <ProductsPage
           products={packagedfruit}
