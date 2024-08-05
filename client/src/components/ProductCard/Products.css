@@ -8,3 +8,9 @@
   justify-content: end;
   direction: rtl;
 }
+
+.product-list img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
