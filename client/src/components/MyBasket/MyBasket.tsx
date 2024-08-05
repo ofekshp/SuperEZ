@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useBasket } from '../MyBasket/BasketContext';
+import { useBasket } from '../MyBasket/BasketContext.tsx';
 import './MyBasket.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
