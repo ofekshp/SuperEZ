@@ -4,8 +4,8 @@ import './LandingPage.css';
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <h1 className="main-heading">!ברוכים הבאים לסופר איזי</h1>
-      <h2 className="second-header">אנחנו הפלטפורמה היחידה בארץ שמאפרת להשוות מחיר סל קניות בין סופרים שונים וגם לקצר את תהליך הקנייה בו זמנית בארבעה שלבים פשוטים!</h2>
+      <h1 className="main-heading"> ברוכים הבאים לסופר איזי!</h1>
+      <h2 className="second-header">אנחנו הפלטפורמה היחידה בארץ שמאפשרת להשוות מחיר סל קניות בין סופרים שונים ולקצר את תהליך הקנייה בו זמנית, בארבעה שלבים פשוטים!</h2>
       
       <div className="sections-container">
         <section className="section">
@@ -39,9 +39,8 @@ const LandingPage = () => {
 
       <p className="bottom-text">וסיימת!</p>
       <p className="bottom-text-second">בלחיצת כפתור תוכלו לעבור ישירות לאתר הסופרמרקט עם הסל שמילאתם אצלנו, ככה קל ופשוט!</p>
-      <p className="bottom-text-third">אומרים שלום לבזבוז זמן וכסף ושלום לקניות יעילות בסופר איזי</p>
+      <p className="bottom-text-third">דיי לבזבוז זמן וכסף ושלום לקניות יעילות עם סופר איזי</p>
     </div>
   );
 };
-
 export default LandingPage;
