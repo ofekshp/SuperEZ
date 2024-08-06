@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import './SignIn.css';
 import { toast } from 'react-toastify';
+import UserService from "../../services/user_service.ts";
 
 interface SignInModalProps {
   closeModal: () => void;
@@ -35,46 +36,18 @@ const SignInModal: React.FC<SignInModalProps> = ({ closeModal, openSignUpModal,s
       return;
     }
 
-    const user = { email, password };
-
-    // Using environment variables for server URL and port
-    const serverUrl = process.env.REACT_APP_SERVER_URL;
-    const port = process.env.REACT_APP_SERVER_PORT;
-
-    if (!serverUrl || !port) {
-      console.error('Server URL or port is not defined');
-      return;
-    }
-
-    const apiUrl = `${serverUrl}:${port}/users/login`;
-
+    const user = { email, password, name: '', phone: '' };
+    const userService:UserService = new UserService();
     try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
-      });
-
-      console.log('Response:', response);
-
-      if (response.ok) {
-        const data = await response.json();
+      const response = await userService.loginUser(user);
+      if (response) {   
         toast.success("Login successful");
-        console.log('User data:', data); // Log user data
-        localStorage.setItem('userEmail', data.email);
-        localStorage.setItem('userId', data.userId);
-        document.cookie = `isLoggedIn=true;path=/`;
         setIsUserLoggedIn(true);
         closeModal();
       } else {
-        const errorData = await response.json();
-        console.error('Error:', errorData); // Log error details
-        toast.error(errorData.message || "Failed to login, please try again later.");
+        toast.error("Failed to login, please try again later.");
       }
     } catch (error) {
-      console.error('Login error:', error); // Log fetch error
       toast.error("Failed to login, please try again later.");
     }
   };

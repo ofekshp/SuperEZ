@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.css';
-import defaultProfileImage from '../../assets/placeholder.png';
 import SignInModal from '../SignIn/SignIn.tsx';
 import SignUpModal from '../SignUp/SignUp.tsx';
 import { toast } from 'react-toastify';
+import UserService from "../../services/user_service.ts";
 
 const importImage = (imageName: string) => {
   try {
@@ -15,6 +15,7 @@ const importImage = (imageName: string) => {
 };
 
 const Navbar: React.FC = () => {
+  const defaultProfileImage = importImage('placeholder.png');
   const [modalOpen, setModalOpen] = useState(false);
   const [signUpOpen, setSignUpOpen] = useState(false);
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -40,12 +41,10 @@ const Navbar: React.FC = () => {
   };
 
   const handleSignOut = async () => {
+    const userService:UserService = new UserService();
     try {
-      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/users/logout`, {
-        method: 'POST',
-        credentials: 'include',
-      });
-      if (response.ok) {
+      const response = await userService.logoutUser();
+      if (response) {
         toast.success('Logout successful');
         setIsUserLoggedIn(false);
         navigate('/');
