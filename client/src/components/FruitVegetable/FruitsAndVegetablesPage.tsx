@@ -561,6 +561,7 @@ const FruitsAndVegetablesPage: React.FC = () => {
     },
   ];
 
+
   initialVegetables.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialFruits.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialPackagedpickedvegetables.sort((a, b) => a.name.localeCompare(b.name, 'he'));

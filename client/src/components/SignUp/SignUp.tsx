@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import "./SignUp.css";
-
 import { toast } from "react-toastify";
+import UserService from "../../services/user_service.ts";
 
 interface SignUpModalProps {
   closeModal: () => void; // Updated prop name to 'closeModal'
@@ -47,41 +47,25 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ closeModal }) => {
       phone,
     };
 
-    console.log("Data to send:", dataToSend);
-
-    const serverUrl = process.env.REACT_APP_SERVER_URL;
-    const port = process.env.REACT_APP_SERVER_PORT;
-
-    if (!serverUrl || !port) {
-      console.error("Server URL or port is not defined");
-      return;
-    }
-
-    const apiUrl = `${serverUrl}:${port}/users/signup`;
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(dataToSend),
-      });
-
-      console.log("Response:", response);
-      if (response.ok) {
+    const userService:UserService = new UserService();
+    try{
+      const response = await userService.registerUser(dataToSend);
+      if (response) {
         closeModal();
         toast.success("Register Success!");
+        await userService.loginUser(dataToSend);
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       } else {
-        const errorData = await response.json();
-        console.log("Error:", errorData);
         toast.error("Failed to register, please try again later.");
       }
-    } catch (error) {
+    }
+    catch (error) {
       console.error(error);
       toast.error("Failed to register, please try again later.");
     }
-  };
+}
 
   return (
     <div className="modal-overlay" onClick={(e) => e.stopPropagation()}>
@@ -169,5 +153,4 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ closeModal }) => {
     </div>
   );
 };
-
 export default SignUpModal;

@@ -1,82 +1,60 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import './SignIn.css';
 import { toast } from 'react-toastify';
+import UserService from "../../services/user_service.ts";
+import ForgotPasswordModal from './ForgotPassword.tsx'; // Ensure the correct import
 
 interface SignInModalProps {
   closeModal: () => void;
   openSignUpModal: () => void;
   setIsUserLoggedIn: (loggedIn: boolean) => void;
-  
-
 }
 
-const SignInModal: React.FC<SignInModalProps> = ({ closeModal, openSignUpModal,setIsUserLoggedIn }) => {
+const SignInModal: React.FC<SignInModalProps> = ({ closeModal, openSignUpModal, setIsUserLoggedIn }) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [forgotPasswordModalOpen, setForgotPasswordModalOpen] = useState<boolean>(false);
 
-
-  // Updated function name for consistency
   const handleChangeEmail = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
 
-  // Updated function name for consistency
   const handleChangePassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
   };
 
-  // Improved error handling and validation
   const handleSignInWithEmail = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Validation checks
     if (!email || !password) {
       toast.error("Please enter your email and password");
       return;
     }
 
-    const user = { email, password };
-
-    // Using environment variables for server URL and port
-    const serverUrl = process.env.REACT_APP_SERVER_URL;
-    const port = process.env.REACT_APP_SERVER_PORT;
-
-    if (!serverUrl || !port) {
-      console.error('Server URL or port is not defined');
-      return;
-    }
-
-    const apiUrl = `${serverUrl}:${port}/users/login`;
-
+    const user = { email, password, name: '', phone: '' };
+    const userService = new UserService();
     try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
-      });
-
-      console.log('Response:', response);
-
-      if (response.ok) {
-        const data = await response.json();
+      const response = await userService.loginUser(user);
+      if (response) {   
         toast.success("Login successful");
-        console.log('User data:', data); // Log user data
-        localStorage.setItem('userEmail', data.email);
-        localStorage.setItem('userId', data.userId);
-        document.cookie = `isLoggedIn=true;path=/`;
         setIsUserLoggedIn(true);
         closeModal();
       } else {
-        const errorData = await response.json();
-        console.error('Error:', errorData); // Log error details
-        toast.error(errorData.message || "Failed to login, please try again later.");
+        toast.error("Failed to login, please try again later.");
       }
     } catch (error) {
-      console.error('Login error:', error); // Log fetch error
       toast.error("Failed to login, please try again later.");
     }
+  };
+
+  const openForgotPasswordModal = () => {
+    setForgotPasswordModalOpen(true);
+  };
+
+  const closeForgotPasswordModal = () => {
+    closeModal(); 
+
+    setForgotPasswordModalOpen(false);
   };
 
   return (
@@ -110,7 +88,7 @@ const SignInModal: React.FC<SignInModalProps> = ({ closeModal, openSignUpModal,s
             />
           </div>
           <p className="forgot-password">
-            <a href="#" className="forgot-password-link">שכחתי סיסמה</a>
+            <a href="#" className="forgot-password-link" onClick={openForgotPasswordModal} >שכחתי סיסמה</a>
           </p>
           <button type="submit" className="continue-button">המשך</button>
           <div className="signup-box">
@@ -126,6 +104,12 @@ const SignInModal: React.FC<SignInModalProps> = ({ closeModal, openSignUpModal,s
             </p>
           </div>
         </form>
+        {forgotPasswordModalOpen && (
+          <ForgotPasswordModal 
+            closeModal={closeForgotPasswordModal} 
+            setIsUserLoggedIn={setIsUserLoggedIn} // Pass the prop
+          />
+        )}
       </div>
     </div>
   );
