@@ -59,6 +59,7 @@ function App() {
         />
         <Route path="/signup" element={<SignUpModal />} />
         <Route path="/logout"/>
+        <Route path="reset-password"/>
         <Route path="/MeatFish" element={<MeatFish />} />
         <Route path="/Drinks" element={<Drinks />} />
         <Route path="/Can_Dry" element={<Can_Dry_Page />} />
