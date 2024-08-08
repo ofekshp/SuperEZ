@@ -17,7 +17,8 @@ interface Product {
   
     addProduct(product: Product) {
       // Handle cart for not logged in user  
-      if(localStorage.getItem('userId') === undefined){
+      const userId = localStorage.getItem('userId');
+      if(!userId){
         const existingProductIndex = this.basketProducts.findIndex(p => p.name === product.name);
         if (existingProductIndex > -1) {
           this.basketProducts[existingProductIndex] = {
@@ -28,9 +29,27 @@ interface Product {
           this.basketProducts.push(product);
         }
       }
-      
-      this.saveBasket();
+      // Handle cart for logged in user
+      else{
+        console.log('Cart : Logged in user');  
+        fetch(`http://localhost:3001/cart/${userId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(product),
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });        
+        }
+        this.saveBasket();
     }
+
   
     removeProduct(productName: string) {
       this.basketProducts = this.basketProducts.filter(product => product.name !== productName);
@@ -38,7 +57,26 @@ interface Product {
     }
   
     getBasketProducts() {
+      const userId = localStorage.getItem('userId');
+      if(!userId){
         return this.basketProducts;
+      }
+      else{
+        console.log('Get Cart : Logged in user');
+        fetch(`http://localhost:3001/cart/${userId}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      }
     }
   }
   
