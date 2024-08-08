@@ -4,6 +4,7 @@ const connectDB = require('./db');
 const dotenv = require('dotenv');
 const cors = require('cors'); 
 const usersRouter = require('./routes/users');
+const cartRouter = require('./routes/cart');
 const priceComparisonRoutes = require('./routes/priceComparison');
 
 dotenv.config();
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 console.log('Setting up routes');
 
 app.use('/users', usersRouter);
+app.use('/cart', cartRouter);
 
 // All other GET requests not handled before will return the React app
 app.get('*', (req, res) => {
