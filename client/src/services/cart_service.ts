@@ -98,7 +98,24 @@ interface Product {
         }
       }
     }
-    
+
+    async getCheapCart(myCart: Product[]) {
+      try {
+        const response = await fetch(`http://localhost:3001/compare`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ products: myCart }),
+        });
+        const data = await response.json();
+        console.log(data);
+        return data;
+      } catch (error) {
+        console.error('Error get CHEAP CART:', error);
+        return []; // Return an empty array on error
+      }
+    }
   }
   
   export default CartService;

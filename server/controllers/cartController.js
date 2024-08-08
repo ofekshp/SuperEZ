@@ -4,7 +4,7 @@ const getCart = async (req, res) => {
     try {
         const cart = await Cart.findOne({ userId: req.params.userId });
         const products = cart.products;
-        res.json(products);
+        res.status(200).json(products);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -26,7 +26,7 @@ const addToCart = async (req, res) => {
       } 
       await cart.save();
       const products = cart.products;
-      res.json(products);
+      res.status(200).json(products);
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
@@ -45,7 +45,7 @@ const removeFromCart = async (req, res) => {
         await cart.save();
       }
       const products = cart.products;
-      res.json(products);
+      res.status(200).json(products);
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
