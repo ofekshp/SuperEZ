@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const cors = require('cors'); 
 const usersRouter = require('./routes/users');
 const cartRouter = require('./routes/cart');
+const compareCartRouter = require('./routes/compareCart');
 const priceComparisonRoutes = require('./routes/priceComparison');
 
 dotenv.config();
@@ -34,7 +35,7 @@ console.log('Setting up routes');
 
 app.use('/users', usersRouter);
 app.use('/cart', cartRouter);
-
+app.use('/compare', compareCartRouter);
 // All other GET requests not handled before will return the React app
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));

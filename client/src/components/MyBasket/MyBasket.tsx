@@ -3,9 +3,10 @@ import { useBasket } from '../MyBasket/BasketContext.tsx';
 import './MyBasket.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import CartService from '../../services/cart_service.ts';
 
 const MyBasket: React.FC = () => {
-  
+  const cartService = new CartService();
   const { basketProducts , addProduct , removeProduct} = useBasket();
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -15,6 +16,15 @@ const MyBasket: React.FC = () => {
   const [floorNumber, setFloorNumber] = useState('');
   const [apartmentNumber, setApartmentNumber] = useState('');
   
+  const handleSubmit = async () => {
+    try{
+      const response = await cartService.getCheapCart(basketProducts);
+      console.log(response);
+    }catch (error) {
+      console.error('Error add product:', error);
+    }
+  }
+
   return (
     <div className="my-basket" dir="rtl">
       <h1 className="my-basket__title">הסל שלי</h1>
@@ -118,6 +128,9 @@ const MyBasket: React.FC = () => {
           <div className="my-basket__login-prompt">
             <span>רוצים לשמור את הסל שלכם? </span>
             <a href="#" className="my-basket__login-link">התחברו כאן</a>
+          </div>
+          <div>
+          <button className="my-basket__order-button" onClick={handleSubmit}>הזמן עכשיו</button>
           </div>
         </div>
       </div>
