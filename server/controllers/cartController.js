@@ -2,9 +2,9 @@ const Cart = require('../models/cart');
 
 const getCart = async (req, res) => {
     try {
-        console.log("I am here")
         const cart = await Cart.findOne({ userId: req.params.userId });
-        res.json(cart);
+        const products = cart.products;
+        res.json(products);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -25,7 +25,8 @@ const addToCart = async (req, res) => {
         }
       } 
       await cart.save();
-      res.json(cart);
+      const products = cart.products;
+      res.json(products);
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
@@ -43,7 +44,8 @@ const removeFromCart = async (req, res) => {
         cart.products.splice(productIndex, 1);
         await cart.save();
       }
-      res.json(cart);
+      const products = cart.products;
+      res.json(products);
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
