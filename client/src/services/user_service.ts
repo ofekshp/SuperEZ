@@ -1,5 +1,3 @@
-import { log } from "console";
-
 interface IUser {
     email: string;
     password: string;
