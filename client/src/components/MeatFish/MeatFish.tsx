@@ -93,7 +93,6 @@ const MeatFish: React.FC = () => {
       image: importImage("whole_chicken_thigh.jpeg"),
     },
   ];
-  initialChickenproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const initialIndiaproducts = [
     {
@@ -145,7 +144,6 @@ const MeatFish: React.FC = () => {
       image: importImage("turkey_shawarma_fresh_2.jpeg"),
     },
   ];
-  initialIndiaproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const initialBeeflamb = [
     {
@@ -293,7 +291,6 @@ const MeatFish: React.FC = () => {
       image: importImage("fresh_boneless_asado.jpeg"),
     },
   ];
-  initialBeeflamb.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const initialFrozenbeefchicken = [
     {
@@ -409,7 +406,6 @@ const MeatFish: React.FC = () => {
       image: importImage("frozen_ribeye_shawarma_tnuva_chef_plancha.jpeg"),
     },
   ];
-  initialFrozenbeefchicken.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const initialSausage = [
     {
@@ -470,7 +466,6 @@ const MeatFish: React.FC = () => {
     },
   ];
 
-  initialSausage.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const initialFreshfish = [
     {
@@ -510,7 +505,6 @@ const MeatFish: React.FC = () => {
       image: importImage("fresh_salmon_fillet_no_skin.jpeg"),
     },
   ];
-  initialFreshfish.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const initialFrozenfish = [
     {
@@ -542,74 +536,83 @@ const MeatFish: React.FC = () => {
       image: importImage("mackerel_fish.jpeg"),
     },
   ];
+
+  initialChickenproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialIndiaproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialBeeflamb.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialFrozenbeefchicken.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialSausage.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialFreshfish.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialFrozenfish.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
+
+
   const [chickenproducts, setChickenProducts] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialChickenproducts.map(item => ({ ...item, count: 0 }))
+    initialChickenproducts.map(chickenproducts => ({ ...chickenproducts, count: 0 }))
   );
   const [indiaProducts, setIndiaProducts] = useState(
-    initialIndiaproducts.map(item => ({ ...item, count: 0 }))
+    initialIndiaproducts.map(indiaProducts => ({ ...indiaProducts, count: 0 }))
   );
   
   const [beefLambProducts, setBeefLambProducts] = useState(
-    initialBeeflamb.map(item => ({ ...item, count: 0 }))
+    initialBeeflamb.map(beefLambProducts => ({ ...beefLambProducts, count: 0 }))
   );
   
   const [frozenBeefChickenProducts, setFrozenBeefChickenProducts] = useState(
-    initialFrozenbeefchicken.map(item => ({ ...item, count: 0 }))
+    initialFrozenbeefchicken.map(frozenBeefChickenProducts => ({ ...frozenBeefChickenProducts, count: 0 }))
   );
 
   const [sausageProducts, setsausageProducts] = useState(
-    initialSausage.map(item => ({ ...item, count: 0 }))
+    initialSausage.map(sausageProducts => ({ ...sausageProducts, count: 0 }))
   );
   
   const [freshFishProducts, setFreshFishProducts] = useState(
-    initialFreshfish.map(item => ({ ...item, count: 0 }))
+    initialFreshfish.map(freshFishProducts => ({ ...freshFishProducts, count: 0 }))
   );
   
   const [frozenFishProducts, setFrozenFishProducts] = useState(
-    initialFrozenfish.map(item => ({ ...item, count: 0 }))
+    initialFrozenfish.map(frozenFishProducts => ({ ...frozenFishProducts, count: 0 }))
   );
 
 
   const handleIncrement = (name: string) => {
-    setChickenProducts(chickenproducts.map(item =>   item.name === name ? { ...item, count: item.count + 1 } : item ));
-    setIndiaProducts(indiaProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
-    setBeefLambProducts(beefLambProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
-    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
-    setsausageProducts(sausageProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
-    setFreshFishProducts(freshFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
-    setFrozenFishProducts(frozenFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setChickenProducts(chickenproducts.map(chickenproducts =>   chickenproducts.name === name ? { ...chickenproducts, count: chickenproducts.count + 1 } : chickenproducts ));
+    setIndiaProducts(indiaProducts.map(indiaProducts => indiaProducts.name === name ? { ...indiaProducts, count: indiaProducts.count + 1 } : indiaProducts ));
+    setBeefLambProducts(beefLambProducts.map(beefLambProducts => beefLambProducts.name === name ? { ...beefLambProducts, count: beefLambProducts.count + 1 } : beefLambProducts ));
+    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(frozenBeefChickenProducts => frozenBeefChickenProducts.name === name ? { ...frozenBeefChickenProducts, count: frozenBeefChickenProducts.count + 1 } : frozenBeefChickenProducts ));
+    setsausageProducts(sausageProducts.map(sausageProducts => sausageProducts.name === name ? { ...sausageProducts, count: sausageProducts.count + 1 } : sausageProducts ));
+    setFreshFishProducts(freshFishProducts.map(freshFishProducts => freshFishProducts.name === name ? { ...freshFishProducts, count: freshFishProducts.count + 1 } : freshFishProducts ));
+    setFrozenFishProducts(frozenFishProducts.map(frozenFishProducts => frozenFishProducts.name === name ? { ...frozenFishProducts, count: frozenFishProducts.count + 1 } : frozenFishProducts ));
   };
 
   const handleDecrement = (name: string) => {
-    setChickenProducts(chickenproducts.map(item =>  item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setIndiaProducts(indiaProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setBeefLambProducts(beefLambProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setsausageProducts(sausageProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count- 1 } : item ));
-    setFreshFishProducts(freshFishProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setFrozenFishProducts(frozenFishProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count- 1 } : item ));
+    setChickenProducts(chickenproducts.map(chickenproducts =>  chickenproducts.name === name && chickenproducts.count > 0 ? { ...chickenproducts, count: chickenproducts.count - 1 } : chickenproducts ));
+    setIndiaProducts(indiaProducts.map(indiaProducts => indiaProducts.name === name && indiaProducts.count > 0 ? { ...indiaProducts, count: indiaProducts.count - 1 } : indiaProducts ));
+    setBeefLambProducts(beefLambProducts.map(beefLambProducts => beefLambProducts.name === name && beefLambProducts.count > 0 ? { ...beefLambProducts, count: beefLambProducts.count - 1 } : beefLambProducts ));
+    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(frozenBeefChickenProducts => frozenBeefChickenProducts.name === name && frozenBeefChickenProducts.count > 0 ? { ...frozenBeefChickenProducts, count: frozenBeefChickenProducts.count - 1 } : frozenBeefChickenProducts ));
+    setsausageProducts(sausageProducts.map(sausageProducts => sausageProducts.name === name && sausageProducts.count > 0 ? { ...sausageProducts, count: sausageProducts.count- 1 } : sausageProducts ));
+    setFreshFishProducts(freshFishProducts.map(freshFishProducts => freshFishProducts.name === name && freshFishProducts.count > 0 ? { ...freshFishProducts, count: freshFishProducts.count - 1 } : freshFishProducts ));
+    setFrozenFishProducts(frozenFishProducts.map(frozenFishProducts => frozenFishProducts.name === name && frozenFishProducts.count > 0 ? { ...frozenFishProducts, count: frozenFishProducts.count- 1 } : frozenFishProducts ));
   };
 
   const handleSave = async () => {
-    const chickenToSave = chickenproducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const indiaToSave = indiaProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const beefLambToSave = beefLambProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const frozenBeefChickenToSave = frozenBeefChickenProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const sausageToSave = sausageProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const freshFishToSave = freshFishProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const frozenFishToSave = frozenFishProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const allItems = [...chickenToSave, ...indiaToSave, ...beefLambToSave, ...frozenBeefChickenToSave,...sausageToSave, ...freshFishToSave, ...frozenFishToSave];
-    allItems.forEach(item => addProduct(item));
+    const chickenToSave = chickenproducts.filter(chickenproducts => chickenproducts.count > 0).map(chickenproducts => ({ ...chickenproducts, quantity: chickenproducts.count }));
+    const indiaToSave = indiaProducts.filter(indiaProducts => indiaProducts.count > 0).map(indiaProducts => ({ ...indiaProducts, quantity: indiaProducts.count }));
+    const beefLambToSave = beefLambProducts.filter(beefLambProducts => beefLambProducts.count > 0).map(beefLambProducts => ({ ...beefLambProducts, quantity: beefLambProducts.count }));
+    const frozenBeefChickenToSave = frozenBeefChickenProducts.filter(frozenBeefChickenProducts => frozenBeefChickenProducts.count > 0).map(frozenBeefChickenProducts => ({ ...frozenBeefChickenProducts, quantity: frozenBeefChickenProducts.count }));
+    const sausageToSave = sausageProducts.filter(sausageProducts => sausageProducts.count > 0).map(sausageProducts => ({ ...sausageProducts, quantity: sausageProducts.count }));
+    const freshFishToSave = freshFishProducts.filter(freshFishProducts => freshFishProducts.count > 0).map(freshFishProducts => ({ ...freshFishProducts, quantity: freshFishProducts.count }));
+    const frozenFishToSave = frozenFishProducts.filter(frozenFishProducts => frozenFishProducts.count > 0).map(frozenFishProducts => ({ ...frozenFishProducts, quantity: frozenFishProducts.count }));
+    const allMeatFish = [...chickenToSave, ...indiaToSave, ...beefLambToSave, ...frozenBeefChickenToSave,...sausageToSave, ...freshFishToSave, ...frozenFishToSave];
+    allMeatFish.forEach(MeatFish => addProduct(MeatFish));
 
-    setChickenProducts(chickenproducts.map(item => ({ ...item, count: 0 })));
-    setIndiaProducts(indiaProducts.map(item => ({ ...item, count: 0 })));
-    setBeefLambProducts(beefLambProducts.map(item => ({ ...item, count: 0 })));
-    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => ({ ...item, count: 0 })));
-    setsausageProducts(sausageProducts.map(item => ({ ...item, count: 0 })));
-    setFreshFishProducts(freshFishProducts.map(item => ({ ...item, count: 0 })));
-    setFrozenFishProducts(frozenFishProducts.map(item => ({ ...item, count: 0 })));
+    setChickenProducts(chickenproducts.map(chickenproducts => ({ ...chickenproducts, count: 0 })));
+    setIndiaProducts(indiaProducts.map(indiaProducts => ({ ...indiaProducts, count: 0 })));
+    setBeefLambProducts(beefLambProducts.map(beefLambProducts => ({ ...beefLambProducts, count: 0 })));
+    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(frozenBeefChickenProducts => ({ ...frozenBeefChickenProducts, count: 0 })));
+    setsausageProducts(sausageProducts.map(sausageProducts => ({ ...sausageProducts, count: 0 })));
+    setFreshFishProducts(freshFishProducts.map(freshFishProducts => ({ ...freshFishProducts, count: 0 })));
+    setFrozenFishProducts(frozenFishProducts.map(frozenFishProducts => ({ ...frozenFishProducts, count: 0 })));
   };
 
   return (

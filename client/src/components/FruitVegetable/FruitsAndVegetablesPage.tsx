@@ -616,13 +616,13 @@ const FruitsAndVegetablesPage: React.FC = () => {
     const packagedfruitToSave = packagedfruit.filter(packagedfruit => packagedfruit.count > 0).map(packagedfruit =>
       ({ ...packagedfruit, quantity: packagedfruit.count }));
 
-    const allItems = [...fruitsToSave, ...vegetablesToSave , ...packagedpickedvegetablesToSave , ...herbssproutsmushroomsToSave , ...packagedfruitToSave];
-    allItems.forEach(item => addProduct(item));
-    setFruits(fruits.map(item => ({ ...item, count: 0 })));
-    setVegetables(vegetables.map(item => ({ ...item, count: 0 })));
-    setPackagedpickedvegetables(packagedpickedvegetables.map(item => ({ ...item, count: 0 })));
+    const allFruitsAndVegetables = [...fruitsToSave, ...vegetablesToSave , ...packagedpickedvegetablesToSave , ...herbssproutsmushroomsToSave , ...packagedfruitToSave];
+    allFruitsAndVegetables.forEach(FruitsAndVegetables => addProduct(FruitsAndVegetables));
+    setFruits(fruits.map(fruits => ({ ...fruits, count: 0 })));
+    setVegetables(vegetables.map(vegetables => ({ ...vegetables, count: 0 })));
+    setPackagedpickedvegetables(packagedpickedvegetables.map(packagedpickedvegetables => ({ ...packagedpickedvegetables, count: 0 })));
     setHerbssproutsmushrooms(herbssproutsmushrooms.map(item => ({ ...item, count: 0 })));
-    setPackagedfruit(packagedfruit.map(item => ({ ...item, count: 0 })));
+    setPackagedfruit(packagedfruit.map(packagedfruit => ({ ...packagedfruit, count: 0 })));
 };
 
   return (

@@ -569,64 +569,65 @@ const FrozenPage: React.FC = () => {
 
 
 
-  const [frozenVegetables, setFrozenvegetables] = useState<{ name: string; image: string | null; count: number }[]>(initialFrozenVegetables.map(product => ({ ...product, count: 0 })));
-  const [doughsPizzasPastries, setDoughsPizzasPastries] = useState<{ name: string; image: string | null; count: number }[]>(initialDoughsPizzasPastries.map(product => ({ ...product, count: 0 })));
-  const [preparedFoods, setPreparedFoods] = useState<{ name: string; image: string | null; count: number }[]>(initialPreparedFoods.map(product => ({ ...product, count: 0 })));
-  const [herbsSpices, setHerbsSpices] = useState<{ name: string; image: string | null; count: number }[]>(initialHerbsSpices.map(product => ({ ...product, count: 0 })));
-  const [frozenFruit, setFrozenFruit] = useState<{ name: string; image: string | null; count: number }[]>(initialFrozenfruit.map(product => ({ ...product, count: 0 })));
+  const [frozenVegetables, setFrozenvegetables] = useState<{ name: string; image: string | null; count: number }[]>(initialFrozenVegetables.map(frozenVegetables => ({ ...frozenVegetables, count: 0 })));
+  const [doughsPizzasPastries, setDoughsPizzasPastries] = useState<{ name: string; image: string | null; count: number }[]>(initialDoughsPizzasPastries.map(doughsPizzasPastries => ({ ...doughsPizzasPastries, count: 0 })));
+  const [preparedFoods, setPreparedFoods] = useState<{ name: string; image: string | null; count: number }[]>(initialPreparedFoods.map(preparedFoods => ({ ...preparedFoods, count: 0 })));
+  const [herbsSpices, setHerbsSpices] = useState<{ name: string; image: string | null; count: number }[]>(initialHerbsSpices.map(herbsSpices => ({ ...herbsSpices, count: 0 })));
+  const [frozenFruit, setFrozenFruit] = useState<{ name: string; image: string | null; count: number }[]>(initialFrozenfruit.map(frozenFruit => ({ ...frozenFruit, count: 0 })));
 
   const handleIncrement = (name: string) => {
-    setFrozenvegetables(frozenVegetables.map(product =>
-      product.name === name ? { ...product, count: product.count + 1 } : product
+    setFrozenvegetables(frozenVegetables.map(frozenVegetables =>
+      frozenVegetables.name === name ? { ...frozenVegetables, count: frozenVegetables.count + 1 } : frozenVegetables
     ));
-    setDoughsPizzasPastries(doughsPizzasPastries.map(product =>
-      product.name === name ? { ...product, count: product.count + 1 } : product
+
+    setDoughsPizzasPastries(doughsPizzasPastries.map(doughsPizzasPastries =>
+      doughsPizzasPastries.name === name ? { ...doughsPizzasPastries, count: doughsPizzasPastries.count + 1 } : doughsPizzasPastries
     ));
-    setPreparedFoods(preparedFoods.map(product =>
-      product.name === name ? { ...product, count: product.count + 1 } : product
+    setPreparedFoods(preparedFoods.map(preparedFoods =>
+      preparedFoods.name === name ? { ...preparedFoods, count: preparedFoods.count + 1 } : preparedFoods
     ));
-    setHerbsSpices(herbsSpices.map(product =>
-      product.name === name ? { ...product, count: product.count + 1 } : product
+    setHerbsSpices(herbsSpices.map(herbsSpices =>
+      herbsSpices.name === name ? { ...herbsSpices, count: herbsSpices.count + 1 } : herbsSpices
     ));
-    setFrozenFruit(frozenFruit.map(product =>
-      product.name === name ? { ...product, count: product.count + 1 } : product
+    setFrozenFruit(frozenFruit.map(frozenFruit =>
+      frozenFruit.name === name ? { ...frozenFruit, count: frozenFruit.count + 1 } : frozenFruit
     ));
   };
 
   const handleDecrement = (name: string) => {
-    setFrozenvegetables(frozenVegetables.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    setFrozenvegetables(frozenVegetables.map(frozenVegetables =>
+      frozenVegetables.name === name && frozenVegetables.count > 0 ? { ...frozenVegetables, count: frozenVegetables.count - 1 } : frozenVegetables
     ));
-    setDoughsPizzasPastries(doughsPizzasPastries.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    setDoughsPizzasPastries(doughsPizzasPastries.map(doughsPizzasPastries =>
+      doughsPizzasPastries.name === name && doughsPizzasPastries.count > 0 ? { ...doughsPizzasPastries, count: doughsPizzasPastries.count - 1 } : doughsPizzasPastries
     ));
-    setPreparedFoods(preparedFoods.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    setPreparedFoods(preparedFoods.map(preparedFoods =>
+      preparedFoods.name === name && preparedFoods.count > 0 ? { ...preparedFoods, count: preparedFoods.count - 1 } : preparedFoods
     ));
-    setHerbsSpices(herbsSpices.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    setHerbsSpices(herbsSpices.map(herbsSpices =>
+      herbsSpices.name === name && herbsSpices.count > 0 ? { ...herbsSpices, count: herbsSpices.count - 1 } : herbsSpices
     ));
-    setFrozenFruit(frozenFruit.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
+    setFrozenFruit(frozenFruit.map(frozenFruit =>
+      frozenFruit.name === name && frozenFruit.count > 0 ? { ...frozenFruit, count: frozenFruit.count - 1 } : frozenFruit
     ));
   };
 
   const handleSave = async () => {
-    const allProducts = [
-      ...frozenVegetables.filter(product => product.count > 0),
-      ...doughsPizzasPastries.filter(product => product.count > 0),
-      ...preparedFoods.filter(product => product.count > 0),
-      ...herbsSpices.filter(product => product.count > 0),
-      ...frozenFruit.filter(product => product.count > 0)
-    ].map(product => ({ ...product, quantity: product.count }));
+    const frozenVegetablesToSave = frozenVegetables.filter(frozenVegetables => frozenVegetables.count > 0).map(frozenVegetables => ({ ...frozenVegetables, quantity: frozenVegetables.count }));
+    const doughsPizzasPastriesToSave = doughsPizzasPastries.filter(doughsPizzasPastries => doughsPizzasPastries.count > 0).map(doughsPizzasPastries => ({ ...doughsPizzasPastries, quantity: doughsPizzasPastries.count }));
+    const preparedFoodsToSave = preparedFoods.filter(preparedFoods => preparedFoods.count > 0).map(preparedFoods => ({ ...preparedFoods, quantity: preparedFoods.count }));
+    const herbsSpicesToSave = herbsSpices.filter(herbsSpices => herbsSpices.count > 0).map(herbsSpices => ({ ...herbsSpices, quantity: herbsSpices.count }));
+    const frozenFruitToSave = frozenFruit.filter(frozenFruit => frozenFruit.count > 0).map(frozenFruit => ({ ...frozenFruit, quantity: frozenFruit.count }));
 
-    allProducts.forEach(product => addProduct(product));
+    const allFrozen = [...frozenVegetablesToSave, ...doughsPizzasPastriesToSave , ...preparedFoodsToSave , ...herbsSpicesToSave , ...frozenFruitToSave];
 
-    setFrozenvegetables(frozenVegetables.map(product => ({ ...product, count: 0 })));
-    setDoughsPizzasPastries(doughsPizzasPastries.map(product => ({ ...product, count: 0 })));
-    setPreparedFoods(preparedFoods.map(product => ({ ...product, count: 0 })));
-    setHerbsSpices(herbsSpices.map(product => ({ ...product, count: 0 })));
-    setFrozenFruit(frozenFruit.map(product => ({ ...product, count: 0 })));
+    allFrozen.forEach(Frozen => addProduct(Frozen));
+
+    setFrozenvegetables(frozenVegetables.map(frozenVegetables => ({ ...frozenVegetables, count: 0 })));
+    setDoughsPizzasPastries(doughsPizzasPastries.map(doughsPizzasPastries => ({ ...doughsPizzasPastries, count: 0 })));
+    setPreparedFoods(preparedFoods.map(preparedFoods => ({ ...preparedFoods, count: 0 })));
+    setHerbsSpices(herbsSpices.map(herbsSpices => ({ ...herbsSpices, count: 0 })));
+    setFrozenFruit(frozenFruit.map(frozenFruit => ({ ...frozenFruit, count: 0 })));
   };
 
   return (
