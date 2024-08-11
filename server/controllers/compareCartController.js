@@ -20,32 +20,33 @@ const compareCart = async (req, res) => {
   
       for (const product of products) {
         //const reverseName = reverseString(product.name);
-        const dbProduct = await CompareCart.findOne({ name: product.name });
+        const dbProduct = await CompareCart.findOne({ name: { $regex: product.name,$options: 'i' } });
         if (dbProduct) {
-          for (const store in dbProduct.prices) {
-            if (cartMap[store]) {
-              const cart = cartMap[store];
-              cart.totalPrice += dbProduct.prices[store];
+          const storeNameArr = dbProduct.prices[0]._doc;
+          const storeKeys = Object.keys(storeNameArr).filter(key => key !== '_id');
+          storeKeys.forEach(storeName => {
+            const priceStore = storeNameArr[storeName];
+            if (cartMap[storeName]) {
+              const cart = cartMap[storeName];
+              cart.totalPrice += priceStore;
               cart.products.push({
-                name: dbProduct.name,
-                price: dbProduct.prices[store]
+                name: product.name,
+                price: priceStore,
               });
             }
-          }
+          })
         }
       }
   
-      const cheapestCart = carts.reduce((cheapest, current) => {
-        return current.totalPrice < cheapest.totalPrice ? current : cheapest;
-      }, carts[0]);
-  
-      console.log("MY CHEAP CART : ",cheapestCart);
-  
-      res.status(200).json({
-        name: cheapestCart.name,
-        totalPrice: cheapestCart.totalPrice,
-        products: cheapestCart.products
-      });
+      const sortedCarts = carts.sort((a, b) => a.totalPrice - b.totalPrice);
+      res.status(200).json(sortedCarts);
+
+      // const cheapestCart = carts.reduce((cheapest, current) => {
+      //   if (current.totalPrice === 0)
+      //     return cheapest;
+      //   return current.totalPrice < cheapest.totalPrice ? current : cheapest;
+      // }, { totalPrice: Infinity });
+      //res.status(200).json(cheapestCart);
   
     } catch (error) {
       console.error('Error comparing products:', error);
