@@ -1,0 +1,72 @@
+/* Container for the entire ComparingCarts component */
+.comparing-carts-container {
+    padding: 10%;
+    background-color: #c3cfe2 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.result-header {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+    align-self: flex-end;
+}
+
+/* Flex container for the cart columns */
+.cart-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-end;
+}
+
+/* Individual cart row styling */
+.cart-row {
+    width: 350px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #eeeeee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row-reverse; /* This will flip the order of the items */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-content {
+    text-align: right;
+}
+
+/* Header for each cart */
+.cart-header {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+/* Total price styling */
+.cart-total {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Order button styling */
+.order-btn {
+    background-color: #4cdd51;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px; /* Add some space between the button and the content */
+    cursor: pointer;
+    border-radius: 4px;
+}

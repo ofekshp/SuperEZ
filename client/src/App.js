@@ -21,6 +21,7 @@ import PharmPage from './components/Pharm/PharmPage.tsx';
 import { BasketProvider } from './components/MyBasket/BasketContext.tsx';
 import SignInModal from './components/SignIn/SignIn.tsx';
 import SignUpModal from './components/SignUp/SignUp.tsx';
+import ComparingCarts from './components/comparingCarts/comparingCarts.tsx';
 
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -65,9 +66,10 @@ function App() {
         <Route path="/Baking" element={<Baking_Page />} />
         <Route path="/fruits-vegetables" element={<FruitsAndVegetablesPage />} />
         <Route path="/dairy-products" element={<DeliPage />} />
-          <Route path="/frozen" element={<FrozenPage />} />
-          <Route path="/cleaning" element={<CleaningDisposablePage />} />
-          <Route path="/pharm" element={<PharmPage />} />
+        <Route path="/frozen" element={<FrozenPage />} />
+        <Route path="/cleaning" element={<CleaningDisposablePage />} />
+        <Route path="/pharm" element={<PharmPage />} />
+        <Route path="/comparingCarts" element={<ComparingCarts />} />
       </Routes>
       <ToastContainer/>
 
