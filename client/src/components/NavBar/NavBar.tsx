@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.css';
-import defaultProfileImage from '../../assets/placeholder.png';
 import SignInModal from '../SignIn/SignIn.tsx';
 import SignUpModal from '../SignUp/SignUp.tsx';
 import MyProfileModal from '../MyProfile/MyProfile.tsx';
