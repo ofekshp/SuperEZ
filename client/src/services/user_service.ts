@@ -49,6 +49,7 @@ class UserService {
               const data = await response.json();
               if (data.message === 'Login successful') {
                 console.log('Data:', data);
+                localStorage.removeItem('basketProducts');
                 localStorage.setItem('userEmail', data.user.email);
                 localStorage.setItem('userId', data.user._id);
                 document.cookie = `isLoggedIn=true;path=/`;
