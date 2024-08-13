@@ -1,6 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.css';
+import SignInModal from '../SignIn/SignIn.tsx';
+import SignUpModal from '../SignUp/SignUp.tsx';
+import MyProfileModal from '../MyProfile/MyProfile.tsx';
+import UserService from '../../services/user_service.ts';
+import { toast } from 'react-toastify';
 
 const importImage = (imageName: string) => {
   try {
@@ -11,17 +16,70 @@ const importImage = (imageName: string) => {
 };
 
 const Navbar: React.FC = () => {
+  const defaultProfileImage = importImage('placeholder.png');
+  const CartImage = importImage('Cart.png');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [signUpOpen, setSignUpOpen] = useState(false);
+  const [myProfileOpen, setMyProfileOpen] = useState(false); 
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = document.cookie.includes('isLoggedIn=true');
+    setIsUserLoggedIn(isLoggedIn);
+  }, []);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSignUpOpen(false); 
+    setMyProfileOpen(false); 
+  };
+
+  const openSignUpModal = () => {
+    setModalOpen(false); 
+    setTimeout(() => setSignUpOpen(true), 300); 
+  };
+
+  const openMyProfileModal = () => {
+    setMyProfileOpen(true); 
+  };
+
+  const handleSignOut = async () => {
+    const userService = new UserService();
+    try {
+      const response = await userService.logoutUser();
+      if (response) {
+        toast.success('Logout successful');
+        setIsUserLoggedIn(false);
+        navigate('/');
+      } else {
+        toast.error('Failed to logout, please try again later.');
+      }
+    } catch (error) {
+      toast.error('Logout error, please try again later.');
+    }
+  };
+
+  const goToCart = () => {
+    navigate('/cart');
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-left">
           <Link to="/" className="navbar-logo">
-            <img src={importImage('logo_super_ez.jpeg')} alt="SuperEZ Logo" />
+            <img src={importImage('logo_super_ez.png')} alt="SuperEZ Logo" />
           </Link>
           <div className="navbar-search">
             <input type="text" placeholder="חיפוש" />
           </div>
         </div>
+
         <ul className="navbar-menu">
           <li>
             <Link to="/fruits-vegetables" className="navbar-link">
@@ -71,17 +129,39 @@ const Navbar: React.FC = () => {
         </ul>
         <div className="navbar-right">
           <div className="navbar-profile">
-            <img src={importImage('placeholder.png')} alt="Default Profile" />
-            <Link to="/login" className="navbar-login">
-              התחברות
-            </Link>
+            {isUserLoggedIn ? (
+              <>
+                <button onClick={handleSignOut} className="navbar-logout">התנתקות</button>
+                <button onClick={openMyProfileModal} className="navbar-profile-button">אזור אישי</button>
+              </>
+            ) : (
+              <>
+              <img src={defaultProfileImage} alt="Default Profile" />
+              <button onClick={openModal} className="navbar-login">התחברות</button>   
+             
+</>
+            )}
+            {modalOpen && (
+              <SignInModal
+                closeModal={closeModal}
+                openSignUpModal={openSignUpModal}
+                setIsUserLoggedIn={setIsUserLoggedIn}
+              />
+            )}
+            {signUpOpen && <SignUpModal closeModal={closeModal} />}
+            {myProfileOpen && <MyProfileModal closeModal={closeModal}  />} 
           </div>
-          <Link to="/cart" className="navbar-cart">
+          
+          <img className="navbar-cart-img" src={CartImage} alt="cart" />
+
+          <button onClick={goToCart} className="navbar-cart">
             הסל שלי
-          </Link>
+          </button>
+     
         </div>
       </div>
     </nav>
   );
 };
+
 export default Navbar;

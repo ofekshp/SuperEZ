@@ -1,17 +1,17 @@
-require('dotenv').config();
+require('dotenv').config(); // Import dotenv configuration
+const mongoose = require('mongoose'); // Import mongoose
 
-const mongoose = require('mongoose');
-
-
+// Define the function to connect to MongoDB
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      dbName: 'super_ez'
+        });
     console.log('MongoDB connected');
   } catch (error) {
-    console.error('MongoDB connection error:', error.message);
+    console.error('MongoDB connection error:', error);
     process.exit(1);
   }
 };
