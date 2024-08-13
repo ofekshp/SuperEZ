@@ -180,11 +180,11 @@ const Can_Dry_Page: React.FC = () => {
   image: importImage('prana_bis_buns_10pack.jpeg'),
   },
   {
-  name: "עלי טורטייה כוסמין - 6 יחידות בקוטר 20 ס",
+  name: "עלי טורטייה כוסמין - 6 יחידות בקוטר 20 ס״מ",
   image: importImage('master_chef_spelt_tortilla_20cm.jpeg'),
   },
   {
-  name: "עלי טורטייה מיני, קמח חיטה - 10 יחידות בקוטר 15 ס",
+  name: "עלי טורטייה מיני, קמח חיטה - 10 יחידות בקוטר 15 ס״מ",
   image: importImage('master_chef_mini_wheat_tortilla_15cm.jpeg'),
   },
   ];
@@ -1035,10 +1035,313 @@ const initialCookies = [
 },
 ];
 
+const initialCrackers = [
+  {
+    name: "קרם קרקר",
+    image: importImage('cream_cracker.jpeg'),
+},
+{
+    name: "קרקר שומשום",
+    image: importImage('sesame_cracker.jpeg'),
+},
+{
+    name: "קרקר בצל",
+    image: importImage('onion_cracker.jpeg'),
+},
+{
+    name: "קרקר קלאסי",
+    image: importImage('classic_cracker.jpeg'),
+},
+{
+    name: "קרקר זהב",
+    image: importImage('gold_cracker.jpeg'),
+},
+{
+    name: "לחמית חיטה מלאה",
+    image: importImage('whole_wheat_lahmit.jpeg'),
+},
+{
+    name: "לחמית כפרית",
+    image: importImage('rustic_lahmit.jpeg'),
+},
+{
+    name: "לחמית חיטה מלאה ושיפון",
+    image: importImage('whole_wheat_rye_lahmit.jpeg'),
+},
+{
+    name: "לחמית 5 דגנים",
+    image: importImage('5_grain_lahmit.jpeg'),
+},
+{
+    name: "לחמית אגוזים",
+    image: importImage('nut_lahmit.jpeg'),
+},
+{
+    name: "טוסטעים צנימים",
+    image: importImage('tostim_toast.jpeg'),
+},
+{
+    name: "טוסטעים צנימים עם קמח חיטה מלא",
+    image: importImage('whole_wheat_tostim_toast.jpeg'),
+},
+{
+    name: "טוסטעים צנימים עם שומשום",
+    image: importImage('sesame_tostim_toast.jpeg'),
+},
+{
+    name: "חטיף קרקר קריספי עם זיתים כבושים",
+    image: importImage('olive_crispy_cracker.jpeg'),
+},
+{
+    name: "חטיף קרקר קריספי כפרי",
+    image: importImage('rustic_crispy_cracker.jpeg'),
+},
+{
+    name: "קריספי קרקר כפרי",
+    image: importImage('rustic_crispy_cracker_small.jpeg'),
+},
+{
+    name: "קריספי קרקר רוזמרין",
+    image: importImage('rosemary_crispy_cracker.jpeg'),
+},
+{
+    name: "חטיפי קרקר זעתר",
+    image: importImage('zaatar_cracker_snacks.jpeg'),
+},
+{
+    name: "חטיפי קרקר מלוח",
+    image: importImage('salty_cracker_snacks.jpeg'),
+},
+{
+    name: "חטיפי פריכונים אורז מלא בטעם טבעי",
+    image: importImage('natural_brown_rice_snacks.jpeg'),
+},
+{
+    name: "חטיפי פריכונים תירס",
+    image: importImage('corn_snacks.jpeg'),
+},
+{
+    name: "פריכונים מאורז מלא",
+    image: importImage('brown_rice_snacks.jpeg'),
+},
+{
+    name: "פריכונים מאורז מלא דל נתרן",
+    image: importImage('low_sodium_brown_rice_snacks.jpeg'),
+},
+{
+    name: "חטיפי פריכונים אורז מלא ודבש",
+    image: importImage('honey_brown_rice_snacks.jpeg'),
+},
+{
+    name: "חטיפי טורטיה תירס",
+    image: importImage('corn_tortilla_snacks.jpeg'),
+},
+{
+    name: "חטיפי טורטיה בטעם חמוץ מתוק",
+    image: importImage('sweet_sour_tortilla_snacks.jpeg'),
+},
+{
+    name: "קרקר פיטנס דק כפרי",
+    image: importImage('rustic_fitness_cracker.jpeg'),
+},
+{
+    name: "קרקר דק רוזמרין ושום פיטנס",
+    image: importImage('rosemary_garlic_fitness_cracker.jpeg'),
+},
+{
+  name: "קרקר פיטנס דק סלק",
+  image: importImage('fitness_cracker_beetroot.jpeg'),
+},
+{
+  name: "קרקר פיטנס דק בטטה",
+  image: importImage('fitness_cracker_sweet_potato.jpeg'),
+},
+{
+  name: "קרקר פיטנס דק עם זיתי קלמטה",
+  image: importImage('fitness_cracker_kalamata_olives.jpeg'),
+},
+{
+  name: "פיטנס פריכיות דקות מיקס דגנים, אפונה וסלק",
+  image: importImage('fitness_crispy_cereal_peas_beetroot.jpeg'),
+},
+{
+  name: "פיטנס פריכיות דקות מיקס שלושה דגנים וקינואה",
+  image: importImage('fitness_crispy_three_grains_quinoa.jpeg'),
+},
+{
+  name: "חטיפי קרקר פיטנס Fitness עם חיטה מלאה",
+  image: importImage('fitness_cracker_whole_wheat.jpeg'),
+},
+{
+  name: "חטיפי קרקר עם חיטה מלאה, צ'יה וזרעי פשתן פיטנס",
+  image: importImage('fitness_cracker_whole_wheat_chia_flaxseed.jpeg'),
+},
+{
+  name: "פריכיות דקות ונימוחות 3 דגנים פיטנס Fitness",
+  image: importImage('fitness_thin_crispy_3_grains.jpeg'),
+},
+{
+  name: "פריכיות דקות ונימוחות 3 דגנים וקינואה פיטנס Fitness",
+  image: importImage('fitness_thin_crispy_3_grains_quinoa.jpeg'),
+},
+{
+  name: "פיטנס חטיפי פריכיות דגנים עם קינמון",
+  image: importImage('fitness_crispy_cereal_cinnamon.jpeg'),
+},
+{
+  name: "פיטנס חטיפי פריכיות דגנים וחומוס מתובלות",
+  image: importImage('fitness_crispy_cereal_chickpea_seasoned.jpeg'),
+},
+{
+  name: "פיטנס חטיפי פריכיות עם קטניות ומלח ים",
+  image: importImage('fitness_crispy_legumes_sea_salt.jpeg'),
+},
+{
+  name: "נשנושים חטיף זעתר",
+  image: importImage('nashnushim_snack_zaatar.jpeg'),
+},
+{
+  name: "נשנושי קרקר קוקטייל מלוח",
+  image: importImage('cracker_snack_salty_cocktail.jpeg'),
+},
+{
+  name: "נשנושי קרקר עיגולים מלוחים",
+  image: importImage('cracker_snack_salty_circles.jpeg'),
+},
+{
+  name: "נשנושי קרקר משולשי שומשום",
+  image: importImage('cracker_snack_sesame_triangles.jpeg'),
+},
+{
+  name: "נשנושי קרקר קוקטייל שומשום",
+  image: importImage('cracker_snack_sesame_cocktail.jpeg'),
+},
+{
+  name: "נשנושים איירביס חטיף אפוי בטעם בצל",
+  image: importImage('airbites_snack_onion_flavor.jpeg'),
+},
+{
+  name: "נשנושים איירביס חטיף אפוי בטעם ברביקיו",
+  image: importImage('airbites_snack_bbq_flavor.jpeg'),
+},
+{
+  name: "נשנושים איירביס חטיף אפוי בטעם פלאפל",
+  image: importImage('airbites_snack_falafel_flavor.jpeg'),
+},
+{
+  name: "נשנושים חטיף בטעם שמנת בצל",
+  image: importImage('snack_sour_cream_onion_flavor.jpeg'),
+},
+{
+  name: "קרקר חיטה מלאה עם פשתן",
+  image: importImage('whole_wheat_cracker_flaxseed.jpeg'),
+},
+{
+  name: "פתית קרקר שיפון",
+  image: importImage('rye_cracker_petite.jpeg'),
+},
+{
+  name: "פתית 6 דגנים",
+  image: importImage('6_grain_cracker_petite.jpeg'),
+},
+{
+  name: "פתית חיטה מלאה",
+  image: importImage('whole_wheat_cracker_petite.jpeg'),
+},
+{
+  name: "פתית שוודי",
+  image: importImage('swedish_cracker_petite.jpeg'),
+},
+{
+  name: "פריכיות תפוחי אדמה ו 3 דגנים בטעם פוטטוס",
+  image: importImage('energy_crispy_potato_3_grains_potatoes_flavor.jpeg'),
+},
+{
+  name: "פריכיות חומוס, אורז, עדשים שחורות וקינואה",
+  image: importImage('tasty_crispy_chickpeas_rice_black_lentils_quinoa.jpeg'),
+},
+{
+  name: "פריכיות עם תחתית שוקולד מריר",
+  image: importImage('crispy_bitter_chocolate_bottom.jpeg'),
+},
+{
+  name: "פריכיות אורז מלא עם שוקולד חלב",
+  image: importImage('whole_rice_crispy_milk_chocolate.jpeg'),
+},
+{
+  name: "פריכיות משולשות תפוח אדמה, אורז, בתיבול סלק ומלח ים",
+  image: importImage('crispy_triangles_potato_rice_seasoned_beetroot_sea_salt.jpeg'),
+},
+{
+  name: "פריכיות תפוחי אדמה, אורז, אפונה ירוקה בתיבול מלח ים",
+  image: importImage('crispy_potato_rice_green_peas_seasoned_sea_salt.jpeg'),
+},
+{
+  name: "אנרג'י קריספס-פריכיות חומוס, עדשים ואפונה עם קייל וסלק",
+  image: importImage('energy_crisps_chickpeas_lentils_peas_kale_beetroot.jpeg'),
+},
+{
+  name: "פריכיות עם אפונה ובטטה סגולה בטעם בצל מקורמל",
+  image: importImage('crisps_peas_purple_sweet_potato_caramelized_onion.jpeg'),
+},
+{
+  name: "פריכיות חומוס, עדשים שחורות, קינואה ופלפל שחור",
+  image: importImage('tasty_crisps_chickpeas_black_lentils_quinoa_black_pepper.jpeg'),
+},
+{
+  name: "פריכיות חומוס, עדשים שחורות, קינואה ומלח ים",
+  image: importImage('tasty_crisps_chickpeas_black_lentils_quinoa_sea_salt.jpeg'),
+},
+{
+  name: "פריכיות תירס בטעם עגבניות ועשבי תיבול",
+  image: importImage('corn_crisps_tomato_herbs_flavor.jpeg'),
+},
+{
+  name: "פריכיות תירס בטעם זיתים ועירית",
+  image: importImage('corn_crisps_olive_chives_flavor.jpeg'),
+},
+{
+  name: "נשנושים חטיף תירס בטעם טבעי",
+  image: importImage('snacks_corn_natural_flavor.jpeg'),
+},
+{
+  name: "קרקר 6 דגנים",
+  image: importImage('6_grain_cracker.jpeg'),
+},
+{
+  name: "קרם קרקר דל נתרן",
+  image: importImage('low_sodium_cracker_cream.jpeg'),
+},
+{
+  name: "אנרג'י פריכיות תירס דקיקות עם מלח ים",
+  image: importImage('energy_thin_corn_crisps_sea_salt.jpeg'),
+},
+{
+  name: "אנרג'י פריכיות תירס דקיקות עם פלפל שחור",
+  image: importImage('energy_thin_corn_crisps_black_pepper.jpeg'),
+},
+{
+  name: "פיטנס מיני קרקר כפרי",
+  image: importImage('nestle_fitness_mini_rustic_crackers.jpeg'),
+},
+{
+  name: "פיטנס פריכיות עם שוקולד חלב",
+  image: importImage('nestle_fitness_rice_cakes_milk_chocolate.jpeg'),
+},
+{
+  name: "פיטנס פריכיות עם שוקולד לבן - חלבי",
+  image: importImage('nestle_fitness_rice_cakes_white_chocolate.jpeg'),
+},
+{
+  name: "קרקר פיטנס דק כרובית וכרישה",
+  image: importImage('nestle_fitness_thin_crackers_cauliflower_leek.jpeg'),
+},
+];
 
   initialBreads.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCakes.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCookies.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialCrackers.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
 
 
@@ -1050,6 +1353,9 @@ const initialCookies = [
   );
   const [cookies, setCookies] = useState<{ name: string; image: string | null; count: number }[]>(
     initialCookies.map(cookies => ({ ...cookies, count: 0 }))
+  );
+  const [crackers, setCrackers] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialCrackers.map(crackers => ({ ...crackers, count: 0 }))
   );
 
 
@@ -1065,8 +1371,13 @@ const initialCookies = [
     setCookies(cookies.map(cookies =>
       cookies.name === name ? { ...cookies, count: cookies.count + 1 } : cookies
     ));
+
+    setCrackers(crackers.map(crackers =>
+      crackers.name === name ? { ...crackers, count: crackers.count + 1 } : crackers
+    ));
   
   };
+
 
   const handleDecrement = (name: string) => {
     setBreads(breads.map(breads =>
@@ -1080,20 +1391,26 @@ const initialCookies = [
     setCookies(cookies.map(cookies =>
       cookies.name === name && cookies.count > 0 ? { ...cookies, count: cookies.count - 1 } : cookies
     ));
+    setCrackers(crackers.map(crackers =>
+      crackers.name === name && crackers.count > 0 ? { ...crackers, count: crackers.count - 1 } : crackers
+    ));
   };
+
 
   const handleSave = async () => {
     const breadsToSave = breads.filter(breads => breads.count > 0).map(breads => ({ ...breads, quantity: breads.count }));
     const cakesToSave = cakes.filter(cakes => cakes.count > 0).map(cakes => ({ ...cakes, quantity: cakes.count }));
     const cookiesToSave = cookies.filter(cookies => cookies.count > 0).map(cookies => ({ ...cookies, quantity: cookies.count }));
+    const crackersToSave = crackers.filter(crackers => crackers.count > 0).map(crackers => ({ ...crackers, quantity: crackers.count }));
 
-    const allCanDry = [...breadsToSave, ...cakesToSave, ...cookiesToSave ];
+
+    const allCanDry = [...breadsToSave, ...cakesToSave, ...cookiesToSave,...crackersToSave ];
     allCanDry.forEach(CanDry => addProduct(CanDry));
 
     setBreads(breads.map(breads => ({ ...breads, count: 0 })));
     setCakes(cakes.map(cakes => ({ ...cakes, count: 0 })));
     setCakes(cookies.map(cookies => ({ ...cookies, count: 0 })));
-
+    setCrackers(crackers.map(crackers => ({ ...crackers, count: 0 })));
 
   };
 
@@ -1124,6 +1441,16 @@ const initialCookies = [
           products={cookies}
           categoryTitle="עוגיות, וופלים, ביסקווטים וגביעי גלידה"
           icon={<img alt="" src={importImage('cookies_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={crackers}
+          categoryTitle="פריכיות, צנימים וקרקרים"
+          icon={<img alt="" src={importImage('crackers_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}

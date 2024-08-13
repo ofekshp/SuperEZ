@@ -1,7 +1,9 @@
-import React, { createContext, useState, ReactNode, useEffect } from 'react';
+// BasketContext.tsx
+import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import CartService from '../../services/cart_service.ts';
 
 interface Product {
-  name: string;
+  name: string |React.JSX.Element;
   quantity: number;
 }
 
@@ -14,37 +16,42 @@ interface BasketContextType {
 const BasketContext = createContext<BasketContextType | undefined>(undefined);
 
 export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const cartService = new CartService();
+  const [basketProducts, setBasketProducts] = useState<Product[]>([]);
 
-  const [basketProducts, setBasketProducts] = useState<Product[]>(() => {
-    const savedBasket = localStorage.getItem('basketProducts');
-    return savedBasket ? JSON.parse(savedBasket) : [];
-  });
-
-  useEffect(() => {  localStorage.setItem('basketProducts', JSON.stringify(basketProducts)); }, [basketProducts]);
-
-  const addProduct = (product: Product) => {
-    setBasketProducts(prevProducts => {
-      const existingProductIndex = prevProducts.findIndex(p => p.name === product.name);
-
-      if (existingProductIndex > -1) {
-        const updatedProducts = [...prevProducts];
-        updatedProducts[existingProductIndex] = {
-          ...updatedProducts[existingProductIndex],
-          quantity: updatedProducts[existingProductIndex].quantity + product.quantity,
-        };
-        return updatedProducts;
-      } else {
-        return [...prevProducts, product];
+  useEffect(() => {
+    async function loadBasketProducts() {
+      try {
+        const myCart = await cartService.getBasketProducts();
+        setBasketProducts(myCart);
+      } catch (error) {
+        console.error('Error loading basket products:', error);
+        setBasketProducts([]);
       }
-    });
+    } 
+    loadBasketProducts();
+  }, []);
+
+  const addProduct = async (product: Product) => {
+    try {
+      const updatedProducts = await cartService.addProduct(product);
+      setBasketProducts(updatedProducts);
+    } catch (error) {
+      console.error('Error adding product to basket:', error);
+    }
   };
 
-  const removeProduct = (productName: string) => {
-    setBasketProducts(prevProducts => prevProducts.filter(product => product.name !== productName));
+  const removeProduct = async (productName: string) => {
+    try {
+      const updatedProducts = await cartService.removeProduct(productName);
+      setBasketProducts(updatedProducts);
+    } catch (error) {
+      console.error('Error removing product from basket:', error);
+    }
   };
 
   return (
-    <BasketContext.Provider value={{ basketProducts, addProduct , removeProduct }}>
+    <BasketContext.Provider value={{ basketProducts, addProduct, removeProduct }}>
       {children}
     </BasketContext.Provider>
   );
