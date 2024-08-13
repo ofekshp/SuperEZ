@@ -1,16 +1,13 @@
 const CompareCart = require('../models/CompareCart');
 
-//  function reverseString(str) {
-//   return str.split('').reverse().join('');
-// }
-
 const compareCart = async (req, res) => {
     const { products } = req.body;
     try {
       const carts = [
         { name: 'שופרסל', totalPrice: 0, products: [] },
         { name: 'רמי לוי', totalPrice: 0, products: [] },
-        { name: 'חצי חינם', totalPrice: 0, products: [] }
+        { name: 'חצי חינם', totalPrice: 0, products: [] },
+        { name: 'ויקטורי', totalPrice: 0, products: [] }
       ];
   
       const cartMap = carts.reduce((map, cart) => {
@@ -19,10 +16,10 @@ const compareCart = async (req, res) => {
       }, {});
   
       for (const product of products) {
-        //const reverseName = reverseString(product.name);
-        const dbProduct = await CompareCart.findOne({ name: { $regex: product.name,$options: 'i' } });
-        if (dbProduct) {
-          const storeNameArr = dbProduct.prices[0]._doc;
+        const dbProduct = await CompareCart.find({ name: { $regex: `^${product.name}`, $options: 'i' } });
+        console.log('dbProduct:', dbProduct);
+        for(const dbP of dbProduct){
+          const storeNameArr = dbP.prices[0]._doc;
           const storeKeys = Object.keys(storeNameArr).filter(key => key !== '_id');
           storeKeys.forEach(storeName => {
             const priceStore = storeNameArr[storeName];
@@ -30,7 +27,7 @@ const compareCart = async (req, res) => {
               const cart = cartMap[storeName];
               cart.totalPrice += priceStore;
               cart.products.push({
-                name: product.name,
+                name: dbP.name,
                 price: priceStore,
               });
             }
@@ -56,4 +53,3 @@ const compareCart = async (req, res) => {
 module.exports = {
     compareCart,
   };
-  
