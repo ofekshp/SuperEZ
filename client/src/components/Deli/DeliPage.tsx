@@ -16,10 +16,7 @@ const DeliPage: React.FC = () => {
   const { addProduct } = useBasket();
 
   const initialMilk = [
-    { 
-      name: "חלב בקרטון 3% , 1 ל׳", 
-      image: importImage('milk_carton_3_percent_mehadrin.jpeg') 
-    },
+    { name: (<>חלב בקרטון 3%<br />1 ל׳</>), image: importImage('milk_carton_3_percent_mehadrin.jpeg') },
     { 
       name: "חלב דל לקטוז 2%", 
       image: importImage('milk_carton_2_percent_low_lactose.jpeg') 
@@ -32,10 +29,7 @@ const DeliPage: React.FC = () => {
       name: "חלב בקרטון 1%", 
       image: importImage('milk_carton_1_percent.jpeg') 
     },
-    { 
-      name: "חלב בקרטון 3% , 1.5 ל׳", 
-      image: importImage('milk_carton_3_percent_1.5_liters.jpeg') 
-    },
+    { name: (<>חלב בקרטון 3%<br />1.5 ל׳</>), image: importImage('milk_carton_3_percent_1.5_liters.jpeg') },
     { 
       name: "חלב בשקית 3%", 
       image: importImage('milk_bag_3_percent_mehadrin.jpeg') 
@@ -48,22 +42,13 @@ const DeliPage: React.FC = () => {
       name: "חלב עיזים", 
       image: importImage('goat_milk.jpeg') 
     },
-    { 
-      name: "חלב 3% בקרטון , 2 ל׳", 
-      image: importImage('milk_carton_3_percent_2_liters.jpeg') 
-    },
+    { name: (<>חלב בקרטון 3%<br />2 ל׳</>), image: importImage('milk_carton_3_percent_2_liters.jpeg') },
     { 
       name: "חלב עיזים משק צוריאל", 
       image: importImage('full_fat_goat_milk_zuriel.jpeg') 
     },
-    { 
-      name: "משקה רוויון 1.5% , 1 ל׳", 
-      image: importImage('buttermilk_drink_1.5_percent.jpeg') 
-    },
-    { 
-      name: "משקה רוויון 1.5% 500 מל׳", 
-      image: importImage('buttermilk_drink_1.5_percent_500ml.jpeg') 
-    },
+    { name: (<>משקה רוויון1.5%<br />1ל׳</>), image: importImage('buttermilk_drink_1.5_percent.jpeg') },
+    { name: (<>משקה רוויון1.5%<br />500 מל׳</>), image: importImage('buttermilk_drink_1.5_percent_500ml.jpeg') },
     { 
       name: "משקה שוקו בקבוק", 
       image: importImage('chocolate_milk_drink_bottle.jpeg') 
@@ -1677,8 +1662,12 @@ const DeliPage: React.FC = () => {
       image: importImage("crushed_garlic_parag.jpeg"),
     },
   ];
-
-  initialMilk.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  
+  initialMilk.sort((a, b) => {
+    const nameA = typeof a.name === 'string' ? a.name : a.name.props.children[0];
+    const nameB = typeof b.name === 'string' ? b.name : b.name.props.children[0];
+    return nameA.localeCompare(nameB, 'he');
+  });
   initialYogurtdelicacies.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialYogurtdrinking.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialMilkdelicaciesdesserts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
@@ -1693,7 +1682,7 @@ const DeliPage: React.FC = () => {
   initialSalads.sort((a, b) => a.name.localeCompare(b.name, 'he'));
     
 
-  const [milk, setMilk] = useState<{ name: string; image: any; count: number }[]>( initialMilk.map(milk => ({ ...milk, count: 0 })) );
+  const [milk, setMilk] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>( initialMilk.map(milk => ({ ...milk, count: 0 })) );
   const [yogurtDelicacies, setYogurtDelicacies] = useState<{ name: string; image: any; count: number }[]>( initialYogurtdelicacies.map(yogurtDelicacies => ({ ...yogurtDelicacies, count: 0 })) );
   const [yogurtDrink, setYogurtDrink] = useState<{ name: string; image: any; count: number }[]>(initialYogurtdrinking.map(yogurtDrink => ({ ...yogurtDrink, count: 0 }))); 
   const [milkDelicaciesDesserts, setMilkDelicaciesDesserts] = useState<{ name: string; image: any; count: number }[]>(initialMilkdelicaciesdesserts.map(milkDelicaciesDesserts => ({ ...milkDelicaciesDesserts, count: 0 }))); 
@@ -1707,9 +1696,9 @@ const DeliPage: React.FC = () => {
   const [sausagesPastrami, setSausagespastrami] = useState<{ name: string; image: any; count: number }[]>(  initialSausagespastrami.map(sausagesPastrami => ({ ...sausagesPastrami, count: 0 })) );
   const [salads, setSalads] = useState<{ name: string; image: any; count: number }[]>(  initialSalads.map(salads => ({ ...salads, count: 0 })) );
 
-  const handleIncrement = (name: string) => {
+  const handleIncrement = (name: string, name1:React.JSX.Element) => {
     setMilk(milk.map(milk =>
-      milk.name === name ? { ...milk, count: milk.count + 1 } : milk
+      milk.name === name1 ? { ...milk, count: milk.count + 1 } : milk
     ));
     
     setYogurtDelicacies(yogurtDelicacies.map(yogurtDelicacies =>
@@ -1761,9 +1750,9 @@ const DeliPage: React.FC = () => {
     ));
   };
   
-  const handleDecrement = (name: string) => {
+  const handleDecrement = (name: string, name1:React.JSX.Element) => {
     setMilk(milk.map(milk =>
-      milk.name === name && milk.count > 0 ? { ...milk, count: milk.count - 1 } : milk
+      milk.name === name1 && milk.count > 0 ? { ...milk, count: milk.count - 1 } : milk
     ));
     
     setYogurtDelicacies(yogurtDelicacies.map(yogurtDelicacies =>
