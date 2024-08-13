@@ -4,8 +4,6 @@ import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
-
-import './App.css';
 import Navbar from './components/NavBar/NavBar.tsx';
 import LandingPage from './components/LandingPage/LandingPage.tsx';
 import MyBasket from './components/MyBasket/MyBasket.tsx';
@@ -22,6 +20,7 @@ import { BasketProvider } from './components/MyBasket/BasketContext.tsx';
 import SignInModal from './components/SignIn/SignIn.tsx';
 import SignUpModal from './components/SignUp/SignUp.tsx';
 import ComparingCarts from './components/comparingCarts/comparingCarts.tsx';
+import MyProfileModal from './components/MyProfile/MyProfile.tsx';
 
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -59,7 +58,9 @@ function App() {
           }
         />
         <Route path="/signup" element={<SignUpModal />} />
-        <Route path="/logout"/>
+        <Route path="/profile" element={<MyProfileModal />} />
+        <Route path="/logout"/>  
+        <Route path="reset-password"/>
         <Route path="/MeatFish" element={<MeatFish />} />
         <Route path="/Drinks" element={<Drinks />} />
         <Route path="/Can_Dry" element={<Can_Dry_Page />} />
@@ -72,13 +73,10 @@ function App() {
         <Route path="/comparingCarts" element={<ComparingCarts />} />
       </Routes>
       <ToastContainer/>
-
   </div>
     </Router>
     </BasketProvider>
 
   );
-
 }
-
 export default App;
