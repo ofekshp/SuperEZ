@@ -1,5 +1,6 @@
-import React from "react";
-import ProductsPage from "../ProductCard/ProductsPage";
+import React, { useState } from "react";
+import ProductsPage from "../ProductCard/ProductsPage.jsx";
+import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
 
 const importImage = (imageName: string) => {
@@ -11,6 +12,8 @@ const importImage = (imageName: string) => {
 };
 
 const DrinksPage: React.FC = () => {
+  const { addProduct } = useBasket();
+
   const initialSweetDrinks = [
     {
       name: "קוקה קולה",
@@ -33,8 +36,37 @@ const DrinksPage: React.FC = () => {
     }
   ];
 
-  const [sweets] = React.useState<{ name: string; image: string | null; }[]>(initialSweetDrinks);
-  const [alcohols] = React.useState<{ name: string; image: string | null; }[]>(initialAlcoholDrinks);
+  const [sweets, setSweets] = useState<{ name: string; image: string | null; count: number }[]>(initialSweetDrinks.map(drink => ({ ...drink, count: 0 })));
+  const [alcohols, setAlcohols] = useState<{ name: string; image: string | null; count: number }[]>(initialAlcoholDrinks.map(drink => ({ ...drink, count: 0 })));
+
+  const handleIncrement = (name: string) => {
+    setSweets(sweets.map(drink =>
+      drink.name === name ? { ...drink, count: drink.count + 1 } : drink
+    ));
+    setAlcohols(alcohols.map(drink =>
+      drink.name === name ? { ...drink, count: drink.count + 1 } : drink
+    ));
+  };
+
+  const handleDecrement = (name: string) => {
+    setSweets(sweets.map(drink =>
+      drink.name === name && drink.count > 0 ? { ...drink, count: drink.count - 1 } : drink
+    ));
+    setAlcohols(alcohols.map(drink =>
+      drink.name === name && drink.count > 0 ? { ...drink, count: drink.count - 1 } : drink
+    ));
+  };
+
+  const handleSave = async () => {
+    const sweetDrinksToSave = sweets.filter(drink => drink.count > 0).map(drink => ({ ...drink, quantity: drink.count }));
+    const alcoholDrinksToSave = alcohols.filter(drink => drink.count > 0).map(drink => ({ ...drink, quantity: drink.count }));
+
+    const allDrinks = [...sweetDrinksToSave, ...alcoholDrinksToSave];
+    allDrinks.forEach(drink => addProduct(drink));
+
+    setSweets(sweets.map(drink => ({ ...drink, count: 0 })));
+    setAlcohols(alcohols.map(drink => ({ ...drink, count: 0 })));
+  };
 
   return (
     <div>
@@ -42,18 +74,24 @@ const DrinksPage: React.FC = () => {
         <ProductsPage
           products={sweets}
           categoryTitle="שתייה מתוקה"
-          icon={<img alt="" src={importImage('')} />}
+          icon={<img alt="" src={importImage('sweet_drinks_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
       </div>
       <div>
         <ProductsPage
           products={alcohols}
           categoryTitle="שתייה חריפה"
-          icon={<img alt="" src={importImage('')} />}
+          icon={<img alt="" src={importImage('alcohol_drinks_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
         />
-      </div>
+      </div>    
     </div>
   );
-}
+};
 
 export default DrinksPage;
