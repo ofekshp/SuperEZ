@@ -13,6 +13,7 @@ const importImage = (imageName: string) => {
 
 const FrozenPage: React.FC = () => {
   const { addProduct } = useBasket();
+  const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialFrozenVegetables = [
     {
@@ -567,14 +568,56 @@ const FrozenPage: React.FC = () => {
   initialPreparedFoods.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialFrozenfruit.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-
-
-  const [frozenVegetables, setFrozenvegetables] = useState<{ name: string; image: string | null; count: number }[]>(initialFrozenVegetables.map(product => ({ ...product, count: 0 })));
-  const [doughsPizzasPastries, setDoughsPizzasPastries] = useState<{ name: string; image: string | null; count: number }[]>(initialDoughsPizzasPastries.map(product => ({ ...product, count: 0 })));
-  const [preparedFoods, setPreparedFoods] = useState<{ name: string; image: string | null; count: number }[]>(initialPreparedFoods.map(product => ({ ...product, count: 0 })));
-  const [herbsSpices, setHerbsSpices] = useState<{ name: string; image: string | null; count: number }[]>(initialHerbsSpices.map(product => ({ ...product, count: 0 })));
-  const [frozenFruit, setFrozenFruit] = useState<{ name: string; image: string | null; count: number }[]>(initialFrozenfruit.map(product => ({ ...product, count: 0 })));
-
+  const [frozenVegetables, setFrozenvegetables] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialFrozenVegetables.map(product => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === product.name);
+      return {
+        ...product,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [doughsPizzasPastries, setDoughsPizzasPastries] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialDoughsPizzasPastries.map(product => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === product.name);
+      return {
+        ...product,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [preparedFoods, setPreparedFoods] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialPreparedFoods.map(product => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === product.name);
+      return {
+        ...product,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [herbsSpices, setHerbsSpices] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialHerbsSpices.map(product => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === product.name);
+      return {
+        ...product,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [frozenFruit, setFrozenFruit] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialFrozenfruit.map(product => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === product.name);
+      return {
+        ...product,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
   const handleIncrement = (name: string) => {
     setFrozenvegetables(frozenVegetables.map(product =>
       product.name === name ? { ...product, count: product.count + 1 } : product
@@ -621,12 +664,6 @@ const FrozenPage: React.FC = () => {
     ].map(product => ({ ...product, quantity: product.count }));
 
     allProducts.forEach(product => addProduct(product));
-
-    setFrozenvegetables(frozenVegetables.map(product => ({ ...product, count: 0 })));
-    setDoughsPizzasPastries(doughsPizzasPastries.map(product => ({ ...product, count: 0 })));
-    setPreparedFoods(preparedFoods.map(product => ({ ...product, count: 0 })));
-    setHerbsSpices(herbsSpices.map(product => ({ ...product, count: 0 })));
-    setFrozenFruit(frozenFruit.map(product => ({ ...product, count: 0 })));
   };
 
   return (

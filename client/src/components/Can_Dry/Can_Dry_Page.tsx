@@ -13,6 +13,7 @@ const importImage = (imageName: string) => {
 
 const Can_Dry_Page: React.FC = () => {
   const { addProduct } = useBasket();
+  const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialCan = [
     {
@@ -36,13 +37,25 @@ const Can_Dry_Page: React.FC = () => {
     }
   ];
 
-  const [cans, setCans] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCan.map(can => ({ ...can, count: 0 }))
-  );
+ const [cans, setCans] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialCan.map(can => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === can.name);
+    return {
+      ...can,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [drys, setDrys] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialDry.map(dry => ({ ...dry, count: 0 }))
-  );
+const [drys, setDrys] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialDry.map(dry => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === dry.name);
+    return {
+      ...dry,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
   const handleIncrement = (name: string) => {
     setCans(cans.map(can =>
@@ -69,8 +82,8 @@ const Can_Dry_Page: React.FC = () => {
     const allItems = [...cansToSave, ...drysToSave];
     allItems.forEach(item => addProduct(item));
 
-    setCans(cans.map(can => ({ ...can, count: 0 })));
-    setDrys(drys.map(dry => ({ ...dry, count: 0 })));
+    // setCans(cans.map(can => ({ ...can, count: 0 })));
+    // setDrys(drys.map(dry => ({ ...dry, count: 0 })));
   };
 
   return (
