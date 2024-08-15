@@ -13,6 +13,7 @@ const importImage = (imageName: string) => {
 
 const CleaningDisposablePage: React.FC = () => {
   const { addProduct } = useBasket(); 
+  const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialPaper = [
     {
@@ -91,49 +92,116 @@ const CleaningDisposablePage: React.FC = () => {
     }
   ];
 
-  const [paper, setPaper] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialPaper.map(item => ({ ...item, count: 0 }))
-  );
+const [paper, setPaper] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialPaper.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [laundryproducts, setLaundryproducts] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialLaundryproducts.map(item => ({ ...item, count: 0 }))
-  );
+const [laundryproducts, setLaundryproducts] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialLaundryproducts.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [cleaningproducts, setCleaningproducts] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCleaningproducts.map(item => ({ ...item, count: 0 }))
-  );
+const [cleaningproducts, setCleaningproducts] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialCleaningproducts.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [kitchencleaning, setKitchencleaning] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialKitchencleaning.map(item => ({ ...item, count: 0 }))
-  );
+const [kitchencleaning, setKitchencleaning] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialKitchencleaning.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [generalcleaning, setGeneralcleaning] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialGeneralcleaning.map(item => ({ ...item, count: 0 }))
-  );
+const [generalcleaning, setGeneralcleaning] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialGeneralcleaning.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [floorcleaning, setFloorcleaning] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialFloorcleaning.map(item => ({ ...item, count: 0 }))
-  );
+const [floorcleaning, setFloorcleaning] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialFloorcleaning.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [bathroomtoilecleaning, setBathroomtoilecleaning] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialBathroomtoilecleaning.map(item => ({ ...item, count: 0 }))
-  );
+const [bathroomtoilecleaning, setBathroomtoilecleaning] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialBathroomtoilecleaning.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [pesticideproducts, setPesticideproducts] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialPesticideproducts.map(item => ({ ...item, count: 0 }))
-  );
+const [pesticideproducts, setPesticideproducts] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialPesticideproducts.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [cleaningaccessories, setCleaningaccessories] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCleaningaccessories.map(item => ({ ...item, count: 0 }))
-  );
+const [cleaningaccessories, setCleaningaccessories] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialCleaningaccessories.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [disposableproducts, setDisposableproducts] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialDisposableproducts.map(item => ({ ...item, count: 0 }))
-  );
+const [disposableproducts, setDisposableproducts] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialDisposableproducts.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [bagspackagingproducts, setBagspackagingproducts] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialBagspackagingproducts.map(item => ({ ...item, count: 0 }))
-  );
+const [bagspackagingproducts, setBagspackagingproducts] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialBagspackagingproducts.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
 
   const handleIncrement = (name: string) => {
     setPaper(paper.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
@@ -192,17 +260,6 @@ const CleaningDisposablePage: React.FC = () => {
 
     allItemsToSave.forEach(item => addProduct(item));
 
-    setPaper(paper.map(item => ({ ...item, count: 0 })));
-    setLaundryproducts(laundryproducts.map(item => ({ ...item, count: 0 })));
-    setCleaningproducts(cleaningproducts.map(item => ({ ...item, count: 0 })));
-    setKitchencleaning(kitchencleaning.map(item => ({ ...item, count: 0 })));
-    setGeneralcleaning(generalcleaning.map(item => ({ ...item, count: 0 })));
-    setFloorcleaning(floorcleaning.map(item => ({ ...item, count: 0 })));
-    setBathroomtoilecleaning(bathroomtoilecleaning.map(item => ({ ...item, count: 0 })));
-    setPesticideproducts(pesticideproducts.map(item => ({ ...item, count: 0 })));
-    setCleaningaccessories(cleaningaccessories.map(item => ({ ...item, count: 0 })));
-    setDisposableproducts(disposableproducts.map(item => ({ ...item, count: 0 })));
-    setBagspackagingproducts(bagspackagingproducts.map(item => ({ ...item, count: 0 })));
   };
 
   return (

@@ -126,3 +126,27 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.my-basket__order-button {
+  background-color: #0d63be;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.my-basket__order-button:hover {
+  background-color: #084d9c;
+  transform: translateY(-2px);
+}
+
+.my-basket__order-button:active {
+  background-color: #003366;
+  transform: translateY(0);
+}
+
