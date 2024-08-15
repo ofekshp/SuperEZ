@@ -2,6 +2,7 @@
     direction: rtl;
     text-align: center;
     padding: 40px;
+    cursor: default;
   }
   
   .main-heading {

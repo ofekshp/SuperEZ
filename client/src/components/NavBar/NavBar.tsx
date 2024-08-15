@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './NavBar.css';
 import SignInModal from '../SignIn/SignIn.tsx';
 import SignUpModal from '../SignUp/SignUp.tsx';
@@ -22,6 +22,7 @@ const Navbar: React.FC = () => {
   const [signUpOpen, setSignUpOpen] = useState(false);
   const [myProfileOpen, setMyProfileOpen] = useState(false); 
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -68,6 +69,14 @@ const Navbar: React.FC = () => {
     navigate('/cart');
   };
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -75,9 +84,14 @@ const Navbar: React.FC = () => {
           <Link to="/" className="navbar-logo">
             <img src={importImage('logo_super_ez.png')} alt="SuperEZ Logo" />
           </Link>
-          <div className="navbar-search">
-            <input type="text" placeholder="חיפוש" />
-          </div>
+          <form className="navbar-search" onSubmit={handleSearchSubmit}>
+            <input
+              type="text"
+              placeholder="חיפוש"
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+          </form>
         </div>
 
         <ul className="navbar-menu">
