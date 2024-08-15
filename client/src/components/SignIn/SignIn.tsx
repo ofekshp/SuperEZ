@@ -37,6 +37,9 @@ const SignInModal: React.FC<SignInModalProps> = ({ closeModal, openSignUpModal, 
       const response = await userService.loginUser(user);
       if (response) {   
         toast.success("Login successful");
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
         setIsUserLoggedIn(true);
         closeModal();
       } else {

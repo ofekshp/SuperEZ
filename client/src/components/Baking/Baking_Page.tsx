@@ -13,7 +13,8 @@ const importImage = (imageName: string) => {
 
 const BakingPage: React.FC = () => {
   const { addProduct } = useBasket(); 
-
+  const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
+  
   const initialBaking = [
     {
       name: "נייר אפייה",
@@ -26,7 +27,13 @@ const BakingPage: React.FC = () => {
   ];
 
   const [baking, setBaking] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialBaking.map(item => ({ ...item, count: 0 }))
+    initialBaking.map(item => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+      return {
+        ...item,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
 
   const handleIncrement = (name: string) => {
@@ -45,7 +52,7 @@ const BakingPage: React.FC = () => {
     const itemsToSave = baking.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
 
     itemsToSave.forEach(item => addProduct(item));
-    setBaking(baking.map(item => ({ ...item, count: 0 })));
+    //setBaking(baking.map(item => ({ ...item, count: 0 })));
   };
 
   return (

@@ -12,9 +12,9 @@ const importImage = (imageName: string) => {
 };
 
 const FruitsAndVegetablesPage: React.FC = () => {
-
   const { addProduct } = useBasket();
-
+  const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
+  
   const initialFruits = [
 
     {
@@ -568,12 +568,56 @@ const FruitsAndVegetablesPage: React.FC = () => {
   initialHerbssproutsmushrooms.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialPackagedfruit.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-  const [fruits, setFruits] = useState<{ name: string; image: any; count: number }[]>(initialFruits.map(fruit => ({ ...fruit, count: 0 })));
-  const [vegetables, setVegetables] = useState<{ name: string; image: any; count: number }[]>(initialVegetables.map(vegetable => ({ ...vegetable, count: 0 })));
-  const [packagedpickedvegetables, setPackagedpickedvegetables] = useState<{ name: string; image: any; count: number }[]>(initialPackagedpickedvegetables.map(packagedpickedvegetable => ({ ...packagedpickedvegetable, count: 0 })));
-  const [herbssproutsmushrooms, setHerbssproutsmushrooms] = useState<{ name: string; image: any; count: number }[]>(initialHerbssproutsmushrooms.map(herbssproutsmushroom => ({ ...herbssproutsmushroom, count: 0 })));
-  const [packagedfruit, setPackagedfruit] = useState<{ name: string; image: any; count: number }[]>(initialPackagedfruit.map(packagedfruit => ({ ...packagedfruit, count: 0 })));
-
+  const [fruits, setFruits] = useState<{ name: string; image: any; count: number }[]>(
+    initialFruits.map(fruit => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === fruit.name);
+      return {
+        ...fruit,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [vegetables, setVegetables] = useState<{ name: string; image: any; count: number }[]>(
+    initialVegetables.map(vegetable => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === vegetable.name);
+      return {
+        ...vegetable,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [packagedpickedvegetables, setPackagedpickedvegetables] = useState<{ name: string; image: any; count: number }[]>(
+    initialPackagedpickedvegetables.map(packagedpickedvegetable => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === packagedpickedvegetable.name);
+      return {
+        ...packagedpickedvegetable,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [herbssproutsmushrooms, setHerbssproutsmushrooms] = useState<{ name: string; image: any; count: number }[]>(
+    initialHerbssproutsmushrooms.map(herbssproutsmushroom => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === herbssproutsmushroom.name);
+      return {
+        ...herbssproutsmushroom,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [packagedfruit, setPackagedfruit] = useState<{ name: string; image: any; count: number }[]>(
+    initialPackagedfruit.map(packagedfruit => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === packagedfruit.name);
+      return {
+        ...packagedfruit,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
   const handleIncrement = (name: string) => {
     setFruits(fruits.map(fruit =>  fruit.name === name ? { ...fruit, count: fruit.count + 1 } : fruit )); 
 
@@ -618,11 +662,7 @@ const FruitsAndVegetablesPage: React.FC = () => {
 
     const allItems = [...fruitsToSave, ...vegetablesToSave , ...packagedpickedvegetablesToSave , ...herbssproutsmushroomsToSave , ...packagedfruitToSave];
     allItems.forEach(item => addProduct(item));
-    setFruits(fruits.map(item => ({ ...item, count: 0 })));
-    setVegetables(vegetables.map(item => ({ ...item, count: 0 })));
-    setPackagedpickedvegetables(packagedpickedvegetables.map(item => ({ ...item, count: 0 })));
-    setHerbssproutsmushrooms(herbssproutsmushrooms.map(item => ({ ...item, count: 0 })));
-    setPackagedfruit(packagedfruit.map(item => ({ ...item, count: 0 })));
+    
 };
 
   return (

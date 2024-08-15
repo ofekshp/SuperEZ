@@ -13,7 +13,8 @@ const importImage = (imageName: string) => {
 
 const PharmPage: React.FC = () => {
   const { addProduct } = useBasket();
-
+  const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
+  
   const initialShampoo = [
     { name: "שמפו לשיער רגיל", image: importImage('shampoo_for_normal_hair.jpeg') },
   ];
@@ -69,24 +70,186 @@ const PharmPage: React.FC = () => {
     { name: "נר נשמה 26 שעות", image: importImage('26_hour_soul_candle.jpeg') },
   ];
 
-  const [shampoo, setShampoo] = useState(initialShampoo.map(item => ({ ...item, count: 0 })));
-  const [conditioner, setConditioner] = useState(initialConditioner.map(item => ({ ...item, count: 0 })));
-  const [bathsoap, setBathsoap] = useState(initialBathsoap.map(item => ({ ...item, count: 0 })));
-  const [deodorantforwomen, setDeodorantforwomen] = useState(initialDeodorantforwomen.map(item => ({ ...item, count: 0 })));
-  const [deodorantformen, setDeodorantformen] = useState(initialDeodorantformen.map(item => ({ ...item, count: 0 })));
-  const [sunprotection, setSunprotection] = useState(initialSunprotection.map(item => ({ ...item, count: 0 })));
-  const [shavingpreparationsaccessories, setShavingpreparationsaccessories] = useState(initialShavingpreparationsaccessories.map(item => ({ ...item, count: 0 })));
-  const [toothpastesmouthwash, setToothpastesmouthwash] = useState(initialToothpastesmouthwash.map(item => ({ ...item, count: 0 })));
-  const [toothbrushesdentalaccessories, setToothbrushesdentalaccessories] = useState(initialToothbrushesdentalaccessories.map(item => ({ ...item, count: 0 })));
-  const [cosmeticsfacialcare, setCosmeticsfacialcare] = useState(initialCosmeticsfacialcare.map(item => ({ ...item, count: 0 })));
-  const [haircarestyling, setHaircarestyling] = useState(initialHaircarestyling.map(item => ({ ...item, count: 0 })));
-  const [femininehygieneabsorbentproducts, setFemininehygieneabsorbentproducts] = useState(initialFemininehygieneabsorbentproducts.map(item => ({ ...item, count: 0 })));
-  const [careaccessories, setCareaccessories] = useState(initialCareaccessories.map(item => ({ ...item, count: 0 })));
-  const [bodycare, setBodycare] = useState(initialBodycare.map(item => ({ ...item, count: 0 })));
-  const [firstaid, setFirstaid] = useState(initialFirstaid.map(item => ({ ...item, count: 0 })));
-  const [vitaminsnutritionalsupplements, setVitaminsnutritionalsupplements] = useState(initialVitaminsnutritionalsupplements.map(item => ({ ...item, count: 0 })));
-  const [airperfume, setAirperfume] = useState(initialAirperfume.map(item => ({ ...item, count: 0 })));
-  const [candlesmatches, setCandlesmatches] = useState(initialCandlesmatches.map(item => ({ ...item, count: 0 })));
+const [shampoo, setShampoo] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialShampoo.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [conditioner, setConditioner] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialConditioner.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [bathsoap, setBathsoap] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialBathsoap.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [deodorantforwomen, setDeodorantforwomen] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialDeodorantforwomen.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [deodorantformen, setDeodorantformen] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialDeodorantformen.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [sunprotection, setSunprotection] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialSunprotection.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [shavingpreparationsaccessories, setShavingpreparationsaccessories] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialShavingpreparationsaccessories.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [toothpastesmouthwash, setToothpastesmouthwash] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialToothpastesmouthwash.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [toothbrushesdentalaccessories, setToothbrushesdentalaccessories] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialToothbrushesdentalaccessories.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [cosmeticsfacialcare, setCosmeticsfacialcare] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialCosmeticsfacialcare.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [haircarestyling, setHaircarestyling] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialHaircarestyling.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [femininehygieneabsorbentproducts, setFemininehygieneabsorbentproducts] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialFemininehygieneabsorbentproducts.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [careaccessories, setCareaccessories] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialCareaccessories.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [bodycare, setBodycare] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialBodycare.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [firstaid, setFirstaid] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialFirstaid.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [vitaminsnutritionalsupplements, setVitaminsnutritionalsupplements] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialVitaminsnutritionalsupplements.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [airperfume, setAirperfume] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialAirperfume.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [candlesmatches, setCandlesmatches] = useState<{ name: string; image: string | null; count: number }[]>(
+  initialCandlesmatches.map(item => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
 
   const handleIncrement = (name: string) => {
     setShampoo(shampoo.map(item =>  item.name === name ? { ...item, count: item.count + 1 } : item));
@@ -155,25 +318,6 @@ const PharmPage: React.FC = () => {
     const itemsToSave = allItems.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
 
     itemsToSave.forEach(item => addProduct(item));
-
-    setShampoo(shampoo.map(item => ({ ...item, count: 0 })));
-    setConditioner(conditioner.map(item => ({ ...item, count: 0 })));
-    setBathsoap(bathsoap.map(item => ({ ...item, count: 0 })));
-    setDeodorantforwomen(deodorantforwomen.map(item => ({ ...item, count: 0 })));
-    setDeodorantformen(deodorantformen.map(item => ({ ...item, count: 0 })));
-    setSunprotection(sunprotection.map(item => ({ ...item, count: 0 })));
-    setShavingpreparationsaccessories(shavingpreparationsaccessories.map(item => ({ ...item, count: 0 })));
-    setToothpastesmouthwash(toothpastesmouthwash.map(item => ({ ...item, count: 0 })));
-    setToothbrushesdentalaccessories(toothbrushesdentalaccessories.map(item => ({ ...item, count: 0 })));
-    setCosmeticsfacialcare(cosmeticsfacialcare.map(item => ({ ...item, count: 0 })));
-    setHaircarestyling(haircarestyling.map(item => ({ ...item, count: 0 })));
-    setFemininehygieneabsorbentproducts(femininehygieneabsorbentproducts.map(item => ({ ...item, count: 0 })));
-    setCareaccessories(careaccessories.map(item => ({ ...item, count: 0 })));
-    setBodycare(bodycare.map(item => ({ ...item, count: 0 })));
-    setFirstaid(firstaid.map(item => ({ ...item, count: 0 })));
-    setVitaminsnutritionalsupplements(vitaminsnutritionalsupplements.map(item => ({ ...item, count: 0 })));
-    setAirperfume(airperfume.map(item => ({ ...item, count: 0 })));
-    setCandlesmatches(candlesmatches.map(item => ({ ...item, count: 0 })));
   };
   return (
     <div>
