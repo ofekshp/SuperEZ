@@ -13,6 +13,7 @@ const importImage = (imageName: string) => {
 
 const MeatFish: React.FC = () => {
   const { addProduct } = useBasket();
+  const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialChickenproducts = [
     { name: (<>כנפיים עוף<br />1 קילו</>), image: importImage("chicken_wings_cleaned.jpeg"), id: 6 },
@@ -158,8 +159,7 @@ const MeatFish: React.FC = () => {
     { name: (<>פילה נסיכת הנילוס קפוא<br />ארוז</>), image: importImage("sliced_nile_perch_fillet_goldag.jpeg"), id: 6 },
     { name: (<>דג הליבוט קפוא<br />ארוז</>), image: importImage("halibut_sliced_tray.jpeg"), id: 6 },
     { name: (<>דגי מקרל קפוא<br />ארוז</>), image: importImage("mackerel_fish.jpeg"), id: 6 },
-  ];
-  
+  ];  
 
   initialChickenproducts.sort((a, b) => {
     const nameA = a.name.props.children[0]; 
@@ -202,45 +202,85 @@ const MeatFish: React.FC = () => {
     const nameB = b.name.props.children[0];
     return nameA.localeCompare(nameB, 'he');
   });
-
-
-  const [chickenproducts, setChickenProducts] = useState<{ name: React.JSX.Element; image: string | null; count: number }[]>(
-    initialChickenproducts.map(chickenproducts => ({ ...chickenproducts, count: 0 }))
+  
+  const [chickenproducts, setChickenProducts] = useState<{ name: React.JSX.Element; image: string| null; count: number }[]>(
+    initialChickenproducts.map(item => {
+      const basketItem = savedBasket.find((p: { name: React.JSX.Element; quantity: number }) => p.name === item.name);
+      return {
+        ...item,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
   
   const [indiaProducts, setIndiaProducts] = useState<{ name: React.JSX.Element; image: string | null; count: number }[]>(
-    initialIndiaproducts.map(indiaProducts => ({ ...indiaProducts, count: 0 }))
+    initialIndiaproducts.map(item => {
+      const basketItem = savedBasket.find((p: { name: React.JSX.Element; quantity: number }) => p.name === item.name);
+      return {
+        ...item,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-
+  
   const [beefLambProducts, setBeefLambProducts] = useState<{ name: React.JSX.Element; image: string | null; count: number }[]>(
-    initialBeeflamb.map(beefLambProducts => ({ ...beefLambProducts, count: 0 }))
+    initialBeeflamb.map(item => {
+      const basketItem = savedBasket.find((p: { name: React.JSX.Element; quantity: number }) => p.name === item.name);
+      return {
+        ...item,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-
+  
   const [frozenBeefChickenProducts, setFrozenBeefChickenProducts] = useState<{ name: React.JSX.Element; image: string | null; count: number }[]>(
-    initialFrozenbeefchicken.map(frozenBeefChickenProducts => ({ ...frozenBeefChickenProducts, count: 0 }))
+    initialFrozenbeefchicken.map(item => {
+      const basketItem = savedBasket.find((p: { name: React.JSX.Element; quantity: number }) => p.name === item.name);
+      return {
+        ...item,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-
+  
   const [sausageProducts, setsausageProducts] = useState<{ name: React.JSX.Element; image: string | null; count: number }[]>(
-    initialSausage.map(sausageProducts => ({ ...sausageProducts, count: 0 }))
+    initialSausage.map(item => {
+      const basketItem = savedBasket.find((p: { name: React.JSX.Element; quantity: number }) => p.name === item.name);
+      return {
+        ...item,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-
+  
   const [freshFishProducts, setFreshFishProducts] = useState<{ name: React.JSX.Element; image: string | null; count: number }[]>(
-    initialFreshfish.map(freshFishProducts => ({ ...freshFishProducts, count: 0 }))
+    initialFreshfish.map(item => {
+      const basketItem = savedBasket.find((p: { name: React.JSX.Element; quantity: number }) => p.name === item.name);
+      return {
+        ...item,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-
+  
   const [frozenFishProducts, setFrozenFishProducts] = useState<{ name: React.JSX.Element; image: string | null; count: number }[]>(
-    initialFrozenfish.map(frozenFishProducts => ({ ...frozenFishProducts, count: 0 }))
+    initialFrozenfish.map(item => {
+      const basketItem = savedBasket.find((p: { name: React.JSX.Element; quantity: number }) => p.name === item.name);
+      return {
+        ...item,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-
-
+  
   const handleIncrement = (name: React.JSX.Element) => {
-    setChickenProducts(chickenproducts.map(chickenproducts =>   chickenproducts.name === name ? { ...chickenproducts, count: chickenproducts.count + 1 } : chickenproducts ));
-    setIndiaProducts(indiaProducts.map(indiaProducts => indiaProducts.name === name ? { ...indiaProducts, count: indiaProducts.count + 1 } : indiaProducts ));
-    setBeefLambProducts(beefLambProducts.map(beefLambProducts => beefLambProducts.name === name ? { ...beefLambProducts, count: beefLambProducts.count + 1 } : beefLambProducts ));
-    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(frozenBeefChickenProducts => frozenBeefChickenProducts.name === name ? { ...frozenBeefChickenProducts, count: frozenBeefChickenProducts.count + 1 } : frozenBeefChickenProducts ));
-    setsausageProducts(sausageProducts.map(sausageProducts => sausageProducts.name === name ? { ...sausageProducts, count: sausageProducts.count + 1 } : sausageProducts ));
-    setFreshFishProducts(freshFishProducts.map(freshFishProducts => freshFishProducts.name === name ? { ...freshFishProducts, count: freshFishProducts.count + 1 } : freshFishProducts ));
-    setFrozenFishProducts(frozenFishProducts.map(frozenFishProducts => frozenFishProducts.name === name ? { ...frozenFishProducts, count: frozenFishProducts.count + 1 } : frozenFishProducts ));
+    setChickenProducts(chickenproducts.map(item =>   item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setIndiaProducts(indiaProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setBeefLambProducts(beefLambProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setsausageProducts(sausageProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setFreshFishProducts(freshFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setFrozenFishProducts(frozenFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
   };
 
   const handleDecrement = (name: React.JSX.Element) => {
@@ -261,16 +301,9 @@ const MeatFish: React.FC = () => {
     const sausageToSave = sausageProducts.filter(sausageProducts => sausageProducts.count > 0).map(sausageProducts => ({ ...sausageProducts, quantity: sausageProducts.count }));
     const freshFishToSave = freshFishProducts.filter(freshFishProducts => freshFishProducts.count > 0).map(freshFishProducts => ({ ...freshFishProducts, quantity: freshFishProducts.count }));
     const frozenFishToSave = frozenFishProducts.filter(frozenFishProducts => frozenFishProducts.count > 0).map(frozenFishProducts => ({ ...frozenFishProducts, quantity: frozenFishProducts.count }));
+  
     const allMeatFish = [...chickenToSave, ...indiaToSave, ...beefLambToSave, ...frozenBeefChickenToSave,...sausageToSave, ...freshFishToSave, ...frozenFishToSave];
     allMeatFish.forEach(MeatFish => addProduct(MeatFish));
-
-    setChickenProducts(chickenproducts.map(chickenproducts => ({ ...chickenproducts, count: 0 })));
-    setIndiaProducts(indiaProducts.map(indiaProducts => ({ ...indiaProducts, count: 0 })));
-    setBeefLambProducts(beefLambProducts.map(beefLambProducts => ({ ...beefLambProducts, count: 0 })));
-    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(frozenBeefChickenProducts => ({ ...frozenBeefChickenProducts, count: 0 })));
-    setsausageProducts(sausageProducts.map(sausageProducts => ({ ...sausageProducts, count: 0 })));
-    setFreshFishProducts(freshFishProducts.map(freshFishProducts => ({ ...freshFishProducts, count: 0 })));
-    setFrozenFishProducts(frozenFishProducts.map(frozenFishProducts => ({ ...frozenFishProducts, count: 0 })));
   };
 
   return (

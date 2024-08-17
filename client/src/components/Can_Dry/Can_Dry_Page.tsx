@@ -13,6 +13,7 @@ const importImage = (imageName: string) => {
 
 const Can_Dry_Page: React.FC = () => {
   const { addProduct } = useBasket();
+  const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
 const initialBreads = [
     {
@@ -1626,6 +1627,8 @@ const initialPasta = [
     setPasta(pasta.map(pasta => ({ ...pasta, count: 0 })));
 
     
+    // setCans(cans.map(can => ({ ...can, count: 0 })));
+    // setDrys(drys.map(dry => ({ ...dry, count: 0 })));
   };
 
   return (
