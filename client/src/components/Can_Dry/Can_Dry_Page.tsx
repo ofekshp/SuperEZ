@@ -14,7 +14,7 @@ const importImage = (imageName: string) => {
 const Can_Dry_Page: React.FC = () => {
   const { addProduct } = useBasket();
 
-  const initialBreads = [
+const initialBreads = [
     {
       name: "לחם אחיד כהה פרוס",
       image: importImage('barman_dark_sliced_bread.jpeg'),
@@ -189,7 +189,7 @@ const Can_Dry_Page: React.FC = () => {
   },
   ];
 
-  const initialCakes = [
+const initialCakes = [
     {
       name: "מארז 10 עוגות אישיות קינדר דליס",
       image: importImage('kinder_delice_10pack.jpeg'),
@@ -1036,7 +1036,7 @@ const initialCookies = [
 ];
 
 const initialCrackers = [
-  {
+{
     name: "קרם קרקר",
     image: importImage('cream_cracker.jpeg'),
 },
@@ -1338,11 +1338,180 @@ const initialCrackers = [
 },
 ];
 
+const initialoil = [
+  { name: "שמן קנולה מזוכך", image: importImage('canola_oil_refined.jpeg') },
+  { name: "שמן קנולה מזוכך מועשר בנוגדי חימצון", image: importImage('canola_oil_antioxidants.jpeg') },
+  { name: "שמן קנולה פלוס מועשר באומגה 3", image: importImage('canola_oil_omega3.jpeg') },
+  { name: "שמן קנולה מזוכך מועשר בויטמין E", image: importImage('canola_oil_vitaminE.jpeg') },
+  { name: "שמן חמניות מזוכך", image: importImage('sunflower_oil_refined.jpeg') },
+  { name: "שמן חמניות מזוכך מועשר בנוגדי חימצון", image: importImage('sunflower_oil_antioxidants.jpeg') },
+  { name: "שמן חמניות פלוס אומגה 3", image: importImage('sunflower_oil_omega3.jpeg') },
+  { name: "שמן זרעי דלעת לא מזוכך", image: importImage('pumpkin_seed_oil_unrefined.jpeg') },
+  { name: "שמן זית כתית מעולה", image: importImage('olive_oil_la_espanola.jpeg') },
+  { name: "שמן זית קלאסי בקבוק לחיץ", image: importImage('olive_oil_classic_squeeze_bottle.jpeg') },
+  { name: "שמן זית כתית מעולה כבישה קרה סורי חומציות 0.5%", image: importImage('olive_oil_syrian_cold_press.jpeg') },
+  { name: "שמן זית כתית מעולה כבישה קרה פישולין", image: importImage('olive_oil_israeli_cold_press_picholine.jpeg') },
+  { name: "שמן זית כתית מעולה כבישה קרה פיקואל חומציות 0.5%", image: importImage('olive_oil_picual_cold_press.jpeg') },
+  { name: "תרסיס שמן קנולה מזוכך", image: importImage('canola_oil_spray_refined.jpeg') },
+  { name: "שמן סובין אורז", image: importImage('rice_bran_oil.jpeg') },
+  { name: "תרסיס שמן זית", image: importImage('olive_oil_spray_pam.jpeg') },
+  { name: "תרסיס שמן קנולה", image: importImage('canola_oil_spray.jpeg') },
+  { name: "תרסיס קנולה בטעם חמאה", image: importImage('butter_flavored_canola_oil_spray.jpeg') },
+  { name: "תרסיס שמן זית כתית מעולה", image: importImage('extra_virgin_olive_oil_spray_ez_ha_zayit.jpeg') },
+  { name: "שמן בוטנים בכבישה קרה", image: importImage('cold_pressed_peanut_oil.jpeg') },
+  { name: "תרסיס שמן חמניות מזוכך", image: importImage('sunflower_oil_spray.jpeg') },
+  { name: "שמן קנולה אורגני בכבישה קרה", image: importImage('organic_cold_pressed_canola_oil.jpeg') },
+  { name: "שמן שומשום כבישה קרה", image: importImage('cold_pressed_sesame_oil.jpeg') },
+  { name: "שמן שומשום לא מזוכך", image: importImage('unrefined_sesame_oil.jpeg') },
+  { name: "שמן אבוקדו בטעם מעודן", image: importImage('mild_avocado_oil.jpeg') },
+  { name: "שמן גרעיני ענבים", image: importImage('grape_seed_oil_casa_d_oro.jpeg') },
+  { name: "תרסיס שמן שומשום בכבישה קרה", image: importImage('cold_pressed_sesame_oil_spray_tamim.jpeg') },
+];
+
+const initialVinegarlemonjuice = [
+  { name: "חומצה אצטית למזון 5%", image: importImage('acetic_acid_for_food_5_percent_yachin.jpeg') },
+  { name: "חומץ 5%", image: importImage('vinegar_5_percent_osem.jpeg') },
+  { name: "חומץ בלסמי ממודנה", image: importImage('balsamic_vinegar_modena_yad_mordechai.jpeg') },
+  { name: "חומץ בלסמי איטלקי", image: importImage('italian_balsamic_vinegar_tamim.jpeg') },
+  { name: "חומץ פירות יער אדומים", image: importImage('red_berry_vinegar_tamim.jpeg') },
+  { name: "חומץ תפוחים אורגני", image: importImage('organic_apple_cider_vinegar_naturofood.jpeg') },
+  { name: "חומץ תפוחים", image: importImage('apple_cider_vinegar_top_brands.jpeg') },
+  { name: "חומץ יין עם הדרים", image: importImage('citrus_fruit_wine_vinegar_tamim.jpeg') },
+  { name: "חומץ בן יין אדום", image: importImage('red_wine_vinegar_tamim.jpeg') },
+  { name: "חומץ בן יין לבן", image: importImage('white_wine_vinegar_tamim.jpeg') },
+  { name: "מיץ לימון משומר מרכז לימונים", image: importImage('preserved_lemon_juice_osem.jpeg') },
+  { name: "מיץ לימון", image: importImage('lemon_juice_willy_food.jpeg') },
+  { name: "מיץ לימון מפוסטר", image: importImage('pasteurized_lemon_juice_yad_mordechai.jpeg') },
+  { name: "קרם בלסמי מצומצם", image: importImage('balsamic_reduction_cream_tamim.jpeg') },
+];
+
+const initialLegumesricecouscous = [
+  { name: "אורז בסמטי מלא", image: importImage('brown_basmati_rice_sugat.jpeg') },
+  { name: "אורז בסמטי קלאסי", image: importImage('classic_basmati_rice_sugat.jpeg') },
+  { name: "אורז חיש", image: importImage('quick_rice_sugat.jpeg') },
+  { name: "אורז יסמין קלאסי", image: importImage('classic_jasmine_rice_sugat.jpeg') },
+  { name: "אורז מלא ארוך", image: importImage('long_grain_brown_rice_sugat.jpeg') },
+  { name: "אורז מלא עגול", image: importImage('round_brown_rice_sugat.jpeg') },
+  { name: "אורז עגול", image: importImage('short_grain_rice_sugat.jpeg') },
+  { name: "אורז פרסי קלאסי", image: importImage('classic_persian_rice_sugat.jpeg') },
+  { name: "אורז תאילנדי", image: importImage('thai_rice_sugat.jpeg') },
+  { name: "עדשים אדומות", image: importImage('red_lentils_sugat.jpeg') },
+  { name: "עדשים ירוקות", image: importImage('green_lentils_sugat.jpeg') },
+  { name: "חיטה", image: importImage('wheat_sugat.jpeg') },
+  { name: "גריסים", image: importImage('grisim_sugat.jpeg') },
+  { name: "בורגול", image: importImage('bulgur_sugat.jpeg') },
+  { name: "גרישה - בורגול דק", image: importImage('fine_bulgur_sugat.jpeg') },
+  { name: "שעועית לבנה", image: importImage('white_bean_sugat.jpeg') },
+  { name: "קוסקוס בינוני", image: importImage('medium_couscous_ossem.jpeg') },
+  { name: "קוסקוס דק", image: importImage('thin_couscous_ossem.jpeg') },
+  { name: "פתיתי קוסקוס ישראלי", image: importImage('israeli_couscous_ossem.jpeg') },
+  { name: "קוסקוס עם קמח חיטה מלא", image: importImage('whole_wheat_couscous_ossem.jpeg') },
+  { name: "קוסקוס רגיל", image: importImage('regular_couscous_kuskus_mazon.jpeg') },
+  { name: "קוסקוס עבה", image: importImage('thick_couscous_kuskus_mazon.jpeg') },
+  { name: "קוסקוס מלא", image: importImage('whole_couscous_kuskus_mazon.jpeg') },
+  { name: "לקט לחמין", image: importImage('maya_chamin_mix.jpeg') },
+  { name: "שעועית מש", image: importImage('maya_mung_bean.jpeg') },
+  { name: "אורז לבן עגול לסושי", image: importImage('masterchef_sushi_rice.jpeg') },
+  { name: "אפונה יבשה", image: importImage('sugat_dry_peas.jpeg') },
+  { name: "גריסי פנינה", image: importImage('sugat_pearl_barley.jpeg') },
+  { name: "גרעיני תירס לפופקורן", image: importImage('sugat_popcorn_kernels.jpeg') },
+  { name: "זרעי פשתן אורגני", image: importImage('harduf_organic_flax_seeds.jpeg') },
+  { name: "חומוס", image: importImage('sugat_chickpeas.jpeg') },
+  { name: "חומוס ענק", image: importImage('sugat_large_chickpeas.jpeg') },
+  { name: "כוסמת", image: importImage('posulsky_buckwheat.jpeg') },
+  { name: "עדשים שחורות בלוגה", image: importImage('sugat_black_beluga_lentils.jpeg') },
+  { name: "פריקה - חיטה ירוקה קלויה", image: importImage('sugat_freeke_greens_wheat.jpeg') },
+  { name: "קינואה אדומה", image: importImage('maya_red_quinoa.jpeg') },
+  { name: "קינואה שחורה", image: importImage('maya_black_quinoa.jpeg') },
+  { name: "אורז בסמטי מלא אורגני", image: importImage('tevaot_organic_brown_basmati_rice.jpeg') },
+  { name: "אורז עגול מלא אורגני", image: importImage('tevaot_organic_round_rice.jpeg') },
+  { name: "אורז בסמטי לבן אורגני", image: importImage('tevaot_organic_white_basmati_rice.jpeg') },
+  { name: "אורז לבן ארוך אורגני", image: importImage('harduf_organic_long_grain_rice.jpeg') },
+  { name: "עדשים אדומות אורגניות", image: importImage('tevaot_organic_red_lentils.jpeg') },
+  { name: "עדשים צהובות אורגניות", image: importImage('tevaot_organic_yellow_lentils.jpeg') },
+  { name: "בורגול אורגני", image: importImage('tevaot_organic_bulgur.jpeg') },
+  { name: "גרגרי חומוס אורגני", image: importImage('harduf_organic_chickpeas.jpeg') },
+  { name: "שעועית אזוקי אורגני", image: importImage('harduf_organic_azuki_beans.jpeg') },
+  { name: "מג'דרה קינואה אורגנית", image: importImage('tevaot_organic_quinoa_mujadara.jpeg') },
+  { name: "מג'דרה אורגנית", image: importImage('tevaot_organic_mujadara.jpeg') },
+  { name: "גריסי פנינה אורגני", image: importImage('harduf_organic_pearl_barley.jpeg') },
+];
+const initialPasta = [
+  { name: "פסטה ספגטי מס׳ 8", image: importImage('osem_spaghetti_8.jpeg') },
+  { name: "פסטה צינורות", image: importImage('osem_tubes.jpeg') },
+  { name: "פסטה מסולסלים", image: importImage('osem_curls.jpeg') },
+  { name: "פסטה צדפים גדולים", image: importImage('osem_large_shells.jpeg') },
+  { name: "פסטה צדפים קטנים", image: importImage('osem_small_shells.jpeg') },
+  { name: "פסטה ספגטי מס׳ 7", image: importImage('osem_macaroni_7.jpeg') },
+  { name: "פסטה תלתלים", image: importImage('osem_curls_2.jpeg') },
+  { name: "פסטה קרניים בינוניות", image: importImage('osem_medium_horns.jpeg') },
+  { name: "פסטה ספגטי מהיר הכנה", image: importImage('osem_quick_spaghetti.jpeg') },
+  { name: "פסטה קסרצ'ה", image: importImage('osem_perfecto_casarecce.jpeg') },
+  { name: "פסטה פטוצ'יני", image: importImage('osem_perfecto_fettuccine.jpeg') },
+  { name: "פסטה פארפאלה", image: importImage('osem_perfecto_farfalline.jpeg') },
+  { name: "פסטה ווזוביוטי", image: importImage('osem_perfecto_vesuviotti.jpeg') },
+  { name: "פסטה רצ'יאולי", image: importImage('osem_perfecto_rechitelli.jpeg') },
+  { name: "פסטה רדיאטורי", image: importImage('osem_perfecto_radiatori.jpeg') },
+  { name: "טורטיגוליני מס' 83", image: importImage('barilla_tortiglioni_83.jpeg') },
+  { name: "פסטה מאצ'רוני", image: importImage('barilla_macaroni.jpeg') },
+  { name: "פסטה ספגטי מס' 9", image: importImage('barilla_bucatini_9.jpeg') },
+  { name: "פסטה פנה מחיטה מלאה", image: importImage('barilla_whole_wheat_penne.jpeg') },
+  { name: "פסטה קנלוני", image: importImage('barilla_cannelloni.jpeg') },
+  { name: "פסטה טליאטלה", image: importImage('barilla_tagliatelle.jpeg') },
+  { name: "פסטה פנה טריקולור", image: importImage('barilla_tricolor_penne.jpeg') },
+  { name: "פסטה ספגטי מס' 3", image: importImage('barilla_spaghettini_3.jpeg') },
+  { name: "פסטה ספגטי מס' 5", image: importImage('barilla_spaghetti_5.jpeg') },
+  { name: "פסטה ספגטי מס' 5 מחיטה מלאה", image: importImage('barilla_whole_wheat_spaghetti_5.jpeg') },
+  { name: "ניוקי", image: importImage('de_cecco_gnocchi.jpeg') },
+  { name: "פסטה פוזילי ללא גלוטן", image: importImage('barilla_gluten_free_fusilli.jpeg') },
+  { name: "לזניה ללא גלוטן", image: importImage('barilla_gluten_free_lasagna.jpeg') },
+  { name: "פסטה פנה ללא גלוטן", image: importImage('barilla_gluten_free_penne.jpeg') },
+  { name: "פסטה ספגטי מס' 5 ללא גלוטן", image: importImage('barilla_gluten_free_spaghetti_5.jpeg') },
+  { name: "פסטה פוזילי מחיטה מלאה", image: importImage('taaman_whole_wheat_fusilli.jpeg') },
+  { name: "פתיתים אפויים קוסקוס", image: importImage('osem_baked_couscous.jpeg') },
+  { name: "פתיתים אפויים טבעות", image: importImage('osem_baked_rings.jpeg') },
+  { name: "פתיתים אפויים כוכבים", image: importImage('osem_baked_stars.jpeg') },
+  { name: "פתיתים אפויים אורז", image: importImage('osem_baked_rice.jpeg') },
+  { name: "פתיתים אפויים עם בצל", image: importImage('osem_baked_onion.jpeg') },
+  { name: "פתיתים אפויים קוסקוס 3 צבעים", image: importImage('osem_baked_couscous_3_colors.jpeg') },
+  { name: "פתיתים 30% חיטה מלאה", image: importImage('osem_baked_whole_wheat_plus.jpeg') },
+  { name: "פתיתים אפויים מקמח מלא", image: importImage('sugat_baked_whole_wheat.jpeg') },
+  { name: "מיני קרוטונים מתובלים למרק ולסלט", image: importImage('osem_mini_croutons_400g.jpeg') },
+  { name: "קרוטונים אפויים בתיבול ביתי", image: importImage('osem_baked_croutons_home_style.jpeg') },
+  { name: "קרוטונים מתובלים למרק ולסלט", image: importImage('osem_croutons_400g.jpeg') },
+  { name: "קרוטונים אפויים לסלט מקמח כוסמין", image: importImage('master_chef_croutons_spelt.jpeg') },
+  { name: "אטריות דקות", image: importImage('osem_thin_noodles.jpeg') },
+  { name: "אטריות בינוניות", image: importImage('osem_medium_noodles.jpeg') },
+  { name: "אטריות דקיקות", image: importImage('osem_very_thin_noodles.jpeg') },
+  { name: "אטריות קלאסיות", image: importImage('osem_classic_noodles.jpeg') },
+  { name: "מיני קרוטונים למרק בתיבול שום, בצל ופטרוזיליה", image: importImage('master_chef_mini_croutons_garlic_onion_parsley.jpeg') },
+  { name: "קרוטונים לסלט בתיבול עגבניות ובזיליקום", image: importImage('master_chef_croutons_tomato_basil.jpeg') },
+  { name: "אטריות אורז דקות", image: importImage('master_chef_thin_rice_noodles.jpeg') },
+  { name: "נודלס אטריות ביצים", image: importImage('master_chef_egg_noodles.jpeg') },
+  { name: "אטריות ביצים רחבות", image: importImage('willy_food_wide_egg_noodles.jpeg') },
+  { name: "אטריות ביצים", image: importImage('willy_food_egg_noodles.jpeg') },
+  { name: "אטריות ביצים דקות להכנה מהירה", image: importImage('tomer_thin_egg_noodles.jpeg') },
+  { name: "אטריות עם עגבניות", image: importImage('taste_of_asia_tomato_noodles.jpeg') },
+  { name: "אטריות עם תרד", image: importImage('taste_of_asia_spinach_noodles.jpeg') },
+  { name: "עלי לזניה", image: importImage('perfecto_lasagna_sheets.jpeg') },
+  { name: "שקדי מרק בשקית", image: importImage('osem_soup_mandels_400g.jpeg') },
+  { name: "שקדי מרק במיכל", image: importImage('osem_soup_mandels_container.jpeg') },
+  { name: "אטריות שעועית מאסטר שף", image: importImage('master_chef_bean_noodles.jpeg') },
+  { name: "פסטה טריגאטלי", image: importImage('barilla_trigatli.jpeg') },
+  { name: "ספגטי מקמח כוסמין מלא אורגני", image: importImage('tevaot_organic_spelt_spaghetti.jpeg') },
+  { name: "פסטה אורגנית פנה", image: importImage('barilla_organic_penne_rigate.jpeg') },
+  { name: "פסטה ספגטי אורגני", image: importImage('barilla_organic_spaghetti.jpeg') },
+  { name: "שקדי מרק ללא גלוטן ללא תוספת סוכר", image: importImage('dagash_gluten_free_soup_mandels.jpeg') },
+
+];
   initialBreads.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCakes.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCookies.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCrackers.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-
+  initialoil.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialVinegarlemonjuice.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialLegumesricecouscous.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialPasta.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
 
   const [breads, setBreads] = useState<{ name: string; image: string | null; count: number }[]>(
@@ -1356,6 +1525,18 @@ const initialCrackers = [
   );
   const [crackers, setCrackers] = useState<{ name: string; image: string | null; count: number }[]>(
     initialCrackers.map(crackers => ({ ...crackers, count: 0 }))
+  );
+  const [oil, setOil] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialoil.map(oil => ({ ...oil, count: 0 }))
+  );
+  const [vinegarLemonjuice, setVinegarLemonjuice] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialVinegarlemonjuice.map(vinegarLemonjuice => ({ ...vinegarLemonjuice, count: 0 }))
+  );
+  const [legumesricecouscous, setLegumesricecouscous] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialLegumesricecouscous.map(legumesricecouscous => ({ ...legumesricecouscous, count: 0 }))
+  );
+  const [pasta, setPasta] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialPasta.map(pasta => ({ ...pasta, count: 0 }))
   );
 
 
@@ -1374,6 +1555,18 @@ const initialCrackers = [
 
     setCrackers(crackers.map(crackers =>
       crackers.name === name ? { ...crackers, count: crackers.count + 1 } : crackers
+    ));
+    setOil(oil.map(oil =>
+      oil.name === name ? { ...oil, count: oil.count + 1 } : oil
+    ));
+    setVinegarLemonjuice(vinegarLemonjuice.map(vinegarLemonjuice =>
+      vinegarLemonjuice.name === name ? { ...vinegarLemonjuice, count: vinegarLemonjuice.count + 1 } : vinegarLemonjuice
+    ));
+    setLegumesricecouscous(legumesricecouscous.map(legumesricecouscous =>
+      legumesricecouscous.name === name ? { ...legumesricecouscous, count: legumesricecouscous.count + 1 } : legumesricecouscous
+    ));
+    setPasta(pasta.map(pasta =>
+      pasta.name === name ? { ...pasta, count: pasta.count + 1 } : pasta
     ));
   
   };
@@ -1394,6 +1587,18 @@ const initialCrackers = [
     setCrackers(crackers.map(crackers =>
       crackers.name === name && crackers.count > 0 ? { ...crackers, count: crackers.count - 1 } : crackers
     ));
+    setOil(oil.map(oil =>
+      oil.name === name && oil.count > 0 ? { ...oil, count: oil.count - 1 } : oil
+    ));
+    setVinegarLemonjuice(vinegarLemonjuice.map(vinegarLemonjuice =>
+      vinegarLemonjuice.name === name && vinegarLemonjuice.count > 0 ? { ...vinegarLemonjuice, count: vinegarLemonjuice.count - 1 } : vinegarLemonjuice
+    ));
+    setLegumesricecouscous(legumesricecouscous.map(legumesricecouscous =>
+      legumesricecouscous.name === name && legumesricecouscous.count > 0 ? { ...legumesricecouscous, count: legumesricecouscous.count - 1 } : legumesricecouscous
+    ));
+    setPasta(pasta.map(pasta =>
+      pasta.name === name && pasta.count > 0 ? { ...pasta, count: pasta.count - 1 } : pasta
+    ));
   };
 
 
@@ -1402,16 +1607,25 @@ const initialCrackers = [
     const cakesToSave = cakes.filter(cakes => cakes.count > 0).map(cakes => ({ ...cakes, quantity: cakes.count }));
     const cookiesToSave = cookies.filter(cookies => cookies.count > 0).map(cookies => ({ ...cookies, quantity: cookies.count }));
     const crackersToSave = crackers.filter(crackers => crackers.count > 0).map(crackers => ({ ...crackers, quantity: crackers.count }));
+    const oilToSave = oil.filter(oil => oil.count > 0).map(oil => ({ ...oil, quantity: oil.count }));
+    const vinegarLemonjuiceToSave = vinegarLemonjuice.filter(vinegarLemonjuice => vinegarLemonjuice.count > 0).map(vinegarLemonjuice => ({ ...vinegarLemonjuice, quantity: vinegarLemonjuice.count }));
+    const legumesricecouscousToSave = legumesricecouscous.filter(legumesricecouscous => legumesricecouscous.count > 0).map(legumesricecouscous => ({ ...legumesricecouscous, quantity: legumesricecouscous.count }));
+    const pastaToSave = pasta.filter(pasta => pasta.count > 0).map(pasta => ({ ...pasta, quantity: pasta.count }));
 
 
-    const allCanDry = [...breadsToSave, ...cakesToSave, ...cookiesToSave,...crackersToSave ];
+    const allCanDry = [...breadsToSave, ...cakesToSave, ...cookiesToSave,...crackersToSave,...oilToSave,...vinegarLemonjuiceToSave,...legumesricecouscousToSave,...pastaToSave ];
     allCanDry.forEach(CanDry => addProduct(CanDry));
 
     setBreads(breads.map(breads => ({ ...breads, count: 0 })));
     setCakes(cakes.map(cakes => ({ ...cakes, count: 0 })));
     setCakes(cookies.map(cookies => ({ ...cookies, count: 0 })));
     setCrackers(crackers.map(crackers => ({ ...crackers, count: 0 })));
+    setOil(oil.map(oil => ({ ...oil, count: 0 })));
+    setVinegarLemonjuice(vinegarLemonjuice.map(vinegarLemonjuice => ({ ...vinegarLemonjuice, count: 0 })));
+    setLegumesricecouscous(legumesricecouscous.map(legumesricecouscous => ({ ...legumesricecouscous, count: 0 })));
+    setPasta(pasta.map(pasta => ({ ...pasta, count: 0 })));
 
+    
   };
 
   return (
@@ -1451,6 +1665,46 @@ const initialCrackers = [
           products={crackers}
           categoryTitle="פריכיות, צנימים וקרקרים"
           icon={<img alt="" src={importImage('crackers_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={oil}
+          categoryTitle="שמן, שמן זית ותרסיסי שמן"
+          icon={<img alt="" src={importImage('oil_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={vinegarLemonjuice}
+          categoryTitle="חומץ ומיץ לימון"
+          icon={<img alt="" src={importImage('vinegarLemonjuice_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={legumesricecouscous}
+          categoryTitle="קטניות, אורז וקוסקוס"
+          icon={<img alt="" src={importImage('legumesricecouscous_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={pasta}
+          categoryTitle="פסטה, אטריות ושקדי מרק"
+          icon={<img alt="" src={importImage('pasta_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}

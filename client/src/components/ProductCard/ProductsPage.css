@@ -12,6 +12,10 @@
   display: flex;
   justify-content: flex-end;
 }
+.multiline-text {
+  white-space: pre-wrap;
+}
+
 
 .products-page {
   padding: 100px;
