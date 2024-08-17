@@ -12,8 +12,8 @@ const importImage = (imageName: string) => {
 };
 
 const DeliPage: React.FC = () => {
-
   const { addProduct } = useBasket();
+  const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialMilk = [
     { name: (<>חלב בקרטון 3%<br />1 ל׳</>), image: importImage('milk_carton_3_percent_mehadrin.jpeg') },
@@ -1681,20 +1681,137 @@ const DeliPage: React.FC = () => {
   initialSausagespastrami.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialSalads.sort((a, b) => a.name.localeCompare(b.name, 'he'));
     
+const [milk, setMilk] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialMilk.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
 
-  const [milk, setMilk] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>( initialMilk.map(milk => ({ ...milk, count: 0 })) );
-  const [yogurtDelicacies, setYogurtDelicacies] = useState<{ name: string; image: any; count: number }[]>( initialYogurtdelicacies.map(yogurtDelicacies => ({ ...yogurtDelicacies, count: 0 })) );
-  const [yogurtDrink, setYogurtDrink] = useState<{ name: string; image: any; count: number }[]>(initialYogurtdrinking.map(yogurtDrink => ({ ...yogurtDrink, count: 0 }))); 
-  const [milkDelicaciesDesserts, setMilkDelicaciesDesserts] = useState<{ name: string; image: any; count: number }[]>(initialMilkdelicaciesdesserts.map(milkDelicaciesDesserts => ({ ...milkDelicaciesDesserts, count: 0 }))); 
-  const [softCheese, setSoftCheese] = useState<{ name: string; image: any; count: number }[]>(initialSoftcheeses.map(softCheese => ({ ...softCheese, count: 0 }))); 
-  const [semiHardCheese, setSemiHardCheese] = useState<{ name: string; image: any; count: number }[]>(initialSemihardcheeses.map(semiHardCheese => ({ ...semiHardCheese, count: 0 })));
-  const [yellowHardCheese, setYellowHardCheese] = useState<{ name: string; image: any; count: number }[]>( initialYellowhardcheeses.map(yellowHardCheese => ({ ...yellowHardCheese, count: 0 })) ); 
-  const [butterMargarine, setButterMargarine] = useState<{ name: string; image: any; count: number }[]>( initialButtermargarine.map(butterMargarine => ({ ...butterMargarine, count: 0 })) ); 
-  const [creamWhippedCreamCookingBaking, setCreamWhippedCreamCookingBaking] = useState<{ name: string; image: any; count: number }[]>( initialCreamwhippedcreamcookingbaking.map(creamWhippedCreamCookingBaking => ({ ...creamWhippedCreamCookingBaking, count: 0 })) );
-  const [chilledPasta, setChilledPasta] = useState<{ name: string; image: any; count: number }[]>(  initialChilledpasta.map(chilledPasta => ({ ...chilledPasta, count: 0 })) );
-  const [eggs, setEggs] = useState<{ name: string; image: any; count: number }[]>(  initialEggs.map(eggs => ({ ...eggs, count: 0 })) );
-  const [sausagesPastrami, setSausagespastrami] = useState<{ name: string; image: any; count: number }[]>(  initialSausagespastrami.map(sausagesPastrami => ({ ...sausagesPastrami, count: 0 })) );
-  const [salads, setSalads] = useState<{ name: string; image: any; count: number }[]>(  initialSalads.map(salads => ({ ...salads, count: 0 })) );
+const [yogurtDelicacies, setYogurtDelicacies] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialYogurtdelicacies.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [yogurtDrink, setYogurtDrink] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialYogurtdrinking.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [milkDelicaciesDesserts, setMilkDelicaciesDesserts] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialMilkdelicaciesdesserts.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [softCheese, setSoftCheese] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialSoftcheeses.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [semiHardCheese, setSemiHardCheese] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialSemihardcheeses.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [yellowHardCheese, setYellowHardCheese] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialYellowhardcheeses.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [butterMargarine, setButterMargarine] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialButtermargarine.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [creamWhippedCreamCookingBaking, setCreamWhippedCreamCookingBaking] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialCreamwhippedcreamcookingbaking.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [chilledPasta, setChilledPasta] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialChilledpasta.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [eggs, setEggs] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialEggs.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [sausagesPastrami, setSausagespastrami] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialSausagespastrami.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+const [salads, setSalads] = useState<{ name: React.JSX.Element|string; image: any; count: number }[]>(
+  initialSalads.map(item => {
+    const basketItem = savedBasket.find((p: { name: React.JSX.Element|string; quantity: number }) => p.name === item.name);
+    return {
+      ...item,
+      count: basketItem ? basketItem.quantity : 0,
+    };
+  })
+);
+
+
 
   const handleIncrement = (name: string, name1:React.JSX.Element) => {
     setMilk(milk.map(milk =>
@@ -1837,20 +1954,6 @@ const DeliPage: React.FC = () => {
     ];
   
     allDeli.forEach(Deli => addProduct(Deli));
-  
-    setMilk(milk.map(milk => ({ ...milk, count: 0 })));
-    setYogurtDelicacies(yogurtDelicacies.map(yogurtDelicacies => ({ ...yogurtDelicacies, count: 0 })));
-    setYogurtDrink(yogurtDrink.map(yogurtDrink => ({ ...yogurtDrink, count: 0 })));
-    setMilkDelicaciesDesserts(milkDelicaciesDesserts.map(milkDelicaciesDesserts => ({ ...milkDelicaciesDesserts, count: 0 })));
-    setSoftCheese(softCheese.map(softCheese => ({ ...softCheese, count: 0 })));
-    setSemiHardCheese(semiHardCheese.map(semiHardCheese => ({ ...semiHardCheese, count: 0 })));
-    setYellowHardCheese(yellowHardCheese.map(yellowHardCheese => ({ ...yellowHardCheese, count: 0 })));
-    setButterMargarine(butterMargarine.map(butterMargarine => ({ ...butterMargarine, count: 0 })));
-    setCreamWhippedCreamCookingBaking(creamWhippedCreamCookingBaking.map(creamWhippedCreamCookingBaking => ({ ...creamWhippedCreamCookingBaking, count: 0 })));
-    setChilledPasta(chilledPasta.map(chilledPasta => ({ ...chilledPasta, count: 0 })));
-    setEggs(eggs.map(eggs => ({ ...eggs, count: 0 })));
-    setSausagespastrami(sausagesPastrami.map(sausagesPastrami => ({ ...sausagesPastrami, count: 0 })));
-    setSalads(salads.map(salads => ({ ...salads, count: 0 })));
   };
   
 
