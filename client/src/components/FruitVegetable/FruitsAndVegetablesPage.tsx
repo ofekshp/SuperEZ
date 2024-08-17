@@ -16,7 +16,7 @@ const FruitsAndVegetablesPage: React.FC = () => {
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
   
   const initialFruits = [
-
+    
     {
       name: "בננה",
       image: importImage(`banana.jpeg`),
@@ -203,7 +203,8 @@ const FruitsAndVegetablesPage: React.FC = () => {
     },
     {
       name: "קישוא",
-      image: importImage(`zucchini.jpeg`)
+      image: importImage(`zucchini.jpeg`),
+      category: "ירקות ופירות טריים"
     },
     {
       name: "שעועית הילדה",
