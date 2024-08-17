@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import CartService from '../../services/cart_service.ts';
 
 interface Product {
-  name: string;
+  name: string |React.JSX.Element;
   quantity: number;
 }
 
