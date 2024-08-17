@@ -21,6 +21,7 @@ import PharmPage from './components/Pharm/PharmPage.tsx';
 import { BasketProvider } from './components/MyBasket/BasketContext.tsx';
 import SignInModal from './components/SignIn/SignIn.tsx';
 import SignUpModal from './components/SignUp/SignUp.tsx';
+import MyProfileModal from './components/MyProfile/MyProfile.tsx';
 
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -58,7 +59,9 @@ function App() {
           }
         />
         <Route path="/signup" element={<SignUpModal />} />
+        <Route path="/profile" element={<MyProfileModal />} />
         <Route path="/logout"/>
+    
         <Route path="reset-password"/>
         <Route path="/MeatFish" element={<MeatFish />} />
         <Route path="/Drinks" element={<Drinks />} />

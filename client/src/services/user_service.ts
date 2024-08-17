@@ -114,6 +114,68 @@ class UserService {
       return { success: false, message: 'Failed to reset password' };
     }
   };
+
+  getUserProfile = async () => {
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
+    const port = process.env.REACT_APP_SERVER_PORT;
+    const apiUrl = `${serverUrl}:${port}/users/profile`;
+    const userEmail = localStorage.getItem('userEmail');
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'email': userEmail || '', // Pass the user's email in the headers
+        },
+        credentials: 'include',
+      });
+      if (response.ok) {
+        const data = await response.json();
+        return data.user;
+      } else {
+        console.error('Error fetching user profile:', response.status);
+        return null;
+      }
+    } catch (error) {
+      console.error('Error fetching user profile:', error);
+      return null;
+    }
+  };
+
+ 
+  updateUserProfile = async (updatedUserData: {name: string; phone: string; password: string }) => {
+    const serverUrl = process.env.REACT_APP_SERVER_URL;
+    const port = process.env.REACT_APP_SERVER_PORT;
+    const apiUrl = `${serverUrl}:${port}/users/profile`;
+    const userEmail = localStorage.getItem('userEmail');
+  
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'email': userEmail || '',
+        },
+        credentials: 'include',
+        body: JSON.stringify(updatedUserData),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        return data.user;
+      } else {
+        const errorData = await response.json();
+        console.error('Error updating user profile:', errorData); // Log detailed error response
+        return null;
+      }
+    } catch (error) {
+      console.error('Error updating user profile:', error);
+      return null;
+    }
+  };
+  
+
+ 
 }
 
 export default UserService;
