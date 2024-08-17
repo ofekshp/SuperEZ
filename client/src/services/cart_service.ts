@@ -1,5 +1,5 @@
 interface Product {
-    name: string;
+    name: string| React.JSX.Element;
     quantity: number;
   }
   

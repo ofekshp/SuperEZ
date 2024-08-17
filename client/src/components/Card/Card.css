@@ -12,7 +12,8 @@
 .card img {
   width: 100px;
   height: 100px;
-  object-fit: cover;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .card-content {
@@ -26,6 +27,7 @@ h2 {
   font-size: 1.2rem;
   font-weight: bold;
   color: black;
+  text-align: center;
 }
 
 .buttons {
