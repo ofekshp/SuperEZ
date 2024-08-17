@@ -1,4 +1,4 @@
-const Cart = require('../models/cart');
+const Cart = require('../models/Cart');
 
 const getCart = async (req, res) => {
     try {
@@ -50,6 +50,9 @@ const removeFromCart = async (req, res) => {
       res.status(500).json({ message: error.message });
     }
   }
+
+
+  
   module.exports = {
     getCart,
     addToCart,

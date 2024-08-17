@@ -7,6 +7,7 @@ const productSchema = new mongoose.Schema({
 
 const cartSchema = new mongoose.Schema({
   userId: { type: String, required: true },
+  date:{type: String},
   products: [productSchema],
 });
 

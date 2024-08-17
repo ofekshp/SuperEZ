@@ -48,10 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/cart" element={<MyBasket />} />
-        <Route
-          path="/login"
-          element={
-            isUserLoggedIn ? (
+        <Route path="/login" element={ isUserLoggedIn ? (
               <Navigate to="/" />
             ) : (
               <SignInModal closeModal={() => {}} openSignUpModal={() => {}} setIsUserLoggedIn={setIsUserLoggedIn} />

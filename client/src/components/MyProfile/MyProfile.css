@@ -87,7 +87,7 @@ input {
     margin-top: 15px;
 }
 
-.save-button {
+.save-button-profile {
     color: white;
     background-color: #007bff;
     font-weight: 700;
@@ -99,7 +99,8 @@ input {
     text-align: center;
 }
 
-.save-button:hover {
+.save-button-profile 
+    :hover {
     background-color: #0056b3;
 }
 

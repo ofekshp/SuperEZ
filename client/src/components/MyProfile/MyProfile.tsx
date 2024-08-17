@@ -13,7 +13,8 @@ const MyProfileModal: React.FC<MyProfileModalProps> = ({ closeModal }) => {
   const [phone, setPhone] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [previousCarts, setPreviousCarts] = useState<string[]>([]);
-  
+  const uid = localStorage.getItem('user_id');
+
   const userService = new UserService();
 
   useEffect(() => {
@@ -113,7 +114,7 @@ const MyProfileModal: React.FC<MyProfileModalProps> = ({ closeModal }) => {
           </div>
           
           <div className="button-container">
-            <button type="submit" className="save-button">שמור שינויים</button>
+            <button type="submit" className="save-button-profile">שמור שינויים</button>
           </div>
         </form>
 
