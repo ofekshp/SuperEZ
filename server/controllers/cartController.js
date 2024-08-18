@@ -4,29 +4,19 @@ const getCart = async (req, res) => {
     try {
         const cart = await Cart.findOne({ userId: req.params.userId });
         const products = cart.products;
-        res.json(products);
+        res.status(200).json(products);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 }
 
 const addToCart = async (req, res) => {
-    const { userId, product } = req.body;
+    const { userId, products } = req.body;
     try {
-      let cart = await Cart.findOne({ userId });
-      if (!cart) {
-        cart = new Cart({ userId, products: [product] });
-      } else {
-        const existingProductIndex = cart.products.findIndex(p => p.name === product.name);
-        if (existingProductIndex > -1) {
-          cart.products[existingProductIndex].quantity += product.quantity;
-        } else {
-          cart.products.push(product);
-        }
-      } 
+      const cart = new Cart({ userId, products});
       await cart.save();
-      const products = cart.products;
-      res.json(products);
+      //const products = cart.products;
+      res.status(200).json(products);
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
@@ -45,7 +35,7 @@ const removeFromCart = async (req, res) => {
         await cart.save();
       }
       const products = cart.products;
-      res.json(products);
+      res.status(200).json(products);
     } catch (error) {
       res.status(500).json({ message: error.message });
     }

@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import SignInModal from "../SignIn/SignIn.tsx";
 import SignUpModal from "../SignUp/SignUp.tsx";
+import { useNavigate } from 'react-router-dom';
+import './MyBasket.css';
+import CartService from '../../services/cart_service.ts';
+
 
 const MyBasket: React.FC = () => {
   const { basketProducts, removeProduct } = useBasket();
@@ -23,6 +27,9 @@ const MyBasket: React.FC = () => {
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
   const currentDate = `${day}-${month}-${year}`;
+  const cartService = new CartService();
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const isLoggedIn = document.cookie.includes("isLoggedIn=true");
@@ -41,6 +48,17 @@ const MyBasket: React.FC = () => {
     setModalOpen(false);
     setTimeout(() => setSignUpOpen(true), 300);
   };
+
+  
+  const handleSubmit = async () => {
+    try{
+      const response = await cartService.getCheapCart(basketProducts);
+      navigate('/comparingCarts', { state: { superCarts: response } });
+      console.log(response);
+    }catch (error) {
+      console.error('Error add product:', error);
+    }
+  }
 
   return (
     <div className="my-basket" dir="rtl">
@@ -246,6 +264,9 @@ const MyBasket: React.FC = () => {
               />
             )}
             {signUpOpen && <SignUpModal closeModal={closeModal} />}
+          </div>
+          <div>
+          <button className="my-basket__order-button" onClick={handleSubmit}>הזמן עכשיו</button>
           </div>
         </div>
       </div>

@@ -3,14 +3,14 @@ import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import CartService from '../../services/cart_service.ts';
 
 interface Product {
-  name: string;
+  name: string |React.JSX.Element;
   quantity: number;
 }
 
 interface BasketContextType {
   basketProducts: Product[];
   addProduct: (product: Product) => void;
-  removeProduct: (productName: string) => void; 
+  removeProduct: (productName: string |React.JSX.Element) => void; 
 }
 
 const BasketContext = createContext<BasketContextType | undefined>(undefined);
@@ -41,7 +41,7 @@ export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
   };
 
-  const removeProduct = async (productName: string) => {
+  const removeProduct = async (productName) => {
     try {
       const updatedProducts = await cartService.removeProduct(productName);
       setBasketProducts(updatedProducts);

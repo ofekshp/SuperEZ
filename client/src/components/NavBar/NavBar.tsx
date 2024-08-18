@@ -117,6 +117,11 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
+            <Link to="/Baking" className="navbar-link">
+              מתוקים 
+            </Link>
+          </li>
+          <li>
             <Link to="/cleaning" className="navbar-link">
               ניקיון/חד"פ
             </Link>
