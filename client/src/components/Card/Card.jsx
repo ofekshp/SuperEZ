@@ -1,7 +1,7 @@
 import React from "react";
 import "../Card/Card.css";
 
-const ProductCard = ({ image, name, count, onIncrement, onDecrement, onSave, id }) => {
+const ProductCard = ({ image, name, count, onIncrement, onDecrement, onSave }) => {
   return (
     <div className="card">
       <img src={image} alt={name} />
