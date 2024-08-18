@@ -203,8 +203,7 @@ const FruitsAndVegetablesPage: React.FC = () => {
     },
     {
       name: "קישוא",
-      image: importImage(`zucchini.jpeg`),
-      category: "ירקות ופירות טריים"
+      image: importImage(`zucchini.jpeg`)
     },
     {
       name: "שעועית הילדה",

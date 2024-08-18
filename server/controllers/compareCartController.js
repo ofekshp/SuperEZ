@@ -12,7 +12,7 @@ const compareCart = async (req, res) => {
     const storeNull = [];
 
     for (const product of products) {
-      const dbProductCategory = await CompareCart.find({ category: product.category });
+      const dbProductCategory = await CompareCart.find({ category: product.id });
 
       for (const cart of carts) {
         let dbProduct;
@@ -30,7 +30,6 @@ const compareCart = async (req, res) => {
           if (dbProduct && dbProduct.prices[0]._doc[cart.name]) {
             break;
           }
-
           index++;
         }
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const compareCartSchema = new mongoose.Schema({
-  category:{
+  id:{
     type: String,
     required: true
   },
