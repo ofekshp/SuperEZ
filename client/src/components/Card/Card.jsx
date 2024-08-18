@@ -6,7 +6,7 @@ const ProductCard = ({ image, name, count, onIncrement, onDecrement, onSave }) =
     <div className="card">
       <img src={image} alt={name} />
       <div className="card-content">
-        <h2>{name}</h2>
+      <h2 dangerouslySetInnerHTML={{ __html: name }} />
         <div className="buttons">
           <svg
             xmlns="http://www.w3.org/2000/svg"
