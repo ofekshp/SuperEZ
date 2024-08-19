@@ -11,9 +11,32 @@ const compareCart = async (req, res) => {
 
     const storeNull = [];
 
-    for (const product of products) {
-      const dbProductCategory = await CompareCart.find({ category: product.id });
+    const getCategoryById = {
+      1: "ירקות ופירות טריים",
+      2: "פירות יבשים פיצוחים ואגוזים",
+      3: "תבלינים",
+      4: "חלב ביצים ותחליפים ומשקאות צמחיים",
+      5: "סלטים רטבים ממרחים",
+      6: "עוף בשר נקניקים ודגים",
+      7: "אורגני ובריאות",
+      8: "קפואים",
+      9: "שימורים",
+      10: "אפיה ובישול",
+      11: "אסיאתי",
+      12: "קטניות ודגנים",
+      13: "מתוקים וחטיפים",
+      14: "אחזקת הבית ובעלי חיים (אביזרי ניקיון, ניקוי כללי, אחסון קופסאות וכו׳)",
+      15: "משקאות",
+      16: "חד פעמי",
+      17: "פארם ותינוקות"
+    };
 
+    for (const product of products) {
+      console.log('product id:', product.id);
+      const categoryName = getCategoryById[product.id];
+      console.log('categoryName:', categoryName);
+      const dbProductCategory = await CompareCart.find({ category: categoryName });
+      console.log('dbProductCategory:', dbProductCategory);
       for (const cart of carts) {
         let dbProduct;
         let index = 0;
