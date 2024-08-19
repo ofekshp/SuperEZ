@@ -1860,20 +1860,8 @@ const initialFloursaltsugar = [
     const pastaToSave = pasta.filter(pasta => pasta.count > 0).map(pasta => ({ ...pasta, quantity: pasta.count }));
     const floursaltsugarToSave = floursaltsugar.filter(floursaltsugar => floursaltsugar.count > 0).map(floursaltsugar => ({ ...floursaltsugar, quantity: floursaltsugar.count }));
 
-
     const allCanDry = [...breadsToSave, ...cakesToSave, ...cookiesToSave,...crackersToSave,...oilToSave,...vinegarLemonjuiceToSave,...legumesricecouscousToSave,...pastaToSave,...floursaltsugarToSave ];
     allCanDry.forEach(CanDry => addProduct(CanDry));
-
-    setBreads(breads.map(breads => ({ ...breads, count: 0 })));
-    setCakes(cakes.map(cakes => ({ ...cakes, count: 0 })));
-    setCakes(cookies.map(cookies => ({ ...cookies, count: 0 })));
-    setCrackers(crackers.map(crackers => ({ ...crackers, count: 0 })));
-    setOil(oil.map(oil => ({ ...oil, count: 0 })));
-    setVinegarLemonjuice(vinegarLemonjuice.map(vinegarLemonjuice => ({ ...vinegarLemonjuice, count: 0 })));
-    setLegumesricecouscous(legumesricecouscous.map(legumesricecouscous => ({ ...legumesricecouscous, count: 0 })));
-    setPasta(pasta.map(pasta => ({ ...pasta, count: 0 })));
-    setFloursaltsugar(floursaltsugar.map(floursaltsugar => ({ ...floursaltsugar, count: 0 })));
-
   };
 
   return (
