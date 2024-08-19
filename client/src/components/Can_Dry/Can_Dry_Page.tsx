@@ -1633,10 +1633,6 @@ const initialFloursaltsugar = [
     image: importImage('piccata_quick_cooking_corn_flour_1kg.jpeg'),
   },
   {
-    name: "קמח מצה חמץ",
-    image: importImage('maya_chametz_matzo_meal_200g.jpeg'),
-  },
-  {
     name: "מטחנת מלח ים גבישי מהים האדום",
     image: importImage('red_sea_granular_salt_mill_250g.jpeg'),
   },
@@ -1689,19 +1685,15 @@ const initialFloursaltsugar = [
     image: importImage('vanilla_sugar_10x10g_hanamal.jpeg'),
   },
   {
-    name: "אבקת סוכר",
-    image: importImage('powdered_sugar_100g_maya.jpeg'),
-  },
-  {
     name: "סוכר בטעם וניל",
     image: importImage('vanilla_flavored_sugar_100g_maya.jpeg'),
   },
   {
-    name: "סוכר חום כהה לאפיה סוגת",
+    name: "סוכר חום כהה לאפיה",
     image: importImage('dark_brown_sugar_baking_1kg_sugat.jpeg'),
   },
   {
-    name: "קמח תפוחי אדמה מיה",
+    name: "קמח תפוחי אדמה",
     image: importImage('potato_flour_500g_maya.jpeg'),
   },
   {
@@ -1709,16 +1701,8 @@ const initialFloursaltsugar = [
     image: importImage('organic_cane_sugar_1kg_haraduf.jpeg'),
   },
   {
-    name: "סוכר קנים אורגני",
-    image: importImage('organic_cane_sugar_1kg_tevaot.jpeg'),
-  },
-  {
     name: "סוכר קוקוס אורגני",
     image: importImage('organic_coconut_sugar_300g_tevaot.jpeg'),
-  },
-  {
-    name: "סוכר קוקוס אורגני Co Co Sugar",
-    image: importImage('organic_coconut_sugar_454g_co_co_sugar.jpeg'),
   },
   {
     name: "קמח תירס ללא גלוטן",
@@ -1742,6 +1726,392 @@ const initialFloursaltsugar = [
   },
 ];
 
+const initialCoffeedrinkingpowders = [
+  {
+    name: "קפה שחור",
+    image: importImage('jacobs_black_coffee_200g.jpeg'),
+  },
+  {
+    name: "קפה נמס טייסטרס צ'ויס",
+    image: importImage('nescafe_tasters_choice_200g.jpeg'),
+  },
+  {
+    name: "קפה נמס טייסטרס צ'ויס בריסטה",
+    image: importImage('nescafe_tasters_choice_barista_180g.jpeg'),
+  },
+  {
+    name: "קפה נמס טייסטרס צ'ויס נטול קפאין",
+    image: importImage('nescafe_tasters_choice_decaf_200g.jpeg'),
+  },
+  {
+    name: "קפה נמס מגורען רד מאג",
+    image: importImage('nescafe_red_mug_200g.jpeg'),
+  },
+  {
+    name: "קפה נמס מיובש בתוספת קפה קלוי",
+    image: importImage('nescafe_gold_200g.jpeg'),
+  },
+  {
+    name: "נסקפה טייסטרס צ'ויס רוסטרי קלייה בהירה טעם עדין",
+    image: importImage('nescafe_tasters_choice_roastery_light_roast_95g.jpeg'),
+  },
+  {
+    name: "מנות אישיות קפה נמס טייסטרס צ'ויס",
+    image: importImage('nescafe_tasters_choice_individual_packs_20.jpeg'),
+  },
+  {
+    name: "קפה טורקי",
+    image: importImage('elite_turkish_coffee_200g.jpeg'),
+  },
+  {
+    name: "קפה טורקי עם הל",
+    image: importImage('elite_turkish_coffee_with_cardamom_100g.jpeg'),
+  },
+  {
+    name: "מנות אישיות קפה טורקי",
+    image: importImage('elite_turkish_coffee_individual_packs_24.jpeg'),
+  },
+  {
+    name: "קפה טורקי קלוי וטחון",
+    image: importImage('elite_turkish_coffee_roasted_1kg.jpeg'),
+  },
+  {
+    name: "קפה נמס עלית",
+    image: importImage('elite_instant_coffee_200g.jpeg'),
+  },
+  {
+    name: "מנות אישיות קפה נמס",
+    image: importImage('elite_instant_coffee_on_the_go_28_packs.jpeg'),
+  },
+  {
+    name: "PLATINUM קפה נמס קלאסיק",
+    image: importImage('elite_platinum_classic_200g.jpeg'),
+  },
+  {
+    name: "PLATINUM ברזילאי קפה נמס",
+    image: importImage('elite_platinum_brazil_200g.jpeg'),
+  },
+  {
+    name: "PLATINUM קפה נמס נטול קפאין",
+    image: importImage('elite_platinum_decaf_200g.jpeg'),
+  },
+  {
+    name: "אבקה להכנת משקה בטעם וניל",
+    image: importImage('pediasure_vanilla_powder_400g.jpeg'),
+  },
+  {
+    name: "קפה פילטר טחון וקלוי מוקה",
+    image: importImage('elite_filter_coffee_mocha_no1_500g.jpeg'),
+  },
+  {
+    name: "שוקולית",
+    image: importImage('elite_shokolit_500g.jpeg'),
+  },
+  {
+    name: "אבקה להכנת משקה אייס קפה בטעם קלאסי",
+    image: importImage('elite_ice_coffee_powder_classic_8_units.jpeg'),
+  },
+  {
+    name: "קפה טורקי נטול קפאין",
+    image: importImage('hag_turkish_coffee_decaf_200g.jpeg'),
+  },
+  {
+    name: "קפה נמס נטול קפאין",
+    image: importImage('hag_instant_coffee_decaf_200g.jpeg'),
+  },
+  {
+    name: "קפה שחור עם הל",
+    image: importImage('al_nakhla_black_coffee_with_cardamom_250g.jpeg'),
+  },
+  {
+    name: "קפה שחור בלי הל",
+    image: importImage('al_nakhla_black_coffee_without_cardamom_250g.jpeg'),
+  },
+  {
+    name: "אבקה להכנת משקה על בסיס עולש",
+    image: importImage('chicoree_leroux_100g.jpeg'),
+  },
+  {
+    name: "חלבית מלבין קפה חלבי",
+    image: importImage('elite_coffee_creamer_350g.jpeg'),
+  },
+  {
+    name: "מלבין קפה",
+    image: importImage('complete_coffee_creamer_400g.jpeg'),
+  },
+  {
+    name: "אבקה להכנת משקה קפה בטעם אגוזי לוז",
+    image: importImage('elite_hazelnut_coffee_powder_10_units.jpeg'),
+  },
+  {
+    name: "אבקה להכנת משקה קפה בטעם וניל",
+    image: importImage('elite_vanilla_coffee_powder_10_units.jpeg'),
+  },
+  {
+    name: "פולי קפה בלנד הבית",
+    image: importImage('elite_house_blend_coffee_beans_450g.jpeg'),
+  },
+  {
+    name: "פולי קפה קלויים בקלייה מקומית עוצמה 10",
+    image: importImage('elite_local_roasted_coffee_beans_1kg.jpeg'),
+  },
+  {
+    name: "אבקה להכנת משקה חלב בטעם שוקו",
+    image: importImage('mia_chocolate_drink_powder_500g.jpeg'),
+  },
+];
+
+const initialCoffeecapsules = [
+    {
+      name: "קפסולות סאני דיי עוצמה 5",
+      image: importImage('starbucks_sunny_day_intensity_5.jpeg'),
+    },
+    {
+      name: "קפסולות בלונד עוצמה 6",
+      image: importImage('starbucks_blonde_intensity_6.jpeg'),
+    },
+    {
+      name: "קפסולות קולומביה עוצמה 7",
+      image: importImage('starbucks_colombia_intensity_7.jpeg'),
+    },
+    {
+      name: "קפסולות פייק פלייס עוצמה 7",
+      image: importImage('starbucks_pike_place_intensity_7.jpeg'),
+    },
+    {
+      name: "קפסולות האוס בלנד לונגו עוצמה 8",
+      image: importImage('starbucks_house_blend_lungo_intensity_8.jpeg'),
+    },
+    {
+      name: "קפסולות ורונה ריסטרטו עוצמה 10",
+      image: importImage('starbucks_verona_ristretto_intensity_10.jpeg'),
+    },
+    {
+      name: "קפסולות אספרסו נטול עוצמה 11",
+      image: importImage('starbucks_espresso_decaf_intensity_11.jpeg'),
+    },
+    {
+      name: "קפסולות אספרסו עוצמה 11",
+      image: importImage('starbucks_espresso_intensity_11.jpeg'),
+    },
+    {
+      name: "קפסולות איטלאן סטייל רוסט עוצמה 11",
+      image: importImage('starbucks_italian_style_roast_intensity_11.jpeg'),
+    },
+    {
+      name: "קפסולות בטעם וניל עוצמה 5",
+      image: importImage('starbucks_vanilla_intensity_5.jpeg'),
+    },
+    {
+      name: "קפסולות בטעם קרמל עוצמה 5",
+      image: importImage('starbucks_caramel_intensity_5.jpeg'),
+    },
+    {
+      name: "קפסולות אספרסו קלאסיקו",
+      image: importImage('jacobs_espresso_classico.jpeg'),
+    },
+    {
+      name: "קפסולות אספרסו לונגו",
+      image: importImage('jacobs_espresso_lungo.jpeg'),
+    },
+    {
+      name: "קפסולות אספרסו אינטנסו",
+      image: importImage('jacobs_espresso_intenso.jpeg'),
+    },
+    {
+      name: "קפסולות אספרסו ריסטרטו",
+      image: importImage('jacobs_espresso_ristretto.jpeg'),
+    },
+    {
+      name: "קפסולות קפה נטול קפאין",
+      image: importImage('elite_decaf_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה 100% ברזיל",
+      image: importImage('elite_brazil_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה עדין וקטיפתי",
+      image: importImage('elite_mild_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה אספרסו עשיר וארומטי",
+      image: importImage('elite_rich_aromatic_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה חזק ועשיר",
+      image: importImage('elite_strong_rich_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה 100% גואטמלה",
+      image: importImage('elite_guatemala_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה חזק ועוצמתי",
+      image: importImage('elite_powerful_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה חזק במיוחד",
+      image: importImage('elite_extra_strong_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה חזק אש",
+      image: importImage('elite_fire_strong_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה בטעם וניל",
+      image: importImage('elite_vanilla_flavored_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה בטעם אגוזי לוז",
+      image: importImage('elite_hazelnut_flavored_espresso.jpeg'),
+    },
+    {
+      name: "קפסולות קפה עם הל",
+      image: importImage('nahla_coffee_with_cardamom.jpeg'),
+    },
+    {
+      name: "קפסולות ספלנדיד להכנת משקה בטעם שוקולטה",
+      image: importImage('splendid_chocolate_drink_capsules.jpeg'),
+    },
+];
+
+const initialTea = [
+    {
+      name: "תה ויסוצקי קלאסי",
+      image: importImage('wissotzky_classic_100.jpeg'),
+    },
+    {
+      name: "תה ויסוצקי טעם מעודן",
+      image: importImage('wissotzky_refined_flavor.jpeg'),
+    },
+    {
+      name: "תה ארל גריי",
+      image: importImage('wissotzky_earl_grey.jpeg'),
+    },
+    {
+      name: "תה עלים ארל גריי",
+      image: importImage('wissotzky_earl_grey_leaves.jpeg'),
+    },
+    {
+      name: "תה ירוק עלים",
+      image: importImage('wissotzky_green_tea_leaves.jpeg'),
+    },
+    {
+      name: "תה קלאסי עם נגיעות נענע",
+      image: importImage('wissotzky_classic_mint.jpeg'),
+    },
+    {
+      name: "תה צ'אי מסאלה",
+      image: importImage('wissotzky_chai_masala.jpeg'),
+    },
+    {
+      name: "תה צ'אי קרמל מלוח",
+      image: importImage('wissotzky_chai_salted_caramel.jpeg'),
+    },
+    {
+      name: "תה צ'אי שקדים",
+      image: importImage('wissotzky_chai_almond.jpeg'),
+    },
+    {
+      name: "תה צ'אי מוקה",
+      image: importImage('wissotzky_chai_mocha.jpeg'),
+    },
+    {
+      name: "צ'אי וניל והל",
+      image: importImage('wissotzky_vanilla_cardamom_chai.jpeg'),
+    },
+    {
+      name: "תערובת תה שחור עם הל",
+      image: importImage('wissotzky_black_tea_cardamom.jpeg'),
+    },
+    {
+      name: "תה נענע",
+      image: importImage('wissotzky_mint_tea.jpeg'),
+    },
+    {
+      name: "תה ירוק סיני קלאסי",
+      image: importImage('wissotzky_chinese_green_tea.jpeg'),
+    },
+    {
+      name: "תה ירוק לימונית ולואיזה",
+      image: importImage('wissotzky_green_lemon_louisa.jpeg'),
+    },
+    {
+      name: "תה ירוק נענע",
+      image: importImage('wissotzky_green_mint.jpeg'),
+    },
+    {
+      name: "תה ירוק לימונית ולואיזה בתוספת עלי סטיביה",
+      image: importImage('wissotzky_green_stevia_lemon_louisa.jpeg'),
+    },
+    {
+      name: "תה ירוק יסמין",
+      image: importImage('wissotzky_green_jasmine.jpeg'),
+    },
+    {
+      name: "תה ירוק לימונית וג'ינג'ר",
+      image: importImage('wissotzky_green_lemon_ginger.jpeg'),
+    },
+    {
+      name: "תה ירוק ארל גריי",
+      image: importImage('wissotzky_green_earl_grey.jpeg'),
+    },
+    {
+      name: "תה ירוק מרווה",
+      image: importImage('wissotzky_green_sage.jpeg'),
+    },
+    {
+      name: "תה ירוק קמומיל",
+      image: importImage('wissotzky_green_chamomile.jpeg'),
+    },
+    {
+      name: "תה ירוק צ'אי מסאלה",
+      image: importImage('wissotzky_green_chai_masala.jpeg'),
+    },
+    {
+      name: "תה ירוק וניל",
+      image: importImage('wissotzky_green_vanilla.jpeg'),
+    },
+    {
+      name: "תה ירוק ג'ינג'ר חריף",
+      image: importImage('wissotzky_green_spicy_ginger.jpeg'),
+    },
+    {
+      name: "תה ירוק בטעם קינמון ודבש",
+      image: importImage('wissotzky_green_cinnamon_honey.jpeg'),
+    },
+    {
+      name: "תה ירוק מנגו",
+      image: importImage('wissotzky_green_mango.jpeg'),
+    },
+    {
+      name: "תה ירוק תפוז, ג'ינג'ר וכורכום",
+      image: importImage('wissotzky_green_orange_ginger_turmeric.jpeg'),
+    },
+    {
+      name: "תה ירוק עם צמחים סגולים בטעם אוכמניות ואסאי",
+      image: importImage('wissotzky_green_blueberry_acai.jpeg'),
+    },
+    {
+      name: "תה ירוק קינמון, ג'ינג'ר וכורכום עם מאצ'ה יפנית",
+      image: importImage('wissotzky_green_cinnamon_ginger_turmeric_matcha.jpeg'),
+    },
+    {
+      name: "תה ירוק לימונית וג'ינג'ר עם ויטמינים C ו- D",
+      image: importImage('wissotzky_plus_green_lemon_ginger_vitamins.jpeg'),
+    },
+    {
+      name: "תה ירוק נענע עם ויטמינים C ו- D",
+      image: importImage('wissotzky_plus_green_mint_vitamins.jpeg'),
+    },
+];
+const initialTeainfusions = [
+  {
+    name: "תה ויסוצקי קלאסי",
+    image: importImage('wissotzky_classic_100.jpeg'),
+  },
+];
   initialBreads.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCakes.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCookies.sort((a, b) => a.name.localeCompare(b.name, 'he'));
@@ -1751,6 +2121,10 @@ const initialFloursaltsugar = [
   initialLegumesricecouscous.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialPasta.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialFloursaltsugar.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialCoffeedrinkingpowders.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialCoffeecapsules.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialTea.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialTeainfusions.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
 
   const [breads, setBreads] = useState<{ name: string; image: string | null; count: number }[]>(
@@ -1779,6 +2153,18 @@ const initialFloursaltsugar = [
   );
   const [floursaltsugar, setFloursaltsugar] = useState<{ name: string; image: string | null; count: number }[]>(
     initialFloursaltsugar.map(floursaltsugar => ({ ...floursaltsugar, count: 0 }))
+  );
+  const [coffeedrinkingpowders, setCoffeedrinkingpowders] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialCoffeedrinkingpowders.map(coffeedrinkingpowders => ({ ...coffeedrinkingpowders, count: 0 }))
+  );
+  const [coffeecapsules, setCoffeecapsules] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialCoffeecapsules.map(coffeecapsules => ({ ...coffeecapsules, count: 0 }))
+  );
+  const [tea, setTea] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialTea.map(tea => ({ ...tea, count: 0 }))
+  );
+  const [teainfusions, setTeainfusions] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialTeainfusions.map(teainfusions => ({ ...teainfusions, count: 0 }))
   );
 
 
@@ -1813,6 +2199,18 @@ const initialFloursaltsugar = [
     setFloursaltsugar(floursaltsugar.map(floursaltsugar =>
       floursaltsugar.name === name ? { ...floursaltsugar, count: floursaltsugar.count + 1 } : floursaltsugar
     ));
+    setCoffeedrinkingpowders(coffeedrinkingpowders.map(coffeedrinkingpowders =>
+      coffeedrinkingpowders.name === name ? { ...coffeedrinkingpowders, count: coffeedrinkingpowders.count + 1 } : coffeedrinkingpowders
+    ));
+    setCoffeecapsules(coffeecapsules.map(coffeecapsules =>
+      coffeecapsules.name === name ? { ...coffeecapsules, count: coffeecapsules.count + 1 } : coffeecapsules
+    ));
+    setTea(tea.map(tea =>
+      tea.name === name ? { ...tea, count: tea.count + 1 } : tea
+    ));
+    setTeainfusions(teainfusions.map(teainfusions =>
+      teainfusions.name === name ? { ...teainfusions, count: teainfusions.count + 1 } : teainfusions
+    ));
   };
 
 
@@ -1846,6 +2244,18 @@ const initialFloursaltsugar = [
     setFloursaltsugar(floursaltsugar.map(floursaltsugar =>
       floursaltsugar.name === name && floursaltsugar.count > 0 ? { ...floursaltsugar, count: floursaltsugar.count - 1 } : floursaltsugar
     ));
+    setCoffeedrinkingpowders(coffeedrinkingpowders.map(coffeedrinkingpowders =>
+      coffeedrinkingpowders.name === name && coffeedrinkingpowders.count > 0 ? { ...coffeedrinkingpowders, count: coffeedrinkingpowders.count - 1 } : coffeedrinkingpowders
+    ));
+    setCoffeecapsules(coffeecapsules.map(coffeecapsules =>
+      coffeecapsules.name === name && coffeecapsules.count > 0 ? { ...coffeecapsules, count: coffeecapsules.count - 1 } : coffeecapsules
+    ));
+    setTea(tea.map(tea =>
+      tea.name === name && tea.count > 0 ? { ...tea, count: tea.count - 1 } : tea
+    ));
+    setTeainfusions(teainfusions.map(teainfusions =>
+      teainfusions.name === name && teainfusions.count > 0 ? { ...teainfusions, count: teainfusions.count - 1 } : teainfusions
+    ));
   };
 
 
@@ -1859,9 +2269,13 @@ const initialFloursaltsugar = [
     const legumesricecouscousToSave = legumesricecouscous.filter(legumesricecouscous => legumesricecouscous.count > 0).map(legumesricecouscous => ({ ...legumesricecouscous, quantity: legumesricecouscous.count }));
     const pastaToSave = pasta.filter(pasta => pasta.count > 0).map(pasta => ({ ...pasta, quantity: pasta.count }));
     const floursaltsugarToSave = floursaltsugar.filter(floursaltsugar => floursaltsugar.count > 0).map(floursaltsugar => ({ ...floursaltsugar, quantity: floursaltsugar.count }));
+    const coffeedrinkingpowdersToSave = coffeedrinkingpowders.filter(coffeedrinkingpowders => coffeedrinkingpowders.count > 0).map(coffeedrinkingpowders => ({ ...coffeedrinkingpowders, quantity: coffeedrinkingpowders.count }));
+    const coffeecapsulesToSave = coffeecapsules.filter(coffeecapsules => coffeecapsules.count > 0).map(coffeecapsules => ({ ...coffeecapsules, quantity: coffeecapsules.count }));
+    const teaToSave = tea.filter(tea => tea.count > 0).map(tea => ({ ...tea, quantity: tea.count }));
+    const teainfusionsToSave = teainfusions.filter(teainfusions => teainfusions.count > 0).map(teainfusions => ({ ...teainfusions, quantity: teainfusions.count }));
 
 
-    const allCanDry = [...breadsToSave, ...cakesToSave, ...cookiesToSave,...crackersToSave,...oilToSave,...vinegarLemonjuiceToSave,...legumesricecouscousToSave,...pastaToSave,...floursaltsugarToSave ];
+    const allCanDry = [...breadsToSave, ...cakesToSave, ...cookiesToSave,...crackersToSave,...oilToSave,...vinegarLemonjuiceToSave,...legumesricecouscousToSave,...pastaToSave,...floursaltsugarToSave,...coffeedrinkingpowdersToSave,...coffeecapsulesToSave,...teaToSave,...teainfusionsToSave ];
     allCanDry.forEach(CanDry => addProduct(CanDry));
 
     setBreads(breads.map(breads => ({ ...breads, count: 0 })));
@@ -1873,6 +2287,10 @@ const initialFloursaltsugar = [
     setLegumesricecouscous(legumesricecouscous.map(legumesricecouscous => ({ ...legumesricecouscous, count: 0 })));
     setPasta(pasta.map(pasta => ({ ...pasta, count: 0 })));
     setFloursaltsugar(floursaltsugar.map(floursaltsugar => ({ ...floursaltsugar, count: 0 })));
+    setCoffeedrinkingpowders(coffeedrinkingpowders.map(coffeedrinkingpowders => ({ ...coffeedrinkingpowders, count: 0 })));
+    setCoffeecapsules(coffeecapsules.map(coffeecapsules => ({ ...coffeecapsules, count: 0 })));
+    setTea(tea.map(tea => ({ ...tea, count: 0 })));
+    setTeainfusions(teainfusions.map(teainfusions => ({ ...teainfusions, count: 0 })));
 
   };
 
@@ -1963,6 +2381,46 @@ const initialFloursaltsugar = [
           products={floursaltsugar}
           categoryTitle="קמח, מלח וסוכר"
           icon={<img alt="" src={importImage('floursaltsugar_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={coffeedrinkingpowders}
+          categoryTitle="קפה ואבקות שתיה"
+          icon={<img alt="" src={importImage('coffeedrinkingpowders_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={coffeecapsules}
+          categoryTitle="קפסולות קפה"
+          icon={<img alt="" src={importImage('coffeecapsules_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={tea}
+          categoryTitle="תה"
+          icon={<img alt="" src={importImage('tea_icon.png')} />}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
+      </div>
+      <div>
+        <ProductsPage
+          products={teainfusions}
+          categoryTitle="חליטות תה"
+          icon={<img alt="" src={importImage('teainfusions_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
