@@ -17,7 +17,7 @@ const DeliPage: React.FC = () => {
 
   const initialMilk = [
     { 
-      name: "חלב בקרטון 3%<br/>1 ל׳", 
+      name: "חלב בקרטון 3% 1 ל׳", 
       image: importImage('milk_carton_3_percent_mehadrin.jpeg'), 
       id: 4,
     },
@@ -37,7 +37,7 @@ const DeliPage: React.FC = () => {
       id: 4,
     },
     { 
-      name: "חלב בקרטון 3%<br/>1.5 ל׳", 
+      name: "חלב בקרטון 3% 1.5 ל׳", 
       image: importImage('milk_carton_3_percent_1.5_liters.jpeg'), 
       id: 4,
     },
@@ -57,7 +57,7 @@ const DeliPage: React.FC = () => {
       id: 4,
     },
     { 
-      name: "חלב 3% בקרטון<br/>2 ל׳", 
+      name: "חלב 3% בקרטון 2 ל׳", 
       image: importImage('milk_carton_3_percent_2_liters.jpeg'), 
       id: 4,
     },
@@ -67,12 +67,12 @@ const DeliPage: React.FC = () => {
       id: 4,
     },
     { 
-      name: "משקה רוויון 1.5%<br/>1 ל׳", 
+      name: "משקה רוויון 1.5% 1 ל׳", 
       image: importImage('buttermilk_drink_1.5_percent.jpeg'), 
       id: 4,
     },
     { 
-      name: "משקה רוויון 1.5%<br/>500 מל׳", 
+      name: "משקה רוויון 1.5% 500 מל׳", 
       image: importImage('buttermilk_drink_1.5_percent_500ml.jpeg'), 
       id: 4,
     },
