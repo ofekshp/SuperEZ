@@ -1508,7 +1508,238 @@ const initialPasta = [
 ];
 
 const initialFloursaltsugar = [
-  { name: "פסטה ספגטי מס׳ 8", image: importImage('osem_spaghetti_8.jpeg') },
+  {
+    name: "סוכר לבן",
+    image: importImage('white_sugar_1kg_sugat.jpeg'),
+  },
+  {
+    name: "סוכר חום דמררה קלאסי",
+    image: importImage('brown_demerara_sugar_1kg_sugat.jpeg'),
+  },
+  {
+    name: "סוכר גולדן קלאסי",
+    image: importImage('golden_sugar_1kg_sugat.jpeg'),
+  },
+  {
+    name: "קוביות סוכר",
+    image: importImage('sugar_cubes_500g.jpeg'),
+  },
+  {
+    name: "מלח שולחן",
+    image: importImage('table_salt_1kg_salit.jpeg'),
+  },
+  {
+    name: "מלח רגיל למליחת בשר ובישול",
+    image: importImage('regular_salt_1kg_salit.jpeg'),
+  },
+  {
+    name: "מלח עדין",
+    image: importImage('fine_salt_1kg_melach_haaretz.jpeg'),
+  },
+  {
+    name: "מלח גס",
+    image: importImage('coarse_salt_1kg_melach_haaretz.jpeg'),
+  },
+  {
+    name: "מלח ים גס",
+    image: importImage('coarse_sea_salt_500g_melach_haaretz.jpeg'),
+  },
+  {
+    name: "מלח ים דק",
+    image: importImage('fine_sea_salt_250g_melach_haaretz.jpeg'),
+  },
+  {
+    name: "תערובת מלחים 50% פחות נתרן",
+    image: importImage('50_percent_less_sodium_salt_mix_250g_melach_haaretz.jpeg'),
+  },
+  {
+    name: "מלח ים מעושר ביוד",
+    image: importImage('iodized_sea_salt_250g_melach_haaretz.jpeg'),
+  },
+  {
+    name: "מלח הימלאיה דק",
+    image: importImage('fine_himalayan_salt_1kg_melach_haaretz.jpeg'),
+  },
+  {
+    name: "מלח הימלאיה גס",
+    image: importImage('coarse_himalayan_salt_1kg_melach_haaretz.jpeg'),
+  },
+  {
+    name: "קמח חיטה לאפיית לחמים וחלות",
+    image: importImage('bread_flour_1kg_israel_mills.jpeg'),
+  },
+  {
+    name: "קמח חיטה לבן בהיר מנופה",
+    image: importImage('sifted_white_flour_1kg_israel_mills.jpeg'),
+  },
+  {
+    name: "קמח תופח מנופה",
+    image: importImage('sifted_self_rising_flour_1kg_israel_mills.jpeg'),
+  },
+  {
+    name: "קמח חיטה מלא 100% מנופה",
+    image: importImage('sifted_whole_wheat_flour_1kg_israel_mills.jpeg'),
+  },
+  {
+    name: "קמח לחם וחלות מנופה",
+    image: importImage('sifted_bread_flour_1kg_israel_mills.jpeg'),
+  },
+  {
+    name: "קמח חיטה 80% מנופה",
+    image: importImage('sifted_80_percent_wheat_flour_1kg_israel_mills.jpeg'),
+  },
+  {
+    name: "קמח כוסמין לבן",
+    image: importImage('neflayot_white_spelt_flour_1kg.jpeg'),
+  },
+  {
+    name: "קמח כוסמין בהיר 80%",
+    image: importImage('neflayot_light_spelt_flour_80_percent_1kg.jpeg'),
+  },
+  {
+    name: "קמח שמרים רב תכליתי",
+    image: importImage('sugat_all_purpose_yeast_flour_1kg.jpeg'),
+  },
+  {
+    name: "קמח חיטה לבן בהיר",
+    image: importImage('sugat_multifunctional_stibel_white_wheat_flour_1kg.jpeg'),
+  },
+  {
+    name: "קמח לחם",
+    image: importImage('sugat_stibel_bread_flour_1kg.jpeg'),
+  },
+  {
+    name: "קמח חיטה מלא",
+    image: importImage('sugat_stibel_whole_wheat_flour_1kg.jpeg'),
+  },
+  {
+    name: "קמח תופח",
+    image: importImage('sugat_stibel_self_rising_flour_1kg.jpeg'),
+  },
+  {
+    name: "קמח פיצה ופוקצ'ה",
+    image: importImage('sugat_stibel_pizza_focaccia_flour_1kg.jpeg'),
+  },
+  {
+    name: "קמח תירס להכנה מהירה",
+    image: importImage('piccata_quick_cooking_corn_flour_500g.jpeg'),
+  },
+  {
+    name: "קמח תירס דק",
+    image: importImage('piccata_fine_corn_flour_1kg.jpeg'),
+  },
+  {
+    name: "קמח תירס להכנה מהירה",
+    image: importImage('piccata_quick_cooking_corn_flour_1kg.jpeg'),
+  },
+  {
+    name: "קמח מצה חמץ",
+    image: importImage('maya_chametz_matzo_meal_200g.jpeg'),
+  },
+  {
+    name: "מטחנת מלח ים גבישי מהים האדום",
+    image: importImage('red_sea_granular_salt_mill_250g.jpeg'),
+  },
+  {
+    name: "מטחנת סלעי מלח גרוסים מהרי ההימלאיה",
+    image: importImage('himalayan_rock_salt_mill_300g.jpeg'),
+  },
+  {
+    name: "מלח ים מועשר ביוד",
+    image: importImage('iodized_sea_salt_1kg_salt_of_the_earth.jpeg'),
+  },
+  {
+    name: "קמח חיטה לפיצה ופוקצ'ה מנופה",
+    image: importImage('sifted_pizza_focaccia_flour_1kg_israel_mills.jpeg'),
+  },
+  {
+    name: "קמח כוסמין מלא",
+    image: importImage('whole_spelt_flour_1kg_israel_mills.jpeg'),
+  },
+  {
+    name: "קמח מצה חמץ",
+    image: importImage('chametz_matzo_meal_500g_maya.jpeg'),
+  },
+  {
+    name: "קמח שמרים חלה",
+    image: importImage('challah_yeast_flour_1kg_sugat.jpeg'),
+  },
+  {
+    name: "קמח שמרים פיצה",
+    image: importImage('pizza_yeast_flour_1kg_sugat.jpeg'),
+  },
+  {
+    name: "קמח שקדים",
+    image: importImage('almond_flour_100g_chef.jpeg'),
+  },
+  {
+    name: "קמח שקדים",
+    image: importImage('almond_flour_250g_maya.jpeg'),
+  },
+  {
+    name: "קורנפלור",
+    image: importImage('cornflour_500g_maya.jpeg'),
+  },
+  {
+    name: "אבקת סוכר",
+    image: importImage('powdered_sugar_100g_hanamal.jpeg'),
+  },
+  {
+    name: "סוכר וניל",
+    image: importImage('vanilla_sugar_10x10g_hanamal.jpeg'),
+  },
+  {
+    name: "אבקת סוכר",
+    image: importImage('powdered_sugar_100g_maya.jpeg'),
+  },
+  {
+    name: "סוכר בטעם וניל",
+    image: importImage('vanilla_flavored_sugar_100g_maya.jpeg'),
+  },
+  {
+    name: "סוכר חום כהה לאפיה סוגת",
+    image: importImage('dark_brown_sugar_baking_1kg_sugat.jpeg'),
+  },
+  {
+    name: "קמח תפוחי אדמה מיה",
+    image: importImage('potato_flour_500g_maya.jpeg'),
+  },
+  {
+    name: "סוכר קנים אורגני",
+    image: importImage('organic_cane_sugar_1kg_haraduf.jpeg'),
+  },
+  {
+    name: "סוכר קנים אורגני",
+    image: importImage('organic_cane_sugar_1kg_tevaot.jpeg'),
+  },
+  {
+    name: "סוכר קוקוס אורגני",
+    image: importImage('organic_coconut_sugar_300g_tevaot.jpeg'),
+  },
+  {
+    name: "סוכר קוקוס אורגני Co Co Sugar",
+    image: importImage('organic_coconut_sugar_454g_co_co_sugar.jpeg'),
+  },
+  {
+    name: "קמח תירס ללא גלוטן",
+    image: importImage('gluten_free_corn_flour_1kg_willy_food.jpeg'),
+  },
+  {
+    name: "קמח אורז מלא ללא גלוטן",
+    image: importImage('gluten_free_brown_rice_flour_400g_tevaot.jpeg'),
+  },
+  {
+    name: "קמח חומוס ללא גלוטן",
+    image: importImage('gluten_free_chickpea_flour_400g_tevaot.jpeg'),
+  },
+  {
+    name: "קמח כוסמת ירוקה ללא גלוטן",
+    image: importImage('gluten_free_green_buckwheat_flour_400g_tevaot.jpeg'),
+  },
+  {
+    name: "קמח עדשים כתומות ללא גלוטן",
+    image: importImage('gluten_free_red_lentil_flour_400g_tevaot.jpeg'),
+  },
 ];
 
   initialBreads.sort((a, b) => a.name.localeCompare(b.name, 'he'));
