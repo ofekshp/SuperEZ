@@ -17,279 +17,279 @@ const FruitsAndVegetablesPage: React.FC = () => {
   
   const initialFruits = [
     {
-      name: "בננה<br/>1 קילו",
+      name: "בננה 1 קילו",
       image: importImage(`banana.jpeg`),
       id: 1,
     },
     {
-      name: "אבטיח<br/>1 קילו",
+      name: "אבטיח 1 קילו",
       image: importImage(`watermelon.jpeg`),
       id: 1,
     },
     {
-      name: "מלון<br/>1 קילו",
+      name: "מלון 1 קילו",
       image: importImage(`melon.jpeg`),
       id: 1,
     },
     {
-      name: "תפוח עץ פינק ליידי<br/>1 קילו",
+      name: "תפוח עץ פינק ליידי 1 קילו",
       image: importImage(`crisp_pink_apple.jpeg`),
       id: 1,
     },
     {
-      name: "תפוח עץ גאלה<br/>1 קילו",
+      name: "תפוח עץ גאלה 1 קילו",
       image: importImage(`gala_apple.jpeg`),
       id: 1,
     },
     {
-      name: "תפוח עץ זהוב<br/>1 קילו",
+      name: "תפוח עץ זהוב 1 קילו",
       image: importImage(`golden_apple.jpeg`),
       id: 1,
     },
     {
-      name: "תפוח עץ חרמון<br/>1 קילו",
+      name: "תפוח עץ חרמון 1 קילו",
       image: importImage(`hermon_apple.jpeg`),
       id: 1,
     },
     {
-      name: "תפוח עץ יונתן<br/>1 קילו",
+      name: "תפוח עץ יונתן 1 קילו",
       image: importImage(`jonathan_apple.jpeg`),
       id: 1,
     },
     {
-      name: "תפוח עץ סמיט<br/>1 קילו",
+      name: "תפוח עץ סמיט 1 קילו",
       image: importImage(`smith_apple.jpeg`),
       id: 1,
     },
     {
-      name: "אגס תפוח<br/>1 קילו",
+      name: "אגס תפוח 1 קילו",
       image: importImage(`pear_apple.jpeg`),
       id: 1,
     },
     {
-      name: "אגס אדום<br/>1 קילו",
+      name: "אגס אדום 1 קילו",
       image: importImage(`red_pear.jpeg`),
       id: 1,
     },
     {
-      name: "אגס ספדונה<br/>1 קילו",
+      name: "אגס ספדונה 1 קילו",
       image: importImage(`sapdona_pear.jpeg`),
       id: 1,
     },
     {
-      name: "קיווי<br/>1 קילו",
+      name: "קיווי 1 קילו",
       image: importImage(`kiwi.png`),
       id: 1,
     },
     {
-      name: "נקטרינה אדומה<br/>1 קילו",
+      name: "נקטרינה אדומה 1 קילו",
       image: importImage(`red_nectarine.jpeg`),
       id: 1,
     },
     {
-      name: "נקטרינה לבנה<br/>1 קילו",
+      name: "נקטרינה לבנה 1 קילו",
       image: importImage(`white_nectarine.jpeg`),
       id: 1,
     },
     {
-      name: "אפרסק לבן<br/>1 קילו",
+      name: "אפרסק לבן 1 קילו",
       image: importImage(`white_peach.jpeg`),
       id: 1,
     },
     {
-      name: "אפרסק צהוב<br/>1 קילו",
+      name: "אפרסק צהוב 1 קילו",
       image: importImage(`yellow_peach.jpeg`),
       id: 1,
     },
     {
-      name: "מנגו מאיה<br/>1 קילו",
+      name: "מנגו מאיה 1 קילו",
       image: importImage(`maya_mango.jpeg`),
       id: 1,
     },
     {
-      name: "שזיף ירוק<br/>1 קילו",
+      name: "שזיף ירוק 1 קילו",
       image: importImage(`green_plum.jpeg`),
       id: 1,
     },
     {
-      name: "שזיף סנטה רוזה<br/>1 קילו",
+      name: "שזיף סנטה רוזה 1 קילו",
       image: importImage(`santa_rosa_plum.jpeg`),
       id: 1,
     },
     {
-      name: "שזיף שחור<br/>1 קילו",
+      name: "שזיף שחור 1 קילו",
       image: importImage(`black_plum.jpeg`),
       id: 1,
     },
     {
-      name: "תפוז<br/>1 קילו",
+      name: "תפוז 1 קילו",
       image: importImage(`orange.jpeg`),
       id: 1,
     },
     {
-      name: "פפאיה<br/>1 קילו",
+      name: "פפאיה 1 קילו",
       image: importImage(`papaya.jpeg`),
       id: 1,
     },
   ];
-
-const initialVegetables = [
+  
+  const initialVegetables = [
     {
-      name: "לימון<br/>1 קילו",
+      name: "לימון 1 קילו",
       image: importImage(`lemon.jpeg`),
       id: 1,
     },
     {
-      name: "אבוקדו<br/>1 קילו",
+      name: "אבוקדו 1 קילו",
       image: importImage(`avocado.jpeg`),
       id: 1,
     },
     {
-      name: "לימון ליים<br/>1 קילו",
+      name: "לימון ליים 1 קילו",
       image: importImage(`lemon_lime.jpeg`),
       id: 1,
     },
     { 
-      name: "מלפפון<br/>1 קילו",
+      name: "מלפפון 1 קילו",
       image: importImage(`cucamber.jpeg`),
       id: 1,
     },
     {
-      name: "עגבניה<br/>1 קילו",
+      name: "עגבניה 1 קילו",
       image: importImage(`tomato.jpeg`), 
       id: 1,
     },
     { 
-      name: "עגבניות שרי<br/>1 קילו",
+      name: "עגבניות שרי 1 קילו",
       image: importImage(`cherry_tomato.jpeg`),
       id: 1,
     },
     {
-      name: "בצל אדום<br/>1 קילו",
+      name: "בצל אדום 1 קילו",
       image: importImage(`red_onion.jpeg`),
       id: 1,
     },
     {
-      name: "בצל יבש<br/>1 קילו",
+      name: "בצל יבש 1 קילו",
       image: importImage(`dry_onion.jpeg`),
       id: 1,
     },
     {
-      name: "כרישה<br/>1 קילו",
+      name: "כרישה 1 קילו",
       image: importImage(`leek.jpeg`),
       id: 1,
     },
     {
-      name: "גזר<br/>1 קילו",
+      name: "גזר 1 קילו",
       image: importImage(`carrot.jpeg`),
       id: 1,
     },
     {
-      name: "חציל<br/>1 קילו",
+      name: "חציל 1 קילו",
       image: importImage(`eggplant.jpeg`),
       id: 1,
     },
     {
-      name: "חציל בלדי<br/>1 קילו",
+      name: "חציל בלדי 1 קילו",
       image: importImage(`baladi_eggplant.jpeg`),
       id: 1,
     },
     {
-      name: "כרוב אדום<br/>1 קילו",
+      name: "כרוב אדום 1 קילו",
       image: importImage(`red_cabbage.jpeg`),
       id: 1,
     },
     {
-      name: "כרוב לבן<br/>1 קילו",
+      name: "כרוב לבן 1 קילו",
       image: importImage(`white_cabbage.jpeg`),
       id: 1,
     },
     {
-      name: "כרובית<br/>1 קילו",
+      name: "כרובית 1 קילו",
       image: importImage(`cauliflower.jpeg`),
       id: 1,
     },
     {
-      name: "פלפל חריף ירוק<br/>1 קילו",
+      name: "פלפל חריף ירוק 1 קילו",
       image: importImage(`green_hot_pepper.jpeg`),
       id: 1,
     },
     {
-      name: "פלפל אדום<br/>1 קילו",
+      name: "פלפל אדום 1 קילו",
       image: importImage(`red_pepper.jpeg`),
       id: 1,
     },
     {
-      name: "פלפל ירוק<br/>1 קילו",
+      name: "פלפל ירוק 1 קילו",
       image: importImage(`green_pepper.jpeg`),
       id: 1,
     },
     {
-      name: "פלפל צהוב<br/>1 קילו",
+      name: "פלפל צהוב 1 קילו",
       image: importImage(`yellow_pepper.jpeg`),
       id: 1,
     },
     {
-      name: "סלק אדום<br/>1 קילו",
+      name: "סלק אדום 1 קילו",
       image: importImage(`red_beet.jpeg`),
       id: 1,
     },
     {
-      name: "קולורבי<br/>1 קילו",
+      name: "קולורבי 1 קילו",
       image: importImage(`kohlrabi.jpeg`),
       id: 1,
     },
     {
-      name: "שומר<br/>1 קילו",
+      name: "שומר 1 קילו",
       image: importImage(`fennel.jpeg`),
       id: 1,
     },
     {
-      name: "קישוא<br/>1 קילו",
+      name: "קישוא 1 קילו",
       image: importImage(`zucchini.jpeg`),
       id: 1,
     },
     {
-      name: "שעועית הילדה<br/>1 קילו",
+      name: "שעועית הילדה 1 קילו",
       image: importImage(`hilada_bean.jpeg`),
       id: 1,
     },
     {
-      name: "שעועית ירוקה<br/>1 קילו",
+      name: "שעועית ירוקה 1 קילו",
       image: importImage(`green_bean.jpeg`),
       id: 1,
     },
     {
-      name: "דלורית<br/>1 קילו",
+      name: "דלורית 1 קילו",
       image: importImage(`butternut_squash.jpeg`),
       id: 1,
     },
     {
-      name: "דלעת הספגטי<br/>1 קילו",
+      name: "דלעת הספגטי 1 קילו",
       image: importImage(`spaghetti_squash.jpeg`),
       id: 1,
     },
     {
-      name: "דלעת חתוכה<br/>1 קילו",
+      name: "דלעת חתוכה 1 קילו",
       image: importImage(`cut_pumpkin.jpeg`),
       id: 1,
     },
     {
-      name: "דלעת ערמונים<br/>1 קילו",
+      name: "דלעת ערמונים 1 קילו",
       image: importImage(`acorn_squash.jpeg`),
       id: 1,
     },
     {
-      name: "בטטה<br/>1 קילו",
+      name: "בטטה 1 קילו",
       image: importImage(`sweet_potato.jpeg`),
       id: 1,
     },
     {
-      name: "תפוח אדמה אדום<br/>1 קילו",
+      name: "תפוח אדמה אדום 1 קילו",
       image: importImage(`red_potato.jpeg`),
       id: 1,
     },
-  ];
+  ];  
 
   const initialPackagedpickedvegetables = [
     { 
@@ -303,22 +303,22 @@ const initialVegetables = [
       id: 1,
     },
     {
-      name: "ברוקולי<br/>1 קילו",
+      name: "ברוקולי",
       image: importImage('broccoli.jpg'),
       id: 1,
     },
     { 
-      name: "אספרגוס<br/>1 קילו",
+      name: "אספרגוס",
       image: importImage('asparagus.jpg'),
       id: 1,
     },
     { 
-      name: "בצל ירוק<br/>1 קילו", 
+      name: "בצל ירוק", 
       image: importImage('green_onion.jpg'),
       id: 1,
     },
     { 
-      name: "גזר<br/>מארז", 
+      name: "גזר מארז", 
       image: importImage('carrot_pack.jpg'),
       id: 1,
     },
@@ -333,7 +333,7 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "סלרי אמריקאי<br/>1 קילו",
+      name: "סלרי אמריקאי",
       image: importImage('american_celery.jpg'),
       id: 1,
     },
@@ -343,7 +343,7 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "ראש סלרי<br/>1 קילו", 
+      name: "ראש סלרי", 
       image: importImage('celery_head.jpg'),
       id: 1,
     },
@@ -353,17 +353,17 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "צנונית<br/>1 קילו",
+      name: "צנונית",
       image: importImage('radish_pack.jpg'),
       id: 1,
     },
     { 
-      name: "שום יבש<br/>1 קילו",
+      name: "שום יבש",
       image: importImage('dry_garlic_pack.jpg'),
       id: 1,
     },
     { 
-      name: "סלרי<br/>1 קילו", 
+      name: "סלרי", 
       image: importImage('israeli_celery.jpg'),
       id: 1,
     },
@@ -388,27 +388,27 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "תפוח אדמה לבן<br/>מארז", 
+      name: "תפוח אדמה לבן מארז", 
       image: importImage('white_potato_pack.jpg'),
       id: 1,
     },
     { 
-      name: "עלי קייל<br/>1 קילו",
+      name: "עלי קייל",
       image: importImage('kale.jpg'),
       id: 1,
     },
     { 
-      name: "תפוח אדמה אדום<br/>מארז",
+      name: "תפוח אדמה אדום מארז",
       image: importImage('red_potato_pack.jpg'),
       id: 1,
     },
     { 
-      name: "פאקצ'וי<br/>1 קילו", 
+      name: "פאקצ'וי", 
       image: importImage('packed_pak_choi.jpg'),
       id: 1,
     },
     { 
-      name: "תרד<br/>1 קילו", 
+      name: "תרד", 
       image: importImage('packed_nz_spinach.jpg'),
       id: 1,
     },
@@ -443,55 +443,55 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "סלק אדום מבושל<br/>1 קילו", 
+      name: "סלק אדום מבושל", 
       image: importImage('vacuum_packed_red_beet.jpg'),
       id: 1,
     },
     { 
-      name: "עדשים ירוקות מבושלות<br/>1 קילו", 
+      name: "עדשים ירוקות מבושלות", 
       image: importImage('cooked_green_lentils.jpg'),
       id: 1,
     },
     { 
-      name: "פלפלונים<br/>1 קילו", 
+      name: "פלפלונים", 
       image: importImage('mini_peppers.jpg'),
       id: 1,
     },
     { 
-      name: "רוקולה<br/>1 קילו",
+      name: "רוקולה",
       image: importImage('arugula.jpg'),
       id: 1,
     },
     { 
-      name: "שעועית אדומה מבושלת<br/>1 קילו", 
+      name: "שעועית אדומה מבושלת", 
       image: importImage('cooked_red_beans.jpg'),
       id: 1,
     },
   ];
-
+  
   const initialHerbssproutsmushrooms = [
     {
-      name: "ג'ינג'ר<br/>1 קילו", 
+      name: "ג'ינג'ר", 
       image: importImage('ginger.jpg'),
       id: 1,
     },
     { 
-      name: "פטריות שמפניון<br/>1 קילו", 
+      name: "פטריות שמפניון", 
       image: importImage('champignon_mushrooms.jpg'),
       id: 1,
     },
     { 
-      name: "פטריות פורטבלו<br/>1 קילו",
+      name: "פטריות פורטבלו",
       image: importImage('portobello_mushrooms.jpg'),
       id: 1,
     },
     {
-      name: "עגבניות מיובשות<br/>1 קילו", 
+      name: "עגבניות מיובשות", 
       image: importImage('sun_dried_tomatoes.jpg'),
       id: 1,
     },
     {
-      name: "פטריות מלך היער<br/>1 קילו", 
+      name: "פטריות מלך היער", 
       image: importImage('king_oyster_mushrooms.jpg'),
       id: 1,
     },
@@ -506,17 +506,17 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "נבטוטים<br/>1 קילו",
+      name: "נבטוטים",
       image: importImage('sprouts.jpg'),
       id: 1,
     },
     {
-      name: "פטריות שמפיניון<br/>מארז", 
+      name: "פטריות שמפיניון מארז", 
       image: importImage('champignon_pack.jpg'),
       id: 1,
     },
     { 
-      name: "נבטים סיניים<br/>1 קילו", 
+      name: "נבטים סיניים", 
       image: importImage('chinese_sprouts.jpg'),
       id: 1,
     },
@@ -551,7 +551,7 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "רוזמרין<br/>1 קילו", 
+      name: "רוזמרין", 
       image: importImage('rosemary.jpg'),
       id: 1,
     },
@@ -561,7 +561,7 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "גרגיר נחלים<br/>1 קילו", 
+      name: "גרגיר נחלים", 
       image: importImage('watercress.jpg'),
       id: 1,
     },
@@ -571,22 +571,22 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "מארז צמד פטריות איטלקי<br/>1 קילו", 
+      name: "מארז צמד פטריות איטלקי", 
       image: importImage('italian_mushrooms_pack.jpg'),
       id: 1,
     },
     { 
-      name: "מאש מונבט<br/>1 קילו", 
+      name: "מאש מונבט", 
       image: importImage('sprouted_mung_beans.jpg'),
       id: 1,
     },
     { 
-      name: "מיקס נבטים<br/>1 קילו", 
+      name: "מיקס נבטים", 
       image: importImage('sprouts_mix.jpg'),
       id: 1,
     },
     { 
-      name: "מרווה<br/>1 קילו", 
+      name: "מרווה", 
       image: importImage('sage.jpg'),
       id: 1,
     },
@@ -626,7 +626,7 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "עדשים שחורות מונבטות<br/>1 קילו", 
+      name: "עדשים שחורות מונבטות", 
       image: importImage('sprouted_black_lentils.jpg'),
       id: 1,
     },
@@ -636,17 +636,17 @@ const initialVegetables = [
       id: 1,
     },
     { 
-      name: "פטריות שי מג'י<br/>1 קילו", 
+      name: "פטריות שי מג'י", 
       image: importImage('shiitake_mushrooms_white.jpg'),
       id: 1,
     },
     { 
-      name: "קינואה מונבטת<br/>1 קילו", 
+      name: "קינואה מונבטת", 
       image: importImage('sprouted_quinoa.jpg'),
       id: 1,
     },
     { 
-      name: "שורש כורכום<br/>1 קילו", 
+      name: "שורש כורכום", 
       image: importImage('fresh_turmeric_root.jpg'),
       id: 1,
     },
@@ -666,59 +666,60 @@ const initialVegetables = [
       id: 1,
     },
   ];
-
+  
   const initialPackagedfruit = [
     { 
-      name: "קיווי ירוק<br/>מארז", 
+      name: "קיווי ירוק", 
       image: importImage('green_kiwi.jpg'),
       id: 1,
     },
     { 
-      name: "אננס<br/>1 יח׳", 
+      name: "אננס 1 יח׳", 
       image: importImage('pineapple.jpg'),
       id: 1,
     },
     { 
-      name: "תפוז<br/>מארז", 
+      name: "תפוז", 
       image: importImage('orange.jpg'),
       id: 1,
     },
     { 
-      name: "אוכמניות<br/>מארז", 
+      name: "אוכמניות", 
       image: importImage('blueberries.jpg'),
       id: 1,
     },
     { 
-      name: "דובדבן<br/>מארז", 
+      name: "דובדבן", 
       image: importImage('cherries.jpg'),
       id: 1,
     },
     { 
-      name: "ליצ'י<br/>מארז", 
+      name: "ליצ'י", 
       image: importImage('lychee.jpg'),
       id: 1,
     },
     { 
-      name: "קיווי סאן גולד<br/>מארז", 
+      name: "קיווי סאן גולד", 
       image: importImage('gold_kiwi.jpg'),
       id: 1,
     },
     { 
-      name: "ענבים לבנים<br/>מארז", 
+      name: "ענבים לבנים", 
       image: importImage('white_grapes.jpg'),
       id: 1,
     },
     { 
-      name: "ענבים שחורים<br/>מארז", 
+      name: "ענבים שחורים", 
       image: importImage('black_grapes.jpg'),
       id: 1,
     },
     { 
-      name: "תמר מג'הול<br/>מארז", 
+      name: "תמר מג'הול", 
       image: importImage('medjool_dates.jpg'),
       id: 1,
     },
   ];
+  
 
   initialVegetables.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialFruits.sort((a, b) => a.name.localeCompare(b.name, 'he'));
