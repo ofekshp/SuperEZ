@@ -81,9 +81,6 @@ const [drys, setDrys] = useState<{ name: string; image: string | null; count: nu
 
     const allItems = [...cansToSave, ...drysToSave];
     allItems.forEach(item => addProduct(item));
-
-    // setCans(cans.map(can => ({ ...can, count: 0 })));
-    // setDrys(drys.map(dry => ({ ...dry, count: 0 })));
   };
 
   return (
