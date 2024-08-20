@@ -12,15 +12,9 @@
 .card img {
   width: 100px;
   height: 100px;
-<<<<<<< HEAD
   object-fit: contain;
-<<<<<<< HEAD
-=======
   border-radius: 8px;
->>>>>>> b5313a9dfca4ac3e79666ff9b3c5ed14a5b1998e
-=======
   object-fit: cover;
->>>>>>> 2c1c65c03121953de44f3d8ad8a2fa33931f2a82
 }
 
 .card-content {

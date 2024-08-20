@@ -162,7 +162,7 @@ class UserService {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'email': userEmail || '', // Pass the user's email in the headers
+          'email': userEmail || '',
         },
         credentials: 'include',
       });

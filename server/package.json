@@ -10,12 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "axios": "^1.7.4",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "bundle": "^2.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "lodash": "^4.17.21",
     "mongoose": "^8.4.0",
     "path": "^0.12.7",
     "react-toastify": "^10.0.5"

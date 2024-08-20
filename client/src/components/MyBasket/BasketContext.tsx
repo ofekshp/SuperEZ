@@ -11,6 +11,8 @@ interface BasketContextType {
   basketProducts: Product[];
   addProduct: (product: Product) => void;
   removeProduct: (productName: string |React.JSX.Element) => void; 
+  clearBasket:()=> void; 
+
 }
 
 const BasketContext = createContext<BasketContextType | undefined>(undefined);
@@ -18,6 +20,7 @@ const BasketContext = createContext<BasketContextType | undefined>(undefined);
 export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const cartService = new CartService();
   const [basketProducts, setBasketProducts] = useState<Product[]>([]);
+
 
   useEffect(() => {
     async function loadBasketProducts() {
@@ -40,7 +43,20 @@ export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       console.error('Error adding product to basket:', error);
     }
   };
-
+ 
+  const clearBasket = async () => {
+    try {
+      for (const product of basketProducts) {
+        await removeProduct(product.name);
+      }
+      setBasketProducts([]);  
+    } catch (error) {
+      console.error('Error clearing basket:', error);
+    }
+  };
+  
+  
+  
   const removeProduct = async (productName) => {
     try {
       const updatedProducts = await cartService.removeProduct(productName);
@@ -51,7 +67,7 @@ export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   };
 
   return (
-    <BasketContext.Provider value={{ basketProducts, addProduct, removeProduct }}>
+    <BasketContext.Provider value={{ basketProducts, addProduct, removeProduct,clearBasket }}>
       {children}
     </BasketContext.Provider>
   );

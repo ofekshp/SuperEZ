@@ -22,11 +22,6 @@ const MyBasket: React.FC = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [signUpOpen, setSignUpOpen] = useState(false);
-  const date = new Date();
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
-  const currentDate = `${day}-${month}-${year}`;
   const cartService = new CartService();
   const navigate = useNavigate();
 

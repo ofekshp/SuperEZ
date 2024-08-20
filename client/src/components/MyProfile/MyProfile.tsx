@@ -1,32 +1,49 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import './MyProfile.css';  
 import UserService from '../../services/user_service.ts';
+import CartService from '../../services/cart_service.ts';
 import { toast } from "react-toastify";
+import { useBasket } from '../MyBasket/BasketContext.tsx'; 
+import { useNavigate } from 'react-router-dom';
 
 interface MyProfileModalProps {
   closeModal: () => void;
 }
 
+interface Product {
+  name: string;
+  quantity: number;
+}
+
+interface Cart {
+  date: string;
+  products: Product[];
+}
+
 const MyProfileModal: React.FC<MyProfileModalProps> = ({ closeModal }) => {
   const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [previousCarts, setPreviousCarts] = useState<string[]>([]);
-  const uid = localStorage.getItem('user_id');
+  const [previousCarts, setPreviousCarts] = useState<Cart[]>([]);
+  const { addProduct } = useBasket(); // השתמש ב־addProduct
+  const {clearBasket}= useBasket(); // ניקוי הסל הנוכחי
+  const navigate = useNavigate();
+
 
   const userService = new UserService();
+  const cartService = new CartService();
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const userProfile = await userService.getUserProfile();
+        const userProfile = await userService.getUserProfile(); // קריאה ללא פרמטרים
         setName(userProfile.name);
         setPhone(userProfile.phone);
-        // Assuming the API returns previous carts
-        setPreviousCarts(userProfile.previousCarts || []);
+        const carts = await cartService.getUserCarts(); // קריאה ללא פרמטרים
+        setPreviousCarts(carts);
       } catch (error) {
-        console.error('Error fetching user profile:', error);
+        console.error('Error fetching user profile or carts:', error);
+        setPreviousCarts([]);
       }
     };
 
@@ -53,7 +70,7 @@ const MyProfileModal: React.FC<MyProfileModalProps> = ({ closeModal }) => {
     }
     
     try {
-      const updatedDetails = { name, phone , password};
+      const updatedDetails = { name, phone, password };
       if (password) {
         if (password.length < 6) {
           toast.error("Password must be at least 6 characters");
@@ -63,12 +80,44 @@ const MyProfileModal: React.FC<MyProfileModalProps> = ({ closeModal }) => {
       }
 
       await userService.updateUserProfile(updatedDetails);
-      alert('Profile updated successfully');
+      toast.success('Profile updated successfully');
     } catch (error) {
-      alert('Failed to update profile. Please try again.');
+      toast.error('Failed to update profile. Please try again.');
     }
   };
 
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+
+
+  const handleSelectCart = async (cart: Cart) => {
+ 
+
+    try {
+      console.log('Before clearing basket:');
+      await clearBasket();
+      console.log('After clearing basket:');
+      
+      // Wait a short time to ensure the basket is cleared before adding new products
+      await new Promise(resolve => setTimeout(resolve, 100));
+      await cart.products.forEach(product => {
+  addProduct({ name: product.name, quantity: product.quantity });
+      });
+      toast.success('הסל שבחרת נוסף בהצלחה לסל שלך');
+      closeModal();
+navigate('/cart');
+    } catch (error) {
+      console.error('Error adding cart to basket:', error);
+      toast.error('Failed to add cart to basket. Please try again.');
+    }
+  };
+  
   return (
     <div className="modal-overlay" onClick={closeModal}>
       <div className="modal-box" onClick={(e) => e.stopPropagation()}>
@@ -117,19 +166,33 @@ const MyProfileModal: React.FC<MyProfileModalProps> = ({ closeModal }) => {
             <button type="submit" className="save-button-profile">שמור שינויים</button>
           </div>
         </form>
-
-        <h3 className="subtitle">סלים קודמים</h3>
+        <h3 className="subtitle">הסלים הקודמים שלי</h3>
         <div className="previous-carts-container">
-          {previousCarts.length > 0 ? (
-            <ul className="previous-carts-list">
-              {previousCarts.map((cart, index) => (
-                <li key={index}>{cart}</li>
-              ))}
-            </ul>
-          ) : (
-            <p>אין סלים קודמים</p>
-          )}
+  {previousCarts.length > 0 ? (
+    <div className="carts-scrollable-list">
+      {previousCarts.map((cart, index) => (
+        <div key={index} className="cart-item">
+          <h4>סל מספר {index + 1}</h4>
+          <p>תאריך רכישה: {formatDate(cart.date) || 'לא זמין'}</p>
+          <p>כמות פריטים: {cart.products ? cart.products.length : 0}</p>
+          <div className="products-list">
+            {cart.products && cart.products.map((product, prodIndex) => (
+              <li key={prodIndex}>
+                {product.name} - כמות: {product.quantity}
+              </li>
+            ))}
+          </div>
+          <button className="select-button" onClick={() => handleSelectCart(cart)}>
+                    בחר
+                  </button>
         </div>
+      ))}
+    </div>
+  ) : (
+    <p>אין סלים קודמים</p>
+  )}
+</div>
+
       </div>
     </div>
   );
