@@ -1139,20 +1139,24 @@ const DeliPage: React.FC = () => {
     {
       name: "רביולי במילוי גבינות",
       image: importImage('cheese_filled_ravioli.jpeg'),
+      id: 4
     },
     {
       name: "רביולי במילוי בטטה",
       image: importImage('sweet_potato_filled_ravioli.jpeg'),
+      id: 4
     },
     {
       name: "טורטליני במילוי פטריות פרווה",
       image: importImage('mushroom_filled_tortellini.jpeg'),
+      id: 4
     },
     {
       name: "רביולי במילוי גבינות Kids",
       image: importImage('kids_cheese_filled_ravioli.jpeg'),
+      id: 4
     },
-  ];//
+  ];
 
   const initialEggs = [
     {
@@ -1384,296 +1388,369 @@ const DeliPage: React.FC = () => {
     {
       name: "חומוס עם טחינה",
       image: importImage("hummus_with_tahini_achla_strauss.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס גלילי",
       image: importImage("galilee_hummus_achla_strauss.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס עם זעתר",
       image: importImage("hummus_with_zaatar_achla_strauss.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס עם צנוברים",
       image: importImage("hummus_with_pine_nuts_achla_strauss.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס עם חריף",
       image: importImage("hummus_with_spicy_achla_strauss.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס גלילי במרקם ותיבול מעודן",
       image: importImage("galilee_hummus_achla_strauss_600g.jpeg"),
+      id: 5,
     },
     {
       name: "טחינה",
       image: importImage("tahini_achla_strauss_500g.jpeg"),
+      id: 5,
     },
     {
       name: "טחינה לבנה",
       image: importImage("white_tahini_achla_strauss.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס",
       image: importImage("hummus_achla_strauss_400g.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס עשיר ב 30% טחינה גולמית",
       image: importImage("rich_hummus_30percent_tahini_achla_strauss.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס עשיר ב 40% טחינה גולמית",
       image: importImage("rich_hummus_40percent_tahini_achla_strauss.jpeg"),
+      id: 5,
     },
     {
       name: "טחינה ירוקה עם פטרוזיליה",
       image: importImage("green_tahini_with_parsley_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס מסעדות בתוספת לימון",
       image: importImage("restaurant_hummus_with_lemon_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס אבו גוש",
       image: importImage("hummus_abu_gosh_shamir_200g.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס אבו גוש עם חריף",
       image: importImage("hummus_abu_gosh_with_spicy_shamir.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס מסבחה",
       image: importImage("masabacha_hummus_shamir_500g.jpeg"),
+      id: 5,
     },
     {
       name: "חומוס עשיר ב- 50% טחינה גולמית",
       image: importImage("rich_hummus_50percent_tahini_achla_strauss.jpeg"),
+      id: 5,
     },
     {
       name: "סלט כרוב סגול במיונז",
       image: importImage("purple_cabbage_mayo_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סלט חציל פיקנטי",
       image: importImage("spicy_eggplant_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סלט חצילים בטעם כבד",
       image: importImage("eggplant_liver_flavor_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סלט מטבוחה",
       image: importImage("matbucha_salad_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סלט חצילים במיונז",
       image: importImage("eggplant_mayo_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סלט קוביות סלק",
       image: importImage("diced_beet_salad_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סלט מטבוחה חריפה אש",
       image: importImage("spicy_matbucha_fire_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סלט טורקי",
       image: importImage("turkish_salad_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סלט חציל קלוי עם שמן זית",
       image: importImage("grilled_eggplant_olive_oil_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סלט קולסלאו",
       image: importImage("coleslaw_salad_achla.jpeg"),
+      id: 5,
     },
     {
       name: "גוואקמולי",
       image: importImage("guacamole_achla.jpeg"),
+      id: 5,
     },
     {
       name: "ממרח גוואקמולי חריף אש",
       image: importImage("spicy_guacamole_achla.jpeg"),
+      id: 5,
     },
     {
       name: "סחוג ירוק פלפלים",
       image: importImage("green_schug_pepper_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סלט גזר חריף במיץ לימון",
       image: importImage("spicy_carrot_lemon_juice_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סלט תפוחי אדמה במיונז",
       image: importImage("potato_mayo_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סלט עגבניות סלסה חריף",
       image: importImage("spicy_tomato_salsa_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סלט פלפלים מרוקאי חריף",
       image: importImage("spicy_moroccan_pepper_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סלט חצילים על האש בטחינה",
       image: importImage("grilled_eggplant_tahini_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סלט ביצים במיונז",
       image: importImage("egg_mayo_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סלט כרוב קולסלאו בסגנון אמריקאי",
       image: importImage("american_style_coleslaw_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סחוג אדום פלפלים",
       image: importImage("red_schug_pepper_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סלט טונה במיונז",
       image: importImage("tuna_mayo_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סלט פלפל צ'ומה",
       image: importImage("pepper_chuma_salad_mashani.jpeg"),
+      id: 5,
     },
     {
       name: "סחוג תימני חריף",
       image: importImage("yemeni_schug_spicy_biton.jpeg"),
+      id: 5,
     },
     {
       name: "חציל קלוי על האש",
       image: importImage("grilled_eggplant_sera.jpeg"),
+      id: 5,
     },
     {
       name: "לימון בלאדי ביתי",
       image: importImage("homemade_baladi_lemon_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "אריסה חריפה",
       image: importImage("spicy_harissa_pita_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "ממרח לימון כבוש",
       image: importImage("preserved_lemon_spread_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "ממרח עגבניות מיובשות",
       image: importImage("sun_dried_tomato_spread_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "טפנד זיתי קלמטה",
       image: importImage("kalamata_olive_tapenade_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "ממרח ארטישוק",
       image: importImage("artichoke_spread_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "ממרח שום",
       image: importImage("garlic_spread_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "ממרח פלפלים קלויים",
       image: importImage("roasted_pepper_spread_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "פסטו ביתי",
       image: importImage("homemade_pesto_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "אריסה פיקנטית",
       image: importImage("spicy_harissa_olivia.jpeg"),
+      id: 5,
     },
     {
       name: "אריסה חריפה",
       image: importImage("hot_harissa_olivia.jpeg"),
+      id: 5,
     },
     {
       name: "אריסה",
       image: importImage("harissa_perg.jpeg"),
+      id: 5,
     },
     {
       name: "אריסה בטעם ביתי חריף פיקנטי",
       image: importImage("homemade_spicy_harissa_biton.jpeg"),
+      id: 5,
     },
     {
       name: "אריסה מתוקה",
       image: importImage("sweet_harissa_biton.jpeg"),
+      id: 5,
     },
     {
       name: "טפנד זיתים ירוקים ועשבי תיבול",
       image: importImage("green_olive_tapenade_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "לימון בלאדי - סלט לימון כבוש",
       image: importImage("baladi_lemon_salad_biton.jpeg"),
+      id: 5,
     },
     {
       name: "ממרח חציל עם נגיעות עגבניה",
       image: importImage("eggplant_tomato_spread_olechem.jpeg"),
+      id: 5,
     },
     {
       name: "ממרח שיפקה כבוש חריף",
       image: importImage("spicy_pickled_schifka_biton.jpeg"),
+      id: 5,
     },
     {
       name: "סלט אבוקדו עם ביצים",
       image: importImage("avocado_egg_salad_shamir.jpeg"),
+      id: 5,
     },
     {
       name: "סלט חזרת",
       image: importImage("horseradish_salad_biton.jpeg"),
+      id: 5,
     },
     {
       name: "סלט חמוצים סיני",
       image: importImage("chinese_pickled_salad_shamir.jpeg"),
+      id: 5,
     },
     {
       name: "סלט טונה עם ירקות",
       image: importImage("tuna_vegetable_salad_shamir.jpeg"),
+      id: 5,
     },
     {
       name: "סלט פלפלים חריף",
       image: importImage("spicy_pepper_salad_shamir.jpeg"),
+      id: 5,
     },
     {
       name: "סלט שום כתוש",
       image: importImage("crushed_garlic_salad_biton.jpeg"),
+      id: 5,
     },
     {
       name: "עגבניות מיובשות בשמן זית",
       image: importImage("sun_dried_tomatoes_olive_oil_parag.jpeg"),
+      id: 5,
     },
     {
       name: "עמבה",
       image: importImage("amba_biton.jpeg"),
+      id: 5,
     },
     {
       name: "פלפל צ'ומה",
       image: importImage("pepper_chuma_parag.jpeg"),
+      id: 5,
     },
     {
       name: "פלפל צ'ומה חריף פיקנטי",
       image: importImage("spicy_pepper_chuma_biton.jpeg"),
+      id: 5,
     },
     {
       name: "פלפל רצועות קלוי / מטוגן",
       image: importImage("roasted_fried_pepper_strips_shamir.jpeg"),
+      id: 5,
     },
     {
       name: "פסטו קלאסי",
       image: importImage("classic_pesto_fresco.jpeg"),
+      id: 5,
     },
     {
       name: "שום כתוש",
       image: importImage("crushed_garlic_parag.jpeg"),
+      id: 5,
     },
-  ];//
+  ];  
 
   initialMilk.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialYogurtdelicacies.sort((a, b) => a.name.localeCompare(b.name, 'he'));
