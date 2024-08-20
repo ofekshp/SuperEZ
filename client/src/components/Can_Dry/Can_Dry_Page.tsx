@@ -3735,81 +3735,230 @@ const initialGranolaoats = [
   initialGranolaoats.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
 
-
-  const [breads, setBreads] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialBreads.map(breads => ({ ...breads, count: 0 }))
+  const [breads, setBreads] = useState<{ name: string; image: any; count: number }[]>(
+    initialBreads.map(breads => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === breads.name);
+      return {
+        ...breads,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cakes, setCakes] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCakes.map(cakes => ({ ...cakes, count: 0 }))
+  const [cakes, setCakes] = useState<{ name: string; image: any; count: number }[]>(
+    initialCakes.map(cakes => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cakes.name);
+      return {
+        ...cakes,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cookies, setCookies] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCookies.map(cookies => ({ ...cookies, count: 0 }))
+  const [cookies, setCookies] = useState<{ name: string; image: any; count: number }[]>(
+    initialCookies.map(cookies => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cookies.name);
+      return {
+        ...cookies,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [crackers, setCrackers] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCrackers.map(crackers => ({ ...crackers, count: 0 }))
+  const [crackers, setCrackers] = useState<{ name: string; image: any; count: number }[]>(
+    initialCrackers.map(crackers => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === crackers.name);
+      return {
+        ...crackers,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [oil, setOil] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialoil.map(oil => ({ ...oil, count: 0 }))
+  const [oil, setOil] = useState<{ name: string; image: any; count: number }[]>(
+    initialoil.map(oil => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === oil.name);
+      return {
+        ...oil,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [vinegarLemonjuice, setVinegarLemonjuice] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialVinegarlemonjuice.map(vinegarLemonjuice => ({ ...vinegarLemonjuice, count: 0 }))
+  const [vinegarLemonjuice, setVinegarLemonjuice] = useState<{ name: string; image: any; count: number }[]>(
+    initialVinegarlemonjuice.map(vinegarLemonjuice => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === vinegarLemonjuice.name);
+      return {
+        ...vinegarLemonjuice,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [legumesricecouscous, setLegumesricecouscous] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialLegumesricecouscous.map(legumesricecouscous => ({ ...legumesricecouscous, count: 0 }))
+  const [legumesricecouscous, setLegumesricecouscous] = useState<{ name: string; image: any; count: number }[]>(
+    initialLegumesricecouscous.map(legumesricecouscous => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === legumesricecouscous.name);
+      return {
+        ...legumesricecouscous,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [pasta, setPasta] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialPasta.map(pasta => ({ ...pasta, count: 0 }))
+  const [pasta, setPasta] = useState<{ name: string; image: any; count: number }[]>(
+    initialPasta.map(pasta => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === pasta.name);
+      return {
+        ...pasta,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [floursaltsugar, setFloursaltsugar] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialFloursaltsugar.map(floursaltsugar => ({ ...floursaltsugar, count: 0 }))
+  const [floursaltsugar, setFloursaltsugar] = useState<{ name: string; image: any; count: number }[]>(
+    initialFloursaltsugar.map(floursaltsugar => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === floursaltsugar.name);
+      return {
+        ...floursaltsugar,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [coffeedrinkingpowders, setCoffeedrinkingpowders] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCoffeedrinkingpowders.map(coffeedrinkingpowders => ({ ...coffeedrinkingpowders, count: 0 }))
+  const [coffeedrinkingpowders, setCoffeedrinkingpowders] = useState<{ name: string; image: any; count: number }[]>(
+    initialCoffeedrinkingpowders.map(coffeedrinkingpowders => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === coffeedrinkingpowders.name);
+      return {
+        ...coffeedrinkingpowders,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [coffeecapsules, setCoffeecapsules] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCoffeecapsules.map(coffeecapsules => ({ ...coffeecapsules, count: 0 }))
+  const [coffeecapsules, setCoffeecapsules] = useState<{ name: string; image: any; count: number }[]>(
+    initialCoffeecapsules.map(coffeecapsules => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === coffeecapsules.name);
+      return {
+        ...coffeecapsules,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [tea, setTea] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialTea.map(tea => ({ ...tea, count: 0 }))
+  const [tea, setTea] = useState<{ name: string; image: any; count: number }[]>(
+    initialTea.map(tea => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === tea.name);
+      return {
+        ...tea,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [teainfusions, setTeainfusions] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialTeainfusions.map(teainfusions => ({ ...teainfusions, count: 0 }))
+  const [teainfusions, setTeainfusions] = useState<{ name: string; image: any; count: number }[]>(
+    initialTeainfusions.map(teainfusions => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === teainfusions.name);
+      return {
+        ...teainfusions,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [tahini, setTahini] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialTahini.map(tahini => ({ ...tahini, count: 0 }))
+  const [tahini, setTahini] = useState<{ name: string; image: any; count: number }[]>(
+    initialTahini.map(tahini => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === tahini.name);
+      return {
+        ...tahini,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [ketchupmayonnaisemustard, setKetchupmayonnaisemustard] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialKetchupmayonnaisemustard.map(ketchupmayonnaisemustard => ({ ...ketchupmayonnaisemustard, count: 0 }))
+  const [ketchupmayonnaisemustard, setKetchupmayonnaisemustard] = useState<{ name: string; image: any; count: number }[]>(
+    initialKetchupmayonnaisemustard.map(ketchupmayonnaisemustard => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === ketchupmayonnaisemustard.name);
+      return {
+        ...ketchupmayonnaisemustard,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cannedvegetables, setCannedvegetables] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCannedvegetables.map(cannedvegetables => ({ ...cannedvegetables, count: 0 }))
+  const [cannedvegetables, setCannedvegetables] = useState<{ name: string; image: any; count: number }[]>(
+    initialCannedvegetables.map(cannedvegetables => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cannedvegetables.name);
+      return {
+        ...cannedvegetables,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cannedcucumbers, setCannedcucumbers] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCannedcucumbers.map(cannedcucumbers => ({ ...cannedcucumbers, count: 0 }))
+  const [cannedcucumbers, setCannedcucumbers] = useState<{ name: string; image: any; count: number }[]>(
+    initialCannedcucumbers.map(cannedcucumbers => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cannedcucumbers.name);
+      return {
+        ...cannedcucumbers,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cannedolives, setCannedolives] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCannedolives.map(cannedolives => ({ ...cannedolives, count: 0 }))
+  const [cannedolives, setCannedolives] = useState<{ name: string; image: any; count: number }[]>(
+    initialCannedolives.map(cannedolives => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cannedolives.name);
+      return {
+        ...cannedolives,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cannedtomatoes, setCannedtomatoes] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCannedtomatoes.map(cannedtomatoes => ({ ...cannedtomatoes, count: 0 }))
+  const [cannedtomatoes, setCannedtomatoes] = useState<{ name: string; image: any; count: number }[]>(
+    initialCannedtomatoes.map(cannedtomatoes => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cannedtomatoes.name);
+      return {
+        ...cannedtomatoes,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cannedfish, setCannedfish] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCannedfish.map(cannedfish => ({ ...cannedfish, count: 0 }))
+  const [cannedfish, setCannedfish] = useState<{ name: string; image: any; count: number }[]>(
+    initialCannedfish.map(cannedfish => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cannedfish.name);
+      return {
+        ...cannedfish,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cannedtuna, setCannedtuna] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCannedtuna.map(cannedtuna => ({ ...cannedtuna, count: 0 }))
+  const [cannedtuna, setCannedtuna] = useState<{ name: string; image: any; count: number }[]>(
+    initialCannedtuna.map(cannedtuna => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cannedtuna.name);
+      return {
+        ...cannedtuna,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cannedfruit, setCannedfruit] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCannedfruit.map(cannedfruit => ({ ...cannedfruit, count: 0 }))
+  const [cannedfruit, setCannedfruit] = useState<{ name: string; image: any; count: number }[]>(
+    initialCannedfruit.map(cannedfruit => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cannedfruit.name);
+      return {
+        ...cannedfruit,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [cracks, setCracks] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialCracks.map(cracks => ({ ...cracks, count: 0 }))
+  const [cracks, setCracks] = useState<{ name: string; image: any; count: number }[]>(
+    initialCracks.map(cracks => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cracks.name);
+      return {
+        ...cracks,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [driedfruits, setDriedfruits] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialDriedfruits.map(driedfruits => ({ ...driedfruits, count: 0 }))
+  const [driedfruits, setDriedfruits] = useState<{ name: string; image: any; count: number }[]>(
+    initialDriedfruits.map(driedfruits => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === driedfruits.name);
+      return {
+        ...driedfruits,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
-  const [granolaoats, setGranolaoats] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialGranolaoats.map(granolaoats => ({ ...granolaoats, count: 0 }))
+  const [granolaoats, setGranolaoats] = useState<{ name: string; image: any; count: number }[]>(
+    initialGranolaoats.map(granolaoats => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === granolaoats.name);
+      return {
+        ...granolaoats,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
   );
 
 
@@ -4002,7 +4151,6 @@ const initialGranolaoats = [
     const cracksToSave = cracks.filter(cracks => cracks.count > 0).map(cracks => ({ ...cracks, quantity: cracks.count }));
     const driedfruitsToSave = driedfruits.filter(driedfruits => driedfruits.count > 0).map(driedfruits => ({ ...driedfruits, quantity: driedfruits.count }));
     const granolaoatsToSave = granolaoats.filter(granolaoats => granolaoats.count > 0).map(granolaoats => ({ ...granolaoats, quantity: granolaoats.count }));
-
 
     const allCanDry = [...breadsToSave, ...cakesToSave, ...cookiesToSave,...crackersToSave,...oilToSave,...vinegarLemonjuiceToSave,...legumesricecouscousToSave,...pastaToSave,...floursaltsugarToSave,...coffeedrinkingpowdersToSave,...coffeecapsulesToSave,...teaToSave,...teainfusionsToSave,...tahiniToSave,...ketchupmayonnaisemustardToSave,...cannedvegetablesToSave,...cannedcucumbersToSave,...cannedolivesToSave,...cannedtomatoesToSave,...cannedfishToSave,...cannedtunaToSave,...cannedfruitToSave,...cracksToSave,...driedfruitsToSave,...granolaoatsToSave ];
     allCanDry.forEach(CanDry => addProduct(CanDry));
