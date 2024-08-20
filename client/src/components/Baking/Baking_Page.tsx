@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
+import { useLocation } from "react-router-dom";
 
 const importImage = (imageName: string) => {
   try {
@@ -25,6 +26,9 @@ const BakingPage: React.FC = () => {
       image: importImage('Aluminum_foil.png'),
     }
   ];
+  
+  initialBaking.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+
 
   const [baking, setBaking] = useState<{ name: string; image: string | null; count: number }[]>(
     initialBaking.map(item => {
@@ -52,9 +56,8 @@ const BakingPage: React.FC = () => {
     const itemsToSave = baking.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
 
     itemsToSave.forEach(item => addProduct(item));
-    //setBaking(baking.map(item => ({ ...item, count: 0 })));
   };
-
+  
   return (
     <div>
       <div>

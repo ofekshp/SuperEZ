@@ -44,7 +44,6 @@ const MyBasket: React.FC = () => {
     setTimeout(() => setSignUpOpen(true), 300);
   };
 
-  
   const handleSubmit = async () => {
     try{
       const response = await cartService.getCheapCart(basketProducts);

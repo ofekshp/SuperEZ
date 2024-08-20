@@ -25,7 +25,7 @@ import MyProfileModal from './components/MyProfile/MyProfile.tsx';
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   
-
+  var firstTime = false;
   useEffect(() => {
     const checkLoginStatus = () => {
       const userEmail = localStorage.getItem('userEmail');
