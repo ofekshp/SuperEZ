@@ -4155,32 +4155,6 @@ const initialGranolaoats = [
     const allCanDry = [...breadsToSave, ...cakesToSave, ...cookiesToSave,...crackersToSave,...oilToSave,...vinegarLemonjuiceToSave,...legumesricecouscousToSave,...pastaToSave,...floursaltsugarToSave,...coffeedrinkingpowdersToSave,...coffeecapsulesToSave,...teaToSave,...teainfusionsToSave,...tahiniToSave,...ketchupmayonnaisemustardToSave,...cannedvegetablesToSave,...cannedcucumbersToSave,...cannedolivesToSave,...cannedtomatoesToSave,...cannedfishToSave,...cannedtunaToSave,...cannedfruitToSave,...cracksToSave,...driedfruitsToSave,...granolaoatsToSave ];
     allCanDry.forEach(CanDry => addProduct(CanDry));
 
-    setBreads(breads.map(breads => ({ ...breads, count: 0 })));
-    setCakes(cakes.map(cakes => ({ ...cakes, count: 0 })));
-    setCakes(cookies.map(cookies => ({ ...cookies, count: 0 })));
-    setCrackers(crackers.map(crackers => ({ ...crackers, count: 0 })));
-    setOil(oil.map(oil => ({ ...oil, count: 0 })));
-    setVinegarLemonjuice(vinegarLemonjuice.map(vinegarLemonjuice => ({ ...vinegarLemonjuice, count: 0 })));
-    setLegumesricecouscous(legumesricecouscous.map(legumesricecouscous => ({ ...legumesricecouscous, count: 0 })));
-    setPasta(pasta.map(pasta => ({ ...pasta, count: 0 })));
-    setFloursaltsugar(floursaltsugar.map(floursaltsugar => ({ ...floursaltsugar, count: 0 })));
-    setCoffeedrinkingpowders(coffeedrinkingpowders.map(coffeedrinkingpowders => ({ ...coffeedrinkingpowders, count: 0 })));
-    setCoffeecapsules(coffeecapsules.map(coffeecapsules => ({ ...coffeecapsules, count: 0 })));
-    setTea(tea.map(tea => ({ ...tea, count: 0 })));
-    setTeainfusions(teainfusions.map(teainfusions => ({ ...teainfusions, count: 0 })));
-    setTahini(tahini.map(tahini => ({ ...tahini, count: 0 })));
-    setKetchupmayonnaisemustard(ketchupmayonnaisemustard.map(ketchupmayonnaisemustard => ({ ...ketchupmayonnaisemustard, count: 0 })));
-    setCannedvegetables(cannedvegetables.map(cannedvegetables => ({ ...cannedvegetables, count: 0 })));
-    setCannedcucumbers(cannedcucumbers.map(cannedcucumbers => ({ ...cannedcucumbers, count: 0 })));
-    setCannedolives(cannedolives.map(cannedolives => ({ ...cannedolives, count: 0 })));
-    setCannedtomatoes(cannedtomatoes.map(cannedtomatoes => ({ ...cannedtomatoes, count: 0 })));
-    setCannedfish(cannedfish.map(cannedfish => ({ ...cannedfish, count: 0 })));
-    setCannedtuna(cannedtuna.map(cannedtuna => ({ ...cannedtuna, count: 0 })));
-    setCannedfruit(cannedfruit.map(cannedfruit => ({ ...cannedfruit, count: 0 })));
-    setCracks(cracks.map(cracks => ({ ...cracks, count: 0 })));
-    setDriedfruits(driedfruits.map(driedfruits => ({ ...driedfruits, count: 0 })));
-    setGranolaoats(granolaoats.map(granolaoats => ({ ...granolaoats, count: 0 })));
-
   };
 
   return (
