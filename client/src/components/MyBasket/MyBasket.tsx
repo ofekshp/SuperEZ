@@ -22,6 +22,7 @@ const MyBasket: React.FC = () => {
     try{
       const response = await cartService.getCheapCart(basketProducts);
       navigate('/comparingCarts', { state: { superCarts: response } });
+      localStorage.setItem('basketProducts', '');
       console.log(response);
     }catch (error) {
       console.error('Error add product:', error);
@@ -129,8 +130,7 @@ const MyBasket: React.FC = () => {
             </div>
           </div>
           <div className="my-basket__login-prompt">
-            <span>רוצים לשמור את הסל שלכם? </span>
-            <a href="#" className="my-basket__login-link">התחברו כאן</a>
+            <span>רוצים לשמור את הסל שלכם?  הרשמו / התחברו </span>
           </div>
           <div>
           <button className="my-basket__order-button" onClick={handleSubmit}>הזמן עכשיו</button>
