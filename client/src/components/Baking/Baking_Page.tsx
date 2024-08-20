@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
+import { useLocation } from "react-router-dom";
 
 const importImage = (imageName: string) => {
   try {
@@ -52,9 +53,8 @@ const BakingPage: React.FC = () => {
     const itemsToSave = baking.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
 
     itemsToSave.forEach(item => addProduct(item));
-    //setBaking(baking.map(item => ({ ...item, count: 0 })));
   };
-
+  
   return (
     <div>
       <div>

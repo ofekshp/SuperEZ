@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const compareCartSchema = new mongoose.Schema({
+  category:{
+    type: String,
+    required: true
+  },
   name: {
     type: String,
     required: true
@@ -15,6 +19,6 @@ const compareCartSchema = new mongoose.Schema({
     ]
 });
 
-const CompareCart = mongoose.model('Product', compareCartSchema);
+const CompareCart = mongoose.model('Categorized_product', compareCartSchema);
 
 module.exports = CompareCart;
