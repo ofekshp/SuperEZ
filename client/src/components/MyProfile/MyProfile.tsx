@@ -100,12 +100,8 @@ const MyProfileModal: React.FC<MyProfileModalProps> = ({ closeModal }) => {
  
 
     try {
-      console.log('Before clearing basket:');
       await clearBasket();
-      console.log('After clearing basket:');
-      
-      // Wait a short time to ensure the basket is cleared before adding new products
-      await new Promise(resolve => setTimeout(resolve, 100));
+            await new Promise(resolve => setTimeout(resolve, 100));
       await cart.products.forEach(product => {
   addProduct({ name: product.name, quantity: product.quantity });
       });

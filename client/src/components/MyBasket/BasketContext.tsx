@@ -10,9 +10,8 @@ interface Product {
 interface BasketContextType {
   basketProducts: Product[];
   addProduct: (product: Product) => void;
-  removeProduct: (productName: string |React.JSX.Element) => void; 
   clearBasket:()=> void; 
-
+  removeProduct: (productName: string) => void; 
 }
 
 const BasketContext = createContext<BasketContextType | undefined>(undefined);
@@ -20,7 +19,6 @@ const BasketContext = createContext<BasketContextType | undefined>(undefined);
 export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const cartService = new CartService();
   const [basketProducts, setBasketProducts] = useState<Product[]>([]);
-
 
   useEffect(() => {
     async function loadBasketProducts() {
@@ -57,7 +55,8 @@ export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   
   
   
-  const removeProduct = async (productName) => {
+
+  const removeProduct = async (productName: string) => {
     try {
       const updatedProducts = await cartService.removeProduct(productName);
       setBasketProducts(updatedProducts);

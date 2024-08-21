@@ -13,8 +13,6 @@
 .card img {
   width: 100px;
   height: 100px;
-  object-fit: contain;
-  border-radius: 8px;
   object-fit: cover;
   object-fit: contain;
 }
@@ -55,5 +53,5 @@ h2 {
 }
 
 span {
-  margin: 0 10px;
+  margin: 0 10px;
 }
