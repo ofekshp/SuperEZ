@@ -58,7 +58,6 @@ function App() {
         <Route path="/profile" element={<MyProfileModal />} />
         <Route path="/logout"/>  
         <Route path="/carts"/>  
-
         <Route path="reset-password"/>
         <Route path="/MeatFish" element={<MeatFish />} />
         <Route path="/Drinks" element={<Drinks />} />
@@ -79,3 +78,4 @@ function App() {
   );
 }
 export default App;
+
