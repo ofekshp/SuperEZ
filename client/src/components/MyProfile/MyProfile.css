@@ -31,7 +31,6 @@
     margin-bottom: 20px;
     align-self: center; 
     font-size: 20px;
-
 }
 
 .close-button {
@@ -87,7 +86,7 @@ input {
     margin-top: 15px;
 }
 
-.save-button {
+.save-button-profile {
     color: white;
     background-color: #007bff;
     font-weight: 700;
@@ -99,7 +98,7 @@ input {
     text-align: center;
 }
 
-.save-button:hover {
+.save-button-profile:hover {
     background-color: #0056b3;
 }
 
@@ -129,3 +128,57 @@ input {
     margin-bottom: 5px;
     text-align: right; 
 }
+
+
+
+/* עיצוב עבור כל סל */
+.cart-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.cart-item p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.products-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    max-height: 100px; /* גובה מקסימלי עבור רשימת מוצרים */
+    overflow-y: auto; /* אפשרות לגלילה אם יש יותר מוצרים מהגובה המקסימלי */
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.products-list li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.select-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+
+  .select-button:hover {
+    background-color: #0056b3;}

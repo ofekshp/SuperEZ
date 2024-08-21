@@ -6,8 +6,9 @@ const productSchema = new mongoose.Schema({
 });
 
 const cartSchema = new mongoose.Schema({
-  userId: { type: String, required: true },
-  products: [productSchema],
+  userId: { type: String, required: true }, 
+  date: { type: Date, default: Date.now }, 
+  products: [productSchema], 
 });
 
 const Cart = mongoose.model('Cart', cartSchema);
