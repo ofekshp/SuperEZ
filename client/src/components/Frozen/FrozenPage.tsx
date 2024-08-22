@@ -789,15 +789,14 @@ const FrozenPage: React.FC = () => {
   };
 
   const handleSave = async () => {
-    const allProducts = [
-      ...frozenVegetables.filter(product => product.count > 0),
-      ...doughsPizzasPastries.filter(product => product.count > 0),
-      ...preparedFoods.filter(product => product.count > 0),
-      ...herbsSpices.filter(product => product.count > 0),
-      ...frozenFruit.filter(product => product.count > 0)
-    ].map(product => ({ ...product, quantity: product.count }));
+    const frozenVegetablesToSave = frozenVegetables.filter(frozenVegetables => frozenVegetables.count > 0).map(frozenVegetables => ({ ...frozenVegetables, quantity: frozenVegetables.count }));
+    const doughsPizzasPastriesToSave = doughsPizzasPastries.filter(doughsPizzasPastries => doughsPizzasPastries.count > 0).map(doughsPizzasPastries => ({ ...doughsPizzasPastries, quantity: doughsPizzasPastries.count }));
+    const preparedFoodsToSave = preparedFoods.filter(preparedFoods => preparedFoods.count > 0).map(preparedFoods => ({ ...preparedFoods, quantity: preparedFoods.count }));
+    const herbsSpicesToSave = herbsSpices.filter(herbsSpices => herbsSpices.count > 0).map(herbsSpices => ({ ...herbsSpices, quantity: herbsSpices.count }));
+    const frozenFruitToSave = frozenFruit.filter(frozenFruit => frozenFruit.count > 0).map(frozenFruit => ({ ...frozenFruit, quantity: frozenFruit.count }));
 
-    allProducts.forEach(product => addProduct(product));
+    const allItems = [...frozenVegetablesToSave, ...doughsPizzasPastriesToSave , ...preparedFoodsToSave , ...herbsSpicesToSave , ...frozenFruitToSave];
+    allItems.forEach(item => addProduct(item));
   };
 
   return (

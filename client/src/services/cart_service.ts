@@ -1,7 +1,14 @@
+import axios from 'axios';
+
+
+
 interface Product {
     name: string;
     quantity: number;
-    id: number;
+  }
+  interface Cart {
+    date: string;
+    products: Product[];
   }
   
   class CartService {
@@ -50,21 +57,12 @@ interface Product {
 
     async getCheapCart(myCart: Product[]) {
       const userId = localStorage.getItem('userId');
-      if (userId) {
-      try{
-               const response = await fetch(`http://localhost:3001/cart/add/${userId}`, {
-                 method: 'POST',
-                 headers: {
-                   'Content-Type': 'application/json',
-                 },
-                 body: JSON.stringify({ userId, products: myCart }),
-              })
-             }catch (error) {
-               console.error('Error add product:', error);
-               return []; // Return an empty array on error
-             }
-      }
-
+      const date = new Date();
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      const currentDate = `${day}-${month}-${year}`;
+    
       try {
         const response = await fetch(`http://localhost:3001/compare`, {
           method: 'POST',
@@ -81,7 +79,28 @@ interface Product {
         return []; // Return an empty array on error
       }
     }
-  }
-  
-  export default CartService;
-  
+
+    async getUserCarts(): Promise<Cart[]> {
+      const userId = localStorage.getItem('userId'); // כאן שולפים את userId מ-localStorage
+      try {
+        const response = await axios.get('http://localhost:3001/cart/carts', {
+          headers: {
+            'Content-Type': 'application/json',
+            'userId': userId || '', // שולחים את userId בכותרות של הבקשה
+          },
+          withCredentials: true,
+        });
+        if (response.status === 200) {
+          return response.data;
+        } else {
+          console.error('Error fetching user carts:', response.status);
+          return [];
+        }
+      } catch (error) {
+        console.error('Error fetching user carts:', error);
+        throw error;
+      }
+    }
+   
+}
+export default CartService;

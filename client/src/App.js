@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useRef} from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -24,9 +24,9 @@ import MyProfileModal from './components/MyProfile/MyProfile.tsx';
 
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-  
-  var firstTime = false;
+
   useEffect(() => {
+  
     const checkLoginStatus = () => {
       const userEmail = localStorage.getItem('userEmail');
       const isLoggedIn = document.cookie.includes('isLoggedIn=true');
@@ -34,8 +34,8 @@ function App() {
         setIsUserLoggedIn(true);
       }
     };
-
     checkLoginStatus();
+
   }, []);
 
 
@@ -47,10 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/cart" element={<MyBasket />} />
-        <Route
-          path="/login"
-          element={
-            isUserLoggedIn ? (
+        <Route path="/login" element={ isUserLoggedIn ? (
               <Navigate to="/" />
             ) : (
               <SignInModal closeModal={() => {}} openSignUpModal={() => {}} setIsUserLoggedIn={setIsUserLoggedIn} />
@@ -60,6 +57,7 @@ function App() {
         <Route path="/signup" element={<SignUpModal />} />
         <Route path="/profile" element={<MyProfileModal />} />
         <Route path="/logout"/>  
+        <Route path="/carts"/>  
         <Route path="reset-password"/>
         <Route path="/MeatFish" element={<MeatFish />} />
         <Route path="/Drinks" element={<Drinks />} />
@@ -79,4 +77,5 @@ function App() {
 
   );
 }
-export default App;
+export default App;
+
