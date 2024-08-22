@@ -112,10 +112,16 @@ class RamiLeviScraper:
                     add_button_selector = '.focus-item.btn-acc'
                     add_button = await page.wait_for_selector(add_button_selector, state="visible", timeout=10000)
                     if add_button:
-                        logger.info("Clicking 'Add to Cart' button")
-                        await add_button.click()
-                        # await page.wait_for_load_state("networkidle")
-                        logger.info(f"Added {product['name']} to cart")
+                        quantity = product.get('quantity', 1)
+                        logger.info(f"Clicking 'Add to Cart' button {quantity} times for {product['name']}")
+                        for _ in range(quantity):
+                            await add_button.click()
+                            await asyncio.sleep(0.5)  # Short delay between clicks to ensure they're registered
+
+                        logger.info(f"Added {quantity} x {product['name']} to cart")
+
+                        # await add_button.click()
+                        # logger.info(f"Added {product['name']} to cart")
 
                         # Check if the product was actually added to the cart
                         cart_count = await page.query_selector('.cart-count')
