@@ -53,11 +53,33 @@ const MyBasket: React.FC = () => {
 
   const handleSubmit = async () => {
     try{
+
       const userEmail = localStorage.getItem('userEmail');
       const userData = await userService.getUserProfile(); // userData contain : name , phone ( userData.name , userData.phone )
+      
+      const client_info = {
+        email,
+        phone,
+        fullName,
+        city,
+        streetAndHouse,
+        floorNumber,
+        apartmentNumber,
+        ...userData && {
+          email: userEmail,
+          phone: userData.phone,
+          fullName: userData.name
+        }
+      }
+      
       const response = await cartService.getCheapCart(basketProducts);
-      navigate('/comparingCarts', { state: { superCarts: response } });
-      localStorage.setItem('basketProducts', '');
+      navigate('/comparingCarts', { 
+        state: { 
+          superCarts: response,
+          client_info: client_info,
+          basketProducts: basketProducts
+        } 
+    });
       console.log(response);
     }catch (error) {
       console.error('Error add product:', error);
@@ -69,8 +91,8 @@ const MyBasket: React.FC = () => {
       <h1 className="my-basket__title">הסל שלי</h1>
       <div className="my-basket__content">
         <div className="my-basket__product-list">
-          {basketProducts.map((product, index) => (
-            <div className="product-item" key={index}>
+          {basketProducts.map((product) => (
+            <div className="product-item" key={product.id}>
               <span className="product-name">{product.name}</span>
               <span className="product-quantity">כמות: {product.quantity}</span>
               <button
