@@ -72,26 +72,26 @@ const ComparingCarts: React.FC = () => {
     }
   };
 
-  const getDeliveryPrice = (index: number) => {
-    switch (index) {
-      case 0: // Rami Levi
+  const getDeliveryPrice = (cartName: string) => {
+    switch (cartName) {
+      case 'רמי לוי': // Rami Levi
         return 29.90; 
-      case 1: // Victory
+      case 'ויקטורי': // Victory
         return 30.00; 
-      case 2: // Hazi-Hinam
+      case 'חצי חינם': // Hazi-Hinam
         return 29.00; 
       default:
         return 0;
     }
   };
 
-  const getLogo = (index: number) => {
-    switch (index) {
-      case 0: // Rami Levi
+  const getLogo = (cartName: string) => {
+    switch (cartName) {
+      case 'רמי לוי': // Rami Levi
         return importImage('RamiLevi.png');
-      case 1: // Victory
+      case 'ויקטורי': // Victory
         return importImage('Victory.png');
-      case 2: // Hazi-Hinam
+      case 'חצי חינם': // Hazi-Hinam
         return importImage('HaziHinam.png');
       default:
         return null;
@@ -103,13 +103,13 @@ const ComparingCarts: React.FC = () => {
       <h1 className="result-header">:תוצאה</h1>
       {error && <div className="error-message">{error}</div>}
       <div className="cart-column">
-        {superCarts.map((cart: any, index: number) => {
-          const deliveryPrice = getDeliveryPrice(index);
+        {superCarts.map((cart: any) => {
+          const deliveryPrice = getDeliveryPrice(cart.name);
           const totalWithDelivery = cart.totalPrice + deliveryPrice;
-          const logo = getLogo(index);
+          const logo = getLogo(cart.name);
           
           return (
-            <div key={index} className="cart-row">
+            <div key={cart.name} className="cart-row">
               <div className="cart-content">
                 {logo && <img src={logo} alt={`${cart.name} Logo`} className="cart-logo" />}
                 <h2 className="cart-header">{cart.name}</h2>
