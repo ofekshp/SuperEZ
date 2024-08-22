@@ -5,11 +5,13 @@ import './MyBasket.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import CartService from '../../services/cart_service.ts';
+import UserService from '../../services/user_service.ts';
 
 const MyBasket: React.FC = () => {
   const cartService = new CartService();
+  const userService = new UserService();
   const navigate = useNavigate();
-  const { basketProducts , addProduct , removeProduct} = useBasket();
+  const { basketProducts , removeProduct} = useBasket();
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [fullName, setFullName] = useState('');
@@ -20,6 +22,8 @@ const MyBasket: React.FC = () => {
   
   const handleSubmit = async () => {
     try{
+      const userEmail = localStorage.getItem('userEmail');
+      const userData = await userService.getUserProfile(); // userData contain : name , phone ( userData.name , userData.phone )
       const response = await cartService.getCheapCart(basketProducts);
       navigate('/comparingCarts', { state: { superCarts: response } });
       localStorage.setItem('basketProducts', '');

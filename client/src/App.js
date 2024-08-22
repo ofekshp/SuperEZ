@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect , useRef} from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -26,6 +26,7 @@ function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
   useEffect(() => {
+  
     const checkLoginStatus = () => {
       const userEmail = localStorage.getItem('userEmail');
       const isLoggedIn = document.cookie.includes('isLoggedIn=true');
