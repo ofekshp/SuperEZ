@@ -20,8 +20,23 @@ const MyBasket: React.FC = () => {
   
   const handleSubmit = async () => {
     try{
+      const client_info = {
+        email,
+        phone,
+        fullName,
+        city,
+        streetAndHouse,
+        floorNumber,
+        apartmentNumber
+      }
       const response = await cartService.getCheapCart(basketProducts);
-      navigate('/comparingCarts', { state: { superCarts: response } });
+      navigate('/comparingCarts', { 
+        state: { 
+          superCarts: response,
+          client_info: client_info,
+          basketProducts: basketProducts
+        } 
+      });
       console.log(response);
     }catch (error) {
       console.error('Error add product:', error);
