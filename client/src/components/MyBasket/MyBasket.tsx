@@ -26,15 +26,9 @@ const MyBasket: React.FC = () => {
   const cartService = new CartService();
   const userService = new UserService();
   const navigate = useNavigate();
-
+  const [errorMessage, setErrorMessage] = useState("");
   useEffect(() => {
     const isLoggedIn = document.cookie.includes("isLoggedIn=true");
-
-    const hasRefreshed = sessionStorage.getItem('hasRefreshed');
-    if (!hasRefreshed) {
-      sessionStorage.setItem('hasRefreshed', 'true');
-      window.location.reload();
-    }
     setIsUserLoggedIn(isLoggedIn);
   }, []);
 
@@ -52,6 +46,10 @@ const MyBasket: React.FC = () => {
   };
 
   const handleSubmit = async () => {
+    if (basketProducts.length === 0) {
+      setErrorMessage("הסל ריק. אנא הוסף מוצרים לסל לפני ביצוע ההזמנה.");
+      return;
+    }
     try{
 
       const userEmail = localStorage.getItem('userEmail');
@@ -288,6 +286,11 @@ const MyBasket: React.FC = () => {
                 openSignUpModal={openSignUpModal}
                 setIsUserLoggedIn={setIsUserLoggedIn}
               />)}
+              {errorMessage && (
+              <div className="error-message">
+                {errorMessage}
+              </div>
+            )}
             </div>
           <div>
           <button className="my-basket__order-button" onClick={handleSubmit}>הזמן עכשיו</button>
