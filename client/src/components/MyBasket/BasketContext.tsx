@@ -10,6 +10,7 @@ interface Product {
 interface BasketContextType {
   basketProducts: Product[];
   addProduct: (product: Product) => void;
+  clearBasket:()=> void; 
   removeProduct: (productName: string) => void; 
 }
 
@@ -41,6 +42,20 @@ export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       console.error('Error adding product to basket:', error);
     }
   };
+ 
+  const clearBasket = async () => {
+    try {
+      for (const product of basketProducts) {
+        await removeProduct(product.name);
+      }
+      setBasketProducts([]);  
+    } catch (error) {
+      console.error('Error clearing basket:', error);
+    }
+  };
+  
+  
+  
 
   const removeProduct = async (productName: string) => {
     try {
@@ -52,7 +67,7 @@ export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   };
 
   return (
-    <BasketContext.Provider value={{ basketProducts, addProduct, removeProduct }}>
+    <BasketContext.Provider value={{ basketProducts, addProduct, removeProduct,clearBasket }}>
       {children}
     </BasketContext.Provider>
   );

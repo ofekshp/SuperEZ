@@ -26,6 +26,9 @@ const BakingPage: React.FC = () => {
       image: importImage('Aluminum_foil.png'),
     }
   ];
+  
+  initialBaking.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+
 
   const [baking, setBaking] = useState<{ name: string; image: string | null; count: number }[]>(
     initialBaking.map(item => {

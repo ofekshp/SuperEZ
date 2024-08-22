@@ -71,7 +71,7 @@ class UserService {
     // loginUser = async (user: IUser) => {
     //     const serverUrl = process.env.REACT_APP_SERVER_URL;
     //     const port = process.env.REACT_APP_SERVER_PORT;
-    //     const apiUrl = `${serverUrl}:${port}/users/login`;
+    //     const apiUrl = ${serverUrl}:${port}/users/login;
     //     try {
     //         const response = await fetch(apiUrl, {
     //           method: 'POST',
@@ -88,7 +88,7 @@ class UserService {
     //             localStorage.removeItem('basketProducts');
     //             localStorage.setItem('userEmail', data.user.email);
     //             localStorage.setItem('userId', data.user._id);
-    //             document.cookie = `isLoggedIn=true;path=/`;
+    //             document.cookie = isLoggedIn=true;path=/;
     //             return true;
     //           } else {
     //             console.log('Invalid data format:', data);
@@ -162,7 +162,7 @@ class UserService {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'email': userEmail || '', // Pass the user's email in the headers
+          'email': userEmail || '',
         },
         credentials: 'include',
       });
@@ -211,4 +211,4 @@ class UserService {
     }
   };
 }
-export default UserService;
+export default UserService;
