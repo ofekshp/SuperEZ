@@ -32,11 +32,8 @@ const compareCart = async (req, res) => {
     };
 
     for (const product of products) {
-      console.log('product id:', product.id);
       const categoryName = getCategoryById[product.id];
-      console.log('categoryName:', categoryName);
       const dbProductCategory = await CompareCart.find({ category: categoryName });
-      console.log('dbProductCategory:', dbProductCategory);
       for (const cart of carts) {
         let dbProduct;
         let index = 0;
@@ -61,7 +58,7 @@ const compareCart = async (req, res) => {
           cart.totalPrice += priceStore;
           cart.products.push({
             name: dbProduct.name,
-            price: priceStore,
+            price: priceStore.toFixed(2),
           });
         } else {
           storeNull.push(product.name);

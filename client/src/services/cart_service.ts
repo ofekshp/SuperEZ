@@ -5,7 +5,6 @@ import axios from 'axios';
 interface Product {
     name: string;
     quantity: number;
-    id: number;
   }
   interface Cart {
     date: string;

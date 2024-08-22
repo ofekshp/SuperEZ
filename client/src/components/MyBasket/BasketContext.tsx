@@ -1,5 +1,5 @@
 // BasketContext.tsx
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useState, useEffect, ReactNode ,useRef} from 'react';
 import CartService from '../../services/cart_service.ts';
 
 interface Product {
@@ -31,6 +31,7 @@ export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       }
     } 
     loadBasketProducts();
+
   }, []);
 
   const addProduct = async (product: Product) => {

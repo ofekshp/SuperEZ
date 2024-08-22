@@ -8,6 +8,7 @@ import SignUpModal from "../SignUp/SignUp.tsx";
 import { useNavigate } from 'react-router-dom';
 import './MyBasket.css';
 import CartService from '../../services/cart_service.ts';
+import UserService from '../../services/user_service.ts';
 
 
 const MyBasket: React.FC = () => {
@@ -23,8 +24,8 @@ const MyBasket: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [signUpOpen, setSignUpOpen] = useState(false);
   const cartService = new CartService();
+  const userService = new UserService();
   const navigate = useNavigate();
-
 
   useEffect(() => {
     const isLoggedIn = document.cookie.includes("isLoggedIn=true");
@@ -46,8 +47,11 @@ const MyBasket: React.FC = () => {
 
   const handleSubmit = async () => {
     try{
+      const userEmail = localStorage.getItem('userEmail');
+      const userData = await userService.getUserProfile(); // userData contain : name , phone ( userData.name , userData.phone )
       const response = await cartService.getCheapCart(basketProducts);
       navigate('/comparingCarts', { state: { superCarts: response } });
+      localStorage.setItem('basketProducts', '');
       console.log(response);
     }catch (error) {
       console.error('Error add product:', error);
@@ -255,8 +259,77 @@ const MyBasket: React.FC = () => {
                 closeModal={closeModal}
                 openSignUpModal={openSignUpModal}
                 setIsUserLoggedIn={setIsUserLoggedIn}
+              />)}
+            </div>
+            <div>
+              <label htmlFor="phone" className="my-basket__form-label">טלפון:</label>
+              <input
+                id="phone"
+                type="text"
+                className="my-basket__form-input"
+                placeholder="הכנס טלפון"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
-            )}
+            </div>
+            <div>
+              <label htmlFor="fullName" className="my-basket__form-label">שם מלא:</label>
+              <input
+                id="fullName"
+                type="text"
+                className="my-basket__form-input"
+                placeholder="הכנס שם מלא"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="city" className="my-basket__form-label">עיר:</label>
+              <input
+                id="city"
+                type="text"
+                className="my-basket__form-input"
+                placeholder="הכנס עיר"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="streetAndHouse" className="my-basket__form-label">רחוב ומספר בית:</label>
+              <input
+                id="streetAndHouse"
+                type="text"
+                className="my-basket__form-input"
+                placeholder="הכנס רחוב ומספר בית"
+                value={streetAndHouse}
+                onChange={(e) => setStreetAndHouse(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="floorNumber" className="my-basket__form-label">מספר קומה:</label>
+              <input
+                id="floorNumber"
+                type="text"
+                className="my-basket__form-input"
+                placeholder="הכנס מספר קומה"
+                value={floorNumber}
+                onChange={(e) => setFloorNumber(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="apartmentNumber" className="my-basket__form-label">מספר דירה:</label>
+              <input
+                id="apartmentNumber"
+                type="text"
+                className="my-basket__form-input"
+                placeholder="הכנס מספר דירה"
+                value={apartmentNumber}
+                onChange={(e) => setApartmentNumber(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="my-basket__login-prompt">
+            <span>רוצים לשמור את הסל שלכם?  הרשמו / התחברו </span>
             {signUpOpen && <SignUpModal closeModal={closeModal} />}
           </div>
           <div>
@@ -264,7 +337,6 @@ const MyBasket: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
