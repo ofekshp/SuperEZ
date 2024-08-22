@@ -54,9 +54,9 @@ const ComparingCarts: React.FC = () => {
               <div className="cart-content">
                 {logo && <img src={logo} alt={`${cart.name} Logo`} className="cart-logo" />}
                 <h2 className="cart-header">{cart.name}</h2>
-                <p className="cart-price">מחיר סל: {cart.totalPrice}</p>
+                <p className="cart-price">מחיר סל: {cart.totalPrice.toFixed(2)}</p>
                 <p className="delivery-price">דמי משלוח: {deliveryPrice}</p>
-                <p className="total-price">סה"כ לתשלום: {totalWithDelivery}</p>
+                <p className="total-price">סה"כ לתשלום: {totalWithDelivery.toFixed(2)}</p>
               </div>
               <button className="order-btn">להזמנה</button>
             </div>
