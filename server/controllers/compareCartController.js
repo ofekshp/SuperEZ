@@ -2,6 +2,7 @@ const CompareCart = require('../models/CompareCart');
 
 const compareCart = async (req, res) => {
   const { products } = req.body;
+  console.log(' My products:', products);
   try {
     const carts = [
       { name: 'רמי לוי', totalPrice: 0, products: [] },
@@ -32,11 +33,8 @@ const compareCart = async (req, res) => {
     };
 
     for (const product of products) {
-      console.log('product id:', product.id);
       const categoryName = getCategoryById[product.id];
-      console.log('categoryName:', categoryName);
       const dbProductCategory = await CompareCart.find({ category: categoryName });
-      console.log('dbProductCategory:', dbProductCategory);
       for (const cart of carts) {
         let dbProduct;
         let index = 0;
@@ -58,10 +56,11 @@ const compareCart = async (req, res) => {
 
         if (dbProduct && dbProduct.prices[0]._doc[cart.name]) {
           const priceStore = dbProduct.prices[0]._doc[cart.name];
-          cart.totalPrice += priceStore;
+          cart.totalPrice += (priceStore * product.quantity);
           cart.products.push({
             name: dbProduct.name,
-            price: priceStore,
+            price: priceStore.toFixed(2),
+            quantity: product.quantity,
           });
         } else {
           storeNull.push(product.name);

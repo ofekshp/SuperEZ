@@ -8,6 +8,7 @@ import SignUpModal from "../SignUp/SignUp.tsx";
 import { useNavigate } from 'react-router-dom';
 import './MyBasket.css';
 import CartService from '../../services/cart_service.ts';
+import UserService from '../../services/user_service.ts';
 
 
 const MyBasket: React.FC = () => {
@@ -23,9 +24,9 @@ const MyBasket: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [signUpOpen, setSignUpOpen] = useState(false);
   const cartService = new CartService();
+  const userService = new UserService();
   const navigate = useNavigate();
-
-
+  const [errorMessage, setErrorMessage] = useState("");
   useEffect(() => {
     const isLoggedIn = document.cookie.includes("isLoggedIn=true");
     setIsUserLoggedIn(isLoggedIn);
@@ -45,9 +46,38 @@ const MyBasket: React.FC = () => {
   };
 
   const handleSubmit = async () => {
+    if (basketProducts.length === 0) {
+      setErrorMessage("הסל ריק. אנא הוסף מוצרים לסל לפני ביצוע ההזמנה.");
+      return;
+    }
     try{
+
+      const userEmail = localStorage.getItem('userEmail');
+      const userData = await userService.getUserProfile(); // userData contain : name , phone ( userData.name , userData.phone )
+      
+      const client_info = {
+        email,
+        phone,
+        fullName,
+        city,
+        streetAndHouse,
+        floorNumber,
+        apartmentNumber,
+        ...userData && {
+          email: userEmail,
+          phone: userData.phone,
+          fullName: userData.name
+        }
+      }
+      
       const response = await cartService.getCheapCart(basketProducts);
-      navigate('/comparingCarts', { state: { superCarts: response } });
+      navigate('/comparingCarts', { 
+        state: { 
+          superCarts: response,
+          client_info: client_info,
+          basketProducts: basketProducts
+        } 
+    });
       console.log(response);
     }catch (error) {
       console.error('Error add product:', error);
@@ -59,8 +89,8 @@ const MyBasket: React.FC = () => {
       <h1 className="my-basket__title">הסל שלי</h1>
       <div className="my-basket__content">
         <div className="my-basket__product-list">
-          {basketProducts.map((product, index) => (
-            <div className="product-item" key={index}>
+          {basketProducts.map((product) => (
+            <div className="product-item" key={product.id}>
               <span className="product-name">{product.name}</span>
               <span className="product-quantity">כמות: {product.quantity}</span>
               <button
@@ -255,10 +285,13 @@ const MyBasket: React.FC = () => {
                 closeModal={closeModal}
                 openSignUpModal={openSignUpModal}
                 setIsUserLoggedIn={setIsUserLoggedIn}
-              />
+              />)}
+              {errorMessage && (
+              <div className="error-message">
+                {errorMessage}
+              </div>
             )}
-            {signUpOpen && <SignUpModal closeModal={closeModal} />}
-          </div>
+            </div>
           <div>
           <button className="my-basket__order-button" onClick={handleSubmit}>הזמן עכשיו</button>
           </div>

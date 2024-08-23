@@ -4271,7 +4271,7 @@ const initialGranolaoats = [
       position: 'absolute',
       marginTop: '100px',
       width: '100%',
-      paddingRight: '20px', // Adjust for right padding if needed
+      paddingRight: '20px', 
       marginBottom: '20px', 
     }}>
       <input

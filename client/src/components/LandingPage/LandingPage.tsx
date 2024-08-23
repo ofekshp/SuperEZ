@@ -2,6 +2,7 @@ import React from 'react';
 import './LandingPage.css';
 
 const LandingPage = () => {
+
   return (
     <div className="landing-page">
       <h1 className="main-heading"> ברוכים הבאים לסופר איזי!</h1>

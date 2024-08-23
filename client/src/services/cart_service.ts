@@ -5,7 +5,6 @@ import axios from 'axios';
 interface Product {
     name: string;
     quantity: number;
-    id: number;
   }
   interface Cart {
     date: string;
@@ -64,60 +63,23 @@ interface Product {
       const year = date.getFullYear();
       const currentDate = `${day}-${month}-${year}`;
     
-      if (userId) {
-        try {
-          const response = await fetch('http://localhost:3001/cart/add/${userId}', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ userId, products: myCart, date: currentDate }),
-          });
-    
-          if (!response.ok) {
-            throw new Error('Failed to save the cart');
-          }
-          
-          const data = await response.json();
-          return data;
-        } catch (error) {
-          console.error('Error adding cart:', error);
-          return [];
-        }
+      try {
+        const response = await fetch(`http://localhost:3001/compare`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ products: myCart }),
+        });
+        const data = await response.json();
+        console.log(data);
+        return data;
+      } catch (error) {
+        console.error('Error get CHEAP CART:', error);
+        return []; // Return an empty array on error
       }
-    };
-    // getUserCarts = async () => {
-    //   const userId = localStorage.getItem('userId');
-    //   try {
-    //     const response = await fetch(http://localhost:3001/cart/${userId}, {
-    //       method: 'GET',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //         'uid': userId || '',
-    //       },
-    //       credentials: 'include',
-    //     });
-    
-    //     if (!response.ok) {
-    //       throw new Error(HTTP error! status: ${response.status});
-    //     }
-    
-    //     const data = await response.json();
-    //     console.log('Data received from server:', data);
-    
-    //     if (Array.isArray(data)) {
-    //       return data; // מחזיר את כל הסלים
-    //     } else {
-    //       console.error('Unexpected data structure:', data);
-    //       return [];
-    //     }
-    //   } catch (error) {
-    //     console.error('Error fetching user carts:', error);
-    //     return [];
-    //   }
-    // };
+    }
 
-    
     async getUserCarts(): Promise<Cart[]> {
       const userId = localStorage.getItem('userId'); // כאן שולפים את userId מ-localStorage
       try {
