@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const importImage = (imageName: string) => {
   try {
@@ -771,79 +773,149 @@ const MeatFish: React.FC = () => {
     const allItems = [...chickenToSave, ...indiaToSave, ...beefLambToSave, ...frozenBeefChickenToSave,...sausageToSave, ...freshFishToSave, ...frozenFishToSave];
     allItems.forEach(item => addProduct(item));
   };
+   
+const [searchTerm, setSearchTerm] = useState("");
+
+const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(event.target.value);
+};
+
+const filterChickenProducts = chickenproducts.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterIndiaProducts = indiaProducts.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterBeefLambProducts = beefLambProducts.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterFrozenBeefChickenProducts = frozenBeefChickenProducts.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterSausageProducts = sausageProducts.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterFreshFishProducts = freshFishProducts.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterFrozenFishProducts = frozenFishProducts.filter(product =>
+  product.name.includes(searchTerm)
+);
 
   return (
-    <div>
-      <div>
-        <ProductsPage   
-          products={chickenproducts}
-          categoryTitle="מוצרי עוף"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={indiaProducts}
-          categoryTitle="מוצרי הודו"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-    </div>
-    <div>
-      <ProductsPage
-        products={beefLambProducts}
-        categoryTitle="בשר בקר וכבש"
-        icon={<img alt="" src={importImage('')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
+
+<div>
+    <div style={{
+      position: 'absolute',
+      marginTop: '100px',
+      width: '100%',
+      paddingRight: '20px', 
+      marginBottom: '20px', 
+    }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר בשר\דגים"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '715px',
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          position: 'relative',
+          float: 'right',
+          marginRight: '200px',
+
+        }}
       />
-    </div>
-    <div>
-      <ProductsPage
-        products={frozenBeefChickenProducts}
-        categoryTitle="בשר בקר ועוף קפוא"
-        icon={<img alt="" src={importImage('')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={sausageProducts}
-        categoryTitle="נקניקיות"
-        icon={<img alt="" src={importImage('')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={freshFishProducts}
-        categoryTitle="דגים טריים"
-        icon={<img alt="" src={importImage('')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={frozenFishProducts}
-        categoryTitle="דגים קפואים"
-        icon={<img alt="" src={importImage('')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        marginRight: '200px',
+
+        pointerEvents: 'none',
+      }}></i>
+    </div>      <div>
+  <ProductsPage
+    products={filterChickenProducts}
+    categoryTitle="מוצרי עוף"
+    icon={<img alt="מוצרי עוף" src={importImage('chicken_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterIndiaProducts}
+    categoryTitle="מוצרי הודו"
+    icon={<img alt="מוצרי הודו" src={importImage('india_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterBeefLambProducts}
+    categoryTitle="בשר בקר וכבש"
+    icon={<img alt="בשר בקר וכבש" src={importImage('beef_lamb_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterFrozenBeefChickenProducts}
+    categoryTitle="בשר בקר ועוף קפוא"
+    icon={<img alt="בשר בקר ועוף קפוא" src={importImage('frozen_beef_chicken_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterSausageProducts}
+    categoryTitle="נקניקיות"
+    icon={<img alt="נקניקיות" src={importImage('sausage_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterFreshFishProducts}
+    categoryTitle="דגים טריים"
+    icon={<img alt="דגים טריים" src={importImage('fresh_fish_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterFrozenFishProducts}
+    categoryTitle="דגים קפואים"
+    icon={<img alt="דגים קפואים" src={importImage('frozen_fish_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+
   </div>
   );
 };
