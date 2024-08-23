@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const DrinksPage: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
   
   const initialSweetDrinks = [
@@ -57,6 +57,10 @@ const [alcohols, setAlcohols] = useState<{ name: string; image: string | null; c
   })
 );
 
+useEffect(() => {
+  handleSave();
+}, [sweets, alcohols]);
+
   const handleIncrement = (name: string) => {
     setSweets(sweets.map(drink =>
       drink.name === name ? { ...drink, count: drink.count + 1 } : drink
@@ -67,12 +71,27 @@ const [alcohols, setAlcohols] = useState<{ name: string; image: string | null; c
   };
 
   const handleDecrement = (name: string) => {
-    setSweets(sweets.map(drink =>
-      drink.name === name && drink.count > 0 ? { ...drink, count: drink.count - 1 } : drink
-    ));
-    setAlcohols(alcohols.map(drink =>
-      drink.name === name && drink.count > 0 ? { ...drink, count: drink.count - 1 } : drink
-    ));
+    setSweets(sweets.map(drink => {
+      if (drink.name === name && drink.count > 0) {
+        const newCount = drink.count - 1;
+        if (newCount === 0) {
+          removeProduct(drink.name);
+        }
+        return { ...drink, count: newCount };
+      }
+      return drink;
+    }));
+    
+    setAlcohols(alcohols.map(drink => {
+      if (drink.name === name && drink.count > 0) {
+        const newCount = drink.count - 1;
+        if (newCount === 0) {
+          removeProduct(drink.name);
+        }
+        return { ...drink, count: newCount };
+      }
+      return drink;
+    }));
   };
 
   const handleSave = async () => {

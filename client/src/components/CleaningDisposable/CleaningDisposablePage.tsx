@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const CleaningDisposablePage: React.FC = () => {
-  const { addProduct } = useBasket(); 
+  const { addProduct , removeProduct } = useBasket(); 
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialPaper = [
@@ -205,6 +205,9 @@ const [bagspackagingproducts, setBagspackagingproducts] = useState<{ name: strin
   })
 );
 
+useEffect(() => {
+  handleSave();
+}, [paper, laundryproducts, cleaningproducts, kitchencleaning, generalcleaning, floorcleaning, bathroomtoilecleaning, pesticideproducts, cleaningaccessories, disposableproducts, bagspackagingproducts]);
 
   const handleIncrement = (name: string) => {
     setPaper(paper.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
@@ -221,17 +224,127 @@ const [bagspackagingproducts, setBagspackagingproducts] = useState<{ name: strin
   };
 
   const handleDecrement = (name: string) => {
-    setPaper(paper.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setLaundryproducts(laundryproducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setCleaningproducts(cleaningproducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setKitchencleaning(kitchencleaning.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setGeneralcleaning(generalcleaning.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setFloorcleaning(floorcleaning.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setBathroomtoilecleaning(bathroomtoilecleaning.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setPesticideproducts(pesticideproducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setCleaningaccessories(cleaningaccessories.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setDisposableproducts(disposableproducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setBagspackagingproducts(bagspackagingproducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
+    setPaper(paper.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setLaundryproducts(laundryproducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCleaningproducts(cleaningproducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setKitchencleaning(kitchencleaning.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setGeneralcleaning(generalcleaning.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setFloorcleaning(floorcleaning.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setBathroomtoilecleaning(bathroomtoilecleaning.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setPesticideproducts(pesticideproducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCleaningaccessories(cleaningaccessories.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setDisposableproducts(disposableproducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setBagspackagingproducts(bagspackagingproducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
   };
 
   const handleSave = async () => {

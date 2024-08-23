@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const PharmPage: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
   
   const initialShampoo = [
@@ -250,6 +250,9 @@ const [candlesmatches, setCandlesmatches] = useState<{ name: string; image: stri
   })
 );
 
+useEffect(() => {
+  handleSave();
+}, [shampoo, conditioner, bathsoap, deodorantforwomen, deodorantformen, sunprotection, shavingpreparationsaccessories, toothpastesmouthwash, toothbrushesdentalaccessories, cosmeticsfacialcare, haircarestyling, femininehygieneabsorbentproducts, careaccessories, bodycare, firstaid, vitaminsnutritionalsupplements, airperfume, candlesmatches]);
 
   const handleIncrement = (name: string) => {
     setShampoo(shampoo.map(item =>  item.name === name ? { ...item, count: item.count + 1 } : item));
@@ -273,24 +276,204 @@ const [candlesmatches, setCandlesmatches] = useState<{ name: string; image: stri
   };
 
   const handleDecrement = (name: string) => {
-    setShampoo(shampoo.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setConditioner(conditioner.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setBathsoap(bathsoap.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setDeodorantforwomen(deodorantforwomen.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setDeodorantformen(deodorantformen.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setSunprotection(sunprotection.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setShavingpreparationsaccessories(shavingpreparationsaccessories.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setToothpastesmouthwash(toothpastesmouthwash.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setToothbrushesdentalaccessories(toothbrushesdentalaccessories.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setCosmeticsfacialcare(cosmeticsfacialcare.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setHaircarestyling(haircarestyling.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setFemininehygieneabsorbentproducts(femininehygieneabsorbentproducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setCareaccessories(careaccessories.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setBodycare(bodycare.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setFirstaid(firstaid.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setVitaminsnutritionalsupplements(vitaminsnutritionalsupplements.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setAirperfume(airperfume.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
-    setCandlesmatches(candlesmatches.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item));
+    setShampoo(shampoo.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setConditioner(conditioner.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setBathsoap(bathsoap.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setDeodorantforwomen(deodorantforwomen.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setDeodorantformen(deodorantformen.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSunprotection(sunprotection.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setShavingpreparationsaccessories(shavingpreparationsaccessories.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setToothpastesmouthwash(toothpastesmouthwash.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setToothbrushesdentalaccessories(toothbrushesdentalaccessories.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCosmeticsfacialcare(cosmeticsfacialcare.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setHaircarestyling(haircarestyling.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setFemininehygieneabsorbentproducts(femininehygieneabsorbentproducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCareaccessories(careaccessories.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setBodycare(bodycare.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setFirstaid(firstaid.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setVitaminsnutritionalsupplements(vitaminsnutritionalsupplements.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setAirperfume(airperfume.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCandlesmatches(candlesmatches.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
   };
 
   const handleSave = () => {
