@@ -276,7 +276,6 @@ const DeliPage: React.FC = () => {
     { name: "יוגורט דיאט בטעם קיווי 0% שומן", image: importImage('diet_kiwi_0_percent.jpeg'), id: 4 },
     { name: "יוגורט דיאט בטעם אפרסק 0%", image: importImage('diet_peach_0_percent.jpeg'), id: 4 },
     { name: "יוגורט יופלה בטעם קיווי 3% שומן", image: importImage('yoplait_kiwi_3_percent.jpeg'), id: 4 },
-    { name: "מארז 8 יחידות יוגורט בטעם אפרסק ותות 3%", image: importImage('8_pack_peach_strawberry_3_percent.jpeg'), id: 4 },
     { name: "יוגורט דיאט בטעם דובדבן 0%", image: importImage('diet_cherry_0_percent.jpeg'), id: 4 },
     { name: "יוגורט דיאט בטעם עוגת גבינה ותות 0%", image: importImage('diet_cheesecake_strawberry_0_percent.jpeg'), id: 4 },
     { name: "יוגורט דיאט בטעם פירות יער 0%", image: importImage('diet_berry_0_percent.jpeg'), id: 4 },
