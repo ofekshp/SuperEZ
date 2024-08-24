@@ -90,7 +90,7 @@ const MyBasket: React.FC = () => {
       <div className="my-basket__content">
         <div className="my-basket__product-list">
           {basketProducts.map((product) => (
-            <div className="product-item" key={product.id}>
+            <div className="product-name" key={product.name}>
               <span className="product-name">{product.name}</span>
               <span className="product-quantity">כמות: {product.quantity}</span>
               <button

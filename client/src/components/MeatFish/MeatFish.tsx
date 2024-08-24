@@ -527,16 +527,6 @@ const MeatFish: React.FC = () => {
     },
     {
       name: "נקניקיות וינר",
-      image: importImage("wiener_sausage_zoglowek.jpeg"),
-      id: 6,
-    },
-    {
-      name: "נקניקיות עוף",
-      image: importImage("chicken_sausage_1kg_zoglowek.jpeg"),
-      id: 6,
-    },
-    {
-      name: "נקניקיות וינר",
       image: importImage("wiener_sausage_1kg_zoglowek.jpeg"),
       id: 6,
     },
@@ -553,11 +543,6 @@ const MeatFish: React.FC = () => {
     {
       name: "נקניקיות צ'ופר",
       image: importImage("choper_sausage_yachiam.jpeg"),
-      id: 6,
-    },
-    {
-      name: "נקניקיות עוף",
-      image: importImage("jumbo_chicken_sausage_1.5kg_zoglowek.jpeg"),
       id: 6,
     },
     {

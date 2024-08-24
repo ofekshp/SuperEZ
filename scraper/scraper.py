@@ -877,7 +877,6 @@ SUPERMARKETS = [
                 "name": "תבלינים",
                 "urls": [
                     "https://shop.hazi-hinam.co.il/catalog/71/%D7%A4%D7%99%D7%A6%D7%95%D7%97%D7%99%D7%9D--%D7%AA%D7%91%D7%9C%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%A4%D7%99%D7%A8%D7%95%D7%AA-%D7%99%D7%91%D7%A9%D7%99%D7%9D/10863/%D7%AA%D7%91%D7%9C%D7%99%D7%A0%D7%99%D7%9D-%D7%90%D7%A8%D7%95%D7%96%D7%99%D7%9D",
-                    "https://shop.hazi-hinam.co.il/catalog/71/%D7%A4%D7%99%D7%A6%D7%95%D7%97%D7%99%D7%9D--%D7%AA%D7%91%D7%9C%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%A4%D7%99%D7%A8%D7%95%D7%AA-%D7%99%D7%91%D7%A9%D7%99%D7%9D/11138/%D7%AA%D7%91%D7%9C%D7%99%D7%A0%D7%99%D7%9D-%D7%91%D7%9E%D7%A9%D7%A7%D7%9C"
                 ]
             },
             {
@@ -894,7 +893,6 @@ SUPERMARKETS = [
                     "https://shop.hazi-hinam.co.il/catalog/78/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%97%D7%9C%D7%91-%D7%95%D7%91%D7%99%D7%A6%D7%99%D7%9D/10870/%D7%97%D7%9C%D7%91-%D7%95%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%97%D7%9C%D7%91-%D7%A2%D7%9E%D7%99%D7%93%D7%99%D7%9D",
                     "https://shop.hazi-hinam.co.il/catalog/78/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%97%D7%9C%D7%91-%D7%95%D7%91%D7%99%D7%A6%D7%99%D7%9D/10869/%D7%A9%D7%9E%D7%A0%D7%AA--%D7%A7%D7%A6%D7%A4%D7%AA--%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94",
                     "https://shop.hazi-hinam.co.il/catalog/129/%D7%94%D7%A6%D7%9E%D7%97%D7%95%D7%A0%D7%99%D7%94/11436/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%A6%D7%9E%D7%97%D7%99%D7%99%D7%9D",
-                    "https://shop.hazi-hinam.co.il/catalog/136/%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%9D-%D7%A2%D7%9D-%D7%97%D7%9C%D7%91%D7%95%D7%9F/11636/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%97%D7%9C%D7%91-%D7%A2%D7%9D-%D7%97%D7%9C%D7%91%D7%95%D7%9F",
                     "https://shop.hazi-hinam.co.il/catalog/78/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%97%D7%9C%D7%91-%D7%95%D7%91%D7%99%D7%A6%D7%99%D7%9D/11213/%D7%91%D7%99%D7%A6%D7%99%D7%9D",
                     "https://shop.hazi-hinam.co.il/catalog/78/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%97%D7%9C%D7%91-%D7%95%D7%91%D7%99%D7%A6%D7%99%D7%9D/11592/%D7%A4%D7%A1%D7%98%D7%95%D7%AA-%D7%9E%D7%A6%D7%95%D7%A0%D7%A0%D7%95%D7%AA",
                 ]
@@ -902,8 +900,6 @@ SUPERMARKETS = [
             {
                 "name": "סלטים רטבים וממרחים",
                 "urls": [
-                    "https://shop.hazi-hinam.co.il/catalog/44/%D7%9E%D7%A2%D7%93%D7%A0%D7%99%D7%99%D7%AA-%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%95%D7%93%D7%92%D7%99%D7%9D/10896/%D7%A1%D7%9C%D7%98%D7%99%D7%9D",
-                    "https://shop.hazi-hinam.co.il/catalog/44/%D7%9E%D7%A2%D7%93%D7%A0%D7%99%D7%99%D7%AA-%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%95%D7%93%D7%92%D7%99%D7%9D/10897/%D7%93%D7%92%D7%99%D7%9D-%D7%9E%D7%A2%D7%95%D7%A9%D7%A0%D7%99%D7%9D-%D7%95%D7%9B%D7%91%D7%95%D7%A9%D7%99%D7%9D",
                     "https://shop.hazi-hinam.co.il/catalog/63/%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%95%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%9D-%D7%90%D7%A8%D7%95%D7%96%D7%99%D7%9D/11598/%D7%97%D7%95%D7%9E%D7%95%D7%A1-%D7%95%D7%98%D7%97%D7%99%D7%A0%D7%94",
                     "https://shop.hazi-hinam.co.il/catalog/63/%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%95%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%9D-%D7%90%D7%A8%D7%95%D7%96%D7%99%D7%9D/10873/%D7%A1%D7%9C%D7%98%D7%99%D7%9D",
                     "https://shop.hazi-hinam.co.il/catalog/63/%D7%A1%D7%9C%D7%98%D7%99%D7%9D-%D7%95%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%9D-%D7%90%D7%A8%D7%95%D7%96%D7%99%D7%9D/11577/%D7%A1%D7%9C%D7%98%D7%99-%D7%93%D7%92%D7%99%D7%9D-%D7%95%D7%93%D7%92%D7%99%D7%9D-%D7%9E%D7%A2%D7%95%D7%A9%D7%A0%D7%99%D7%9D",
@@ -926,7 +922,6 @@ SUPERMARKETS = [
                     "https://shop.hazi-hinam.co.il/catalog/46/%D7%A7%D7%A6%D7%91%D7%99%D7%94/10890/%D7%91%D7%A9%D7%A8-%D7%91%D7%A7%D7%A8-%D7%95%D7%9B%D7%91%D7%A9",
                     "https://shop.hazi-hinam.co.il/catalog/46/%D7%A7%D7%A6%D7%91%D7%99%D7%94/11771/%D7%91%D7%A9%D7%A8-%D7%91%D7%A7%D7%A8-%D7%95%D7%A2%D7%95%D7%A3-%D7%A7%D7%A4%D7%95%D7%90",
                     "https://shop.hazi-hinam.co.il/catalog/87/%D7%93%D7%92%D7%99%D7%94/11770/%D7%93%D7%92%D7%99%D7%9D-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D",
-                    "https://shop.hazi-hinam.co.il/catalog/82/%D7%9E%D7%A2%D7%93%D7%A0%D7%99%D7%99%D7%AA-%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%9D/11141/%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%9D-%D7%95%D7%A4%D7%A1%D7%98%D7%A8%D7%9E%D7%94"
                     "https://shop.hazi-hinam.co.il/catalog/87/%D7%93%D7%92%D7%99%D7%94/11233/%D7%93%D7%92%D7%99%D7%9D-%D7%98%D7%A8%D7%99%D7%99%D7%9D"
                 ]
             },
