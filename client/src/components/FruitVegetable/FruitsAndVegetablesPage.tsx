@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const importImage = (imageName: string) => {
   try {
@@ -823,58 +825,120 @@ const initialPackagedfruit = [
     
 };
 
+ 
+const [searchTerm, setSearchTerm] = useState("");
+
+const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(event.target.value);
+};
+const filterFruits = fruits.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterVegetables = vegetables.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterPackagedPickedVegetables = packagedpickedvegetables.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterHerbsSproutsMushrooms = herbssproutsmushrooms.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterPackagedFruit = packagedfruit.filter(product =>
+  product.name.includes(searchTerm)
+);
+
   return (
-    <div>
-       <div>
-        <ProductsPage
-          products={vegetables}
-          categoryTitle="ירקות"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={packagedpickedvegetables}
-          categoryTitle="ירקות ארוזים"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={herbssproutsmushrooms}
-          categoryTitle="עשבי תיבול, נבטים ופטריות"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>   
-      <div>
-        <ProductsPage
-          products={fruits}
-          categoryTitle="פירות"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={packagedfruit}
-          categoryTitle="פירות ארוזים"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
+
+<div>
+    <div style={{
+      position: 'absolute',
+      marginTop: '100px',
+      width: '100%',
+      paddingRight: '20px', 
+      marginBottom: '20px', 
+    }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר פרי\ירק"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '715px',
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          position: 'relative',
+          float: 'right',
+          marginRight: '200px',
+
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        marginRight: '200px',
+
+        pointerEvents: 'none',
+      }}></i>
+    </div>       <div>
+  <ProductsPage
+    products={filterVegetables}
+    categoryTitle="ירקות"
+    icon={<img alt="" src={importImage('vegetables_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterPackagedPickedVegetables}
+    categoryTitle="ירקות ארוזים"
+    icon={<img alt="" src={importImage('packaged_vegetables_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterHerbsSproutsMushrooms}
+    categoryTitle="עשבי תיבול, נבטים ופטריות"
+    icon={<img alt="" src={importImage('herbs_sprouts_mushrooms_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterFruits}
+    categoryTitle="פירות"
+    icon={<img alt="" src={importImage('fruits_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterPackagedFruit}
+    categoryTitle="פירות ארוזים"
+    icon={<img alt="" src={importImage('packaged_fruit_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+
     </div>
   );
 };

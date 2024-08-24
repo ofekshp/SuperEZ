@@ -5,7 +5,6 @@ import CartService from '../../services/cart_service.ts';
 interface Product {
   name: string;
   quantity: number;
-  id : number;
 }
 
 interface BasketContextType {
