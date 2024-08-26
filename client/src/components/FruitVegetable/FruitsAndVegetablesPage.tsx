@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -14,7 +14,7 @@ const importImage = (imageName: string) => {
 };
 
 const FruitsAndVegetablesPage: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
   
   const initialFruits = [
@@ -778,6 +778,10 @@ const initialPackagedfruit = [
     })
   );
   
+  useEffect(() => {
+    handleSave();
+  }, [fruits, vegetables, packagedpickedvegetables, herbssproutsmushrooms, packagedfruit]);
+
   const handleIncrement = (name: string) => {
     setFruits(fruits.map(fruit =>  fruit.name === name ? { ...fruit, count: fruit.count + 1 } : fruit )); 
 
@@ -793,21 +797,72 @@ const initialPackagedfruit = [
   };
 
   const handleDecrement = (name: string) => {
-    setFruits(fruits.map(fruit =>
-      fruit.name === name && fruit.count > 0 ? { ...fruit, count: fruit.count - 1 } : fruit
-    ));
-    setVegetables(vegetables.map(vegetable =>
-      vegetable.name === name && vegetable.count > 0 ? { ...vegetable, count: vegetable.count - 1 } : vegetable
-    ));
-    setPackagedpickedvegetables(packagedpickedvegetables.map(packagedpickedvegetable =>
-      packagedpickedvegetable.name === name && packagedpickedvegetable.count > 0 ? { ...packagedpickedvegetable, count: packagedpickedvegetable.count - 1 } : packagedpickedvegetable
-    ));
-    setHerbssproutsmushrooms(herbssproutsmushrooms.map(herbssproutsmushroom =>
-      herbssproutsmushroom.name === name && herbssproutsmushroom.count > 0 ? { ...herbssproutsmushroom, count: herbssproutsmushroom.count - 1 } : herbssproutsmushroom
-    ));
-    setPackagedfruit(packagedfruit.map(packagedfruit =>
-      packagedfruit.name === name && packagedfruit.count > 0 ? { ...packagedfruit, count: packagedfruit.count - 1 } : packagedfruit
-    ));
+
+    setFruits(fruits.map(fruit => {
+      if (fruit.name === name && fruit.count > 0) {
+        const newCount = fruit.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(fruit.name);
+        }
+    
+        return { ...fruit, count: newCount };
+      }
+      return fruit;
+    }));
+
+    setVegetables(vegetables.map(vegetable => {
+      if (vegetable.name === name && vegetable.count > 0) {
+        const newCount = vegetable.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(vegetable.name);
+        }
+    
+        return { ...vegetable, count: newCount };
+      }
+      return vegetable;
+    })); 
+    
+    setPackagedpickedvegetables(packagedpickedvegetables.map(packagedpickedvegetable => {
+      if (packagedpickedvegetable.name === name && packagedpickedvegetable.count > 0) {
+        const newCount = packagedpickedvegetable.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(packagedpickedvegetable.name);
+        }
+    
+        return { ...packagedpickedvegetable, count: newCount };
+      }
+      return packagedpickedvegetable;
+    }));
+    
+    setHerbssproutsmushrooms(herbssproutsmushrooms.map(herbssproutsmushroom => {
+      if (herbssproutsmushroom.name === name && herbssproutsmushroom.count > 0) {
+        const newCount = herbssproutsmushroom.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(herbssproutsmushroom.name);
+        }
+    
+        return { ...herbssproutsmushroom, count: newCount };
+      }
+      return herbssproutsmushroom;
+    }));
+    
+    setPackagedfruit(packagedfruit.map(packagedfruit => {
+      if (packagedfruit.name === name && packagedfruit.count > 0) {
+        const newCount = packagedfruit.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(packagedfruit.name);
+        }
+    
+        return { ...packagedfruit, count: newCount };
+      }
+      return packagedfruit;
+    }));
+    
   };
 
   const handleSave = async () => {

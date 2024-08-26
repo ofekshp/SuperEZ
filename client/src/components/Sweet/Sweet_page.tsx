@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const Sweet_Page: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialCereals = [
@@ -2767,7 +2767,9 @@ const [proteinbars, setProteinbars] = useState<{ name: string; image: any; count
   })
 );
 
-
+useEffect(() => {
+    handleSave();
+},[cereals, cerealsnacks, sweetspreads, chocolatetables, chocolatebars, bonbonnieres, candiesmarshmallows, gum, saltysnacks, pretzels, proteinbars]);
 
 const handleIncrement = (name: string) => {
 setCereals(cereals.map(cereals =>
@@ -2807,40 +2809,128 @@ setProteinbars(proteinbars.map(proteinbars =>
 
 
 const handleDecrement = (name: string) => {
-setCereals(cereals.map(cereals =>
-        cereals.name === name && cereals.count > 0 ? { ...cereals, count: cereals.count - 1 } : cereals
-));
-setCerealsnacks(cerealsnacks.map(cerealsnacks =>
-    cerealsnacks.name === name && cerealsnacks.count > 0 ? { ...cerealsnacks, count: cerealsnacks.count - 1 } : cerealsnacks
-));
-setSweetspreads(sweetspreads.map(sweetspreads =>
-    sweetspreads.name === name && sweetspreads.count > 0 ? { ...sweetspreads, count: sweetspreads.count - 1 } : sweetspreads
-));
-setChocolatetables(chocolatetables.map(chocolatetables =>
-    chocolatetables.name === name && chocolatetables.count > 0 ? { ...chocolatetables, count: chocolatetables.count - 1 } : chocolatetables
-));
-setChocolatebars(chocolatebars.map(chocolatebars =>
-    chocolatebars.name === name && chocolatebars.count > 0 ? { ...chocolatebars, count: chocolatebars.count - 1 } : chocolatebars
-));
-setBonbonnieres(bonbonnieres.map(bonbonnieres =>
-    bonbonnieres.name === name && bonbonnieres.count > 0 ? { ...bonbonnieres, count: bonbonnieres.count - 1 } : bonbonnieres
-));
-setCandiesmarshmallows(candiesmarshmallows.map(candiesmarshmallows =>
-    candiesmarshmallows.name === name && candiesmarshmallows.count > 0 ? { ...candiesmarshmallows, count: candiesmarshmallows.count - 1 } : candiesmarshmallows
-));
-setGum(gum.map(gum =>
-    gum.name === name && gum.count > 0 ? { ...gum, count: gum.count - 1 } : gum
-));
-setSaltysnacks(saltysnacks.map(saltysnacks =>
-    saltysnacks.name === name && saltysnacks.count > 0 ? { ...saltysnacks, count: saltysnacks.count - 1 } : saltysnacks
-));
-setPretzels(pretzels.map(pretzels =>
-    pretzels.name === name && pretzels.count > 0 ? { ...pretzels, count: pretzels.count - 1 } : pretzels
-));
-setProteinbars(proteinbars.map(proteinbars =>
-    proteinbars.name === name && proteinbars.count > 0 ? { ...proteinbars, count: proteinbars.count - 1 } : proteinbars
-));
-};
+    setCereals(cereals.map(cereal => {
+      if (cereal.name === name && cereal.count > 0) {
+        const newCount = cereal.count - 1;
+        if (newCount === 0) {
+          removeProduct(cereal.name);
+        }
+        return { ...cereal, count: newCount };
+      }
+      return cereal;
+    }));
+  
+    setCerealsnacks(cerealsnacks.map(cerealSnack => {
+      if (cerealSnack.name === name && cerealSnack.count > 0) {
+        const newCount = cerealSnack.count - 1;
+        if (newCount === 0) {
+          removeProduct(cerealSnack.name);
+        }
+        return { ...cerealSnack, count: newCount };
+      }
+      return cerealSnack;
+    }));
+  
+    setSweetspreads(sweetspreads.map(sweetspread => {
+      if (sweetspread.name === name && sweetspread.count > 0) {
+        const newCount = sweetspread.count - 1;
+        if (newCount === 0) {
+          removeProduct(sweetspread.name);
+        }
+        return { ...sweetspread, count: newCount };
+      }
+      return sweetspread;
+    }));
+  
+    setChocolatetables(chocolatetables.map(chocolateTable => {
+      if (chocolateTable.name === name && chocolateTable.count > 0) {
+        const newCount = chocolateTable.count - 1;
+        if (newCount === 0) {
+          removeProduct(chocolateTable.name);
+        }
+        return { ...chocolateTable, count: newCount };
+      }
+      return chocolateTable;
+    }));
+  
+    setChocolatebars(chocolatebars.map(chocolateBar => {
+      if (chocolateBar.name === name && chocolateBar.count > 0) {
+        const newCount = chocolateBar.count - 1;
+        if (newCount === 0) {
+          removeProduct(chocolateBar.name);
+        }
+        return { ...chocolateBar, count: newCount };
+      }
+      return chocolateBar;
+    }));
+  
+    setBonbonnieres(bonbonnieres.map(bonbonniere => {
+      if (bonbonniere.name === name && bonbonniere.count > 0) {
+        const newCount = bonbonniere.count - 1;
+        if (newCount === 0) {
+          removeProduct(bonbonniere.name);
+        }
+        return { ...bonbonniere, count: newCount };
+      }
+      return bonbonniere;
+    }));
+  
+    setCandiesmarshmallows(candiesmarshmallows.map(candiesmarshmallow => {
+      if (candiesmarshmallow.name === name && candiesmarshmallow.count > 0) {
+        const newCount = candiesmarshmallow.count - 1;
+        if (newCount === 0) {
+          removeProduct(candiesmarshmallow.name);
+        }
+        return { ...candiesmarshmallow, count: newCount };
+      }
+      return candiesmarshmallow;
+    }));
+  
+    setGum(gum.map(g => {
+      if (g.name === name && g.count > 0) {
+        const newCount = g.count - 1;
+        if (newCount === 0) {
+          removeProduct(g.name);
+        }
+        return { ...g, count: newCount };
+      }
+      return g;
+    }));
+  
+    setSaltysnacks(saltysnacks.map(saltySnack => {
+      if (saltySnack.name === name && saltySnack.count > 0) {
+        const newCount = saltySnack.count - 1;
+        if (newCount === 0) {
+          removeProduct(saltySnack.name);
+        }
+        return { ...saltySnack, count: newCount };
+      }
+      return saltySnack;
+    }));
+  
+    setPretzels(pretzels.map(pretzel => {
+      if (pretzel.name === name && pretzel.count > 0) {
+        const newCount = pretzel.count - 1;
+        if (newCount === 0) {
+          removeProduct(pretzel.name);
+        }
+        return { ...pretzel, count: newCount };
+      }
+      return pretzel;
+    }));
+  
+    setProteinbars(proteinbars.map(proteinBar => {
+      if (proteinBar.name === name && proteinBar.count > 0) {
+        const newCount = proteinBar.count - 1;
+        if (newCount === 0) {
+          removeProduct(proteinBar.name);
+        }
+        return { ...proteinBar, count: newCount };
+      }
+      return proteinBar;
+    }));
+  };
+  
 
 const handleSave = async () => {
  const cerealsToSave = cereals.filter(cereals => cereals.count > 0).map(cereals => ({ ...cereals, quantity: cereals.count }));
