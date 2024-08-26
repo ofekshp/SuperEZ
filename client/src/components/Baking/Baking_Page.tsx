@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const Baking_Page: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
 const initialSpreadssauces = [
@@ -1728,8 +1728,6 @@ initialJams.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 initialHalvahhoneysilan.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 initialSpices.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-
-
 const [spreadssauces, setSpreadssauces] = useState<{ name: string; image: any; count: number }[]>(
   initialSpreadssauces.map(spreadssauces => {
     const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === spreadssauces.name);
@@ -1810,16 +1808,17 @@ const [spices, setSpices] = useState<{ name: string; image: any; count: number }
   })
 );
 
+useEffect(() => {
+  handleSave();
+}, [spreadssauces, breadcrumbs, soups, asian, bakeryproducts, jams, halvahhoneysilan, spices]);
 
 const handleIncrement = (name: string) => {
   setSpreadssauces(spreadssauces.map(spreadssauces =>
     spreadssauces.name === name ? { ...spreadssauces, count: spreadssauces.count + 1 } : spreadssauces
   ));
-  
   setBreadcrumbs(breadcrumbs.map(breadcrumbs =>
     breadcrumbs.name === name ? { ...breadcrumbs, count: breadcrumbs.count + 1 } : breadcrumbs
   ));
-
   setSoups(soups.map(soups =>
     soups.name === name ? { ...soups, count: soups.count + 1 } : soups
   ));
@@ -1840,33 +1839,111 @@ const handleIncrement = (name: string) => {
   ));
 };
 
-
 const handleDecrement = (name: string) => {
-  setSpreadssauces(spreadssauces.map(spreadssauces =>
-    spreadssauces.name === name && spreadssauces.count > 0 ? { ...spreadssauces, count: spreadssauces.count - 1 } : spreadssauces
-  ));
-  setBreadcrumbs(breadcrumbs.map(breadcrumbs =>
-    breadcrumbs.name === name && breadcrumbs.count > 0 ? { ...breadcrumbs, count: breadcrumbs.count - 1 } : breadcrumbs
-  ));
-  setSoups(soups.map(soups =>
-    soups.name === name && soups.count > 0 ? { ...soups, count: soups.count - 1 } : soups
-  ));
-  setAsian(asian.map(asian =>
-    asian.name === name && asian.count > 0 ? { ...asian, count: asian.count - 1 } : asian
-  ));
-  setBakeryproducts(bakeryproducts.map(bakeryproducts =>
-    bakeryproducts.name === name && bakeryproducts.count > 0 ? { ...bakeryproducts, count: bakeryproducts.count - 1 } : bakeryproducts
-  ));
-  setJams(jams.map(jams =>
-    jams.name === name && jams.count > 0 ? { ...jams, count: jams.count - 1 } : jams
-  ));
-  setHalvahhoneysilan(halvahhoneysilan.map(halvahhoneysilan =>
-    halvahhoneysilan.name === name && halvahhoneysilan.count > 0 ? { ...halvahhoneysilan, count: halvahhoneysilan.count - 1 } : halvahhoneysilan
-  ));
-  setSpices(spices.map(spices =>
-    spices.name === name && spices.count > 0 ? { ...spices, count: spices.count - 1 } : spices
-  ));
-};
+  setSpreadssauces(spreadssauces.map(spreadssauce => {
+    if (spreadssauce.name === name && spreadssauce.count > 0) {
+      const newCount = spreadssauce.count - 1;
+  
+      if (newCount === 0) {
+        removeProduct(spreadssauce.name);
+      }
+  
+      return { ...spreadssauce, count: newCount };
+    }
+    return spreadssauce;
+  }));
+  
+  setBreadcrumbs(breadcrumbs.map(breadcrumb => {
+    if (breadcrumb.name === name && breadcrumb.count > 0) {
+      const newCount = breadcrumb.count - 1;
+  
+      if (newCount === 0) {
+        removeProduct(breadcrumb.name);
+      }
+  
+      return { ...breadcrumb, count: newCount };
+    }
+    return breadcrumb;
+  }));
+  
+  setSoups(soups.map(soup => {
+    if (soup.name === name && soup.count > 0) {
+      const newCount = soup.count - 1;
+  
+      if (newCount === 0) {
+        removeProduct(soup.name);
+      }
+  
+      return { ...soup, count: newCount };
+    }
+    return soup;
+  }));
+  
+  setAsian(asian.map(asianProduct => {
+    if (asianProduct.name === name && asianProduct.count > 0) {
+      const newCount = asianProduct.count - 1;
+  
+      if (newCount === 0) {
+        removeProduct(asianProduct.name);
+      }
+  
+      return { ...asianProduct, count: newCount };
+    }
+    return asianProduct;
+  }));
+  
+  setBakeryproducts(bakeryproducts.map(bakeryproduct => {
+    if (bakeryproduct.name === name && bakeryproduct.count > 0) {
+      const newCount = bakeryproduct.count - 1;
+  
+      if (newCount === 0) {
+        removeProduct(bakeryproduct.name);
+      }
+  
+      return { ...bakeryproduct, count: newCount };
+    }
+    return bakeryproduct;
+  }));
+  
+  setJams(jams.map(jam => {
+    if (jam.name === name && jam.count > 0) {
+      const newCount = jam.count - 1;
+  
+      if (newCount === 0) {
+        removeProduct(jam.name);
+      }
+  
+      return { ...jam, count: newCount };
+    }
+    return jam;
+  }));
+  
+  setHalvahhoneysilan(halvahhoneysilan.map(halvahhoneysilanProduct => {
+    if (halvahhoneysilanProduct.name === name && halvahhoneysilanProduct.count > 0) {
+      const newCount = halvahhoneysilanProduct.count - 1;
+  
+      if (newCount === 0) {
+        removeProduct(halvahhoneysilanProduct.name);
+      }
+  
+      return { ...halvahhoneysilanProduct, count: newCount };
+    }
+    return halvahhoneysilanProduct;
+  }));
+  
+  setSpices(spices.map(spice => {
+    if (spice.name === name && spice.count > 0) {
+      const newCount = spice.count - 1;
+  
+      if (newCount === 0) {
+        removeProduct(spice.name);
+      }
+  
+      return { ...spice, count: newCount };
+    }
+    return spice;
+  }));
+  };
 
 const handleSave = async () => {
  const spreadssaucesToSave = spreadssauces.filter(spreadssauces => spreadssauces.count > 0).map(spreadssauces => ({ ...spreadssauces, quantity: spreadssauces.count }));
@@ -1923,122 +2000,135 @@ const filterSpices = spices.filter(product =>
 );
 
 return (
-  <div>
+<div>
   <div style={{
     position: 'absolute',
     marginTop: '100px',
     width: '100%',
-    paddingRight: '20px', 
-    marginBottom: '20px', 
+    display: 'flex',
+    justifyContent: 'center',
   }}>
-    <input
-      type="text"
-      placeholder="חפש מוצר בישול\אפייה"
-      value={searchTerm}
-      onChange={handleSearch}
-      style={{
-        width: '715px',
-        padding: '5px 40px 5px 5px',
-        borderRadius: '8px',
-        border: '1px solid #ccc',
-        textAlign: 'right',
-        position: 'relative',
-        float: 'right',
-        marginRight: '200px',
+    <div style={{ position: 'relative' }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר בישול/אפייה"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '100%',
+      
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '-30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        pointerEvents: 'none',
+      }}></i>
+    </div>
 
-      }}
+</div>
+<div>  {filterSpreadssauces.length > 0 && (
+    <ProductsPage
+      products={filterSpreadssauces}
+      categoryTitle="ממרחים ורטבים"
+      icon={<img alt="" src={importImage('spreadssauces_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
     />
-    <i className="fas fa-search" style={{
-      position: 'absolute',
-      right: '30px',
-      top: '50%',
-      transform: 'translateY(-50%)',
-      color: '#aaa',
-      marginRight: '200px',
-
-      pointerEvents: 'none',
-    }}></i>
-  </div>
-  
-  <div>
-  <ProductsPage
-    products={filterSpreadssauces}
-    categoryTitle="ממרחים ורטבים"
-    icon={<img alt="" src={importImage('spreadssauces_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterBreadcrumbs}
-    categoryTitle="פירורי לחם"
-    icon={<img alt="" src={importImage('breadcrumbs_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterBreadcrumbs.length > 0 && (
+    <ProductsPage
+      products={filterBreadcrumbs}
+      categoryTitle="פירורי לחם"
+      icon={<img alt="" src={importImage('breadcrumbs_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterSoups}
-    categoryTitle="מרקים, תיבול ותבשילים מהירי הכנה"
-    icon={<img alt="" src={importImage('soups_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterSoups.length > 0 && (
+    <ProductsPage
+      products={filterSoups}
+      categoryTitle="מרקים, תיבול ותבשילים מהירי הכנה"
+      icon={<img alt="" src={importImage('soups_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterAsian}
-    categoryTitle="אסייאתי"
-    icon={<img alt="" src={importImage('asian_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterAsian.length > 0 && (
+    <ProductsPage
+      products={filterAsian}
+      categoryTitle="אסייאתי"
+      icon={<img alt="" src={importImage('asian_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterBakeryproducts}
-    categoryTitle="מוצרי אפיה"
-    icon={<img alt="" src={importImage('bakeryproducts_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterBakeryproducts.length > 0 && (
+    <ProductsPage
+      products={filterBakeryproducts}
+      categoryTitle="מוצרי אפיה"
+      icon={<img alt="" src={importImage('bakeryproducts_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterJams}
-    categoryTitle="ריבות ומעדני פירות"
-    icon={<img alt="" src={importImage('jams_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterJams.length > 0 && (
+    <ProductsPage
+      products={filterJams}
+      categoryTitle="ריבות ומעדני פירות"
+      icon={<img alt="" src={importImage('jams_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterHalvahhoneysilan}
-    categoryTitle="חלווה, דבש וסילאן"
-    icon={<img alt="" src={importImage('halvahhoneysilan_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterHalvahhoneysilan.length > 0 && (
+    <ProductsPage
+      products={filterHalvahhoneysilan}
+      categoryTitle="חלווה, דבש וסילאן"
+      icon={<img alt="" src={importImage('halvahhoneysilan_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterSpices}
-    categoryTitle="תבלינים"
-    icon={<img alt="" src={importImage('spices_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterSpices.length > 0 && (
+    <ProductsPage
+      products={filterSpices}
+      categoryTitle="תבלינים"
+      icon={<img alt="" src={importImage('spices_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 
   </div>

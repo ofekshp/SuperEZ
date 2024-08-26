@@ -67,7 +67,43 @@ input {
   cursor: pointer;
 }
 
-.continue-button {
+button.continue-button {
+  
+  align-items: center;
+  appearance: none;
+
+  background-image: radial-gradient(100% 100% at 100% 0, #ffffff 0, #2e93ff 100%);  border: 0;
+  border-radius: 5px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  height: 40px;
+  justify-content: center;
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  width: 100%;
+
+}
+
+.continue-button:focus {
+  box-shadow: #8493ff 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.continue-button:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #2e46ff 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+/* .continue-button {
   background-color: #007bff !important;
   color: white;
   text-transform: none;
@@ -79,7 +115,7 @@ input {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
-}
+} */
 
 .signup-box {
   display: flex;
@@ -91,7 +127,7 @@ input {
 .signup-text {
   font-size: 1rem;
   color: black;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .signup-link {

@@ -106,7 +106,7 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ closeModal, s
               required
             />
           </div>
-          <button type="submit" className="change-password-button">שנה סיסמה</button>
+          <button type="submit" className="continue-button">שנה סיסמה</button>
         </form>
       </div>
     </div>

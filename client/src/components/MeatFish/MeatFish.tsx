@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -14,7 +14,7 @@ const importImage = (imageName: string) => {
 };
 
 const MeatFish: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialChickenproducts = [
@@ -657,7 +657,7 @@ const MeatFish: React.FC = () => {
   initialFrozenfish.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
  
-  const [chickenproducts, setChickenProducts] = useState<{ name: string; image: string | null; count: number }[]>(
+  const [chickenProducts, setChickenProducts] = useState<{ name: string; image: string | null; count: number }[]>(
     initialChickenproducts.map(item => {
       const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
       return {
@@ -697,7 +697,7 @@ const MeatFish: React.FC = () => {
     })
   );
   
-  const [sausageProducts, setsausageProducts] = useState<{ name: string; image: string | null; count: number }[]>(
+  const [sausageProducts, setSausageProducts] = useState<{ name: string; image: string | null; count: number }[]>(
     initialSausage.map(item => {
       const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
       return {
@@ -727,28 +727,102 @@ const MeatFish: React.FC = () => {
     })
   );
   
+  useEffect(() => {
+    handleSave();
+  }, [chickenProducts, indiaProducts, beefLambProducts, frozenBeefChickenProducts, sausageProducts, freshFishProducts, frozenFishProducts]);
+
   const handleIncrement = (name: string) => {
-    setChickenProducts(chickenproducts.map(item =>   item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setChickenProducts(chickenProducts.map(item =>   item.name === name ? { ...item, count: item.count + 1 } : item ));
     setIndiaProducts(indiaProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
     setBeefLambProducts(beefLambProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
     setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
-    setsausageProducts(sausageProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
+    setSausageProducts(sausageProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
     setFreshFishProducts(freshFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
     setFrozenFishProducts(frozenFishProducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item ));
   };
 
   const handleDecrement = (name: string) => {
-    setChickenProducts(chickenproducts.map(item =>  item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setIndiaProducts(indiaProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setBeefLambProducts(beefLambProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setsausageProducts(sausageProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count- 1 } : item ));
-    setFreshFishProducts(freshFishProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item ));
-    setFrozenFishProducts(frozenFishProducts.map(item => item.name === name && item.count > 0 ? { ...item, count: item.count- 1 } : item ));
+    setChickenProducts(chickenProducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setIndiaProducts(indiaProducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setBeefLambProducts(beefLambProducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setFrozenBeefChickenProducts(frozenBeefChickenProducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSausageProducts(sausageProducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setFreshFishProducts(freshFishProducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setFrozenFishProducts(frozenFishProducts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
   };
 
   const handleSave = async () => {
-    const chickenToSave = chickenproducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const chickenToSave = chickenProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const indiaToSave = indiaProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const beefLambToSave = beefLambProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const frozenBeefChickenToSave = frozenBeefChickenProducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
@@ -765,7 +839,7 @@ const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
   setSearchTerm(event.target.value);
 };
 
-const filterChickenProducts = chickenproducts.filter(product =>
+const filterChickenProducts = chickenProducts.filter(product =>
   product.name.includes(searchTerm)
 );
 
@@ -793,114 +867,131 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
   product.name.includes(searchTerm)
 );
 
-  return (
-
-<div>
+  return (<div>
     <div style={{
       position: 'absolute',
       marginTop: '100px',
       width: '100%',
-      paddingRight: '20px', 
-      marginBottom: '20px', 
+      display: 'flex',
+      justifyContent: 'center',
     }}>
-      <input
-        type="text"
-        placeholder="חפש מוצר בשר\דגים"
-        value={searchTerm}
-        onChange={handleSearch}
-        style={{
-          width: '715px',
-          padding: '5px 40px 5px 5px',
-          borderRadius: '8px',
-          border: '1px solid #ccc',
-          textAlign: 'right',
-          position: 'relative',
-          float: 'right',
-          marginRight: '200px',
+      <div style={{ position: 'relative' }}>
+        <input
+          type="text"
+          placeholder="חפש מוצר בשר/עוף/דגים"
+          value={searchTerm}
+          onChange={handleSearch}
+          style={{
+            width: '100%',
+        
+            padding: '5px 40px 5px 5px',
+            borderRadius: '8px',
+            border: '1px solid #ccc',
+            textAlign: 'right',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          }}
+        />
+        <i className="fas fa-search" style={{
+          position: 'absolute',
+          right: '-30px',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          color: '#aaa',
+          pointerEvents: 'none',
+        }}></i>
+      </div>
+  
+  </div>
+  {filterChickenProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterChickenProducts}
+      categoryTitle="מוצרי עוף"
+      icon={<img alt="" src={importImage('chicken_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
 
-        }}
-      />
-      <i className="fas fa-search" style={{
-        position: 'absolute',
-        right: '30px',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        color: '#aaa',
-        marginRight: '200px',
+{filterIndiaProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterIndiaProducts}
+      categoryTitle="מוצרי הודו"
+      icon={<img alt="" src={importImage('india_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
 
-        pointerEvents: 'none',
-      }}></i>
-    </div>      <div>
-  <ProductsPage
-    products={filterChickenProducts}
-    categoryTitle="מוצרי עוף"
-    icon={<img alt="מוצרי עוף" src={importImage('chicken_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterIndiaProducts}
-    categoryTitle="מוצרי הודו"
-    icon={<img alt="מוצרי הודו" src={importImage('india_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterBeefLambProducts}
-    categoryTitle="בשר בקר וכבש"
-    icon={<img alt="בשר בקר וכבש" src={importImage('beef_lamb_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterFrozenBeefChickenProducts}
-    categoryTitle="בשר בקר ועוף קפוא"
-    icon={<img alt="בשר בקר ועוף קפוא" src={importImage('frozen_beef_chicken_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSausageProducts}
-    categoryTitle="נקניקיות"
-    icon={<img alt="נקניקיות" src={importImage('sausage_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterFreshFishProducts}
-    categoryTitle="דגים טריים"
-    icon={<img alt="דגים טריים" src={importImage('fresh_fish_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterFrozenFishProducts}
-    categoryTitle="דגים קפואים"
-    icon={<img alt="דגים קפואים" src={importImage('frozen_fish_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
+{filterBeefLambProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterBeefLambProducts}
+      categoryTitle="בשר בקר וכבש"
+      icon={<img alt="" src={importImage('beef_lamb_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
 
+{filterFrozenBeefChickenProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterFrozenBeefChickenProducts}
+      categoryTitle="בשר בקר ועוף קפוא"
+      icon={<img alt="" src={importImage('frozen_beef_chicken_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSausageProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSausageProducts}
+      categoryTitle="נקניקיות"
+      icon={<img alt="" src={importImage('sausage_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterFreshFishProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterFreshFishProducts}
+      categoryTitle="דגים טריים"
+      icon={<img alt="" src={importImage('fresh_fish_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterFrozenFishProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterFrozenFishProducts}
+      categoryTitle="דגים קפואים"
+      icon={<img alt="" src={importImage('frozen_fish_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
   </div>
   );
 };

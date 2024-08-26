@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -14,7 +14,7 @@ const importImage = (imageName: string) => {
 };
 
 const FruitsAndVegetablesPage: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
   
   const initialFruits = [
@@ -778,6 +778,10 @@ const initialPackagedfruit = [
     })
   );
   
+  useEffect(() => {
+    handleSave();
+  }, [fruits, vegetables, packagedpickedvegetables, herbssproutsmushrooms, packagedfruit]);
+
   const handleIncrement = (name: string) => {
     setFruits(fruits.map(fruit =>  fruit.name === name ? { ...fruit, count: fruit.count + 1 } : fruit )); 
 
@@ -793,21 +797,72 @@ const initialPackagedfruit = [
   };
 
   const handleDecrement = (name: string) => {
-    setFruits(fruits.map(fruit =>
-      fruit.name === name && fruit.count > 0 ? { ...fruit, count: fruit.count - 1 } : fruit
-    ));
-    setVegetables(vegetables.map(vegetable =>
-      vegetable.name === name && vegetable.count > 0 ? { ...vegetable, count: vegetable.count - 1 } : vegetable
-    ));
-    setPackagedpickedvegetables(packagedpickedvegetables.map(packagedpickedvegetable =>
-      packagedpickedvegetable.name === name && packagedpickedvegetable.count > 0 ? { ...packagedpickedvegetable, count: packagedpickedvegetable.count - 1 } : packagedpickedvegetable
-    ));
-    setHerbssproutsmushrooms(herbssproutsmushrooms.map(herbssproutsmushroom =>
-      herbssproutsmushroom.name === name && herbssproutsmushroom.count > 0 ? { ...herbssproutsmushroom, count: herbssproutsmushroom.count - 1 } : herbssproutsmushroom
-    ));
-    setPackagedfruit(packagedfruit.map(packagedfruit =>
-      packagedfruit.name === name && packagedfruit.count > 0 ? { ...packagedfruit, count: packagedfruit.count - 1 } : packagedfruit
-    ));
+
+    setFruits(fruits.map(fruit => {
+      if (fruit.name === name && fruit.count > 0) {
+        const newCount = fruit.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(fruit.name);
+        }
+    
+        return { ...fruit, count: newCount };
+      }
+      return fruit;
+    }));
+
+    setVegetables(vegetables.map(vegetable => {
+      if (vegetable.name === name && vegetable.count > 0) {
+        const newCount = vegetable.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(vegetable.name);
+        }
+    
+        return { ...vegetable, count: newCount };
+      }
+      return vegetable;
+    })); 
+    
+    setPackagedpickedvegetables(packagedpickedvegetables.map(packagedpickedvegetable => {
+      if (packagedpickedvegetable.name === name && packagedpickedvegetable.count > 0) {
+        const newCount = packagedpickedvegetable.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(packagedpickedvegetable.name);
+        }
+    
+        return { ...packagedpickedvegetable, count: newCount };
+      }
+      return packagedpickedvegetable;
+    }));
+    
+    setHerbssproutsmushrooms(herbssproutsmushrooms.map(herbssproutsmushroom => {
+      if (herbssproutsmushroom.name === name && herbssproutsmushroom.count > 0) {
+        const newCount = herbssproutsmushroom.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(herbssproutsmushroom.name);
+        }
+    
+        return { ...herbssproutsmushroom, count: newCount };
+      }
+      return herbssproutsmushroom;
+    }));
+    
+    setPackagedfruit(packagedfruit.map(packagedfruit => {
+      if (packagedfruit.name === name && packagedfruit.count > 0) {
+        const newCount = packagedfruit.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(packagedfruit.name);
+        }
+    
+        return { ...packagedfruit, count: newCount };
+      }
+      return packagedfruit;
+    }));
+    
   };
 
   const handleSave = async () => {
@@ -852,92 +907,107 @@ const filterPackagedFruit = packagedfruit.filter(product =>
 );
 
   return (
-
 <div>
-    <div style={{
-      position: 'absolute',
-      marginTop: '100px',
-      width: '100%',
-      paddingRight: '20px', 
-      marginBottom: '20px', 
-    }}>
+  <div style={{
+    position: 'absolute',
+    marginTop: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  }}>
+    <div style={{ position: 'relative' }}>
       <input
         type="text"
-        placeholder="חפש מוצר פרי\ירק"
+        placeholder="חפש מוצר פרי/ירק"
         value={searchTerm}
         onChange={handleSearch}
         style={{
-          width: '715px',
+          width: '100%',
+      
           padding: '5px 40px 5px 5px',
           borderRadius: '8px',
           border: '1px solid #ccc',
           textAlign: 'right',
-          position: 'relative',
-          float: 'right',
-          marginRight: '200px',
-
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         }}
       />
       <i className="fas fa-search" style={{
         position: 'absolute',
-        right: '30px',
+        right: '-30px',
         top: '50%',
         transform: 'translateY(-50%)',
         color: '#aaa',
-        marginRight: '200px',
-
         pointerEvents: 'none',
       }}></i>
-    </div>       <div>
-  <ProductsPage
-    products={filterVegetables}
-    categoryTitle="ירקות"
-    icon={<img alt="" src={importImage('vegetables_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+    </div>
+
 </div>
-<div>
-  <ProductsPage
-    products={filterPackagedPickedVegetables}
-    categoryTitle="ירקות ארוזים"
-    icon={<img alt="" src={importImage('packaged_vegetables_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterHerbsSproutsMushrooms}
-    categoryTitle="עשבי תיבול, נבטים ופטריות"
-    icon={<img alt="" src={importImage('herbs_sprouts_mushrooms_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterFruits}
-    categoryTitle="פירות"
-    icon={<img alt="" src={importImage('fruits_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterPackagedFruit}
-    categoryTitle="פירות ארוזים"
-    icon={<img alt="" src={importImage('packaged_fruit_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
+    
+     {filterVegetables.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterVegetables}
+      categoryTitle="ירקות"
+      icon={<img alt="" src={importImage('vegetables_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterPackagedPickedVegetables.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterPackagedPickedVegetables}
+      categoryTitle="ירקות ארוזים"
+      icon={<img alt="" src={importImage('packaged_vegetables_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterHerbsSproutsMushrooms.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterHerbsSproutsMushrooms}
+      categoryTitle="עשבי תיבול, נבטים ופטריות"
+      icon={<img alt="" src={importImage('herbs_sprouts_mushrooms_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterFruits.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterFruits}
+      categoryTitle="פירות"
+      icon={<img alt="" src={importImage('fruits_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterPackagedFruit.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterPackagedFruit}
+      categoryTitle="פירות ארוזים"
+      icon={<img alt="" src={importImage('packaged_fruit_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+  
 
     </div>
   );

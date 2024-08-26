@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const Sweet_Page: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialCereals = [
@@ -2767,7 +2767,9 @@ const [proteinbars, setProteinbars] = useState<{ name: string; image: any; count
   })
 );
 
-
+useEffect(() => {
+    handleSave();
+},[cereals, cerealsnacks, sweetspreads, chocolatetables, chocolatebars, bonbonnieres, candiesmarshmallows, gum, saltysnacks, pretzels, proteinbars]);
 
 const handleIncrement = (name: string) => {
 setCereals(cereals.map(cereals =>
@@ -2807,40 +2809,128 @@ setProteinbars(proteinbars.map(proteinbars =>
 
 
 const handleDecrement = (name: string) => {
-setCereals(cereals.map(cereals =>
-        cereals.name === name && cereals.count > 0 ? { ...cereals, count: cereals.count - 1 } : cereals
-));
-setCerealsnacks(cerealsnacks.map(cerealsnacks =>
-    cerealsnacks.name === name && cerealsnacks.count > 0 ? { ...cerealsnacks, count: cerealsnacks.count - 1 } : cerealsnacks
-));
-setSweetspreads(sweetspreads.map(sweetspreads =>
-    sweetspreads.name === name && sweetspreads.count > 0 ? { ...sweetspreads, count: sweetspreads.count - 1 } : sweetspreads
-));
-setChocolatetables(chocolatetables.map(chocolatetables =>
-    chocolatetables.name === name && chocolatetables.count > 0 ? { ...chocolatetables, count: chocolatetables.count - 1 } : chocolatetables
-));
-setChocolatebars(chocolatebars.map(chocolatebars =>
-    chocolatebars.name === name && chocolatebars.count > 0 ? { ...chocolatebars, count: chocolatebars.count - 1 } : chocolatebars
-));
-setBonbonnieres(bonbonnieres.map(bonbonnieres =>
-    bonbonnieres.name === name && bonbonnieres.count > 0 ? { ...bonbonnieres, count: bonbonnieres.count - 1 } : bonbonnieres
-));
-setCandiesmarshmallows(candiesmarshmallows.map(candiesmarshmallows =>
-    candiesmarshmallows.name === name && candiesmarshmallows.count > 0 ? { ...candiesmarshmallows, count: candiesmarshmallows.count - 1 } : candiesmarshmallows
-));
-setGum(gum.map(gum =>
-    gum.name === name && gum.count > 0 ? { ...gum, count: gum.count - 1 } : gum
-));
-setSaltysnacks(saltysnacks.map(saltysnacks =>
-    saltysnacks.name === name && saltysnacks.count > 0 ? { ...saltysnacks, count: saltysnacks.count - 1 } : saltysnacks
-));
-setPretzels(pretzels.map(pretzels =>
-    pretzels.name === name && pretzels.count > 0 ? { ...pretzels, count: pretzels.count - 1 } : pretzels
-));
-setProteinbars(proteinbars.map(proteinbars =>
-    proteinbars.name === name && proteinbars.count > 0 ? { ...proteinbars, count: proteinbars.count - 1 } : proteinbars
-));
-};
+    setCereals(cereals.map(cereal => {
+      if (cereal.name === name && cereal.count > 0) {
+        const newCount = cereal.count - 1;
+        if (newCount === 0) {
+          removeProduct(cereal.name);
+        }
+        return { ...cereal, count: newCount };
+      }
+      return cereal;
+    }));
+  
+    setCerealsnacks(cerealsnacks.map(cerealSnack => {
+      if (cerealSnack.name === name && cerealSnack.count > 0) {
+        const newCount = cerealSnack.count - 1;
+        if (newCount === 0) {
+          removeProduct(cerealSnack.name);
+        }
+        return { ...cerealSnack, count: newCount };
+      }
+      return cerealSnack;
+    }));
+  
+    setSweetspreads(sweetspreads.map(sweetspread => {
+      if (sweetspread.name === name && sweetspread.count > 0) {
+        const newCount = sweetspread.count - 1;
+        if (newCount === 0) {
+          removeProduct(sweetspread.name);
+        }
+        return { ...sweetspread, count: newCount };
+      }
+      return sweetspread;
+    }));
+  
+    setChocolatetables(chocolatetables.map(chocolateTable => {
+      if (chocolateTable.name === name && chocolateTable.count > 0) {
+        const newCount = chocolateTable.count - 1;
+        if (newCount === 0) {
+          removeProduct(chocolateTable.name);
+        }
+        return { ...chocolateTable, count: newCount };
+      }
+      return chocolateTable;
+    }));
+  
+    setChocolatebars(chocolatebars.map(chocolateBar => {
+      if (chocolateBar.name === name && chocolateBar.count > 0) {
+        const newCount = chocolateBar.count - 1;
+        if (newCount === 0) {
+          removeProduct(chocolateBar.name);
+        }
+        return { ...chocolateBar, count: newCount };
+      }
+      return chocolateBar;
+    }));
+  
+    setBonbonnieres(bonbonnieres.map(bonbonniere => {
+      if (bonbonniere.name === name && bonbonniere.count > 0) {
+        const newCount = bonbonniere.count - 1;
+        if (newCount === 0) {
+          removeProduct(bonbonniere.name);
+        }
+        return { ...bonbonniere, count: newCount };
+      }
+      return bonbonniere;
+    }));
+  
+    setCandiesmarshmallows(candiesmarshmallows.map(candiesmarshmallow => {
+      if (candiesmarshmallow.name === name && candiesmarshmallow.count > 0) {
+        const newCount = candiesmarshmallow.count - 1;
+        if (newCount === 0) {
+          removeProduct(candiesmarshmallow.name);
+        }
+        return { ...candiesmarshmallow, count: newCount };
+      }
+      return candiesmarshmallow;
+    }));
+  
+    setGum(gum.map(g => {
+      if (g.name === name && g.count > 0) {
+        const newCount = g.count - 1;
+        if (newCount === 0) {
+          removeProduct(g.name);
+        }
+        return { ...g, count: newCount };
+      }
+      return g;
+    }));
+  
+    setSaltysnacks(saltysnacks.map(saltySnack => {
+      if (saltySnack.name === name && saltySnack.count > 0) {
+        const newCount = saltySnack.count - 1;
+        if (newCount === 0) {
+          removeProduct(saltySnack.name);
+        }
+        return { ...saltySnack, count: newCount };
+      }
+      return saltySnack;
+    }));
+  
+    setPretzels(pretzels.map(pretzel => {
+      if (pretzel.name === name && pretzel.count > 0) {
+        const newCount = pretzel.count - 1;
+        if (newCount === 0) {
+          removeProduct(pretzel.name);
+        }
+        return { ...pretzel, count: newCount };
+      }
+      return pretzel;
+    }));
+  
+    setProteinbars(proteinbars.map(proteinBar => {
+      if (proteinBar.name === name && proteinBar.count > 0) {
+        const newCount = proteinBar.count - 1;
+        if (newCount === 0) {
+          removeProduct(proteinBar.name);
+        }
+        return { ...proteinBar, count: newCount };
+      }
+      return proteinBar;
+    }));
+  };
+  
 
 const handleSave = async () => {
  const cerealsToSave = cereals.filter(cereals => cereals.count > 0).map(cereals => ({ ...cereals, quantity: cereals.count }));
@@ -2862,118 +2952,235 @@ const handleSave = async () => {
 
 };
 
+const [searchTerm, setSearchTerm] = useState("");
+
+const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(event.target.value);
+};
+
+const filterCereals = cereals.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterCerealsnacks = cerealsnacks.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterSweetspreads = sweetspreads.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterChocolatetables = chocolatetables.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterChocolatebars = chocolatebars.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterBonbonnieres = bonbonnieres.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterCandiesmarshmallows = candiesmarshmallows.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterGum = gum.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterSaltysnacks = saltysnacks.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterPretzels = pretzels.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterProteinbars = proteinbars.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
 return (
+<div>
+  <div style={{
+    position: 'absolute',
+    marginTop: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  }}>
+    <div style={{ position: 'relative' }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר מתוקים/חטיפים"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '100%',
+      
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '-30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        pointerEvents: 'none',
+      }}></i>
+    </div>
+
+</div>   {filterCereals.length > 0 && (
   <div>
-    <div>
-      <ProductsPage
-        products={cereals}
-        categoryTitle="דגני בוקר"
-        icon={<img alt="" src={importImage('cereals_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={cerealsnacks}
-        categoryTitle="חטיפי דגנים"
-        icon={<img alt="" src={importImage('cerealsnacks_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={sweetspreads}
-        categoryTitle="ממרחים מתוקים"
-        icon={<img alt="" src={importImage('sweetspreads_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={chocolatetables}
-        categoryTitle="טבלאות שוקולד"
-        icon={<img alt="" src={importImage('chocolatetables_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={chocolatebars}
-        categoryTitle="חטיפי שוקולד"
-        icon={<img alt="" src={importImage('chocolatebars_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={bonbonnieres}
-        categoryTitle="בונבוניירות"
-        icon={<img alt="" src={importImage('bonbonnieres_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={candiesmarshmallows}
-        categoryTitle="סוכריות ומרשמלו"
-        icon={<img alt="" src={importImage('candiesmarshmallows_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={gum}
-        categoryTitle="מסטיקים"
-        icon={<img alt="" src={importImage('gum_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={saltysnacks}
-        categoryTitle="חטיפים מלוחים"
-        icon={<img alt="" src={importImage('saltysnacks_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={pretzels}
-        categoryTitle="בייגלה"
-        icon={<img alt="" src={importImage('pretzels_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={proteinbars}
-        categoryTitle="חטיפי חלבון"
-        icon={<img alt="" src={importImage('proteinbars_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
+    <ProductsPage
+      products={filterCereals}
+      categoryTitle="דגני בוקר"
+      icon={<img alt="" src={importImage('cereals_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterCerealsnacks.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterCerealsnacks}
+      categoryTitle="חטיפי דגנים"
+      icon={<img alt="" src={importImage('cerealsnacks_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSweetspreads.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSweetspreads}
+      categoryTitle="ממרחים מתוקים"
+      icon={<img alt="" src={importImage('sweetspreads_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterChocolatetables.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterChocolatetables}
+      categoryTitle="טבלאות שוקולד"
+      icon={<img alt="" src={importImage('chocolatetables_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterChocolatebars.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterChocolatebars}
+      categoryTitle="חטיפי שוקולד"
+      icon={<img alt="" src={importImage('chocolatebars_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterBonbonnieres.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterBonbonnieres}
+      categoryTitle="בונבוניירות"
+      icon={<img alt="" src={importImage('bonbonnieres_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterCandiesmarshmallows.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterCandiesmarshmallows}
+      categoryTitle="סוכריות ומרשמלו"
+      icon={<img alt="" src={importImage('candiesmarshmallows_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterGum.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterGum}
+      categoryTitle="מסטיקים"
+      icon={<img alt="" src={importImage('gum_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSaltysnacks.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSaltysnacks}
+      categoryTitle="חטיפים מלוחים"
+      icon={<img alt="" src={importImage('saltysnacks_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterPretzels.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterPretzels}
+      categoryTitle="בייגלה"
+      icon={<img alt="" src={importImage('pretzels_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterProteinbars.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterProteinbars}
+      categoryTitle="חטיפי חלבון"
+      icon={<img alt="" src={importImage('proteinbars_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+
   </div>
   );
 }

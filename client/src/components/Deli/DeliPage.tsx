@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -13,7 +13,7 @@ const importImage = (imageName: string) => {
 };
 
 const DeliPage: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialMilk = [
@@ -1898,6 +1898,9 @@ const [salads, setSalads] = useState<{ name: string; image: any; count: number }
   })
 );
 
+useEffect(() => {
+  handleSave();
+}, [milk, yogurtDelicacies, yogurtDrink, milkDelicaciesDesserts, softCheese, semiHardCheese, yellowHardCheese, butterMargarine, creamWhippedCreamCookingBaking, chilledPasta, eggs, sausagesPastrami, salads]);
 
   const handleIncrement = (name: string) => {
     setMilk(milk.map(item =>
@@ -1954,57 +1957,149 @@ const [salads, setSalads] = useState<{ name: string; image: any; count: number }
   };
   
   const handleDecrement = (name: string) => {
-    setMilk(milk.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
+    setMilk(milk.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
     
-    setYogurtDelicacies(yogurtDelicacies.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setYogurtDrink(yogurtDrink.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setMilkDelicaciesDesserts(milkDelicaciesDesserts.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setSoftCheese(softCheese.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setSemiHardCheese(semiHardCheese.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setYellowHardCheese(yellowHardCheese.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setButterMargarine(butterMargarine.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setCreamWhippedCreamCookingBaking(creamWhippedCreamCookingBaking.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setChilledPasta(chilledPasta.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setEggs(eggs.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-
-    setSausagespastrami(sausagesPastrami.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-
-    setSalads(salads.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
+    setYogurtDelicacies(yogurtDelicacies.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setYogurtDrink(yogurtDrink.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setMilkDelicaciesDesserts(milkDelicaciesDesserts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSoftCheese(softCheese.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSemiHardCheese(semiHardCheese.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setYellowHardCheese(yellowHardCheese.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setButterMargarine(butterMargarine.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCreamWhippedCreamCookingBaking(creamWhippedCreamCookingBaking.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setChilledPasta(chilledPasta.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setEggs(eggs.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSausagespastrami(sausagesPastrami.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSalads(salads.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
   };
   
 
@@ -2103,172 +2198,210 @@ const [salads, setSalads] = useState<{ name: string; image: any; count: number }
   );
   
   return (
- <div>
+    <div>
     <div style={{
       position: 'absolute',
       marginTop: '100px',
       width: '100%',
-      paddingRight: '20px', // Adjust for right padding if needed
-      marginBottom: '20px', 
+      display: 'flex',
+      justifyContent: 'center',
     }}>
-      <input
-        type="text"
-        placeholder="חפש מוצר מעדנייה"
-        value={searchTerm}
-        onChange={handleSearch}
-        style={{
-          width: '715px',
-          padding: '5px 40px 5px 5px',
-          borderRadius: '8px',
-          border: '1px solid #ccc',
-          textAlign: 'right',
-          position: 'relative',
-          float: 'right',
-          marginRight: '200px',
+      <div style={{ position: 'relative' }}>
+        <input
+          type="text"
+          placeholder="חפש מוצר מעדנייה"
+          value={searchTerm}
+          onChange={handleSearch}
+          style={{
+            width: '100%',
+        
+            padding: '5px 40px 5px 5px',
+            borderRadius: '8px',
+            border: '1px solid #ccc',
+            textAlign: 'right',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          }}
+        />
+        <i className="fas fa-search" style={{
+          position: 'absolute',
+          right: '-30px',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          color: '#aaa',
+          pointerEvents: 'none',
+        }}></i>
+      </div>
+  
+  </div>
+    {filterMilk.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterMilk}
+      categoryTitle="חלב ומשקאות חלב"
+      icon={<img alt="" src={importImage('milk_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
 
-        }}
-      />
-      <i className="fas fa-search" style={{
-        position: 'absolute',
-        right: '30px',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        color: '#aaa',
-        marginRight: '200px',
+{filterYogurtDelicacies.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterYogurtDelicacies}
+      categoryTitle="יוגורטים ודליקטסים"
+      icon={<img alt="" src={importImage('yogurt_delicacies_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
 
-        pointerEvents: 'none',
-      }}></i>
-    </div>
-    <div>
-  <ProductsPage
-    products={filterMilk}
-    categoryTitle="חלב ומשקאות חלב"
-    icon={<img alt="" src={importImage('milk_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterYogurtDelicacies}
-    categoryTitle="יוגורטים ודליקטסים"
-    icon={<img alt="" src={importImage('yogurt_delicacies_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterYogurtDrink}
-    categoryTitle="יוגורטים לשתייה"
-    icon={<img alt="" src={importImage('yogurt_drink_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterMilkDelicaciesDesserts}
-    categoryTitle="דליקטסים וקינוחים מחלב"
-    icon={<img alt="" src={importImage('milk_delicacies_desserts_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSoftCheese}
-    categoryTitle="גבינות רכות"
-    icon={<img alt="" src={importImage('cheese_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSemiHardCheese}
-    categoryTitle="גבינות חצי קשות"
-    icon={<img alt="" src={importImage('semi_hard_cheese_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterYellowHardCheese}
-    categoryTitle="גבינות קשות צהובות"
-    icon={<img alt="" src={importImage('yellow_hard_cheese_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterButterMargarine}
-    categoryTitle="חמאה ומרגרינה"
-    icon={<img alt="" src={importImage('butter_margarine_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterCreamWhippedCreamCookingBaking}
-    categoryTitle="שמנת, קצפת, בישול ואפייה"
-    icon={<img alt="" src={importImage('cream_whipped_cream_cooking_baking_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterChilledPasta}
-    categoryTitle="פסטות קפואות"
-    icon={<img alt="" src={importImage('chilled_pasta_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterEggs}
-    categoryTitle="ביצים"
-    icon={<img alt="" src={importImage('eggs_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSausagesPastrami}
-    categoryTitle="נקניקים ופסטרמה"
-    icon={<img alt="" src={importImage('sausages_pastrami_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSalads}
-    categoryTitle="סלטים"
-    icon={<img alt="" src={importImage('salads_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
+{filterYogurtDrink.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterYogurtDrink}
+      categoryTitle="יוגורטים לשתייה"
+      icon={<img alt="" src={importImage('yogurt_drink_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterMilkDelicaciesDesserts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterMilkDelicaciesDesserts}
+      categoryTitle="דליקטסים וקינוחים מחלב"
+      icon={<img alt="" src={importImage('milk_delicacies_desserts_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSoftCheese.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSoftCheese}
+      categoryTitle="גבינות רכות"
+      icon={<img alt="" src={importImage('cheese_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSemiHardCheese.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSemiHardCheese}
+      categoryTitle="גבינות חצי קשות"
+      icon={<img alt="" src={importImage('semi_hard_cheese_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterYellowHardCheese.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterYellowHardCheese}
+      categoryTitle="גבינות קשות צהובות"
+      icon={<img alt="" src={importImage('yellow_hard_cheese_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterButterMargarine.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterButterMargarine}
+      categoryTitle="חמאה ומרגרינה"
+      icon={<img alt="" src={importImage('butter_margarine_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterCreamWhippedCreamCookingBaking.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterCreamWhippedCreamCookingBaking}
+      categoryTitle="שמנת, קצפת, בישול ואפייה"
+      icon={<img alt="" src={importImage('cream_whipped_cream_cooking_baking_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterChilledPasta.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterChilledPasta}
+      categoryTitle="פסטות קפואות"
+      icon={<img alt="" src={importImage('chilled_pasta_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterEggs.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterEggs}
+      categoryTitle="ביצים"
+      icon={<img alt="" src={importImage('eggs_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSausagesPastrami.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSausagesPastrami}
+      categoryTitle="נקניקים ופסטרמה"
+      icon={<img alt="" src={importImage('sausages_pastrami_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSalads.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSalads}
+      categoryTitle="סלטים"
+      icon={<img alt="" src={importImage('salads_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
 
     </div>
   );
