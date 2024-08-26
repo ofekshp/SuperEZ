@@ -11,7 +11,7 @@ const compareCart = async (req, res) => {
       { name: 'טיב טעם', totalPrice: 0, products: [] }
     ];
 
-    const storeNull = [];
+    const storeNull = new Set();
 
     const getCategoryById = {
       1: "ירקות ופירות טריים",
@@ -19,7 +19,7 @@ const compareCart = async (req, res) => {
       3: "תבלינים",
       4: "חלב ביצים ותחליפים ומשקאות צמחיים",
       5: "סלטים רטבים ממרחים",
-      6: "עוף בשר נקניקים ודגים",
+      6: "עוף, בשר, נקניקים ודגים",
       7: "אורגני ובריאות",
       8: "קפואים",
       9: "שימורים",
@@ -36,6 +36,7 @@ const compareCart = async (req, res) => {
     for (const product of products) {
       const categoryName = getCategoryById[product.id];
       const dbProductCategory = await CompareCart.find({ category: categoryName });
+    
       for (const cart of carts) {
         let dbProduct;
         let index = 0;
@@ -43,18 +44,19 @@ const compareCart = async (req, res) => {
         while (index < dbProductCategory.length) {
           dbProduct = dbProductCategory.find((dbProduct, i) => {
             if (i >= index) {
-              const regex = new RegExp(product.name, 'i');
-              return regex.test(dbProduct.name);
+              const regex = new RegExp(product.name.split(' ').join('.*'), 'i');
+              const match = regex.test(dbProduct.name);
+              return match;
             }
             return false;
           });
-
+  
           if (dbProduct && dbProduct.prices[0]._doc[cart.name]) {
             break;
           }
           index++;
         }
-
+    
         if (dbProduct && dbProduct.prices[0]._doc[cart.name]) {
           const priceStore = dbProduct.prices[0]._doc[cart.name];
           cart.totalPrice += (priceStore * product.quantity);
@@ -64,13 +66,12 @@ const compareCart = async (req, res) => {
             quantity: product.quantity,
           });
         } else {
-          storeNull.push(product.name);
+          storeNull.add({ super: cart.name, product: product.name });
         }
       }
     }
 
-    const reversedWords = storeNull.map(word => word.split('').reverse().join(''));
-    console.log('storeNull:', reversedWords);
+    console.log('storeNull:', storeNull);
     const sortedCarts = carts.sort((a, b) => a.totalPrice - b.totalPrice);
     res.status(200).json(sortedCarts);
 
