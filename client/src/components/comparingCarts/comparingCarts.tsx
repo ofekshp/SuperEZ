@@ -40,7 +40,7 @@ const ComparingCarts: React.FC = () => {
           scriptPath = 'scraper/victoryScraper.py';
           break;
         case 'חצי חינם':
-          scriptPath = 'scraper/hatzi_hinam_scraper.py';
+          scriptPath = 'scraper/hatziHinamScraper.py';
           break;
         default:
           throw new Error('Invalid supermarket');
