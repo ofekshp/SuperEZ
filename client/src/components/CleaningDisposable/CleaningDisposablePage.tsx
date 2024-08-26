@@ -129,7 +129,7 @@ const CleaningDisposablePage: React.FC = () => {
     },
     {
       name: "ג'ל כביסה מרוכז בניחוח פרחים",
-      image: importImage("perfect_flower_gel_5l.jpeg"),
+      image: importImage("perfect_flower_gel_5l.jpg"),
     },
     {
       name: "ג'ל כביסה מרוכז בניחוח מאסק Musk",
@@ -208,155 +208,67 @@ const CleaningDisposablePage: React.FC = () => {
       image: importImage("perfect_soap_flakes_750g.jpeg"),
     },
     {
-      name: "מסיר כתמים ג'ל אוקסיג'ן ללא אקונומיקה",
+      name: "מסיר כתמים ללא אקונומיקה",
       image: importImage("sano_oxygen_stain_remover_gel_3l.jpeg"),
     },
     {
-      name: "מסיר כתמים עוצמתי לכביסה לבנה",
+      name: "מסיר כתמים לכביסה לבנה",
       image: importImage("sano_oxygen_power_stain_remover_750ml.jpeg"),
     },
     {
-      name: "אוקסיג'ן פאוור תוסף להסרת כתמים קשים",
+      name: "תוסף להסרת כתמים קשים",
       image: importImage("sano_oxygen_power_stain_remover_1400g.jpeg"),
     },
     {
-      name: "אוקסיג'ן תוסף להסרת כתמים קשים מכביסה לבנה",
+      name: "תוסף להסרת כתמים קשים מכביסה לבנה",
       image: importImage("sano_oxygen_stain_remover_for_white_laundry_1400g.jpeg"),
     },
     {
-      name: "מסיר כתמים לכביסה לבנה אוקסיג'ן ג'ל",
-      image: importImage("sano_oxygen_stain_remover_gel_for_white_laundry_3l.jpeg"),
-    },
-    {
-      name: "מסיר כתמים ג'ל Oxygen בייבי",
+      name: "מסיר כתמים לתינוק",
       image: importImage("sano_oxygen_baby_stain_remover_gel_3l.jpeg"),
-    },
-    {
-      name: "מסיר כתמים אוקסיג'ן ג'ל",
-      image: importImage("sano_oxygen_stain_remover_gel_4l.jpeg"),
-    },
-    {
-      name: "מסיר כתמים אוקסיג'ן ג'ל",
-      image: importImage("sano_oxygen_stain_remover_gel_2l.jpeg"),
-    },
-    {
-      name: "סנו קל רסס וכבס",
-      image: importImage("sano_kal_spray_and_wash_750ml.jpeg"),
-    },
-    {
-      name: "מסיר כתמים רסס וכבס מילוי",
-      image: importImage("sano_kal_spray_and_wash_refill_750ml.jpeg"),
-    },
-    {
-      name: "מסיר כתמים עם מברשת",
-      image: importImage("sano_stain_remover_with_brush_125g.jpeg"),
     },
     {
       name: "ספריי להסרת כתמים",
       image: importImage("kalia_vanish_stain_remover_spray_750ml.jpeg"),
     },
     {
-      name: "מסיר כתמים קרבונה ניקוי יבש",
-      image: importImage("carbona_dry_cleaning_stain_remover_170g.jpeg"),
-    },
-    {
-      name: "מסיר כתמים אוקסיג'ן",
-      image: importImage("sano_oxygen_stain_remover_750ml.jpeg"),
-    },
-    {
-      name: "מרכך ומבשם כביסה למייבש מקסימה סנסטיב",
-      image: importImage("sano_maxima_sensitive_dryer_softener_750ml.jpeg"),
-    },
-    {
-      name: "מרכך ומבשם כביסה למייבש מקסימה מאסק",
+      name: "מרכך ומבשם כביסה למייבש בניחוח מאסק",
       image: importImage("sano_maxima_musk_dryer_softener_750ml.jpeg"),
     },
     {
-      name: "מרכך ומבשם כביסה למייבש מקסימה אולטרה פרש",
+      name: "מרכך ומבשם כביסה למייבש אולטרה פרש",
       image: importImage("sano_maxima_ultra_fresh_dryer_softener_750ml.jpeg"),
     },
     {
-      name: "מרכך ומבשם כביסה למייבש מקסימה לבנדר",
+      name: "מרכך ומבשם כביסה למייבש בניחוח לבנדר",
       image: importImage("sano_maxima_lavender_dryer_softener_750ml.jpeg"),
     },
     {
-      name: "מבשם ומרכך למייבש כביסה Baby לתינוקות ולעור רגיש",
+      name: "מבשם ומרכך למייבש כביסה לתינוקות ולעור רגיש",
       image: importImage("sano_maxima_baby_dryer_softener_750ml.jpeg"),
     },
     {
-      name: "מבשם ומרכך למייבש כביסה Blue Blossom",
-      image: importImage("sano_maxima_blue_blossom_dryer_softener_750ml.jpeg"),
-    },
-    {
-      name: "בושם מרוכז לכביסה FOREVER כחול",
-      image: importImage("sano_maxima_forever_blue_laundry_perfume_600ml.jpeg"),
-    },
-    {
-      name: "בושם מרוכז לכביסה FOREVER ורוד",
-      image: importImage("sano_maxima_forever_pink_laundry_perfume_600ml.jpeg"),
-    },
-    {
-      name: "בושם מרוכז לכביסה FOREVER בורדו",
-      image: importImage("sano_maxima_forever_bordeaux_laundry_perfume_600ml.jpeg"),
-    },
-    {
-      name: "מבשם ומרכך למייבש כביסה Floral Touch",
-      image: importImage("sano_maxima_floral_touch_dryer_softener_750ml.jpeg"),
-    },
-    {
-      name: "בדין תרסיס ריחני למייבש הכביסה כחול",
-      image: importImage("baddin_blue_dryer_spray_500ml.jpeg"),
-    },
-    {
-      name: "דפי מרכך למייבש כביסה כחול",
+      name: "דפי מרכך למייבש כביסה",
       image: importImage("baddin_blue_dryer_sheets_40pcs.jpeg"),
     },
     {
-      name: "כדוריות הבושם לנור בניחוח סחלב",
+      name: "כדוריות הבושם בניחוח סחלב",
       image: importImage("lenor_orchid_perfume_beads_210g.jpeg"),
     },
     {
-      name: "כדוריות הבושם לנור בניחוח רענן",
+      name: "כדוריות הבושם בניחוח רענן",
       image: importImage("lenor_fresh_perfume_beads_210g.jpeg"),
     },
     {
-      name: "כדוריות הבושם לנור רעננות האוקיינוס",
+      name: "כדוריות הבושם רעננות האוקיינוס",
       image: importImage("lenor_ocean_fresh_perfume_beads_210g.jpeg"),
     },
     {
-      name: "לנור כדוריות הבושם בניחוח אריאל",
+      name: "כדוריות הבושם בניחוח אריאל",
       image: importImage("lenor_ariel_perfume_beads_210g.jpeg"),
     },
     {
-      name: "דפים למייבש פרש אנד סופט Clean Burst",
-      image: importImage("fresh_n_soft_clean_burst_dryer_sheets_100pcs.jpeg"),
-    },
-    {
-      name: "דפים למייבש פרש אנד סופט Tropical Burst",
-      image: importImage("fresh_n_soft_tropical_burst_dryer_sheets_100pcs.jpeg"),
-    },
-    {
-      name: "דפים למכונת כביסה למניעת העברת צבע",
-      image: importImage("woolite_color_catcher_sheets_10pcs.jpeg"),
-    },
-    {
-      name: "דפים למכונת כביסה למניעת העברת צבע",
-      image: importImage("woolite_color_catcher_sheets_20pcs.jpeg"),
-    },
-    {
-      name: "קולור קאצ'ר- לוכד צבעים בכביסה 10 יח'",
-      image: importImage("henkel_color_catcher_10pcs.jpeg"),
-    },
-    {
-      name: "קולור קאצ'ר- לוכד צבעים בכביסה 20 יח'",
-      image: importImage("henkel_color_catcher_20pcs.jpeg"),
-    },
-    {
-      name: "קולור קאצ'ר- לוכד צבעים בכביסה 40 דפים",
-      image: importImage("henkel_color_catcher_40pcs.jpeg"),
-    },
-    {
-      name: "תרסיס לגיהוץ קל מריטו",
+      name: "תרסיס לגיהוץ",
       image: importImage("merito_easy_ironing_spray_500ml.jpeg"),
     },
     {
@@ -364,15 +276,11 @@ const CleaningDisposablePage: React.FC = () => {
       image: importImage("hepi_lavender_moth_repellent_2pcs.jpeg"),
     },
     {
-      name: "אבקת הלבנה",
-      image: importImage("run_whitening_powder_350g.jpeg"),
-    },
-    {
-      name: "ג'ל למניעת אבנית 2 ב-1",
+      name: "ג'ל למניעת אבנית",
       image: importImage("calgon_antiscale_gel_2in1_750ml.jpeg"),
     },
     {
-      name: "אבקה למניעת אבנית במכונת כביסה 2 ב-1",
+      name: "אבקה למניעת אבנית במכונת כביסה",
       image: importImage("calgon_antiscale_powder_2in1_1kg.jpeg"),
     },
     {
@@ -380,81 +288,329 @@ const CleaningDisposablePage: React.FC = () => {
       image: importImage("colon_washing_machine_cleaner_250ml.jpeg"),
     },
     {
-      name: "אטבי כביסה איכותיים בשלל צבעים",
-      image: importImage("perfect_colored_laundry_pegs_9pcs.jpeg"),
-    },
-    {
-      name: "אטבי כביסה גדולים וחזקים עם גומי",
-      image: importImage("perfect_large_strong_laundry_pegs_10pcs.jpeg"),
-    },
-    {
-      name: "מקסימה FORVER פניני בישום לכביסה lovely",
-      image: importImage("sano_maxima_forever_perfume_beads_lovely_275g.jpeg"),
-    },
-    {
-      name: "בדין דפי מרכך ריחניים למייבש כביסה",
-      image: importImage("baddin_dryer_sheets_40pcs.jpeg"),
-    },
-    {
-      name: "דזיטול נוזל מחטא בגדים בכביסה",
-      image: importImage("desytol_laundry_sanitizer_1l.jpeg"),
-    },
-    {
-      name: "וניש ג'ל מסיר כתמים לכביסה לבנה",
-      image: importImage("vanish_white_stain_remover_gel_2.75l.jpeg"),
-    },
-    {
-      name: "וניש תוסף כביסה רב תכליתי לבגדים לבנים",
-      image: importImage("vanish_multi_purpose_laundry_additive_white_1.5kg.jpeg"),
-    },
-    {
-      name: "מבשם בדים בייבי לאב TNX",
-      image: importImage("tnx_fabric_perfume_baby_love_500ml.jpeg"),
-    },
-    {
-      name: "ניקוי וחיטוי מכונת הכביסה בתוספת חומץ סנו מקסימה",
+      name: "ניקוי וחיטוי מכונת הכביסה בתוספת חומץ",
       image: importImage("sano_maxima_washing_machine_cleaner_500ml.jpeg"),
-    },
-    {
-      name: "סופר מסיר כתמים KH7",
-      image: importImage("kh7_super_stain_remover_750ml.jpeg"),
-    },
-    {
-      name: "סנו אוקסיג'ן תוסף להסרת כתמים לכביסה לבנה וצבעונית",
-      image: importImage("sano_oxygen_stain_remover_540g.jpeg"),
-    },
-    {
-      name: "תוסף לחיטוי כביסה סנו מקסימה",
-      image: importImage("sano_maxima_laundry_sanitizer_3l.jpeg"),
     },
   ];
 
   const initialCleaningproducts = [
     {
       name: "נוזל לניקוי כלים בניחוח לימון",
-      image: importImage('lemon_scented_dishwashing_liquid.jpeg'),
-    }
+      image: importImage('dish_liquid_lemon_750ml.jpeg'),
+    },
+    {
+      name: "נוזל לניקוי כלים בניחוח תפוח",
+      image: importImage('dish_liquid_apple_750ml.jpeg'),
+    },
+    {
+      name: "נוזל כלים אקולוגי",
+      image: importImage('eco_dish_liquid_green_power_700ml.jpeg'),
+    },
+    {
+      name: "נוזל לניקוי כלים בניחוח לבנדר",
+      image: importImage('spark_dish_liquid_lavender_700ml.jpeg'),
+    },
+    {
+      name: "נוזל לניקוי כלים קלאסי",
+      image: importImage('spark_dish_liquid_classic_700ml.jpeg'),
+    },
+    {
+      name: "נוזל כלים היפואלרגני פריחת השקד",
+      image: importImage('spark_dish_liquid_hypoallergenic_almond_700ml.jpeg'),
+    },
+    {
+      name: "טבליות למדיח בניחוח מרענן",
+      image: importImage('finish_power_tablets_fresh_40_units.jpeg'),
+    },
+    {
+      name: "ג'ל מרוכז למדיח",
+      image: importImage('finish_all_in_one_max_gel_600ml.jpeg'),
+    },
+    {
+      name: "ג'ל מרוכז למדיח בניחוח לימון",
+      image: importImage('finish_all_in_one_max_lemon_gel_600ml.jpeg'),
+    },
+    {
+      name: "מפיץ ריח למדיח",
+      image: importImage('finish_dishwasher_deodorizer_10ml.jpeg'),
+    },
+    {
+      name: "מלח למדיח",
+      image: importImage('finish_dishwasher_salt_2kg.jpeg'),
+    },
+    {
+      name: "תרסיס מסיר שומנים",
+      image: importImage('astonish_grease_remover_spray_750ml.jpeg'),
+    },
   ];
 
   const initialKitchencleaning = [
     {
       name: "מסיר שומנים",
-      image: importImage('degreaser_product.jpeg'),
-    }
+      image: importImage("cillit_bang_grease_remover.jpeg"),
+    },
+    {
+      name: "מסיר שומנים להסרת לכלוך קשה",
+      image: importImage("tough_grease_remover.jpeg"),
+    },
+    {
+      name: "מנקה ומחטא עוצמתי למטבח ללא אקונומיקה",
+      image: importImage("powerful_kitchen_cleaner.jpeg"),
+    },
+    {
+      name: "מטליות לחות למטבח",
+      image: importImage("kitchen_cleaning_wipes.jpeg"),
+    },
+    {
+      name: "ספריי לניקוי והברקה של משטחי נירוסטה",
+      image: importImage("stainless_steel_cleaning_spray.jpeg"),
+    },
+    {
+      name: "מסיר אבנית מקומקומים",
+      image: importImage("anti_kalk_descaler.jpeg"),
+    },
+    {
+      name: "תרסיס לניקוי מטבח",
+      image: importImage("astonish_kitchen_spray.jpeg"),
+    },
+    {
+      name: "תרסיס ניקוי רב עוצמתי למטבח",
+      image: importImage("astonish_powerful_kitchen_spray.jpeg"),
+    },
+    {
+      name: "מסיר לכלוך קשה ודביק",
+      image: importImage("saint_moritz_kitchen_cleaner.jpeg"),
+    },
+    {
+      name: "מטליות רב שימושיות",
+      image: importImage("multi_use_wipes.jpeg"),
+    },
   ];
 
   const initialGeneralcleaning = [
     {
-      name: "אקונומיקה",
-      image: importImage('bleach.jpeg'),
-    }
+      name: "תרסיס ניקוי והברקת נירוסטה",
+      image: importImage("stainless_steel_cleaning_spray.jpeg"),
+    },
+    {
+      name: "אקונומיקה בניחוח לימון",
+      image: importImage("lemon_scented_bleach.jpeg"),
+    },
+    {
+      name: "אקונומיקה בניחוח פרחים",
+      image: importImage("flower_scented_bleach.jpeg"),
+    },
+    {
+      name: "מסיר אבנית ולכלוך קשה",
+      image: importImage("tough_scale_remover.jpeg"),
+    },
+    {
+      name: "תרסיס לניקוי כללי בתוספת אבקת סודה",
+      image: importImage("general_cleaning_spray_with_soda.jpeg"),
+    },
+    {
+      name: "אבקת ניקוי עם אקונומיקה",
+      image: importImage("cleaning_powder_with_bleach.jpeg"),
+    },
+    {
+      name: "אקונומיקה בניחוח לבנדר",
+      image: importImage("lavender_scented_bleach.jpeg"),
+    },
+    {
+      name: "אקונומיקה בניחוח פריחה לבנה",
+      image: importImage("white_blossom_scented_bleach.jpeg"),
+    },
+    {
+      name: "קצף ניקוי בתוספת אקונומיקה בריח לימון",
+      image: importImage("cleaning_foam_with_lemon_bleach.jpeg"),
+    },
+    {
+      name: "קצף ניקוי בתוספת אקונומיקה בריח לבנדר",
+      image: importImage("cleaning_foam_with_lavender_bleach.jpeg"),
+    },
+    {
+      name: "קצף ניקוי בניחוח פריחה לבנה",
+      image: importImage("sano_cleaning_foam_white_blossom.jpeg"),
+    },
+    {
+      name: "ניקוי חלונות אקולוגי",
+      image: importImage("green_power_window_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל ניקוי כללי אקולוגי",
+      image: importImage("green_power_general_cleaner.jpeg"),
+    },
+    {
+      name: "מסיר עובש",
+      image: importImage("mold_remover.jpeg"),
+    },
+    {
+      name: "מארז מטליות לחיטוי וניקוי",
+      image: importImage("antibacterial_wipes_99_9.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי כללי על בסיס שמן אורנים טבעי",
+      image: importImage("pine_oil_cleaning_gel.jpeg"),
+    },
+    {
+      name: "מסיר עובש בניחוח לימון",
+      image: importImage("lemon_scented_mold_remover.jpeg"),
+    },
+    {
+      name: "חיטוי וניקוי בסביבת התינוק",
+      image: importImage("baby_safe_disinfectant_99_9.jpeg"),
+    },
+    {
+      name: "ניקוי כללי מסיר אבנית",
+      image: importImage("general_scale_remover.jpeg"),
+    },
+    {
+      name: "מטליות לחות לניקוי כללי",
+      image: importImage("general_cleaning_wipes.jpeg"),
+    },
+    {
+      name: "ניקוי וחיטוי רצפות ומשטחים בניחוח אקליפטוס",
+      image: importImage("eucalyptus_floor_cleaner.jpeg"),
+    },
+    {
+      name: "מארז מטליות הפלא לניקוי כללי",
+      image: importImage("trio_miracle_cleaning_cloths_decor_sano_sushi.jpeg"),
+    },
+    {
+      name: "מטליות לחות לניקוי כללי בניחוח לימון",
+      image: importImage("lemon_scented_general_cleaning_wipes.jpeg"),
+    },
+    {
+      name: "מטליות לחות לניקוי כללי בניחוח מרכך כביסה",
+      image: importImage("fabric_softener_scented_cleaning_wipes.jpeg"),
+    },
+    {
+      name: "מטליות לחות לניקוי משטחים אנטיבקטריאלי",
+      image: importImage("antibacterial_surface_wipes.jpeg"),
+    },
+    {
+      name: "נוזל רב תכליתי מנקה ומבריק",
+      image: importImage("multi_purpose_cleaner_shine.jpeg"),
+    },
+    {
+      name: "מבריק שמשות",
+      image: importImage("window_shine_spray.jpeg"),
+    },
+    {
+      name: "נוזל שמשות לרכב",
+      image: importImage("car_window_cleaner.jpeg"),
+    },
+    {
+      name: "סבון שטיחים דוחה קרדית אבק הבית",
+      image: importImage("carpet_shampoo_dust_mite_repellent.jpeg"),
+    },
+    {
+      name: "תרסיס לניקוי רהיטים",
+      image: importImage("furniture_cleaning_spray.jpeg"),
+    },
+    {
+      name: "מטליות לחות לניקוי והברקת רהיטים",
+      image: importImage("furniture_cleaning_wipes.jpeg"),
+    },
+    {
+      name: "ניקוי וטיפול במוצרי עור",
+      image: importImage("leather_care_cleaner.jpeg"),
+    },
+    {
+      name: "מטליות לניקוי משקפיים",
+      image: importImage("glasses_cleaning_wipes.jpeg"),
+    },
+    {
+      name: "דפי ספוג הפלא",
+      image: importImage("sano_sushi_magic_sponge_sheets.jpeg"),
+    },
   ];
 
   const initialFloorcleaning = [
     {
-      name: "נוזל רצפות בריח לבנדר",
-      image: importImage('lavender_scented_floor_liquid.jpeg'),
-    }
+      name: "נוזל מנקה רצפות בניחוח לבנדר",
+      image: importImage("lavender_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל מנקה רצפות בניחוח אורנים",
+      image: importImage("pine_scented_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל מנקה רצפות בניחוח מאסק",
+      image: importImage("musk_scented_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל מנקה פרקט",
+      image: importImage("parquet_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל לניקוי רצפה דוחה תיקנים",
+      image: importImage("roach_repellent_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל בניחוח פנטזיה לניקוי הרצפה",
+      image: importImage("fantasy_scented_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל לניקוי רצפה בניחוח מאסק",
+      image: importImage("fresh_musk_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל לניקוי רצפה בניחוח לילך לבנדר",
+      image: importImage("fresh_lavender_lilac_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל לניקוי רצפה בניחוח ספא מרגיע",
+      image: importImage("spa_scented_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל לניקוי רצפה בניחוח כותנה מלטפת",
+      image: importImage("home_cotton_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל לניקוי רצפה בריח אפרסק",
+      image: importImage("peach_scented_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל לניקוי רצפה בניחוח לימון מרענן",
+      image: importImage("fresh_lemon_scented_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל לניקוי רצפה בניחוח יסמין",
+      image: importImage("jasmine_scented_floor_cleaner.jpeg"),
+    },
+    {
+      name: "נוזל לניקוי רצפה בניחוח פסיפלורה",
+      image: importImage("passionfruit_scented_floor_cleaner.jpeg"),
+    },
+    {
+      name: "מטליות לחות לניקוי רצפות",
+      image: importImage("floor_cleaning_wipes.jpeg"),
+    },
+    {
+      name: "מטליות לחות לניקוי הרצפה בניחוח מאסק",
+      image: importImage("musk_scented_floor_wipes.jpeg"),
+    },
+    {
+      name: "מטליות לחות לרצפה בניחוח מרכך כביסה",
+      image: importImage("thick_floor_wipes_fabric_softener_scent.jpeg"),
+    },
+    {
+      name: "מטליות לחות לניקוי הרצפה בניחוח מלון מפנק",
+      image: importImage("luxury_hotel_floor_wipes_70x40.jpeg"),
+    },
+    {
+      name: "מטליות לחות לניקוי הרצפה בניחוח מלון בוטיק",
+      image: importImage("boutique_hotel_floor_wipes.jpeg"),
+    },
+    {
+      name: "מטליות לחות לרצפה בניחוח לימון",
+      image: importImage("lemon_scented_floor_wipes.jpeg"),
+    },
+    {
+      name: "מטליות רצפה",
+      image: importImage("perfect_floor_wipes.jpeg"),
+    },
   ];
 
   const initialBathroomtoilecleaning = [
@@ -494,6 +650,11 @@ const CleaningDisposablePage: React.FC = () => {
 
   initialPaper.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialLaundryproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialCleaningproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialKitchencleaning.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialGeneralcleaning.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialFloorcleaning.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+
 
 
 const [paper, setPaper] = useState<{ name: string; image: string | null; count: number }[]>(
@@ -517,40 +678,40 @@ const [laundryproducts, setLaundryproducts] = useState<{ name: string; image: st
 );
 
 const [cleaningproducts, setCleaningproducts] = useState<{ name: string; image: string | null; count: number }[]>(
-  initialCleaningproducts.map(item => {
-    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  initialCleaningproducts.map(cleaningproducts => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cleaningproducts.name);
     return {
-      ...item,
+      ...cleaningproducts,
       count: basketItem ? basketItem.quantity : 0,
     };
   })
 );
 
 const [kitchencleaning, setKitchencleaning] = useState<{ name: string; image: string | null; count: number }[]>(
-  initialKitchencleaning.map(item => {
-    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  initialKitchencleaning.map(kitchencleaning => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === kitchencleaning.name);
     return {
-      ...item,
+      ...kitchencleaning,
       count: basketItem ? basketItem.quantity : 0,
     };
   })
 );
 
 const [generalcleaning, setGeneralcleaning] = useState<{ name: string; image: string | null; count: number }[]>(
-  initialGeneralcleaning.map(item => {
-    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  initialGeneralcleaning.map(generalcleaning => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === generalcleaning.name);
     return {
-      ...item,
+      ...generalcleaning,
       count: basketItem ? basketItem.quantity : 0,
     };
   })
 );
 
 const [floorcleaning, setFloorcleaning] = useState<{ name: string; image: string | null; count: number }[]>(
-  initialFloorcleaning.map(item => {
-    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  initialFloorcleaning.map(floorcleaning => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === floorcleaning.name);
     return {
-      ...item,
+      ...floorcleaning,
       count: basketItem ? basketItem.quantity : 0,
     };
   })
@@ -613,10 +774,10 @@ useEffect(() => {
   const handleIncrement = (name: string) => {
     setPaper(paper.map(paper => paper.name === name ? { ...paper, count: paper.count + 1 } : paper));
     setLaundryproducts(laundryproducts.map(laundryproducts => laundryproducts.name === name ? { ...laundryproducts, count: laundryproducts.count + 1 } : laundryproducts));
-    setCleaningproducts(cleaningproducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
-    setKitchencleaning(kitchencleaning.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
-    setGeneralcleaning(generalcleaning.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
-    setFloorcleaning(floorcleaning.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
+    setCleaningproducts(cleaningproducts.map(cleaningproducts => cleaningproducts.name === name ? { ...cleaningproducts, count: cleaningproducts.count + 1 } : cleaningproducts));
+    setKitchencleaning(kitchencleaning.map(kitchencleaning => kitchencleaning.name === name ? { ...kitchencleaning, count: kitchencleaning.count + 1 } : kitchencleaning));
+    setGeneralcleaning(generalcleaning.map(generalcleaning => generalcleaning.name === name ? { ...generalcleaning, count: generalcleaning.count + 1 } : generalcleaning));
+    setFloorcleaning(floorcleaning.map(floorcleaning => floorcleaning.name === name ? { ...floorcleaning, count: floorcleaning.count + 1 } : floorcleaning));
     setBathroomtoilecleaning(bathroomtoilecleaning.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
     setPesticideproducts(pesticideproducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
     setCleaningaccessories(cleaningaccessories.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
@@ -625,70 +786,70 @@ useEffect(() => {
   };
 
   const handleDecrement = (name: string) => {
-    setPaper(paper.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setPaper(paper.map(paper => {
+      if (paper.name === name && paper.count > 0) {
+        const newCount = paper.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(paper.name);
         }
-        return { ...item, count: newCount };
+        return { ...paper, count: newCount };
       }
-      return item;
+      return paper;
     }));
     
-    setLaundryproducts(laundryproducts.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setLaundryproducts(laundryproducts.map(laundryproducts => {
+      if (laundryproducts.name === name && laundryproducts.count > 0) {
+        const newCount = laundryproducts.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(laundryproducts.name);
         }
-        return { ...item, count: newCount };
+        return { ...laundryproducts, count: newCount };
       }
-      return item;
+      return laundryproducts;
     }));
     
-    setCleaningproducts(cleaningproducts.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setCleaningproducts(cleaningproducts.map(cleaningproducts => {
+      if (cleaningproducts.name === name && cleaningproducts.count > 0) {
+        const newCount = cleaningproducts.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(cleaningproducts.name);
         }
-        return { ...item, count: newCount };
+        return { ...cleaningproducts, count: newCount };
       }
-      return item;
+      return cleaningproducts;
     }));
     
-    setKitchencleaning(kitchencleaning.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setKitchencleaning(kitchencleaning.map(kitchencleaning => {
+      if (kitchencleaning.name === name && kitchencleaning.count > 0) {
+        const newCount = kitchencleaning.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(kitchencleaning.name);
         }
-        return { ...item, count: newCount };
+        return { ...kitchencleaning, count: newCount };
       }
-      return item;
+      return kitchencleaning;
     }));
     
-    setGeneralcleaning(generalcleaning.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setGeneralcleaning(generalcleaning.map(generalcleaning => {
+      if (generalcleaning.name === name && generalcleaning.count > 0) {
+        const newCount = generalcleaning.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(generalcleaning.name);
         }
-        return { ...item, count: newCount };
+        return { ...generalcleaning, count: newCount };
       }
-      return item;
+      return generalcleaning;
     }));
     
-    setFloorcleaning(floorcleaning.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setFloorcleaning(floorcleaning.map(floorcleaning => {
+      if (floorcleaning.name === name && floorcleaning.count > 0) {
+        const newCount = floorcleaning.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(floorcleaning.name);
         }
-        return { ...item, count: newCount };
+        return { ...floorcleaning, count: newCount };
       }
-      return item;
+      return floorcleaning;
     }));
     
     setBathroomtoilecleaning(bathroomtoilecleaning.map(item => {
@@ -750,10 +911,10 @@ useEffect(() => {
   const handleSave = async () => {
     const paperToSave = paper.filter(paper => paper.count > 0).map(paper => ({ ...paper, quantity: paper.count }));
     const laundryproductsToSave = laundryproducts.filter(laundryproducts => laundryproducts.count > 0).map(laundryproducts => ({ ...laundryproducts, quantity: laundryproducts.count }));
-    const cleaningproductsToSave = cleaningproducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const kitchencleaningToSave = kitchencleaning.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const generalcleaningToSave = generalcleaning.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const floorcleaningToSave = floorcleaning.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const cleaningproductsToSave = cleaningproducts.filter(cleaningproducts => cleaningproducts.count > 0).map(cleaningproducts => ({ ...cleaningproducts, quantity: cleaningproducts.count }));
+    const kitchencleaningToSave = kitchencleaning.filter(kitchencleaning => kitchencleaning.count > 0).map(kitchencleaning => ({ ...kitchencleaning, quantity: kitchencleaning.count }));
+    const generalcleaningToSave = generalcleaning.filter(generalcleaning => generalcleaning.count > 0).map(generalcleaning => ({ ...generalcleaning, quantity: generalcleaning.count }));
+    const floorcleaningToSave = floorcleaning.filter(floorcleaning => floorcleaning.count > 0).map(floorcleaning => ({ ...floorcleaning, quantity: floorcleaning.count }));
     const bathroomtoilecleaningToSave = bathroomtoilecleaning.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const pesticideproductsToSave = pesticideproducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
     const cleaningaccessoriesToSave = cleaningaccessories.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
@@ -804,7 +965,7 @@ useEffect(() => {
         <ProductsPage
           products={cleaningproducts}
           categoryTitle="ניקוי כלים"
-          icon={<img alt="" src={importImage('cleaning_icon.png')} />} 
+          icon={<img alt="" src={importImage('cleaningproducts_icon.png')} />} 
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
           onSave={handleSave}
