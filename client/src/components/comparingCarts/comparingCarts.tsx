@@ -80,6 +80,8 @@ const ComparingCarts: React.FC = () => {
         return 30.00; 
       case 'חצי חינם': // Hazi-Hinam
         return 29.00; 
+      case 'טיב טעם': // Tiv Taam
+        return 29.9; 
       default:
         return 0;
     }
@@ -93,6 +95,8 @@ const ComparingCarts: React.FC = () => {
         return importImage('Victory.png');
       case 'חצי חינם': // Hazi-Hinam
         return importImage('HaziHinam.png');
+      case 'טיב טעם': // Hazi-Hinam
+        return importImage('TivTaam.png');  
       default:
         return null;
     }
@@ -104,7 +108,10 @@ const ComparingCarts: React.FC = () => {
       {error && <div className="error-message">{error}</div>}
       <div className="cart-column">
         {superCarts.map((cart: any) => {
-          const deliveryPrice = getDeliveryPrice(cart.name);
+          var deliveryPrice = getDeliveryPrice(cart.name);
+          if(cart.name === 'טיב טעם' && cart.totalPrice >= 750 ){
+            deliveryPrice = 0;
+          }
           const totalWithDelivery = cart.totalPrice + deliveryPrice;
           const logo = getLogo(cart.name);
           

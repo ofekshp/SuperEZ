@@ -7,7 +7,8 @@ const compareCart = async (req, res) => {
     const carts = [
       { name: 'רמי לוי', totalPrice: 0, products: [] },
       { name: 'חצי חינם', totalPrice: 0, products: [] },
-      { name: 'ויקטורי', totalPrice: 0, products: [] }
+      { name: 'ויקטורי', totalPrice: 0, products: [] },
+      { name: 'טיב טעם', totalPrice: 0, products: [] }
     ];
 
     const storeNull = [];
