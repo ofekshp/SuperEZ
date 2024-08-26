@@ -898,6 +898,7 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
         onDecrement={handleDecrement}
         onSave={handleSave}
       />
+      </div>
 <div>
     <div style={{
       position: 'absolute',
@@ -933,78 +934,98 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
 
         pointerEvents: 'none',
       }}></i>
-    </div>      <div>
-  <ProductsPage
-    products={filterChickenProducts}
-    categoryTitle="מוצרי עוף"
-    icon={<img alt="מוצרי עוף" src={importImage('chicken_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterIndiaProducts}
-    categoryTitle="מוצרי הודו"
-    icon={<img alt="מוצרי הודו" src={importImage('india_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterBeefLambProducts}
-    categoryTitle="בשר בקר וכבש"
-    icon={<img alt="בשר בקר וכבש" src={importImage('beef_lamb_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterFrozenBeefChickenProducts}
-    categoryTitle="בשר בקר ועוף קפוא"
-    icon={<img alt="בשר בקר ועוף קפוא" src={importImage('frozen_beef_chicken_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSausageProducts}
-    categoryTitle="נקניקיות"
-    icon={<img alt="נקניקיות" src={importImage('sausage_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterFreshFishProducts}
-    categoryTitle="דגים טריים"
-    icon={<img alt="דגים טריים" src={importImage('fresh_fish_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterFrozenFishProducts}
-    categoryTitle="דגים קפואים"
-    icon={<img alt="דגים קפואים" src={importImage('frozen_fish_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-</div>
-</div>
+    </div>
+    </div>    
+  {filterChickenProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterChickenProducts}
+      categoryTitle="מוצרי עוף"
+      icon={<img alt="" src={importImage('chicken_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterIndiaProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterIndiaProducts}
+      categoryTitle="מוצרי הודו"
+      icon={<img alt="" src={importImage('india_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterBeefLambProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterBeefLambProducts}
+      categoryTitle="בשר בקר וכבש"
+      icon={<img alt="" src={importImage('beef_lamb_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterFrozenBeefChickenProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterFrozenBeefChickenProducts}
+      categoryTitle="בשר בקר ועוף קפוא"
+      icon={<img alt="" src={importImage('frozen_beef_chicken_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSausageProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSausageProducts}
+      categoryTitle="נקניקיות"
+      icon={<img alt="" src={importImage('sausage_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterFreshFishProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterFreshFishProducts}
+      categoryTitle="דגים טריים"
+      icon={<img alt="" src={importImage('fresh_fish_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterFrozenFishProducts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterFrozenFishProducts}
+      categoryTitle="דגים קפואים"
+      icon={<img alt="" src={importImage('frozen_fish_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
   </div>
   );
 };

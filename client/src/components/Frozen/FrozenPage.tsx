@@ -909,56 +909,71 @@ const FrozenPage: React.FC = () => {
 
         pointerEvents: 'none',
       }}></i>
-    </div>      <div>
+    </div>    {filterFrozenVegetables.length > 0 && (
+  <div>
     <ProductsPage
-    products={filterFrozenVegetables}
-    categoryTitle="ירקות קפואים"
-    icon={<img alt="" src={importImage('frozen_vegetables_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterDoughsPizzasPastries}
-    categoryTitle="בצקים, פיצות ומאפים"
-    icon={<img alt="" src={importImage('doughs_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterPreparedFoods}
-    categoryTitle="מאכלים מוכנים"
-    icon={<img alt="" src={importImage('prepared_foods_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterHerbsSpices}
-    categoryTitle="עשבי תיבול ותבלינים"
-    icon={<img alt="" src={importImage('herbs_spices_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterFrozenFruit}
-    categoryTitle="פירות קפואים"
-    icon={<img alt="" src={importImage('frozen_fruit_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
+      products={filterFrozenVegetables}
+      categoryTitle="ירקות קפואים"
+      icon={<img alt="" src={importImage('frozen_vegetables_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterDoughsPizzasPastries.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterDoughsPizzasPastries}
+      categoryTitle="בצקים, פיצות ומאפים"
+      icon={<img alt="" src={importImage('doughs_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterPreparedFoods.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterPreparedFoods}
+      categoryTitle="מאכלים מוכנים"
+      icon={<img alt="" src={importImage('prepared_foods_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterHerbsSpices.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterHerbsSpices}
+      categoryTitle="עשבי תיבול ותבלינים"
+      icon={<img alt="" src={importImage('herbs_spices_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterFrozenFruit.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterFrozenFruit}
+      categoryTitle="פירות קפואים"
+      icon={<img alt="" src={importImage('frozen_fruit_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
     </div>
   );
 };
