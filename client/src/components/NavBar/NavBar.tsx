@@ -6,6 +6,9 @@ import SignUpModal from '../SignUp/SignUp.tsx';
 import MyProfileModal from '../MyProfile/MyProfile.tsx';
 import UserService from '../../services/user_service.ts';
 import { toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 const importImage = (imageName: string) => {
   try {
@@ -98,6 +101,7 @@ const Navbar: React.FC = () => {
               בשר/דגים
             </Link>
           </li>
+
           <li>
             <Link to="/Drinks" className="navbar-link">
               שתייה
@@ -133,12 +137,16 @@ const Navbar: React.FC = () => {
               פארם/בית
             </Link>
           </li>
+          
         </ul>
         <div className="navbar-right">
           <div className="navbar-profile">
             {isUserLoggedIn ? (
               <>
-                <button onClick={handleSignOut} className="navbar-logout">התנתקות</button>
+<button onClick={handleSignOut} className="navbar-logout" style={{ background: 'none', border: 'none'}}>
+  <FontAwesomeIcon icon={faSignOutAlt} style={{ fontSize: '20px', color: '##a3a2a2' }} />
+</button>
+
                 <button onClick={openMyProfileModal} className="navbar-profile-button">אזור אישי</button>
               </>
             ) : (

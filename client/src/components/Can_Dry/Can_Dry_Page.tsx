@@ -4515,42 +4515,39 @@ const initialGranolaoats = [
   };
 
   return (
-    <div>
-    <div style={{
-      position: 'absolute',
-      marginTop: '100px',
-      width: '100%',
-      paddingRight: '20px', 
-      marginBottom: '20px', 
-    }}>
+    <div> 
+ <div style={{
+    position: 'absolute',
+    marginTop: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  }}>
+    <div style={{ position: 'relative' }}>
       <input
         type="text"
-        placeholder="חפש מוצר יבשים\שימורים"
+        placeholder="חפש מוצר יבשים/שימורים"
         value={searchTerm}
         onChange={handleSearch}
         style={{
-          width: '715px',
+          width: '100%',
           padding: '5px 40px 5px 5px',
           borderRadius: '8px',
           border: '1px solid #ccc',
           textAlign: 'right',
-          position: 'relative',
-          float: 'right',
-          marginRight: '200px',
-
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         }}
       />
       <i className="fas fa-search" style={{
         position: 'absolute',
-        right: '30px',
+        right: '-33px',
         top: '50%',
         transform: 'translateY(-50%)',
         color: '#aaa',
-        marginRight: '200px',
-
         pointerEvents: 'none',
       }}></i>
     </div>
+</div>
     
     <div>
   {filterBreads.length > 0 && (

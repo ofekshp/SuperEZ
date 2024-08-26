@@ -287,7 +287,9 @@ const MyBasket: React.FC = () => {
                 closeModal={closeModal}
                 openSignUpModal={openSignUpModal}
                 setIsUserLoggedIn={setIsUserLoggedIn}
-              />)}
+              />
+            )}
+            {signUpOpen && <SignUpModal closeModal={closeModal} />}
               {errorMessage && (
               <div className="error-message">
                 {errorMessage}

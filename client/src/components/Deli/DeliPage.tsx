@@ -2198,42 +2198,41 @@ useEffect(() => {
   );
   
   return (
- <div>
+    <div>
     <div style={{
       position: 'absolute',
       marginTop: '100px',
       width: '100%',
-      paddingRight: '20px', // Adjust for right padding if needed
-      marginBottom: '20px', 
+      display: 'flex',
+      justifyContent: 'center',
     }}>
-      <input
-        type="text"
-        placeholder="חפש מוצר מעדנייה"
-        value={searchTerm}
-        onChange={handleSearch}
-        style={{
-          width: '715px',
-          padding: '5px 40px 5px 5px',
-          borderRadius: '8px',
-          border: '1px solid #ccc',
-          textAlign: 'right',
-          position: 'relative',
-          float: 'right',
-          marginRight: '200px',
-
-        }}
-      />
-      <i className="fas fa-search" style={{
-        position: 'absolute',
-        right: '30px',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        color: '#aaa',
-        marginRight: '200px',
-
-        pointerEvents: 'none',
-      }}></i>
-    </div>
+      <div style={{ position: 'relative' }}>
+        <input
+          type="text"
+          placeholder="חפש מוצר מעדנייה"
+          value={searchTerm}
+          onChange={handleSearch}
+          style={{
+            width: '100%',
+        
+            padding: '5px 40px 5px 5px',
+            borderRadius: '8px',
+            border: '1px solid #ccc',
+            textAlign: 'right',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          }}
+        />
+        <i className="fas fa-search" style={{
+          position: 'absolute',
+          right: '-30px',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          color: '#aaa',
+          pointerEvents: 'none',
+        }}></i>
+      </div>
+  
+  </div>
     {filterMilk.length > 0 && (
   <div>
     <ProductsPage
