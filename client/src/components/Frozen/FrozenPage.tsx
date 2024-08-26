@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const importImage = (imageName: string) => {
   try {
@@ -843,58 +845,120 @@ const FrozenPage: React.FC = () => {
     allItems.forEach(item => addProduct(item));
   };
 
+  
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+  const filterFrozenVegetables = frozenVegetables.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterDoughsPizzasPastries = doughsPizzasPastries.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterPreparedFoods = preparedFoods.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterHerbsSpices = herbsSpices.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterFrozenFruit = frozenFruit.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  
+
   return (
-    <div>
-      <div>
-        <ProductsPage
-          products={frozenVegetables}
-          categoryTitle="ירקות קפואים"
-          icon={<img alt="" src={importImage('frozen_vegetables_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={doughsPizzasPastries}
-          categoryTitle="בצקים, פיצות ומאפים"
-          icon={<img alt="" src={importImage('doughs_icon.png')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={preparedFoods}
-          categoryTitle="מאכלים מוכנים"
-          icon={<img alt="" src={importImage('prepared_foods_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={herbsSpices}
-          categoryTitle="עשבי תיבול ותבלינים"
-          icon={<img alt="" src={importImage('herbs_spices_icon.png')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={frozenFruit}
-          categoryTitle="פירות קפואים"
-          icon={<img alt="" src={importImage('frozen_fruit_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
+<div>
+    <div style={{
+      position: 'absolute',
+      marginTop: '100px',
+      width: '100%',
+      paddingRight: '20px', // Adjust for right padding if needed
+      marginBottom: '20px', 
+    }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר קפואים"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '715px',
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          position: 'relative',
+          float: 'right',
+          marginRight: '200px',
+
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        marginRight: '200px',
+
+        pointerEvents: 'none',
+      }}></i>
+    </div>      <div>
+    <ProductsPage
+    products={filterFrozenVegetables}
+    categoryTitle="ירקות קפואים"
+    icon={<img alt="" src={importImage('frozen_vegetables_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterDoughsPizzasPastries}
+    categoryTitle="בצקים, פיצות ומאפים"
+    icon={<img alt="" src={importImage('doughs_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterPreparedFoods}
+    categoryTitle="מאכלים מוכנים"
+    icon={<img alt="" src={importImage('prepared_foods_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterHerbsSpices}
+    categoryTitle="עשבי תיבול ותבלינים"
+    icon={<img alt="" src={importImage('herbs_spices_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterFrozenFruit}
+    categoryTitle="פירות קפואים"
+    icon={<img alt="" src={importImage('frozen_fruit_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
     </div>
   );
 };

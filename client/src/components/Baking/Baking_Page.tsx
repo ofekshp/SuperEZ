@@ -1961,88 +1961,163 @@ const handleSave = async () => {
 
 };
 
+const [searchTerm, setSearchTerm] = useState("");
+
+const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(event.target.value);
+};
+
+const filterSpreadssauces = spreadssauces.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterBreadcrumbs = breadcrumbs.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterSoups = soups.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterAsian = asian.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterBakeryproducts = bakeryproducts.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterJams = jams.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterHalvahhoneysilan = halvahhoneysilan.filter(product =>
+  product.name.includes(searchTerm)
+);
+
+const filterSpices = spices.filter(product =>
+  product.name.includes(searchTerm)
+);
+
 return (
   <div>
-    <div>
-      <ProductsPage
-        products={spreadssauces}
-        categoryTitle="ממרחים ורטבים"
-        icon={<img alt="" src={importImage('spreadssauces_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={breadcrumbs}
-        categoryTitle="פירורי לחם"
-        icon={<img alt="" src={importImage('breadcrumbs_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={soups}
-        categoryTitle="מרקים, תיבול ותבשילים מהירי הכנה"
-        icon={<img alt="" src={importImage('soups_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={asian}
-        categoryTitle="אסייאתי"
-        icon={<img alt="" src={importImage('asian_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={bakeryproducts}
-        categoryTitle="מוצרי אפיה"
-        icon={<img alt="" src={importImage('bakeryproducts_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={jams}
-        categoryTitle="ריבות ומעדני פירות"
-        icon={<img alt="" src={importImage('jams_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={halvahhoneysilan}
-        categoryTitle="חלווה, דבש וסילאן"
-        icon={<img alt="" src={importImage('halvahhoneysilan_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={spices}
-        categoryTitle="תבלינים"
-        icon={<img alt="" src={importImage('spices_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
+  <div style={{
+    position: 'absolute',
+    marginTop: '100px',
+    width: '100%',
+    paddingRight: '20px', 
+    marginBottom: '20px', 
+  }}>
+    <input
+      type="text"
+      placeholder="חפש מוצר בישול\אפייה"
+      value={searchTerm}
+      onChange={handleSearch}
+      style={{
+        width: '715px',
+        padding: '5px 40px 5px 5px',
+        borderRadius: '8px',
+        border: '1px solid #ccc',
+        textAlign: 'right',
+        position: 'relative',
+        float: 'right',
+        marginRight: '200px',
+
+      }}
+    />
+    <i className="fas fa-search" style={{
+      position: 'absolute',
+      right: '30px',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      color: '#aaa',
+      marginRight: '200px',
+
+      pointerEvents: 'none',
+    }}></i>
+  </div>
+  
+  <div>
+  <ProductsPage
+    products={filterSpreadssauces}
+    categoryTitle="ממרחים ורטבים"
+    icon={<img alt="" src={importImage('spreadssauces_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterBreadcrumbs}
+    categoryTitle="פירורי לחם"
+    icon={<img alt="" src={importImage('breadcrumbs_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterSoups}
+    categoryTitle="מרקים, תיבול ותבשילים מהירי הכנה"
+    icon={<img alt="" src={importImage('soups_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterAsian}
+    categoryTitle="אסייאתי"
+    icon={<img alt="" src={importImage('asian_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterBakeryproducts}
+    categoryTitle="מוצרי אפיה"
+    icon={<img alt="" src={importImage('bakeryproducts_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterJams}
+    categoryTitle="ריבות ומעדני פירות"
+    icon={<img alt="" src={importImage('jams_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterHalvahhoneysilan}
+    categoryTitle="חלווה, דבש וסילאן"
+    icon={<img alt="" src={importImage('halvahhoneysilan_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+<div>
+  <ProductsPage
+    products={filterSpices}
+    categoryTitle="תבלינים"
+    icon={<img alt="" src={importImage('spices_icon.png')} />}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+</div>
+
   </div>
   );
 }
