@@ -12,7 +12,7 @@ const ProductCard = ({ image, name, count, onIncrement, onDecrement, onSave }) =
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
             height="1em"
-            viewBox="0 0 24 24"
+            viewBox="1 1 24 24"
             onClick={onDecrement}
             className="buttonAction"
           >
@@ -21,7 +21,7 @@ const ProductCard = ({ image, name, count, onIncrement, onDecrement, onSave }) =
               stroke="currentColor"
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
+              strokeWidth={1.5}
               d="M5 12h14"
             ></path>
           </svg>
@@ -30,7 +30,7 @@ const ProductCard = ({ image, name, count, onIncrement, onDecrement, onSave }) =
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
             height="1em"
-            viewBox="0 0 24 24"
+            viewBox="1 1 24 24"
             onClick={onIncrement}
             className="buttonAction"
           >
@@ -38,12 +38,12 @@ const ProductCard = ({ image, name, count, onIncrement, onDecrement, onSave }) =
               fill="none"
               stroke="currentColor"
               strokeLinecap="round"
-              strokeWidth={2}
+              strokeWidth={1.5}
               d="M12 19V5m7 7H5"
             ></path>
           </svg>
         </div>
-        <div className="save-button">
+        {/* <div className="save-button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -61,7 +61,7 @@ const ProductCard = ({ image, name, count, onIncrement, onDecrement, onSave }) =
               d="M5 13l4 4L19 7"
             ></path>
           </svg>
-        </div>
+        </div> */}
       </div>
     </div>
   );
