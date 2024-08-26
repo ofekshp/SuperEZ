@@ -11,7 +11,12 @@ const compareCart = async (req, res) => {
       { name: 'טיב טעם', totalPrice: 0, products: [] }
     ];
 
-    const storeNull = new Set();
+    const storeNull = [
+      { name: 'רמי לוי', products: [] },
+      { name: 'חצי חינם', products: [] },
+      { name: 'ויקטורי', products: [] },
+      { name: 'טיב טעם', products: [] }
+    ];
 
     const getCategoryById = {
       1: "ירקות ופירות טריים",
@@ -66,14 +71,14 @@ const compareCart = async (req, res) => {
             quantity: product.quantity,
           });
         } else {
-          storeNull.add({ super: cart.name, product: product.name });
+          storeNull.find(store => store.name === cart.name).products.push(product);
         }
       }
     }
 
     console.log('storeNull:', storeNull);
     const sortedCarts = carts.sort((a, b) => a.totalPrice - b.totalPrice);
-    res.status(200).json(sortedCarts);
+    res.status(200).json({sortedCarts , storeNull});
 
   } catch (error) {
     console.error('Error comparing products:', error);

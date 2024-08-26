@@ -73,7 +73,8 @@ const MyBasket: React.FC = () => {
       const response = await cartService.getCheapCart(basketProducts);
       navigate('/comparingCarts', { 
         state: { 
-          superCarts: response,
+          superCarts: response.sortedCarts,
+          missingProducts: response.storeNull,
           client_info: client_info,
           basketProducts: basketProducts
         } 
@@ -286,7 +287,9 @@ const MyBasket: React.FC = () => {
                 closeModal={closeModal}
                 openSignUpModal={openSignUpModal}
                 setIsUserLoggedIn={setIsUserLoggedIn}
-              />)}
+              />
+            )}
+            {signUpOpen && <SignUpModal closeModal={closeModal} />}
               {errorMessage && (
               <div className="error-message">
                 {errorMessage}

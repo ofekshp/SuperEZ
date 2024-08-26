@@ -88,7 +88,7 @@ interface Product {
           body: JSON.stringify({ products: myCart }),
         });
         const data = await response.json();
-        console.log(data);
+        console.log("my data:", data);
         return data;
       } catch (error) {
         console.error('Error get CHEAP CART:', error);
@@ -97,7 +97,7 @@ interface Product {
     }
 
     async getUserCarts(): Promise<Cart[]> {
-      const userId = localStorage.getItem('userId'); // כאן שולפים את userId מ-localStorage
+      const userId = localStorage.getItem('userId'); 
       try {
         const response = await axios.get('http://localhost:3001/cart/carts', {
           headers: {
