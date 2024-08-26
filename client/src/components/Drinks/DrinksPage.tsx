@@ -819,7 +819,7 @@ const initialAlcoholDrinks = [
     }}>
       <input
         type="text"
-        placeholder="חפש מוצר קפואים"
+        placeholder="חפש מוצר שתייה"
         value={searchTerm}
         onChange={handleSearch}
         style={{
