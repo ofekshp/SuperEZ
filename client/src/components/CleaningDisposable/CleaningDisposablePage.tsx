@@ -104,559 +104,103 @@ const CleaningDisposablePage: React.FC = () => {
       image: importImage("laundry_powder_white_color_2.5kg.jpeg"),
     },
     {
-      name: "אבקת כביסה סנו מקסימה אפקט ז'אוול Javel",
-      image: importImage("sano_maxima_javel_powder_1.25kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה סנו מקסימה בניחוח מאסק Musk",
+      name: "אבקת כביסה בניחוח מאסק Musk",
       image: importImage("sano_maxima_musk_powder_1.25kg.jpeg"),
     },
     {
-      name: "אבקת כביסה סנו מקסימה סנסיטיב sensitive",
-      image: importImage("sano_maxima_sensitive_powder_1.25kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה סנו מקסימה ביו Bio לכתמים קשים",
+      name: "אבקת כביסה לכתמים קשים",
       image: importImage("sano_maxima_bio_powder_1.25kg.jpeg"),
     },
     {
-      name: "אבקת כביסה סנו מקסימה בלאק Black לצבעים כהים",
+      name: "אבקת כביסה לצבעים כהים",
       image: importImage("sano_maxima_black_powder_1.25kg.jpeg"),
     },
     {
-      name: "אבקת כביסה סנו מקסימה אפקט ז'אוול Javel - 2.5 ק\"ג",
-      image: importImage("sano_maxima_javel_powder_2.5kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה סנו מקסימה ביו Bio לכתמים קשים - 2.5 ק\"ג",
-      image: importImage("sano_maxima_bio_powder_2.5kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה סנו מקסימה בניחוח Musk - 2.5 ק\"ג",
-      image: importImage("sano_maxima_musk_powder_2.5kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה סנו מקסימה סנסיטיב sensitive - 2.5 ק\"ג",
-      image: importImage("sano_maxima_sensitive_powder_2.5kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה סנו מקסימה בייבי לבגדי תינוקות ולעור רגיש",
+      name: "אבקת כביסה לבגדי תינוקות ולעור רגיש",
       image: importImage("sano_maxima_baby_powder_1.25kg.jpeg"),
     },
     {
-      name: "אבקת כביסה סנו מקסימה אפקט Javel - 6 ק\"ג",
-      image: importImage("sano_maxima_javel_powder_6kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה סנו מקסימה Bio - 6 ק\"ג",
-      image: importImage("sano_maxima_bio_powder_6kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה סנו מקסימה בניחוח Musk - 6 ק\"ג",
-      image: importImage("sano_maxima_musk_powder_6kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה BLACK לשמירה על צבעים כהים - 6 ק\"ג",
-      image: importImage("sano_maxima_black_powder_6kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה סנו מקסימה sensitive - 6 ק\"ג",
-      image: importImage("sano_maxima_sensitive_powder_6kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה אריאל שושן צחור",
+      name: "אבקת כביסה בניחוח שושן צחור",
       image: importImage("ariel_white_powder_1.25kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה תינוקלין",
-      image: importImage("tinoklin_powder_1.25kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה תינוקלין - 3 ק\"ג",
-      image: importImage("tinoklin_powder_3kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה קולון לכביסה לבנה וצבעונית",
-      image: importImage("colon_powder_1.25kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה קולון לכביסה לבנה וצבעונית - 8 ק\"ג",
-      image: importImage("colon_powder_8kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה פרסיל",
-      image: importImage("persil_powder_1.25kg.jpeg"),
-    },
-    {
-      name: "אבקת כביסה פרסיל קולור",
-      image: importImage("persil_color_powder_1.25kg.jpeg"),
     },
     {
       name: "ג'ל מרוכז לכביסה לבנה וצבעונית",
       image: importImage("perfect_white_color_gel_3l.jpeg"),
     },
     {
-      name: "ג'ל מרוכז לכביסה לבנה וצבעונית - 5 ליטר",
-      image: importImage("perfect_white_color_gel_5l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז בניחוח פרחים - 5 ליטר",
+      name: "ג'ל כביסה מרוכז בניחוח פרחים",
       image: importImage("perfect_flower_gel_5l.jpeg"),
     },
     {
-      name: "ג'ל כביסה מרוכז מקסימה Bio cold water",
-      image: importImage("sano_maxima_bio_gel_3l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה חכם Smart",
-      image: importImage("sano_maxima_smart_gel_3l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז מקסימה בבישום קריסטל נואר",
-      image: importImage("sano_maxima_crystal_noir_gel_3l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז מקסימה Musk",
+      name: "ג'ל כביסה מרוכז בניחוח מאסק Musk",
       image: importImage("sano_maxima_musk_gel_3l.jpeg"),
     },
     {
-      name: "ג'ל כביסה מרוכז מקסימה בייבי",
+      name: "ג'ל כביסה מרוכז לתינוקות",
       image: importImage("sano_maxima_baby_gel_3l.jpeg"),
     },
     {
-      name: "ג'ל כביסה מרוכז לכבס בלי להפריד כביסה צבעונית",
-      image: importImage("sano_maxima_mix_wash_gel_3l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז בניחוח Crystal Noir - 5 ליטר",
-      image: importImage("sano_maxima_crystal_noir_gel_5l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז מאסק - 5 ליטר",
-      image: importImage("sano_maxima_musk_gel_5l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז Mix & Wash - 5 ליטר",
-      image: importImage("sano_mix_wash_gel_5l.jpeg"),
-    },
-    {
-      name: "מקסימה ג'ל כביסה מרוכז Bio Cold Water - 5 ליטר",
-      image: importImage("sano_maxima_bio_gel_5l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה בניחוח בדין כחול",
-      image: importImage("badin_blue_gel_2.5l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה בניחוח בדין ורוד",
-      image: importImage("badin_pink_gel_2.5l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה לבגדי תינוקות ובעלי עור רגיש Sensitive",
+      name: "ג'ל כביסה לבגדי תינוקות ובעלי עור רגיש",
       image: importImage("persil_sensitive_gel_2.5l.jpeg"),
     },
     {
-      name: "ג'ל לכביסה לבנה וצבעונית",
-      image: importImage("persil_white_color_gel_2.5l.jpeg"),
-    },
-    {
-      name: "ג'ל לכביסה צבעונית",
-      image: importImage("persil_color_gel_2.5l.jpeg"),
-    },
-    {
-      name: "ג'ל לכביסה לבנה וצבעונית בניחוח רענן",
-      image: importImage("persil_fresh_gel_2.5l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה לבגדים שחורים וכהים",
+      name: "ג'ל כביסה לבגדים כהים",
       image: importImage("persil_black_gel_2.5l.jpeg"),
     },
     {
-      name: "ג'ל כביסה מרוכז קולון בניחוח קלאסי - 4 ליטר",
+      name: "ג'ל כביסה מרוכז קלאסי",
       image: importImage("colon_classic_gel_4l.jpeg"),
     },
     {
-      name: "ג'ל כביסה מרוכז קולון בניחוח לבנדר - 4 ליטר",
+      name: "ג'ל כביסה מרוכז בניחוח לבנדר",
       image: importImage("colon_lavender_gel_4l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז קולון בניחוח פריחה רעננה - 4 ליטר",
-      image: importImage("colon_fresh_bloom_gel_4l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז קולון בניחוח קלאסי",
-      image: importImage("colon_classic_gel_2.5l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז קולון בניחוח לבנדר",
-      image: importImage("colon_lavender_gel_2.5l.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה מרוכז קולון בניחוח פריחה רעננה",
-      image: importImage("colon_fresh_bloom_gel_2.5l.jpeg"),
     },
     {
       name: "ג'ל לכביסה ביד",
       image: importImage("sod_hand_wash_gel_1l.jpeg"),
     },
     {
-      name: "קפסולות לכביסה Floral Burst",
+      name: "קפסולות לכביסה",
       image: importImage("sano_maxima_floral_burst_capsules_40_units.jpeg"),
     },
     {
-      name: "קפסולות לכביסה Fresh Breeze",
-      image: importImage("sano_maxima_fresh_breeze_capsules_40_units.jpeg"),
-    },
-    {
-      name: "קפסולות ג'ל לכביסה",
-      image: importImage("colon_gel_capsules_28_units.jpeg"),
-    },
-    {
-      name: "טקסטיל שמפו נוזלי",
-      image: importImage("nika_textile_shampoo_1l.jpeg"),
-    },
-    {
-      name: "טקסטיל שמפו בשקית",
-      image: importImage("nika_textile_shampoo_1kg.jpeg"),
-    },
-    {
-      name: "סינטבון סבון רב שימושי",
-      image: importImage("nika_syntabon_230g.jpeg"),
-    },
-    {
-      name: "אבקת כביסה בניחוח מרכך כביסה סופט סילק",
-      image: importImage("sano_maxima_soft_silk_powder_2kg.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה בייבי לאב היפואלרגני TNX",
-      image: importImage("tnx_baby_love_hypoallergenic_gel_1350ml.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה ירוק לכביסה צבעונית TNX",
-      image: importImage("tnx_green_color_laundry_gel_1350ml.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה כחול לכביסה לבנה TNX",
-      image: importImage("tnx_blue_white_laundry_gel_1350ml.jpeg"),
-    },
-    {
-      name: "ג'ל כביסה סופרו אקטיב",
-      image: importImage("supero_active_gel_2.5l.jpeg"),
-    },
-    {
-      name: "כביסכל נוזל כביסה בייבי",
-      image: importImage("kabiscal_baby_detergent_2l.jpeg"),
-    },
-    {
-      name: "כביסכל נוזל כביסה בניחוח ארומטי",
+      name: "נוזל כביסה בניחוח ארומטי",
       image: importImage("kabiscal_aromatic_detergent_2l.jpeg"),
     },
     {
-      name: "כביסכל נוזל כביסה בניחוח ספא",
+      name: "נוזל כביסה בניחוח ספא",
       image: importImage("kabiscal_spa_detergent_2l.jpeg"),
     },
     {
-      name: "כביסכל נוזל כביסה בניחוח רוז",
-      image: importImage("kabiscal_rose_detergent_2l.jpeg"),
-    },
-    {
-      name: "סנו מקסימה ג'ל כביסה מרוכז בניחוח Blue Blossom",
-      image: importImage("sano_maxima_blue_blossom_gel_1.5l.jpeg"),
-    },
-    {
-      name: "סנו מקסימה ג'ל כביסה מרוכז בניחוח מרכך כביסה",
-      image: importImage("sano_maxima_conditioner_scent_gel_1.5l.jpeg"),
-    },
-    {
-      name: "קפסולות ג'ל לכביסה",
-      image: importImage("sod_gel_capsules_26_units.jpeg"),
-    },
-    {
-      name: "קפסולות לכביסה אריאל בניחוח לנור 23 יח'",
-      image: importImage("ariel_lenor_scent_capsules_23_units.jpeg"),
-    },
-    {
-      name: "קפסולות לכביסה אריאל לכתמים קשים 23 יח'",
-      image: importImage("ariel_stain_removal_capsules_23_units.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מבושם בייבי baby",
+      name: "מרכך כביסה מבושם לתינוק",
       image: importImage("perfect_baby_fabric_softener_4l.jpeg"),
     },
     {
-      name: "מרכך כביסה מבושם צהוב yellow sunset",
-      image: importImage("perfect_yellow_sunset_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מבושם כחול blue ocean",
-      image: importImage("perfect_blue_ocean_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מבושם ורוד pink blossom",
-      image: importImage("perfect_pink_blossom_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך ומבשם כביסה מרוכז בייבי baby",
-      image: importImage("perfect_baby_concentrated_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך ומבשם כביסה מרוכז צהוב yellow sunset",
-      image: importImage("perfect_yellow_sunset_concentrated_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך ומבשם כביסה מרוכז ורוד pink blossom",
-      image: importImage("perfect_pink_blossom_concentrated_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך ומבשם כביסה מרוכז סגול purple fantasy",
-      image: importImage("perfect_purple_fantasy_concentrated_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך ומבשם כביסה מרוכז זהב golden amber",
-      image: importImage("perfect_golden_amber_concentrated_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך ומבשם כביסה מרוכז שחור black mystery",
-      image: importImage("perfect_black_mystery_concentrated_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה בדין לבן",
-      image: importImage("badan_white_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה בדין ורוד",
-      image: importImage("badan_pink_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה בדין כחול",
-      image: importImage("badan_blue_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה היפואלרגני סנסטיב בייבי",
-      image: importImage("sano_sensitive_baby_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה אנטיבקטריאלי Bio",
+      name: "מרכך כביסה אנטיבקטריאלי",
       image: importImage("sano_bio_antibacterial_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה אולטרה פרש",
-      image: importImage("sano_ultra_fresh_fabric_softener_4l.jpeg"),
     },
     {
       name: "מרכך כביסה היפואלרגני עם אלוורה לתינוקות",
       image: importImage("sano_aloe_vera_baby_fabric_softener_4l.jpeg"),
     },
     {
-      name: "מרכך כביסה לבנדר פצ'ולי",
+      name: "מרכך כביסה בניחוח לבנדר פצ'ולי",
       image: importImage("sano_lavender_patchouli_fabric_softener_4l.jpeg"),
     },
     {
-      name: "מרכך כביסה ארומתראפי מאסק",
+      name: "מרכך כביסה ארומתראפי בניחוח מאסק",
       image: importImage("sano_aromatherapy_musk_fabric_softener_4l.jpeg"),
     },
     {
-      name: "מרכך כביסה ארומתראפי Cool",
-      image: importImage("sano_aromatherapy_cool_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה בבישום עוצמתי סופט סילק",
-      image: importImage("sano_soft_silk_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה בבישום עוצמתי פריחה כחולה",
-      image: importImage("sano_blue_blossom_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מקסימה מרכך CALM בבישום עוצמתי",
-      image: importImage("sano_calm_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מקסימה מרכך JOY בבישום עוצמתי",
-      image: importImage("sano_joy_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה בבישום עוצמתי ג'נטל בריז",
-      image: importImage("sano_gentle_breeze_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה בבישום עוצמתי פלורל טאצ'",
-      image: importImage("sano_floral_touch_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה לבגדי תינוקות ולבעלי לעור רגיש",
-      image: importImage("sod_sensitive_baby_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה לבן",
-      image: importImage("sod_white_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה ורוד",
-      image: importImage("sod_pink_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה כחול",
-      image: importImage("sod_blue_fabric_softener_4l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה אקסטרה בייבי היפואלרגני בריח טלק",
-      image: importImage("badan_extra_baby_talc_fabric_softener_960ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה אקסטרא בניחוח סחלבים פראי",
+      name: "מרכך כביסה בניחוח סחלבים",
       image: importImage("badan_wild_orchid_fabric_softener_960ml.jpeg"),
     },
     {
-      name: "מרכך כביסה סופר מרוכז Cool",
-      image: importImage("sano_super_concentrated_cool_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז Zen",
-      image: importImage("sano_super_concentrated_zen_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז מאסק",
-      image: importImage("sano_super_concentrated_musk_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז סנסטיב בייבי",
-      image: importImage("sano_super_concentrated_sensitive_baby_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז אולטרה פרש",
-      image: importImage("sano_super_concentrated_ultra_fresh_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז לבנדר פצ'ולי",
-      image: importImage("sano_super_concentrated_lavender_patchouli_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז Bio",
-      image: importImage("sano_super_concentrated_bio_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז בייבי לתינוקות ולעור רגיש",
-      image: importImage("sano_super_concentrated_baby_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז חלב ודבש Care",
-      image: importImage("sano_super_concentrated_milk_honey_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך בבישום עוצמתי Blue Blossom",
-      image: importImage("sano_blue_blossom_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך בבישום עוצמתי Soft Silk",
-      image: importImage("sano_soft_silk_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה בבישום עוצמתי ג'נטל בריז",
-      image: importImage("sano_gentle_breeze_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה בבישום עוצמתי פלורל טאצ'",
-      image: importImage("sano_floral_touch_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז פרפיום גולדן סנרייז",
-      image: importImage("sano_perfum_gold_sunrise_fabric_softener_750ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה סופר מרוכז פרפיום קריסטל נואר",
-      image: importImage("sano_crystal_noir_fabric_softener_750ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז לבגדי תינוקות ובעלי עור רגיש",
-      image: importImage("sod_sensitive_baby_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז ארומתרפי צהוב",
-      image: importImage("sod_aromatherapy_yellow_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז ארומתרפי סגול",
-      image: importImage("sod_aromatherapy_purple_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז Fresh Sky",
-      image: importImage("sod_fresh_sky_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז Wild Rose",
-      image: importImage("sod_wild_rose_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז Lavender",
-      image: importImage("sod_lavender_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז פרש קונטרול Floral Crisp",
-      image: importImage("sod_floral_crisp_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז פרש קונטרול Cool Fresh",
-      image: importImage("sod_cool_fresh_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "לנור מרכך כביסה מרוכז הגנה מרעננת",
-      image: importImage("lenor_refreshing_protection_fabric_softener_819ml.jpeg"),
-    },
-    {
-      name: "לנור מרכך כביסה מרוכז רעננות האוקיינוס",
-      image: importImage("lenor_ocean_freshness_fabric_softener_819ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז אוריינטל פינק TNX",
-      image: importImage("tnx_oriental_pink_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז אמור TNX",
-      image: importImage("tnx_amor_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז בבישום עוצמתי Moments Of Calm",
+      name: "מרכך כביסה מרוכז בבישום עוצמתי",
       image: importImage("sano_moments_of_calm_fabric_softener_1l.jpeg"),
     },
     {
-      name: "מרכך כביסה מרוכז בייבי לאב TNX",
-      image: importImage("tnx_baby_love_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז בלו טאצ' TNX",
-      image: importImage("tnx_blue_touch_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז לגונה TNX",
-      image: importImage("tnx_laguna_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז סופט קלין TNX",
-      image: importImage("tnx_soft_clean_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז פרש וויט TNX",
-      image: importImage("tnx_fresh_white_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה מרוכז ריבר סייד TNX",
-      image: importImage("tnx_riverside_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "מרכך כביסה תינוקלין מרוכז",
-      image: importImage("tinoklin_concentrated_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "סוד מרכך כביסה מרוכז ארומתרפי אדום- Sensual Rose",
-      image: importImage("sod_aromatherapy_red_sensual_rose_fabric_softener_900ml.jpeg"),
-    },
-    {
-      name: "תינוקלין מרכך כביסה מרוכז",
-      image: importImage("tinoklin_concentrated_fabric_softener_1l.jpeg"),
-    },
-    {
-      name: "אטבי כביסה איכותיים - מארז 10 יח'",
+      name: "אטבי כביסה'",
       image: importImage("perfect_quality_clothes_pins_10pcs.jpeg"),
     },
     {
