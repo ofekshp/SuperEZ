@@ -77,7 +77,8 @@ const MyBasket: React.FC = () => {
           client_info: client_info,
           basketProducts: basketProducts
         } 
-    });
+      });
+      localStorage.setItem('basketProducts', '[]');
       console.log(response);
     }catch (error) {
       console.error('Error add product:', error);
@@ -90,7 +91,7 @@ const MyBasket: React.FC = () => {
       <div className="my-basket__content">
         <div className="my-basket__product-list">
           {basketProducts.map((product) => (
-            <div className="product-name" key={product.name}>
+            <div className="product-item" key={product.name}>
               <span className="product-name">{product.name}</span>
               <span className="product-quantity">כמות: {product.quantity}</span>
               <button

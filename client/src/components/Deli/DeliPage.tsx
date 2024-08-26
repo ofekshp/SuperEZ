@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -13,7 +13,7 @@ const importImage = (imageName: string) => {
 };
 
 const DeliPage: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialMilk = [
@@ -1898,6 +1898,9 @@ const [salads, setSalads] = useState<{ name: string; image: any; count: number }
   })
 );
 
+useEffect(() => {
+  handleSave();
+}, [milk, yogurtDelicacies, yogurtDrink, milkDelicaciesDesserts, softCheese, semiHardCheese, yellowHardCheese, butterMargarine, creamWhippedCreamCookingBaking, chilledPasta, eggs, sausagesPastrami, salads]);
 
   const handleIncrement = (name: string) => {
     setMilk(milk.map(item =>
@@ -1954,57 +1957,149 @@ const [salads, setSalads] = useState<{ name: string; image: any; count: number }
   };
   
   const handleDecrement = (name: string) => {
-    setMilk(milk.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
+    setMilk(milk.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
     
-    setYogurtDelicacies(yogurtDelicacies.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setYogurtDrink(yogurtDrink.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setMilkDelicaciesDesserts(milkDelicaciesDesserts.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setSoftCheese(softCheese.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setSemiHardCheese(semiHardCheese.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setYellowHardCheese(yellowHardCheese.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setButterMargarine(butterMargarine.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setCreamWhippedCreamCookingBaking(creamWhippedCreamCookingBaking.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setChilledPasta(chilledPasta.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-  
-    setEggs(eggs.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-
-    setSausagespastrami(sausagesPastrami.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
-
-    setSalads(salads.map(item =>
-      item.name === name && item.count > 0 ? { ...item, count: item.count - 1 } : item
-    ));
+    setYogurtDelicacies(yogurtDelicacies.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setYogurtDrink(yogurtDrink.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setMilkDelicaciesDesserts(milkDelicaciesDesserts.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSoftCheese(softCheese.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSemiHardCheese(semiHardCheese.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setYellowHardCheese(yellowHardCheese.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setButterMargarine(butterMargarine.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCreamWhippedCreamCookingBaking(creamWhippedCreamCookingBaking.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setChilledPasta(chilledPasta.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setEggs(eggs.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSausagespastrami(sausagesPastrami.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setSalads(salads.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
   };
   
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -14,7 +14,7 @@ const importImage = (imageName: string) => {
 };
 
 const Can_Dry_Page: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
 const initialBreads = [
@@ -3736,7 +3736,6 @@ const initialGranolaoats = [
   initialDriedfruits.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialGranolaoats.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-
   const [breads, setBreads] = useState<{ name: string; image: any; count: number }[]>(
     initialBreads.map(breads => {
       const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === breads.name);
@@ -3963,6 +3962,9 @@ const initialGranolaoats = [
     })
   );
 
+  useEffect(() => {
+    handleSave();
+  }, [breads, cakes, cookies, crackers, oil, vinegarLemonjuice, legumesricecouscous, pasta, floursaltsugar, coffeedrinkingpowders, coffeecapsules, tea, teainfusions, tahini, ketchupmayonnaisemustard, cannedvegetables, cannedcucumbers, cannedolives, cannedtomatoes, cannedfish, cannedtuna, cannedfruit, cracks, driedfruits, granolaoats]);
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -4153,85 +4155,332 @@ const initialGranolaoats = [
 
 
   const handleDecrement = (name: string) => {
-    setBreads(breads.map(breads =>
-      breads.name === name && breads.count > 0 ? { ...breads, count: breads.count - 1 } : breads
-    ));
-
-    setCakes(cakes.map(cakes =>
-      cakes.name === name && cakes.count > 0 ? { ...cakes, count: cakes.count - 1 } : cakes
-    ));
-
-    setCookies(cookies.map(cookies =>
-      cookies.name === name && cookies.count > 0 ? { ...cookies, count: cookies.count - 1 } : cookies
-    ));
-    setCrackers(crackers.map(crackers =>
-      crackers.name === name && crackers.count > 0 ? { ...crackers, count: crackers.count - 1 } : crackers
-    ));
-    setOil(oil.map(oil =>
-      oil.name === name && oil.count > 0 ? { ...oil, count: oil.count - 1 } : oil
-    ));
-    setVinegarLemonjuice(vinegarLemonjuice.map(vinegarLemonjuice =>
-      vinegarLemonjuice.name === name && vinegarLemonjuice.count > 0 ? { ...vinegarLemonjuice, count: vinegarLemonjuice.count - 1 } : vinegarLemonjuice
-    ));
-    setLegumesricecouscous(legumesricecouscous.map(legumesricecouscous =>
-      legumesricecouscous.name === name && legumesricecouscous.count > 0 ? { ...legumesricecouscous, count: legumesricecouscous.count - 1 } : legumesricecouscous
-    ));
-    setPasta(pasta.map(pasta =>
-      pasta.name === name && pasta.count > 0 ? { ...pasta, count: pasta.count - 1 } : pasta
-    ));
-    setFloursaltsugar(floursaltsugar.map(floursaltsugar =>
-      floursaltsugar.name === name && floursaltsugar.count > 0 ? { ...floursaltsugar, count: floursaltsugar.count - 1 } : floursaltsugar
-    ));
-    setCoffeedrinkingpowders(coffeedrinkingpowders.map(coffeedrinkingpowders =>
-      coffeedrinkingpowders.name === name && coffeedrinkingpowders.count > 0 ? { ...coffeedrinkingpowders, count: coffeedrinkingpowders.count - 1 } : coffeedrinkingpowders
-    ));
-    setCoffeecapsules(coffeecapsules.map(coffeecapsules =>
-      coffeecapsules.name === name && coffeecapsules.count > 0 ? { ...coffeecapsules, count: coffeecapsules.count - 1 } : coffeecapsules
-    ));
-    setTea(tea.map(tea =>
-      tea.name === name && tea.count > 0 ? { ...tea, count: tea.count - 1 } : tea
-    ));
-    setTeainfusions(teainfusions.map(teainfusions =>
-      teainfusions.name === name && teainfusions.count > 0 ? { ...teainfusions, count: teainfusions.count - 1 } : teainfusions
-    ));
-    setTahini(tahini.map(tahini =>
-      tahini.name === name && tahini.count > 0 ? { ...tahini, count: tahini.count - 1 } : tahini
-    ));
-    setKetchupmayonnaisemustard(ketchupmayonnaisemustard.map(ketchupmayonnaisemustard =>
-      ketchupmayonnaisemustard.name === name && ketchupmayonnaisemustard.count > 0 ? { ...ketchupmayonnaisemustard, count: ketchupmayonnaisemustard.count - 1 } : ketchupmayonnaisemustard
-    ));
-    setCannedvegetables(cannedvegetables.map(cannedvegetables =>
-      cannedvegetables.name === name && cannedvegetables.count > 0 ? { ...cannedvegetables, count: cannedvegetables.count - 1 } : cannedvegetables
-    ));
-    setCannedcucumbers(cannedcucumbers.map(cannedcucumbers =>
-      cannedcucumbers.name === name && cannedcucumbers.count > 0 ? { ...cannedcucumbers, count: cannedcucumbers.count - 1 } : cannedcucumbers
-    ));
-    setCannedolives(cannedolives.map(cannedolives =>
-      cannedolives.name === name && cannedolives.count > 0 ? { ...cannedolives, count: cannedolives.count - 1 } : cannedolives
-    ));
-    setCannedtomatoes(cannedtomatoes.map(cannedtomatoes =>
-      cannedtomatoes.name === name && cannedtomatoes.count > 0 ? { ...cannedtomatoes, count: cannedtomatoes.count - 1 } : cannedtomatoes
-    ));
-    setCannedfish(cannedfish.map(cannedfish =>
-      cannedfish.name === name && cannedfish.count > 0 ? { ...cannedfish, count: cannedfish.count - 1 } : cannedfish
-    ));
-    setCannedtuna(cannedtuna.map(cannedtuna =>
-      cannedtuna.name === name && cannedtuna.count > 0 ? { ...cannedtuna, count: cannedtuna.count - 1 } : cannedtuna
-    ));
-    setCannedfruit(cannedfruit.map(cannedfruit =>
-      cannedfruit.name === name && cannedfruit.count > 0 ? { ...cannedfruit, count: cannedfruit.count - 1 } : cannedfruit
-    ));
-    setCracks(cracks.map(cracks =>
-      cracks.name === name && cracks.count > 0 ? { ...cracks, count: cracks.count - 1 } : cracks
-    ));
-    setDriedfruits(driedfruits.map(driedfruits =>
-      driedfruits.name === name && driedfruits.count > 0 ? { ...driedfruits, count: driedfruits.count - 1 } : driedfruits
-    ));
-    setGranolaoats(granolaoats.map(granolaoats =>
-      granolaoats.name === name && granolaoats.count > 0 ? { ...granolaoats, count: granolaoats.count - 1 } : granolaoats
-    ));
+    setBreads(breads.map(bread => {
+      if (bread.name === name && bread.count > 0) {
+        const newCount = bread.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(bread.name);
+        }
+    
+        return { ...bread, count: newCount };
+      }
+      return bread;
+    }));
+    
+    setCakes(cakes.map(cake => {
+      if (cake.name === name && cake.count > 0) {
+        const newCount = cake.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(cake.name);
+        }
+    
+        return { ...cake, count: newCount };
+      }
+      return cake;
+    }));
+    
+    setCookies(cookies.map(cookie => {
+      if (cookie.name === name && cookie.count > 0) {
+        const newCount = cookie.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(cookie.name);
+        }
+    
+        return { ...cookie, count: newCount };
+      }
+      return cookie;
+    }));
+    
+    setCrackers(crackers.map(cracker => {
+      if (cracker.name === name && cracker.count > 0) {
+        const newCount = cracker.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(cracker.name);
+        }
+    
+        return { ...cracker, count: newCount };
+      }
+      return cracker;
+    }));
+    
+    setOil(oil.map(oilProduct => {
+      if (oilProduct.name === name && oilProduct.count > 0) {
+        const newCount = oilProduct.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(oilProduct.name);
+        }
+    
+        return { ...oilProduct, count: newCount };
+      }
+      return oilProduct;
+    }));
+    
+    setVinegarLemonjuice(vinegarLemonjuice.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setLegumesricecouscous(legumesricecouscous.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setPasta(pasta.map(pastaItem => {
+      if (pastaItem.name === name && pastaItem.count > 0) {
+        const newCount = pastaItem.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(pastaItem.name);
+        }
+    
+        return { ...pastaItem, count: newCount };
+      }
+      return pastaItem;
+    }));
+    
+    setFloursaltsugar(floursaltsugar.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCoffeedrinkingpowders(coffeedrinkingpowders.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCoffeecapsules(coffeecapsules.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setTea(tea.map(teaItem => {
+      if (teaItem.name === name && teaItem.count > 0) {
+        const newCount = teaItem.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(teaItem.name);
+        }
+    
+        return { ...teaItem, count: newCount };
+      }
+      return teaItem;
+    }));
+    
+    setTeainfusions(teainfusions.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setTahini(tahini.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setKetchupmayonnaisemustard(ketchupmayonnaisemustard.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCannedvegetables(cannedvegetables.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCannedcucumbers(cannedcucumbers.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCannedolives(cannedolives.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCannedtomatoes(cannedtomatoes.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCannedfish(cannedfish.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCannedtuna(cannedtuna.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCannedfruit(cannedfruit.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setCracks(cracks.map(crack => {
+      if (crack.name === name && crack.count > 0) {
+        const newCount = crack.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(crack.name);
+        }
+    
+        return { ...crack, count: newCount };
+      }
+      return crack;
+    }));
+    
+    setDriedfruits(driedfruits.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
+    setGranolaoats(granolaoats.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+    
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+    
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+    
   };
-
 
   const handleSave = async () => {
     const breadsToSave = breads.filter(breads => breads.count > 0).map(breads => ({ ...breads, quantity: breads.count }));
