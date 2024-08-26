@@ -551,13 +551,66 @@ const initialAlcoholDrinks = [
       };
     })
   );
-  const [carbonatedDrinks, setCarbonatedDrinks] = useState<{ name: string; image: string | null; count: number }[]>(initialCarbonatedDrinks.map(drink => ({ ...drink, count: 0 })));
-  const [waterDrinks, setWaterDrinks] = useState<{ name: string; image: string | null; count: number }[]>(initialWaterDrinks.map(drink => ({ ...drink, count: 0 })));
-  const [concentrates, setConcentrates] = useState<{ name: string; image: string | null; count: number }[]>(initialConcentrates.map(drink => ({ ...drink, count: 0 })));
-  const [energyDrinks, setEnergyDrink] = useState<{ name: string; image: string | null; count: number }[]>(initialEnergyDrinks.map(drink => ({ ...drink, count: 0 })));
-  const [beers, setBeers] = useState<{ name: string; image: string | null; count: number }[]>(initialBeers.map(drink => ({ ...drink, count: 0 })));
-  const [wines, setWines] = useState<{ name: string; image: string | null; count: number }[]>(initialWines.map(drink => ({ ...drink, count: 0 })));
-
+  const [carbonatedDrinks, setCarbonatedDrinks] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialCarbonatedDrinks.map(drink => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === drink.name);
+      return {
+        ...drink,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [waterDrinks, setWaterDrinks] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialWaterDrinks.map(drink => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === drink.name);
+      return {
+        ...drink,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [concentrates, setConcentrates] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialConcentrates.map(drink => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === drink.name);
+      return {
+        ...drink,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [energyDrinks, setEnergyDrink] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialEnergyDrinks.map(drink => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === drink.name);
+      return {
+        ...drink,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [beers, setBeers] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialBeers.map(drink => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === drink.name);
+      return {
+        ...drink,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
+  const [wines, setWines] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialWines.map(drink => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === drink.name);
+      return {
+        ...drink,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+  
   const handleIncrement = (name: string) => {
     setWaterDrinks(
       waterDrinks.map((drink) =>
@@ -715,90 +768,179 @@ const initialAlcoholDrinks = [
 
     
   };
+  
+  const [searchTerm, setSearchTerm] = useState("");
 
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filterSweets = sweets.filter(drink =>
+    drink.name.includes(searchTerm)
+  );
+  
+  const filterAlcohols = alcohols.filter(drink =>
+    drink.name.includes(searchTerm)
+  );
+  
+  const filterCarbonatedDrinks = carbonatedDrinks.filter(drink =>
+    drink.name.includes(searchTerm)
+  );
+  
+  const filterWaterDrinks = waterDrinks.filter(drink =>
+    drink.name.includes(searchTerm)
+  );
+  
+  const filterConcentrates = concentrates.filter(drink =>
+    drink.name.includes(searchTerm)
+  );
+  
+  const filterEnergyDrinks = energyDrinks.filter(drink =>
+    drink.name.includes(searchTerm)
+  );
+  
+  const filterBeers = beers.filter(drink =>
+    drink.name.includes(searchTerm)
+  );
+  
+  const filterWines = wines.filter(drink =>
+    drink.name.includes(searchTerm)
+  );
+  
   return (
-    <div>
-      <div>
-        <ProductsPage
-          products={waterDrinks}
-          categoryTitle="מים וסודה"
-          icon={<img alt="" src={importImage('')} />}
-          // icon={<img alt="" src={importImage("water_drinks_icon.png")} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={carbonatedDrinks}
-          categoryTitle="משקאות מוגזים"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={sweets}
-          categoryTitle="משקאות קלים"
-          icon={<img alt="" src={importImage('sweet_drinks_icon.png')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={concentrates}
-          categoryTitle="תרכיזים"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={energyDrinks}
-          categoryTitle="משקאות אנרגיה"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={beers}
-          categoryTitle="בירות"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={wines}
-          categoryTitle="יינות"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={alcohols}
-          categoryTitle="שתייה חריפה"
-          icon={<img alt="" src={importImage('alcohol_drinks_icon.png')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
+
+<div>
+    <div style={{
+      position: 'absolute',
+      marginTop: '100px',
+      width: '100%',
+      paddingRight: '20px', // Adjust for right padding if needed
+      marginBottom: '20px', 
+    }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר קפואים"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '715px',
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          position: 'relative',
+          float: 'right',
+          marginRight: '200px',
+
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        marginRight: '200px',
+
+        pointerEvents: 'none',
+      }}></i>
+    </div>       <div>
+  {filterWaterDrinks.length > 0 && (
+    <ProductsPage
+      products={filterWaterDrinks}
+      categoryTitle="מים וסודה"
+      icon={<img alt="" src={importImage('')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterCarbonatedDrinks.length > 0 && (
+    <ProductsPage
+      products={filterCarbonatedDrinks}
+      categoryTitle="משקאות מוגזים"
+      icon={<img alt="" src={importImage('carbonated_drinks_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterSweets.length > 0 && (
+    <ProductsPage
+      products={filterSweets}
+      categoryTitle="משקאות קלים"
+      icon={<img alt="" src={importImage('sweet_drinks_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterConcentrates.length > 0 && (
+    <ProductsPage
+      products={filterConcentrates}
+      categoryTitle="תרכיזים"
+      icon={<img alt="" src={importImage('concentrates_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterEnergyDrinks.length > 0 && (
+    <ProductsPage
+      products={filterEnergyDrinks}
+      categoryTitle="משקאות אנרגיה"
+      icon={<img alt="" src={importImage('energy_drinks_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterBeers.length > 0 && (
+    <ProductsPage
+      products={filterBeers}
+      categoryTitle="בירות"
+      icon={<img alt="" src={importImage('beer_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterWines.length > 0 && (
+    <ProductsPage
+      products={filterWines}
+      categoryTitle="יינות"
+      icon={<img alt="" src={importImage('wine_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterAlcohols.length > 0 && (
+    <ProductsPage
+      products={filterAlcohols}
+      categoryTitle="שתייה חריפה"
+      icon={<img alt="" src={importImage('alcohol_drinks_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
     </div>
   );
 };
