@@ -40,7 +40,7 @@ const LandingPage = () => {
 
       <p className="bottom-text">וסיימת!</p>
       <p className="bottom-text-second">בלחיצת כפתור תוכלו לעבור ישירות לאתר הסופרמרקט עם הסל שמילאתם אצלנו, ככה קל ופשוט!</p>
-      <p className="bottom-text-third">דיי לבזבוז זמן וכסף ושלום לקניות יעילות עם סופר איזי</p>
+      <p className="bottom-text">דיי לבזבוז זמן וכסף ושלום לקניות יעילות עם סופר איזי</p>
     </div>
   );
 };

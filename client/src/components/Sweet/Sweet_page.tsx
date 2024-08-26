@@ -2862,118 +2862,237 @@ const handleSave = async () => {
 
 };
 
+const [searchTerm, setSearchTerm] = useState("");
+
+const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(event.target.value);
+};
+
+const filterCereals = cereals.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterCerealsnacks = cerealsnacks.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterSweetspreads = sweetspreads.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterChocolatetables = chocolatetables.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterChocolatebars = chocolatebars.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterBonbonnieres = bonbonnieres.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterCandiesmarshmallows = candiesmarshmallows.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterGum = gum.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterSaltysnacks = saltysnacks.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterPretzels = pretzels.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterProteinbars = proteinbars.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
 return (
+
+<div>
+    <div style={{
+      position: 'absolute',
+      marginTop: '100px',
+      width: '100%',
+      paddingRight: '20px', 
+      marginBottom: '20px', 
+    }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר מתוקים\חטיפים"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '715px',
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          position: 'relative',
+          float: 'right',
+          marginRight: '200px',
+
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        marginRight: '200px',
+
+        pointerEvents: 'none',
+      }}></i>
+    </div>   {filterCereals.length > 0 && (
   <div>
-    <div>
-      <ProductsPage
-        products={cereals}
-        categoryTitle="דגני בוקר"
-        icon={<img alt="" src={importImage('cereals_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={cerealsnacks}
-        categoryTitle="חטיפי דגנים"
-        icon={<img alt="" src={importImage('cerealsnacks_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={sweetspreads}
-        categoryTitle="ממרחים מתוקים"
-        icon={<img alt="" src={importImage('sweetspreads_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={chocolatetables}
-        categoryTitle="טבלאות שוקולד"
-        icon={<img alt="" src={importImage('chocolatetables_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={chocolatebars}
-        categoryTitle="חטיפי שוקולד"
-        icon={<img alt="" src={importImage('chocolatebars_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={bonbonnieres}
-        categoryTitle="בונבוניירות"
-        icon={<img alt="" src={importImage('bonbonnieres_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={candiesmarshmallows}
-        categoryTitle="סוכריות ומרשמלו"
-        icon={<img alt="" src={importImage('candiesmarshmallows_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={gum}
-        categoryTitle="מסטיקים"
-        icon={<img alt="" src={importImage('gum_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={saltysnacks}
-        categoryTitle="חטיפים מלוחים"
-        icon={<img alt="" src={importImage('saltysnacks_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={pretzels}
-        categoryTitle="בייגלה"
-        icon={<img alt="" src={importImage('pretzels_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
-    <div>
-      <ProductsPage
-        products={proteinbars}
-        categoryTitle="חטיפי חלבון"
-        icon={<img alt="" src={importImage('proteinbars_icon.png')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-    </div>
+    <ProductsPage
+      products={filterCereals}
+      categoryTitle="דגני בוקר"
+      icon={<img alt="" src={importImage('cereals_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterCerealsnacks.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterCerealsnacks}
+      categoryTitle="חטיפי דגנים"
+      icon={<img alt="" src={importImage('cerealsnacks_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSweetspreads.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSweetspreads}
+      categoryTitle="ממרחים מתוקים"
+      icon={<img alt="" src={importImage('sweetspreads_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterChocolatetables.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterChocolatetables}
+      categoryTitle="טבלאות שוקולד"
+      icon={<img alt="" src={importImage('chocolatetables_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterChocolatebars.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterChocolatebars}
+      categoryTitle="חטיפי שוקולד"
+      icon={<img alt="" src={importImage('chocolatebars_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterBonbonnieres.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterBonbonnieres}
+      categoryTitle="בונבוניירות"
+      icon={<img alt="" src={importImage('bonbonnieres_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterCandiesmarshmallows.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterCandiesmarshmallows}
+      categoryTitle="סוכריות ומרשמלו"
+      icon={<img alt="" src={importImage('candiesmarshmallows_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterGum.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterGum}
+      categoryTitle="מסטיקים"
+      icon={<img alt="" src={importImage('gum_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSaltysnacks.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSaltysnacks}
+      categoryTitle="חטיפים מלוחים"
+      icon={<img alt="" src={importImage('saltysnacks_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterPretzels.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterPretzels}
+      categoryTitle="בייגלה"
+      icon={<img alt="" src={importImage('pretzels_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterProteinbars.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterProteinbars}
+      categoryTitle="חטיפי חלבון"
+      icon={<img alt="" src={importImage('proteinbars_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+
   </div>
   );
 }

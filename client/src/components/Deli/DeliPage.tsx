@@ -2139,136 +2139,175 @@ const [salads, setSalads] = useState<{ name: string; image: any; count: number }
         pointerEvents: 'none',
       }}></i>
     </div>
-    <div>
-  <ProductsPage
-    products={filterMilk}
-    categoryTitle="חלב ומשקאות חלב"
-    icon={<img alt="" src={importImage('milk_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterYogurtDelicacies}
-    categoryTitle="יוגורטים ודליקטסים"
-    icon={<img alt="" src={importImage('yogurt_delicacies_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterYogurtDrink}
-    categoryTitle="יוגורטים לשתייה"
-    icon={<img alt="" src={importImage('yogurt_drink_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterMilkDelicaciesDesserts}
-    categoryTitle="דליקטסים וקינוחים מחלב"
-    icon={<img alt="" src={importImage('milk_delicacies_desserts_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSoftCheese}
-    categoryTitle="גבינות רכות"
-    icon={<img alt="" src={importImage('cheese_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSemiHardCheese}
-    categoryTitle="גבינות חצי קשות"
-    icon={<img alt="" src={importImage('semi_hard_cheese_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterYellowHardCheese}
-    categoryTitle="גבינות קשות צהובות"
-    icon={<img alt="" src={importImage('yellow_hard_cheese_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterButterMargarine}
-    categoryTitle="חמאה ומרגרינה"
-    icon={<img alt="" src={importImage('butter_margarine_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterCreamWhippedCreamCookingBaking}
-    categoryTitle="שמנת, קצפת, בישול ואפייה"
-    icon={<img alt="" src={importImage('cream_whipped_cream_cooking_baking_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterChilledPasta}
-    categoryTitle="פסטות קפואות"
-    icon={<img alt="" src={importImage('chilled_pasta_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterEggs}
-    categoryTitle="ביצים"
-    icon={<img alt="" src={importImage('eggs_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSausagesPastrami}
-    categoryTitle="נקניקים ופסטרמה"
-    icon={<img alt="" src={importImage('sausages_pastrami_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
-<div>
-  <ProductsPage
-    products={filterSalads}
-    categoryTitle="סלטים"
-    icon={<img alt="" src={importImage('salads_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-</div>
+    {filterMilk.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterMilk}
+      categoryTitle="חלב ומשקאות חלב"
+      icon={<img alt="" src={importImage('milk_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterYogurtDelicacies.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterYogurtDelicacies}
+      categoryTitle="יוגורטים ודליקטסים"
+      icon={<img alt="" src={importImage('yogurt_delicacies_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterYogurtDrink.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterYogurtDrink}
+      categoryTitle="יוגורטים לשתייה"
+      icon={<img alt="" src={importImage('yogurt_drink_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterMilkDelicaciesDesserts.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterMilkDelicaciesDesserts}
+      categoryTitle="דליקטסים וקינוחים מחלב"
+      icon={<img alt="" src={importImage('milk_delicacies_desserts_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSoftCheese.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSoftCheese}
+      categoryTitle="גבינות רכות"
+      icon={<img alt="" src={importImage('cheese_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSemiHardCheese.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSemiHardCheese}
+      categoryTitle="גבינות חצי קשות"
+      icon={<img alt="" src={importImage('semi_hard_cheese_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterYellowHardCheese.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterYellowHardCheese}
+      categoryTitle="גבינות קשות צהובות"
+      icon={<img alt="" src={importImage('yellow_hard_cheese_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterButterMargarine.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterButterMargarine}
+      categoryTitle="חמאה ומרגרינה"
+      icon={<img alt="" src={importImage('butter_margarine_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterCreamWhippedCreamCookingBaking.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterCreamWhippedCreamCookingBaking}
+      categoryTitle="שמנת, קצפת, בישול ואפייה"
+      icon={<img alt="" src={importImage('cream_whipped_cream_cooking_baking_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterChilledPasta.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterChilledPasta}
+      categoryTitle="פסטות קפואות"
+      icon={<img alt="" src={importImage('chilled_pasta_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterEggs.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterEggs}
+      categoryTitle="ביצים"
+      icon={<img alt="" src={importImage('eggs_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSausagesPastrami.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSausagesPastrami}
+      categoryTitle="נקניקים ופסטרמה"
+      icon={<img alt="" src={importImage('sausages_pastrami_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
+{filterSalads.length > 0 && (
+  <div>
+    <ProductsPage
+      products={filterSalads}
+      categoryTitle="סלטים"
+      icon={<img alt="" src={importImage('salads_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  </div>
+)}
+
 
     </div>
   );
