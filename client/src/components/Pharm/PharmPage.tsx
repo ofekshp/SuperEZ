@@ -14,13 +14,70 @@ const importImage = (imageName: string) => {
 const PharmPage: React.FC = () => {
   const { addProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
-  
+
   const initialShampoo = [
-    { name: "שמפו לשיער רגיל", image: importImage('shampoo_for_normal_hair.jpeg') },
+    { name: "שמפו לשיער רגיל", image: importImage('shampoo_for_normal_hair.jpg'), id: 17 },
+    { name: "שמפו לשיער יבש / פגום", image: importImage('shampoo_for_dry_damaged_hair.jpg'), id: 17 },
+    { name: "שמפו שמן קוקוס", image: importImage('shampoo_with_coconut_oil.jpg'), id: 17 },
+    { name: "שמפו לשיער יבש בתוספת קרטין", image: importImage('shampoo_for_dry_hair_with_keratin.jpg'), id: 17 },
+    { name: "שמפו לשיער יבש בתוספת שמן מרוקאי", image: importImage('shampoo_for_dry_hair_with_moroccan_oil.jpg'), id: 17 },
+    { name: "שמפו קרטין שמן מרולה", image: importImage('shampoo_with_keratin_and_marula_oil.jpg'), id: 17 },
+    { name: "שמפו לקרקפת שומנית", image: importImage('shampoo_for_oily_hair.jpg'), id: 17 },
+    { name: "שמפו תפוח", image: importImage('shampoo_with_apple.jpg'), id: 17 },
+    { name: "שמפו שמן אבוקדו ותמצית קלנדולה", image: importImage('shampoo_with_Avocado_oil_and_calendula.avif'), id: 17 },
+    { name: "שמפו ויטמין C", image: importImage('shampoo_with_vitamin_C.jpg'), id: 17 },
+    { name: "שמפו ויטמין E", image: importImage('shampoo_with_vitamin_E.jpg'), id: 17 },
+    { name: "שמפו לשיער צבוע", image: importImage('shampoo_for_colored_hair.png'), id: 17 },
+    { name: "שמפו ארגן", image: importImage('shampoo_with_aragan.jpg'), id: 17 },
+    { name: "שמפו שמן קוקוס כורכום", image: importImage('shampoo_with_coconut_oil_and_turmeric.jpg'), id: 17 },
+    { name: "שמפו מעניק נפח לשיער דק יסמין", image: importImage('shampoo_with_jasmine_for_thin_hair.jpg'), id: 17 },
+    { name: "שמפו למניעת קשקשים", image: importImage('anti_dandruff_shampoo.jpg'), id: 17 },
+    { name: "שמפו הד אנד שולדרס קלאסי", image: importImage('head_and_shoulders_classic_shampoo.jpg'), id: 17 },
+    { name: "שמפו לשיער מתולתל", image: importImage('shampoo_for_curly_hair.jpg'), id: 17 },
+    { name: "שמפו ללא סולפטים", image: importImage('sulfate_free_shampoo.jpg'), id: 17 },
+    { name: "שמפו אלוורה", image: importImage('aloe_vera_shampoo.jpg'), id: 17 },
+    { name: "שמפו חימר", image: importImage('clay_shampoo.jpg'), id: 17 },
+    { name: "שמפו תות ומנטה", image: importImage('shampoo_strawberry_mint.webp'), id: 17 },
+    { name: "שמפו פריחת הדובדבן", image: importImage('shampoo_cherry_blossom.jpg'), id: 17 },
+    { name: "שמפו מי קקטוס ושמן באבאסו", image: importImage('shampoo_cactus_water_and_babassu_oil.webp'), id: 17 },
+    { name: "שמפו אמפולה לטיפול אינטנסיבי לשיער יבש, צבוע ופגום", image: importImage('shampoo_ampoule_intensive_treatment.jpeg'), id: 17 },
+    { name: "שמפו ורד", image: importImage('shampoo_with_rose.jpg'), id: 17 },
+    { name: "שמפו לחות מוגברת אפרסק וחמאת מורומורו", image: importImage('shampoo_peach_and_morumoro_butter.jpg'), id: 17 },
+    { name: "שמפו לחות מוגברת", image: importImage('shampoo_increased_moisture.jpg'), id: 17 },
+    { name: "שמפו עם שמני הזנה", image: importImage('shampoo_with_nourishing_oils.jpg'), id: 17 },
+    { name: "שמפו קרטין לאחר החלקה ועיצוב בחום", image: importImage('shampoo_keratin_after_heat_styling.jpg'), id: 17 },
+    { name: "שמפו סילבר לשיער כסוף", image: importImage('silver_shampoo_for_gray_hair.webp'), id: 17 },
+    { name: "שמפו לשיער בלונדיני בהיר", image: importImage('shampoo_for_light_blonde_hair.jpg'), id: 17 },
+    { name: "שמפו קרטין לשיער עדין או חלש", image: importImage('shampoo_for_weak_hair.jpg'), id: 17 },
+    { name: "שמפו רך כמשי", image: importImage('shampoo_silky_soft.jpg'), id: 17 },
+    { name: "שמפו טיפוח יום יומי", image: importImage('daily_care_shampoo.jpg'), id: 17 },
+    { name: "שמפו לשיער ארוך ופגום", image: importImage('shampoo_for_long_damaged_hair.jpg'), id: 17 },
+
+    // 2 or 3 or 4 in 1
+    { name: "שמפו ומרכך לכל סוגי השיער 2 ב-1", image: importImage('shampoo_and_conditioner_all_hair_types_2in1.png'), id: 17 },
+    { name: "שמפו ומרכך לשיער רגיל 2 ב-1", image: importImage('shampoo_and_conditioner_for_dry_damaged_hair_2in1.jpg'), id: 17 },
+    { name: "שמפו ומרכך 2 ב-1 לשיער יבש / פגום", image: importImage('shampoo_and_conditioner_normal_hair_2in1.jpg'), id: 17 },
+    { name: "שמפו ומרכך 2 ב-1 ורדים וחלב רימונים", image: importImage('shampoo_and_conditioner_roses_and_pomegranate_milk_2in1.jpg'), id: 17 },
+    { name: "שמפו ומרכך 2 ב-1 למניעת קשקשים", image: importImage('shampoo_and_conditioner_anti_dandruff_2in1.jpg'), id: 17 },
+
+    //men
+    { name: "שמפו ומרכך 2 ב-1 לגבר", image: importImage('shampoo_and_conditioner_men_2in1.jpg'), id: 17 },
+    { name: "שמפו וג׳ל רחצה 2 ב-1 לגבר", image: importImage('shampoo_and_shower_for_men_2in1.png'), id: 17 },
+    { name: "שמפו, ג׳ל רחצה, פנים 3 ב-1 לגבר", image: importImage('shampoo_and_body_face_for_men_3in1.jpg'), id: 17 },
+    { name: "4 ב-1 לגבר", image: importImage('shampoo_and_body_for_men_4in1.jpg'), id: 17 },
+
+    // dry shampoos
+    { name: "שמפו יבש קלאסי", image: importImage('dry_shampoo_classic.webp'), id: 17 },
+    { name: "שמפו יבש טרופי", image: importImage('dry_shampoo_tropical.webp'), id: 17 },
+    { name: "שמפו יבש דובדבן", image: importImage('dry_shampoo_cherry.webp'), id: 17 },
+    { name: "שמפו יבש פריחה אביבית", image: importImage('dry_shampoo_spring_bloom.webp'), id: 17 },
+
   ];
+
   const initialConditioner = [
     { name: "מרכך לשיער רגיל", image: importImage('conditioner_for_normal_hair.jpeg') },
   ];
+  
   const initialBathsoap = [
     { name: "תחליב רחצה קלאסי", image: importImage('classic_shower_lotion.png') },
   ];
