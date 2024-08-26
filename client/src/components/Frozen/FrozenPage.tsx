@@ -759,7 +759,7 @@ const FrozenPage: React.FC = () => {
   }, [frozenVegetables, doughsPizzasPastries, preparedFoods, herbsSpices, frozenFruit]);
 
   const handleIncrement = (name: string) => {
-    setFrozenvegetables(frozenVegetables.map(product =>
+    setFrozenVegetables(frozenVegetables.map(product =>
       product.name === name ? { ...product, count: product.count + 1 } : product
     ));
     setDoughsPizzasPastries(doughsPizzasPastries.map(product =>

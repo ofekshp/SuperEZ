@@ -868,37 +868,7 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
 );
 
   return (
-    <div>
-      <div>
-        <ProductsPage   
-          products={chickenProducts}
-          categoryTitle="מוצרי עוף"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={indiaProducts}
-          categoryTitle="מוצרי הודו"
-          icon={<img alt="" src={importImage('')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-    </div>
-    <div>
-      <ProductsPage
-        products={beefLambProducts}
-        categoryTitle="בשר בקר וכבש"
-        icon={<img alt="" src={importImage('')} />}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      </div>
+<div>
 <div>
     <div style={{
       position: 'absolute',

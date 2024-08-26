@@ -4482,7 +4482,6 @@ const initialGranolaoats = [
     
   };
 
-
   const handleSave = async () => {
     const breadsToSave = breads.filter(breads => breads.count > 0).map(breads => ({ ...breads, quantity: breads.count }));
     const cakesToSave = cakes.filter(cakes => cakes.count > 0).map(cakes => ({ ...cakes, quantity: cakes.count }));

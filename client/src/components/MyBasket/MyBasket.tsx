@@ -77,7 +77,8 @@ const MyBasket: React.FC = () => {
           client_info: client_info,
           basketProducts: basketProducts
         } 
-    });
+      });
+      localStorage.setItem('basketProducts', '[]');
       console.log(response);
     }catch (error) {
       console.error('Error add product:', error);
