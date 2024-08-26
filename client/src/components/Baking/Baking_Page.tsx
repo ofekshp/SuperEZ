@@ -2000,47 +2000,42 @@ const filterSpices = spices.filter(product =>
 );
 
 return (
-  <div>
+<div>
   <div style={{
     position: 'absolute',
-    top: '20px', // קרוב יותר לראש הדף
-    left: '50%', // מרכז את הדיב האופקי
-    transform: 'translateX(-50%)', // מפעיל את המרכז האמיתי
-    width: '100%',
-    paddingRight: '20px',
-    marginBottom: '20px',
     marginTop: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
   }}>
-    <input
-      type="text"
-      placeholder="חפש מוצר בישול\אפייה"
-      value={searchTerm}
-      onChange={handleSearch}
-      style={{
-        width: '715px',
-        padding: '10px 40px 10px 10px', // יותר ריווח פנימי
-        borderRadius: '25px', // פינות עגולות יותר
-        border: '1px solid #ccc',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // צל להוספת עומק
-        textAlign: 'right',
-        fontSize: '16px',
-        outline: 'none',
-      }}
-    />
-    <i className="fas fa-search" style={{
-      position: 'absolute',
-      right: '30px',
-      top: '50%',
-      transform: 'translateY(-50%)',
-      color: '#aaa',
-      pointerEvents: 'none',
-    }}></i>
-  </div>
+    <div style={{ position: 'relative' }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר בישול/אפייה"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '100%',
+      
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '-30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        pointerEvents: 'none',
+      }}></i>
+    </div>
 
-
-  
-  <div>
-  {filterSpreadssauces.length > 0 && (
+</div>
+<div>  {filterSpreadssauces.length > 0 && (
     <ProductsPage
       products={filterSpreadssauces}
       categoryTitle="ממרחים ורטבים"

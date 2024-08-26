@@ -88,7 +88,7 @@ input {
 
 .save-button-profile {
     color: white;
-    background-color: #007bff;
+    background-image: radial-gradient(100% 100% at 100% 0, #b9b8ff 0, #2e93ff 100%);  border: 0;
     font-weight: 700;
     padding: 8px 16px;
     border: none;
@@ -131,7 +131,6 @@ input {
 
 
 
-/* עיצוב עבור כל סל */
 .cart-item {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -157,8 +156,8 @@ input {
     list-style-type: none;
     padding: 0;
     margin: 10px 0;
-    max-height: 100px; /* גובה מקסימלי עבור רשימת מוצרים */
-    overflow-y: auto; /* אפשרות לגלילה אם יש יותר מוצרים מהגובה המקסימלי */
+    max-height: 100px;
+    overflow-y: auto;
     border-top: 1px solid #eee;
     padding-top: 10px;
 }
@@ -172,7 +171,7 @@ input {
 .select-button {
     margin-top: 10px;
     padding: 5px 10px;
-    background-color: #007bff;
+    background-image: radial-gradient(100% 100% at 100% 0, #b9b8ff 0, #2e93ff 100%);  border: 0;
     color: white;
     border: none;
     border-radius: 3px;
