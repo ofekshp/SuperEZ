@@ -1961,84 +1961,100 @@ return (
   </div>
   
   <div>
-  <ProductsPage
-    products={filterSpreadssauces}
-    categoryTitle="ממרחים ורטבים"
-    icon={<img alt="" src={importImage('spreadssauces_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterSpreadssauces.length > 0 && (
+    <ProductsPage
+      products={filterSpreadssauces}
+      categoryTitle="ממרחים ורטבים"
+      icon={<img alt="" src={importImage('spreadssauces_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterBreadcrumbs}
-    categoryTitle="פירורי לחם"
-    icon={<img alt="" src={importImage('breadcrumbs_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterBreadcrumbs.length > 0 && (
+    <ProductsPage
+      products={filterBreadcrumbs}
+      categoryTitle="פירורי לחם"
+      icon={<img alt="" src={importImage('breadcrumbs_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterSoups}
-    categoryTitle="מרקים, תיבול ותבשילים מהירי הכנה"
-    icon={<img alt="" src={importImage('soups_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterSoups.length > 0 && (
+    <ProductsPage
+      products={filterSoups}
+      categoryTitle="מרקים, תיבול ותבשילים מהירי הכנה"
+      icon={<img alt="" src={importImage('soups_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterAsian}
-    categoryTitle="אסייאתי"
-    icon={<img alt="" src={importImage('asian_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterAsian.length > 0 && (
+    <ProductsPage
+      products={filterAsian}
+      categoryTitle="אסייאתי"
+      icon={<img alt="" src={importImage('asian_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterBakeryproducts}
-    categoryTitle="מוצרי אפיה"
-    icon={<img alt="" src={importImage('bakeryproducts_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterBakeryproducts.length > 0 && (
+    <ProductsPage
+      products={filterBakeryproducts}
+      categoryTitle="מוצרי אפיה"
+      icon={<img alt="" src={importImage('bakeryproducts_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterJams}
-    categoryTitle="ריבות ומעדני פירות"
-    icon={<img alt="" src={importImage('jams_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterJams.length > 0 && (
+    <ProductsPage
+      products={filterJams}
+      categoryTitle="ריבות ומעדני פירות"
+      icon={<img alt="" src={importImage('jams_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterHalvahhoneysilan}
-    categoryTitle="חלווה, דבש וסילאן"
-    icon={<img alt="" src={importImage('halvahhoneysilan_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterHalvahhoneysilan.length > 0 && (
+    <ProductsPage
+      products={filterHalvahhoneysilan}
+      categoryTitle="חלווה, דבש וסילאן"
+      icon={<img alt="" src={importImage('halvahhoneysilan_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 <div>
-  <ProductsPage
-    products={filterSpices}
-    categoryTitle="תבלינים"
-    icon={<img alt="" src={importImage('spices_icon.png')} />}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
+  {filterSpices.length > 0 && (
+    <ProductsPage
+      products={filterSpices}
+      categoryTitle="תבלינים"
+      icon={<img alt="" src={importImage('spices_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
 </div>
 
   </div>
