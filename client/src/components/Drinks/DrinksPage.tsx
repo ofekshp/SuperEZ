@@ -531,7 +531,6 @@ const initialAlcoholDrinks = [
 ];
 
 
-
   const [sweets, setSweets] = useState<{ name: string; image: string | null; count: number }[]>(
     initialSweetDrinks.map(drink => {
       const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === drink.name);
