@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import ProductsPage from "../ProductCard/ProductsPage";
+import React, { useEffect, useState } from "react";
+import ProductsPage from "../ProductCard/ProductsPage.jsx";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import "../ProductCard/ProductsPage.css";
 
@@ -12,7 +12,7 @@ const importImage = (imageName: string) => {
 };
 
 const DrinksPage: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
   const initialWaterDrinks = [
     // { name: "מים מינרליים<br />בקבוק 500 מ״ל", image: importImage('mineral_water_500ml.jpeg'), id: 15 },
@@ -336,7 +336,6 @@ const DrinksPage: React.FC = () => {
       { name: "צלזיוס משקה אנרגיה בטעם מנגו פסיפלורה", image: importImage('celsius_mango_passionfruit.webp'), id: 15 }
   ];
 
-
   const initialBeers = [
  // { name: "מאלט שחורה", image: importImage('black_malt.jpg'), id: 15 },
     { name: "בירה שחורה", image: importImage('nesher_black_beer_1.5l.jpeg'), id: 15 },
@@ -440,7 +439,6 @@ const initialWines = [
   { name: "יין אדום מתוק", image: importImage('red_sweet_wine.webp'), id: 15 },
   { name: "יין לבן חצי מתוק", image: importImage('white_semi_sweet_wine.jpg'), id: 15 },
 ];
-
 
 const initialAlcoholDrinks = [
   { name: "וויסקי בלאק לייבל", image: importImage('Black_Label.png'), id: 15 },
@@ -550,6 +548,7 @@ const initialAlcoholDrinks = [
       };
     })
   );
+
   const [carbonatedDrinks, setCarbonatedDrinks] = useState<{ name: string; image: string | null; count: number }[]>(
     initialCarbonatedDrinks.map(drink => {
       const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === drink.name);
@@ -610,6 +609,10 @@ const initialAlcoholDrinks = [
     })
   );
   
+  useEffect(() => {
+    handleSave();
+  }, [sweets, alcohols, carbonatedDrinks, waterDrinks, concentrates, energyDrinks, beers, wines]);
+
   const handleIncrement = (name: string) => {
     setWaterDrinks(
       waterDrinks.map((drink) =>
@@ -654,64 +657,111 @@ const initialAlcoholDrinks = [
   };
 
   const handleDecrement = (name: string) => {
-    setWaterDrinks(
-      waterDrinks.map((drink) =>
-        drink.name === name && drink.count > 0
-          ? { ...drink, count: drink.count - 1 }
-          : drink
-      )
-    );
-    setCarbonatedDrinks(
-      carbonatedDrinks.map((drink) =>
-        drink.name === name && drink.count > 0
-          ? { ...drink, count: drink.count - 1 }
-          : drink
-      )
-    );
-    setSweets(
-      sweets.map((drink) =>
-        drink.name === name && drink.count > 0
-          ? { ...drink, count: drink.count - 1 }
-          : drink
-      )
-    );
-    setConcentrates(
-      concentrates.map((drink) =>
-        drink.name === name && drink.count > 0
-          ? { ...drink, count: drink.count - 1 }
-          : drink
-      )
-    );
-    setEnergyDrink(
-      energyDrinks.map((drink) =>
-        drink.name === name && drink.count > 0
-          ? { ...drink, count: drink.count - 1 }
-          : drink
-      )
-    );
-    setBeers(
-      beers.map((drink) =>
-        drink.name === name && drink.count > 0
-          ? { ...drink, count: drink.count - 1 }
-          : drink
-      )
-    );
-    setWines(
-      wines.map((drink) =>
-        drink.name === name && drink.count > 0
-          ? { ...drink, count: drink.count - 1 }
-          : drink
-      )
-    );
-    setAlcohols(
-      alcohols.map((drink) =>
-        drink.name === name && drink.count > 0
-          ? { ...drink, count: drink.count - 1 }
-          : drink
-      )
-    );
+    setWaterDrinks(waterDrinks.map(drink => {
+      if (drink.name === name && drink.count > 0) {
+        const newCount = drink.count - 1;
+  
+        if (newCount === 0) {
+          removeProduct(drink.name);
+        }
+  
+        return { ...drink, count: newCount };
+      }
+      return drink;
+    }));
+  
+    setCarbonatedDrinks(carbonatedDrinks.map(drink => {
+      if (drink.name === name && drink.count > 0) {
+        const newCount = drink.count - 1;
+  
+        if (newCount === 0) {
+          removeProduct(drink.name);
+        }
+  
+        return { ...drink, count: newCount };
+      }
+      return drink;
+    }));
+  
+    setSweets(sweets.map(sweet => {
+      if (sweet.name === name && sweet.count > 0) {
+        const newCount = sweet.count - 1;
+  
+        if (newCount === 0) {
+          removeProduct(sweet.name);
+        }
+  
+        return { ...sweet, count: newCount };
+      }
+      return sweet;
+    }));
+  
+    setConcentrates(concentrates.map(drink => {
+      if (drink.name === name && drink.count > 0) {
+        const newCount = drink.count - 1;
+  
+        if (newCount === 0) {
+          removeProduct(drink.name);
+        }
+  
+        return { ...drink, count: newCount };
+      }
+      return drink;
+    }));
+  
+    setEnergyDrink(energyDrinks.map(drink => {
+      if (drink.name === name && drink.count > 0) {
+        const newCount = drink.count - 1;
+  
+        if (newCount === 0) {
+          removeProduct(drink.name);
+        }
+  
+        return { ...drink, count: newCount };
+      }
+      return drink;
+    }));
+  
+    setBeers(beers.map(drink => {
+      if (drink.name === name && drink.count > 0) {
+        const newCount = drink.count - 1;
+  
+        if (newCount === 0) {
+          removeProduct(drink.name);
+        }
+  
+        return { ...drink, count: newCount };
+      }
+      return drink;
+    }));
+  
+    setWines(wines.map(drink => {
+      if (drink.name === name && drink.count > 0) {
+        const newCount = drink.count - 1;
+  
+        if (newCount === 0) {
+          removeProduct(drink.name);
+        }
+  
+        return { ...drink, count: newCount };
+      }
+      return drink;
+    }));
+  
+    setAlcohols(alcohols.map(drink => {
+      if (drink.name === name && drink.count > 0) {
+        const newCount = drink.count - 1;
+  
+        if (newCount === 0) {
+          removeProduct(drink.name);
+        }
+  
+        return { ...drink, count: newCount };
+      }
+      return drink;
+    }));
   };
-
+  
   const handleSave = async () => {
     //Water Drinks
     const waterDrinksToSave = waterDrinks
@@ -807,43 +857,41 @@ const initialAlcoholDrinks = [
   );
   
   return (
-
 <div>
-    <div style={{
-      position: 'absolute',
-      marginTop: '100px',
-      width: '100%',
-      paddingRight: '20px', //Adjust for right padding (if needed)
-      marginBottom: '20px', 
-    }}>
+  <div style={{
+    position: 'absolute',
+    marginTop: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  }}>
+    <div style={{ position: 'relative' }}>
       <input
         type="text"
         placeholder="חפש מוצר שתייה"
         value={searchTerm}
         onChange={handleSearch}
         style={{
-          width: '715px',
+          width: '100%',
+      
           padding: '5px 40px 5px 5px',
           borderRadius: '8px',
           border: '1px solid #ccc',
           textAlign: 'right',
-          position: 'relative',
-          float: 'right',
-          marginRight: '200px',
-
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         }}
       />
       <i className="fas fa-search" style={{
         position: 'absolute',
-        right: '30px',
+        right: '-30px',
         top: '50%',
         transform: 'translateY(-50%)',
         color: '#aaa',
-        marginRight: '200px',
-
         pointerEvents: 'none',
       }}></i>
-    </div>       <div>
+    </div>
+
+</div>   <div>
   {filterWaterDrinks.length > 0 && (
     <ProductsPage
       products={filterWaterDrinks}

@@ -61,6 +61,7 @@
     font-size: 16px;
     margin: 5px 0;
     text-align: center;
+    font-weight: bold;
 }
 
 .delivery-price {
@@ -69,7 +70,6 @@
 
 .total-price {
     font-size: 18px;
-    font-weight: bold;
     color: #28a745;
 }
 
@@ -89,4 +89,9 @@
 
 .order-btn:hover {
     background-color: #0056b3;
+}
+
+.cart-missingProducts {
+    font-weight: bold;
+    color: #e00f0f;
 }

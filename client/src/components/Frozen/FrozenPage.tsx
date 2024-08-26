@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsPage from "../ProductCard/ProductsPage";
 import { useBasket } from "../MyBasket/BasketContext.tsx";
 import '../ProductCard/ProductsPage.css';
@@ -14,7 +14,7 @@ const importImage = (imageName: string) => {
 };
 
 const FrozenPage: React.FC = () => {
-  const { addProduct } = useBasket();
+  const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
 
   const initialFrozenVegetables = [
@@ -704,7 +704,7 @@ const FrozenPage: React.FC = () => {
   initialPreparedFoods.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialFrozenfruit.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-  const [frozenVegetables, setFrozenvegetables] = useState<{ name: string; image: string | null; count: number }[]>(
+  const [frozenVegetables, setFrozenVegetables] = useState<{ name: string; image: string | null; count: number }[]>(
     initialFrozenVegetables.map(product => {
       const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === product.name);
       return {
@@ -754,8 +754,12 @@ const FrozenPage: React.FC = () => {
     })
   );
   
+  useEffect(() => {
+    handleSave();
+  }, [frozenVegetables, doughsPizzasPastries, preparedFoods, herbsSpices, frozenFruit]);
+
   const handleIncrement = (name: string) => {
-    setFrozenvegetables(frozenVegetables.map(product =>
+    setFrozenVegetables(frozenVegetables.map(product =>
       product.name === name ? { ...product, count: product.count + 1 } : product
     ));
     setDoughsPizzasPastries(doughsPizzasPastries.map(product =>
@@ -773,21 +777,61 @@ const FrozenPage: React.FC = () => {
   };
 
   const handleDecrement = (name: string) => {
-    setFrozenvegetables(frozenVegetables.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
-    ));
-    setDoughsPizzasPastries(doughsPizzasPastries.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
-    ));
-    setPreparedFoods(preparedFoods.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
-    ));
-    setHerbsSpices(herbsSpices.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
-    ));
-    setFrozenFruit(frozenFruit.map(product =>
-      product.name === name && product.count > 0 ? { ...product, count: product.count - 1 } : product
-    ));
+    setFrozenVegetables(frozenVegetables.map(product => {
+      if (product.name === name && product.count > 0) {
+        const newCount = product.count - 1;
+        if (newCount === 0) {
+          removeProduct(product.name);
+        }
+        return { ...product, count: newCount };
+      }
+      return product;
+    }));
+    
+    setDoughsPizzasPastries(doughsPizzasPastries.map(product => {
+      if (product.name === name && product.count > 0) {
+        const newCount = product.count - 1;
+        if (newCount === 0) {
+          removeProduct(product.name);
+        }
+        return { ...product, count: newCount };
+      }
+      return product;
+    }));
+    
+    setPreparedFoods(preparedFoods.map(product => {
+      if (product.name === name && product.count > 0) {
+        const newCount = product.count - 1;
+        if (newCount === 0) {
+          removeProduct(product.name);
+        }
+        return { ...product, count: newCount };
+      }
+      return product;
+    }));
+    
+    setHerbsSpices(herbsSpices.map(product => {
+      if (product.name === name && product.count > 0) {
+        const newCount = product.count - 1;
+        if (newCount === 0) {
+          removeProduct(product.name);
+        }
+        return { ...product, count: newCount };
+      }
+      return product;
+    }));
+    
+    setFrozenFruit(frozenFruit.map(product => {
+      if (product.name === name && product.count > 0) {
+        const newCount = product.count - 1;
+        if (newCount === 0) {
+          removeProduct(product.name);
+        }
+        return { ...product, count: newCount };
+      }
+      return product;
+    }));
+    
   };
 
   const handleSave = async () => {
@@ -831,41 +875,40 @@ const FrozenPage: React.FC = () => {
 
   return (
 <div>
-    <div style={{
-      position: 'absolute',
-      marginTop: '100px',
-      width: '100%',
-      paddingRight: '20px', // Adjust for right padding if needed
-      marginBottom: '20px', 
-    }}>
+  <div style={{
+    position: 'absolute',
+    marginTop: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  }}>
+    <div style={{ position: 'relative' }}>
       <input
         type="text"
         placeholder="חפש מוצר קפואים"
         value={searchTerm}
         onChange={handleSearch}
         style={{
-          width: '715px',
+          width: '100%',
+      
           padding: '5px 40px 5px 5px',
           borderRadius: '8px',
           border: '1px solid #ccc',
           textAlign: 'right',
-          position: 'relative',
-          float: 'right',
-          marginRight: '200px',
-
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         }}
       />
       <i className="fas fa-search" style={{
         position: 'absolute',
-        right: '30px',
+        right: '-30px',
         top: '50%',
         transform: 'translateY(-50%)',
         color: '#aaa',
-        marginRight: '200px',
-
         pointerEvents: 'none',
       }}></i>
-    </div>    {filterFrozenVegetables.length > 0 && (
+    </div>
+
+</div> {filterFrozenVegetables.length > 0 && (
   <div>
     <ProductsPage
       products={filterFrozenVegetables}

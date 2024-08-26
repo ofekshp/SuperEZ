@@ -13,7 +13,7 @@ const importImage = (imageName: string) => {
 
 const ComparingCarts: React.FC = () => {
   const location = useLocation();
-  const { superCarts, client_info } = location.state || {};
+  const { superCarts, missingProducts , client_info } = location.state || {};
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -80,6 +80,8 @@ const ComparingCarts: React.FC = () => {
         return 30.00; 
       case 'חצי חינם': // Hazi-Hinam
         return 29.00; 
+      case 'טיב טעם': // Tiv Taam
+        return 29.9; 
       default:
         return 0;
     }
@@ -93,9 +95,19 @@ const ComparingCarts: React.FC = () => {
         return importImage('Victory.png');
       case 'חצי חינם': // Hazi-Hinam
         return importImage('HaziHinam.png');
+      case 'טיב טעם': // Hazi-Hinam
+        return importImage('TivTaam.png');  
       default:
         return null;
     }
+  };
+
+  const renderMissingProducts = (cartName: string) => {
+    const myMissingProducts = missingProducts.find((item) => item.name === cartName);
+    if (!myMissingProducts || myMissingProducts.products.length === 0) {
+      return 'אין חוסרים';
+    }
+    return myMissingProducts.products.map((p) => p.name).join(', ');
   };
 
   return (
@@ -104,7 +116,10 @@ const ComparingCarts: React.FC = () => {
       {error && <div className="error-message">{error}</div>}
       <div className="cart-column">
         {superCarts.map((cart: any) => {
-          const deliveryPrice = getDeliveryPrice(cart.name);
+          var deliveryPrice = getDeliveryPrice(cart.name);
+          if(cart.name === 'טיב טעם' && cart.totalPrice >= 750 ){
+            deliveryPrice = 0;
+          }
           const totalWithDelivery = cart.totalPrice + deliveryPrice;
           const logo = getLogo(cart.name);
           
@@ -113,6 +128,10 @@ const ComparingCarts: React.FC = () => {
               <div className="cart-content">
                 {logo && <img src={logo} alt={`${cart.name} Logo`} className="cart-logo" />}
                 <h2 className="cart-header">{cart.name}</h2>
+                <div>
+                <p className="cart-missingProducts">:מוצרים חסרים</p>
+                <p className="cart-missingProducts-list">{renderMissingProducts(cart.name)}</p>
+                </div>
                 <p className="cart-price">מחיר סל: {cart.totalPrice.toFixed(2)}</p>
                 <p className="delivery-price">דמי משלוח: {deliveryPrice}</p>
                 <p className="total-price">סה"כ לתשלום: {totalWithDelivery.toFixed(2)}</p>

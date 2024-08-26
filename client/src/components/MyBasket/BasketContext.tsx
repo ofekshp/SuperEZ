@@ -54,9 +54,6 @@ export const BasketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     }
   };
   
-  
-  
-
   const removeProduct = async (productName: string) => {
     try {
       const updatedProducts = await cartService.removeProduct(productName);

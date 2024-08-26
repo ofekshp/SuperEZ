@@ -62,8 +62,24 @@ interface Product {
       const month = date.getMonth() + 1;
       const year = date.getFullYear();
       const currentDate = `${day}-${month}-${year}`;
-    
-      try {
+      
+      if(userId) {
+      try { // save the cart in database
+        const response = await fetch(`http://localhost:3001/cart/add`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ userId: userId , products: myCart }),
+        });
+        const data = await response.json();
+        console.log("save the cart in database", data);
+      } catch (error) {
+        console.error('Error get CHEAP CART:', error);
+        return []; // Return an empty array on error
+      }
+    }
+      try { // compare carts
         const response = await fetch(`http://localhost:3001/compare`, {
           method: 'POST',
           headers: {
@@ -72,7 +88,7 @@ interface Product {
           body: JSON.stringify({ products: myCart }),
         });
         const data = await response.json();
-        console.log(data);
+        console.log("my data:", data);
         return data;
       } catch (error) {
         console.error('Error get CHEAP CART:', error);
@@ -81,7 +97,7 @@ interface Product {
     }
 
     async getUserCarts(): Promise<Cart[]> {
-      const userId = localStorage.getItem('userId'); // כאן שולפים את userId מ-localStorage
+      const userId = localStorage.getItem('userId'); 
       try {
         const response = await axios.get('http://localhost:3001/cart/carts', {
           headers: {
