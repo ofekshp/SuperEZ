@@ -921,7 +921,6 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
   </div>
 )}
 
-
   </div>
   );
 };
