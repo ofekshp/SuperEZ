@@ -72,10 +72,10 @@ const PharmPage: React.FC = () => {
     { name: "שמפו יבש דובדבן", image: importImage('dry_shampoo_cherry.webp'), id: 17 },
     { name: "שמפו יבש פריחה אביבית", image: importImage('dry_shampoo_spring_bloom.webp'), id: 17 },
 
-  ];
+  ];  
 
   const initialConditioner = [
-    { name: "מרכך לשיער רגיל", image: importImage('conditioner_for_normal_hair.jpeg') },
+    { name: "מרכך לשיער רגיל", image: importImage('conditioner_for_normal_hair.jpg') },
   ];
   
   const initialBathsoap = [
