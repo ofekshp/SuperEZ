@@ -834,7 +834,7 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
   <ProductsPage
     products={filterChickenProducts}
     categoryTitle="מוצרי עוף"
-    icon={<img alt="מוצרי עוף" src={importImage('chicken_icon.png')} />}
+    icon={<img alt="" src={importImage('chicken_icon.png')} />}
     onIncrement={handleIncrement}
     onDecrement={handleDecrement}
     onSave={handleSave}
@@ -844,7 +844,7 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
   <ProductsPage
     products={filterIndiaProducts}
     categoryTitle="מוצרי הודו"
-    icon={<img alt="מוצרי הודו" src={importImage('india_icon.png')} />}
+    icon={<img alt="" src={importImage('india_icon.png')} />}
     onIncrement={handleIncrement}
     onDecrement={handleDecrement}
     onSave={handleSave}
@@ -854,7 +854,7 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
   <ProductsPage
     products={filterBeefLambProducts}
     categoryTitle="בשר בקר וכבש"
-    icon={<img alt="בשר בקר וכבש" src={importImage('beef_lamb_icon.png')} />}
+    icon={<img alt="" src={importImage('beef_lamb_icon.png')} />}
     onIncrement={handleIncrement}
     onDecrement={handleDecrement}
     onSave={handleSave}
@@ -864,7 +864,7 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
   <ProductsPage
     products={filterFrozenBeefChickenProducts}
     categoryTitle="בשר בקר ועוף קפוא"
-    icon={<img alt="בשר בקר ועוף קפוא" src={importImage('frozen_beef_chicken_icon.png')} />}
+    icon={<img alt="" src={importImage('frozen_beef_chicken_icon.png')} />}
     onIncrement={handleIncrement}
     onDecrement={handleDecrement}
     onSave={handleSave}
@@ -884,7 +884,7 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
   <ProductsPage
     products={filterFreshFishProducts}
     categoryTitle="דגים טריים"
-    icon={<img alt="דגים טריים" src={importImage('fresh_fish_icon.png')} />}
+    icon={<img alt="" src={importImage('fresh_fish_icon.png')} />}
     onIncrement={handleIncrement}
     onDecrement={handleDecrement}
     onSave={handleSave}
@@ -894,7 +894,7 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
   <ProductsPage
     products={filterFrozenFishProducts}
     categoryTitle="דגים קפואים"
-    icon={<img alt="דגים קפואים" src={importImage('frozen_fish_icon.png')} />}
+    icon={<img alt="" src={importImage('frozen_fish_icon.png')} />}
     onIncrement={handleIncrement}
     onDecrement={handleDecrement}
     onSave={handleSave}
