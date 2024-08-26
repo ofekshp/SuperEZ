@@ -615,37 +615,577 @@ const CleaningDisposablePage: React.FC = () => {
 
   const initialBathroomtoilecleaning = [
     {
-      name: "נוזל לניקוי אסלות",
-      image: importImage('liquid_for_cleaning_toilets.jpeg'),
-    }
+      name: "מסיר עובש בניחוח לימון",
+      image: importImage("lemon_mold_remover.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי אסלות בניחוח אורנים",
+      image: importImage("pine_scented_toilet_gel.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי אסלות בניחוח לימון",
+      image: importImage("lemon_scented_toilet_gel.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי אסלות בניחוח לבנדר",
+      image: importImage("lavender_scented_toilet_gel.jpeg"),
+    },
+    {
+      name: "ניקוי אסלות אקולוגי",
+      image: importImage("green_power_ecological_toilet_cleaner.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי אסלות לוטוס וסחלב",
+      image: importImage("lotus_orchid_toilet_gel.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי אסלות עם אפקט בישום מוגבר מגנוליה ונרולי",
+      image: importImage("magnolia_neroli_scented_toilet_gel.jpeg"),
+    },
+    {
+      name: "ג'ל בתוספת אקונומיקה בניחוח לימון",
+      image: importImage("lemon_bleach_toilet_gel.jpeg"),
+    },
+    {
+      name: "ניקוי יסודי בחדר האמבטיה",
+      image: importImage("jet_bathroom_cleaner.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי מתקדם בניחוח ים",
+      image: importImage("sea_breeze_advanced_toilet_gel.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי מתקדם בניחוח רענן",
+      image: importImage("fresh_scented_advanced_toilet_gel.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי עם אקונומיקה מקציפה בניחוח הדרים",
+      image: importImage("citrus_bleach_foam_toilet_gel.jpeg"),
+    },
+    {
+      name: "ספריי לחדר אמבט",
+      image: importImage("astonish_bathroom_spray.jpeg"),
+    },
+    {
+      name: "מטליות לחות לחדרי אמבטיה ושירותים",
+      image: importImage("bathroom_toilet_wipes.jpeg"),
+    },
+    {
+      name: "סנובון מוצק כחול מגנוליה ונרולי",
+      image: importImage("snobon_solid_blue_magnolia_neroli.jpeg"),
+    },
+    {
+      name: "סנובון מוצק כחול לוטוס וסחלב",
+      image: importImage("snobon_solid_blue_lotus_orchid.jpeg"),
+    },
+    {
+      name: "סנובון סבון אסלה כחול קלאסיק",
+      image: importImage("snobon_solid_blue_classic.jpeg"),
+    },
+    {
+      name: "סנובון סבון אסלה בריח לימון",
+      image: importImage("snobon_solid_lemon_scented.jpeg"),
+    },
+    {
+      name: "סנובון סבון אסלה בניחוח לובר",
+      image: importImage("snobon_solid_louber_scented.jpeg"),
+    },
+    {
+      name: "סנובון סבון אסלה בריח תות",
+      image: importImage("snobon_solid_strawberry_scented.jpeg"),
+    },
+    {
+      name: "סנובון סבון אסלה כחול בניחוח אפרסק",
+      image: importImage("snobon_blue_peach_scented.jpeg"),
+    },
+    {
+      name: "סנובון סבון אסלה כחול בניחוח תפוח",
+      image: importImage("snobon_blue_apple_scented.jpeg"),
+    },
+    {
+      name: "סנובון סבון אסלה בניחוח מאסק",
+      image: importImage("snobon_musk_scented_toilet_soap.jpeg"),
+    },
+    {
+      name: "טבליות הפלא לאסלה בניחוח אקליפטוס",
+      image: importImage("astonish_eucalyptus_toilet_tablets.jpeg"),
+    },
+    {
+      name: "טבליות הפלא לאסלה בניחוח ורדים'",
+      image: importImage("astonish_rose_toilet_tablets.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי אסלות + חומץ ומלח לימון בריח הדרים",
+      image: importImage("citrus_vinegar_lemon_toilet_gel.jpeg"),
+    },
+    {
+      name: "ג'ל לניקוי אסלות + חומץ ומלח לימון בריח לבנדר",
+      image: importImage("lavender_vinegar_lemon_toilet_gel.jpeg"),
+    },
+    {
+      name: "מסיר אבן בחדר האמבט",
+      image: importImage("durgol_bathroom_descaler.jpeg"),
+    },
+    {
+      name: "תרסיס לניקוי מקלחון",
+      image: importImage("durgol_shower_cleaner_spray.jpeg"),
+    },
+    {
+      name: "טבליות לניקוי תחתית האסלה",
+      image: importImage("hepi_toilet_cleaning_tablets.jpeg"),
+    },
+    {
+      name: "ספריי לחיטוי וניקוי חדר האמבטיה",
+      image: importImage("jet_bathroom_disinfectant.jpeg"),
+    },
   ];
 
   const initialPesticideproducts = [
     {
-      name: "קוטל חרקים",
-      image: importImage('an_insects_killer.jpeg'),
-    }
+      name: "K3 נמלים פיתיון ג'ל",
+      image: importImage("k3_ant_bait_gel.jpeg"),
+    },
+    {
+      name: "K3 פיתיון ג'ל קוטל תיקנים",
+      image: importImage("k3_cockroach_bait_gel.jpeg"),
+    },
+    {
+      name: "K3 תחנת פיתיון קוטל תיקנים",
+      image: importImage("k3_cockroach_bait_station.jpeg"),
+    },
+    {
+      name: "קוטל חרקים K2000",
+      image: importImage("k2000_insect_killer.jpeg"),
+    },
+    {
+      name: "קוטל חרקים K300",
+      image: importImage("k300_insect_killer.jpeg"),
+    },
+    {
+      name: "קוטל זבובים ויתושים K400",
+      image: importImage("k400_fly_mosquito_killer.jpeg"),
+    },
+    {
+      name: "רב קוטל K",
+      image: importImage("rav_k_insect_killer.jpeg"),
+    },
+    {
+      name: "קוטל יבש ליתושים מזיקי ספרים וארגזים K600",
+      image: importImage("k600_dry_insect_killer.jpeg"),
+    },
+    {
+      name: "קוטל נמלים ותיקנים K500",
+      image: importImage("k500_ant_cockroach_killer.jpeg"),
+    },
+    {
+      name: "ספריי דוחה יתושים ומונע עקיצות",
+      image: importImage("sano_di_mosquito_repellent.jpeg"),
+    },
+    {
+      name: "רול און נגד יתושים",
+      image: importImage("sano_di_mosquito_rollon.jpeg"),
+    },
+    {
+      name: "רול און פלוס אלוורה",
+      image: importImage("sano_di_aloe_vera_rollon.jpeg"),
+    },
+    {
+      name: "תחליב רול און דוחה יתושים לתינוקות ולילדים",
+      image: importImage("sano_di_kids_repellent.jpeg"),
+    },
+    {
+      name: "דוחה יתושים עם קמומיל לילדים",
+      image: importImage("sano_di_kids_chamomile.jpeg"),
+    },
+    {
+      name: "דוחה יתושים נוזלי + מכשיר",
+      image: importImage("sanomat_mosquito_repellant_device.jpeg"),
+    },
+    {
+      name: "פותח סתימות בצנרת ניקוז ובכיורים",
+      image: importImage("drain_opener_pipes.jpeg"),
+    },
+    {
+      name: "נוזל פותח סתימות בצנרת ניקוז",
+      image: importImage("drain_out_extra_liquid.jpeg"),
+    },
   ];
 
   const initialCleaningaccessories = [
     {
-      name: "מטליות לניקוי כללי",
-      image: importImage('cloths_for_general_cleaning.jpeg'),
-    }
+      name: "מטליות מיקרופייבר למשטחים",
+      image: importImage("microfiber_surface_cloths_3pack.jpeg"),
+    },
+    {
+      name: "מטליות רב שימושיות",
+      image: importImage("multi_use_cloths_9pack.jpeg"),
+    },
+    {
+      name: "מטלית הפלא מיקרופייבר לכל סוגי המשטחים",
+      image: importImage("microfiber_magic_cloth_30x30.jpeg"),
+    },
+    {
+      name: "מטלית מיקרופייבר לרצפה",
+      image: importImage("microfiber_floor_cloth.jpeg"),
+    },
+    {
+      name: "מטליות רצפה",
+      image: importImage("floor_cloths_3pack.jpeg"),
+    },
+    {
+      name: "כריות יפניות",
+      image: importImage("dual_sided_japanese_pads_4pack.jpeg"),
+    },
+    {
+      name: "כריות ברזל לקרצוף חזק",
+      image: importImage("strong_scrubbing_steel_pads_3pack.jpeg"),
+    },
+    {
+      name: "כריות קרצוף",
+      image: importImage("scrubbing_pads_6pack.jpeg"),
+    },
+    {
+      name: "כריות ניקוי לשבת ללא ספוג",
+      image: importImage("shabbat_cleaning_pads_no_foam_4pack.jpeg"),
+    },
+    {
+      name: "ספוגיות מתכת רב שימושיות",
+      image: importImage("multi_use_metal_sponges_3pack.jpeg"),
+    },
+    {
+      name: "ברזלית מפלדת אל חלד",
+      image: importImage("stainless_steel_scourers_5pack.jpeg"),
+    },
+    {
+      name: "ספוג הפלא",
+      image: importImage("magic_sponge_6pack.jpeg"),
+    },
+    {
+      name: "כפפות ניילון",
+      image: importImage("nylon_gloves_100pack.jpeg"),
+    },
+    {
+      name: "כפפות לטקס עם אבקה מידה S",
+      image: importImage("powdered_latex_gloves_S_100pack.jpeg"),
+    },
+    {
+      name: "כפפות ניטריל כחולות ללא אבקה L",
+      image: importImage("blue_nitrile_gloves_no_powder_L_80pack.jpeg"),
+    },
+    {
+      name: "כפפות ניטריל כחולות ללא אבקה מידה S",
+      image: importImage("blue_nitrile_gloves_no_powder_S_80pack.jpeg"),
+    },
+    {
+      name: "כפפות לטקס עם אבקה מידה L",
+      image: importImage("powdered_latex_gloves_L_100pack.jpeg"),
+    },
+    {
+      name: "כפפות ניטריל כחולות ללא אבקה מידה M",
+      image: importImage("blue_nitrile_gloves_no_powder_M_80pack.jpeg"),
+    },
+    {
+      name: "כפפות ניטריל שחורות ללא אבקה L",
+      image: importImage("nitrile_gloves_no_powder_L_80pack.jpeg"),
+    },
+    {
+      name: "כפפות ניטריל שחורות ללא אבקה M",
+      image: importImage("nitrile_gloves_no_powder_M_80pack.jpeg"),
+    },
+    {
+      name: "כפפות ניטריל שחורות ללא אבקה S",
+      image: importImage("black_nitrile_gloves_no_powder_S_80pack.jpeg"),
+    },
+    {
+      name: "משטח מיקרופייבר לייבוש כלים",
+      image: importImage("microfiber_dish_drying_mat.jpeg"),
+    },
   ];
 
   const initialDisposableproducts = [
     {
-      name: "שרוול כוסות פלסטיק",
-      image: importImage('plastic_cup_sleeve.jpeg'),
-    }
+      name: "כוסות פלסטיק",
+      image: importImage("plastic_cups_100pack.jpeg"),
+    },
+    {
+      name: "מזלגות חד פעמיות",
+      image: importImage("disposable_forks_100pack.jpeg"),
+    },
+    {
+      name: "סכינים חד פעמיים",
+      image: importImage("disposable_knives_100pack.jpeg"),
+    },
+    {
+      name: "כפות חד פעמיים",
+      image: importImage("disposable_spoons_100pack.jpeg"),
+    },
+    {
+      name: "כפיות חד פעמיות",
+      image: importImage("disposable_teaspoons_100pack.jpeg"),
+    },
+    {
+      name: "צלחות גדולות",
+      image: importImage("large_plates_50pack.jpeg"),
+    },
+    {
+      name: "צלחות קטנות",
+      image: importImage("small_plates_50pack.jpeg"),
+    },
+    {
+      name: "מרקיות",
+      image: importImage("soup_bowls_25pack.jpeg"),
+    },
+    {
+      name: "מפיות אירוח",
+      image: importImage("hosting_napkins_180pack.jpeg"),
+    },
+    {
+      name: "כוסות גדולות לשתיה קרה",
+      image: importImage("cold_drink_cups_330ml_40pack.jpeg"),
+    },
+    {
+      name: "כוסות לחיים",
+      image: importImage("lchaim_cups_40pack.jpeg"),
+    },
+    {
+      name: "כוסות משקה חם קרטון",
+      image: importImage("hot_drink_cups_cardboard_235ml_50pack.jpeg"),
+    },
+    {
+      name: "מפות שולחן בגליל",
+      image: importImage("table_cloth_roll_135x240_8pack.jpeg"),
+    },
+    {
+      name: "סלטינות אובלי",
+      image: importImage("oval_salad_bowls_25pack.jpeg"),
+    },
+    {
+      name: "צלחות גדולות מקנה סוכר טבעי",
+      image: importImage("sugarcane_large_plates_25pack.jpeg"),
+    },
+    {
+      name: "ליפתניות",
+      image: importImage("ramekins_25pack.jpeg"),
+    },
+    {
+      name: "צלחות קטנות מקנה סוכר טבעי",
+      image: importImage("sugarcane_small_plates_25pack.jpg"),
+    },
+    {
+      name: "קעריות מקנה סוכר טבעי",
+      image: importImage("sugarcane_bowls_25pack.jpeg"),
+    },
+    {
+      name: "קשים מתקפלים לשתיה",
+      image: importImage("foldable_drinking_straws_40pack.jpeg"),
+    },
+    {
+      name: "זוג מפות שולחן עשויות מבד בלתי ארוג",
+      image: importImage("nonwoven_tablecloth_180x120_2pack.jpeg"),
+    },
+    {
+      name: "כוסות אספרסו",
+      image: importImage("espresso_cups_120ml_50pack_hanamal.jpeg"),
+    },
+    {
+      name: "כוסות וויסקי פלסטיק חזק במיוחד",
+      image: importImage("strong_plastic_whiskey_glasses_300ml_10pack_hanamal.jpeg"),
+    },
+    {
+      name: "כוסות יין",
+      image: importImage("wine_glasses_150ml_12pack_hanamal.jpeg"),
+    },
+    {
+      name: "כוסות שמפניה",
+      image: importImage("champagne_glasses_147ml_12pack_hanamal.jpeg"),
+    },
+    {
+      name: "כפות מעץ מתכלה",
+      image: importImage("biodegradable_wooden_spoons_25pack_tebnichel.jpeg"),
+    },
+    {
+      name: "מדליק פחמים אקולוגי",
+      image: importImage("eco_coal_lighter_32pack_easy_light.jpeg"),
+    },
+    {
+      name: "מדליק פחמים מוצק",
+      image: importImage("solid_coal_lighter_40pack_easy_light.jpeg"),
+    },
+    {
+      name: "מדליק פחמים נוזלי",
+      image: importImage("liquid_coal_lighter_250ml_easy_light.jpeg"),
+    },
+    {
+      name: "פחם דרום אמריקאי",
+      image: importImage("south_american_charcoal_2kg_hanamal.jpeg"),
+    },
+    {
+      name: "שיפודי במבוק ג'מבו עבים",
+      image: importImage("jumbo_bamboo_skewers_30cm_50pack_hostess.jpeg"),
+    },
+    {
+      name: "ליפתניות הגשה + מכסים",
+      image: importImage("serving_containers_with_lids_12_pack_namal.jpeg"),
+    },
+    {
+      name: "מארז תבניות אלומיניום לחלה חזקות ועבות במיוחד",
+      image: importImage("heavy_duty_aluminum_pans_challah_4pack_perfect.jpeg"),
+    },
+    {
+      name: "תבניות אלומיניום עבות וחזקות במיוחד גסטרונום ביתי",
+      image: importImage("heavy_duty_aluminum_pans_gastronome_2pack_perfect.jpeg"),
+    },
+    {
+      name: "ניירות אפיה",
+      image: importImage("baking_paper_sheets_perfect_50pack.jpeg"),
+    },
+    {
+      name: "גביעי נייר גודל 1.5",
+      image: importImage("paper_cups_size_1.5_130pack_namal.jpeg"),
+    },
+    {
+      name: "גביעי נייר גודל 2",
+      image: importImage("paper_cups_size_2_130pack_namal.jpeg"),
+    },
+    {
+      name: "גביעי נייר גודל 3",
+      image: importImage("paper_cups_size_3_130pack_namal.jpeg"),
+    },
+    {
+      name: "גביעי נייר גודל 4",
+      image: importImage("paper_cups_size_4_130pack_namal.jpeg"),
+    },
+    {
+      name: "גביעי נייר גודל 5",
+      image: importImage("paper_cups_size_5_130pack_namal.jpeg"),
+    },
+    {
+      name: "מגש הכסף שומר כיריים",
+      image: importImage("aluminum_stovetop_protector_4pack_namal.jpeg"),
+    },
+    {
+      name: "סיר אלומיניום + מכסה",
+      image: importImage("aluminum_pot_with_lid_5.3L_namal.jpeg"),
+    },
+    {
+      name: "שקיות לצלייה לתנור ולמיקרוגל",
+      image: importImage("oven_microwave_roasting_bags_10pack_namal.jpeg"),
+    },
+    {
+      name: "תבניות אלומיניום 41*30",
+      image: importImage("heavy_duty_aluminum_pans_roaster_41x30cm_namal.jpeg"),
+    },
+    {
+      name: "תבניות אלומיניום 46*34",
+      image: importImage("heavy_duty_aluminum_pans_roaster_46x34cm_namal.jpeg"),
+    },
+    {
+      name: "תבניות אלומיניום עגולות",
+      image: importImage("round_aluminum_pans_5pack_namal.jpeg"),
+    },
+    {
+      name: "תבניות אלומיניום קטנות + מכסים",
+      image: importImage("small_aluminum_pans_with_lids_10pack_namal.jpeg"),
+    },
+    {
+      name: "תבניות אלומיניום 37*27",
+      image: importImage("aluminum_pans_roaster_37x27cm_4pack_namal.jpeg"),
+    },
+    {
+      name: "תבנית אלומיניום מוארכת",
+      image: importImage("long_aluminum_pan_20pack_namal.jpeg"),
+    },
+    {
+      name: "תבניות אפייה ארוכות מקרטון",
+      image: importImage("long_baking_pans_cardboard_6pack_namal.jpeg"),
+    },
+    {
+      name: "תבנית אפייה משפחתית מקרטון",
+      image: importImage("family_size_baking_pan_cardboard_3pack_namal.jpeg"),
+    },
+    {
+      name: "נייר אפייה עשוי מחומרים מן הצומח",
+      image: importImage("eco_friendly_baking_paper_50pack_sano_sushi.jpeg"),
+    },
+    {
+      name: "תבניות אלומיניום מאפינס",
+      image: importImage("muffin_aluminum_pans_7pack_sano_sushi.jpeg"),
+    },
+    {
+      name: "תבניות אלומיניום עם ידיות אחיזה 25*20",
+      image: importImage("aluminum_pans_with_handles_25x20_sano_sushi.jpeg"),
+    },
+    {
+      name: "תבניות אלומיניום עם ידיות אחיזה 34*29",
+      image: importImage("aluminum_pans_with_handles_34x29_sano_sushi.jpeg"),
+    },
+    {
+      name: "חמגשית אלומיניום עם מכסה",
+      image: importImage("sano_sushi_aluminum_trays_with_lid_10pack.jpeg"),
+    },
+    {
+      name: "שקיות בד לבישול",
+      image: importImage("sano_sushi_cooking_bags_7pack.jpeg"),
+    },    
   ];
 
   const initialBagspackagingproducts = [
     {
+      name: "אריזות ואקום לאחסון רב פעמי",
+      image: importImage("vacuum_storage_bags_xxl_sano_sushi.jpeg"),
+    },
+    {
       name: "רדיד אלומיניום",
-      image: importImage('foil.jpeg'),
-    }
+      image: importImage("aluminum_foil_30cm_diamond_22.8m.jpeg"),
+    },
+    {
+      name: "נייר עטיפה לכריכים",
+      image: importImage("sandwich_wrap_paper_namal_100pack.jpeg"),
+    },
+    {
+      name: "ניילון נצמד",
+      image: importImage("microwave_safe_cling_film_sano_sushi_150m.jpeg"),
+    },
+    {
+      name: "שקיות אוכל מנייר",
+      image: importImage("paper_food_bags_sano_sushi_70pack.jpeg"),
+    },
+    {
+      name: "שקיות מזון נקשרות",
+      image: importImage("food_bags_tie_closure_sano_sushi_250pack.jpeg"),
+    },
+    {
+      name: "שקיות מזון נשלפות",
+      image: importImage("extra_large_food_bags_pull_out_sano_sushi_300pack.jpeg"),
+    },
+    {
+      name: "שקיות ריצ'רץ' לסגירה חוזרת - S",
+      image: importImage("zip_lock_bags_small_nicole_15pack.jpeg"),
+    },
+    {
+      name: "שקיות ריצ'רץ' לשימוש רב פעמי - L",
+      image: importImage("reusable_zip_lock_bags_large_nicole_12pack.jpeg"),
+    },
+    {
+      name: "שקיות רב שימושיות להקפאה, אחסון ואריזת מזון",
+      image: importImage("multi_use_storage_freezer_bags_nicole_250pack.jpeg"),
+    },
+    {
+      name: "שקיות אשפה L",
+      image: importImage("extra_strong_drawstring_garbage_bags_L_sano_sushi_60pack.jpeg"),
+    },
+    {
+      name: "שקיות אשפה S לפחים קטנים ",
+      image: importImage("small_garbage_bags_S_sano_sushi_100pack.jpeg"),
+    },
+    {
+      name: "שקיות אשפה XXL",
+      image: importImage("extra_large_garbage_bags_xxl_sano_sushi_20pack.jpeg"),
+    },
+    {
+      name: "כיסוי ניילון עם גומי",
+      image: importImage("plastic_wrap_with_elastic_L_sano_sushi_30pack.jpeg"),
+    },
   ];
 
   initialPaper.sort((a, b) => a.name.localeCompare(b.name, 'he'));
@@ -654,7 +1194,11 @@ const CleaningDisposablePage: React.FC = () => {
   initialKitchencleaning.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialGeneralcleaning.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialFloorcleaning.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-
+  initialBathroomtoilecleaning.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialPesticideproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialCleaningaccessories.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialDisposableproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialBagspackagingproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
 
 const [paper, setPaper] = useState<{ name: string; image: string | null; count: number }[]>(
@@ -718,50 +1262,50 @@ const [floorcleaning, setFloorcleaning] = useState<{ name: string; image: string
 );
 
 const [bathroomtoilecleaning, setBathroomtoilecleaning] = useState<{ name: string; image: string | null; count: number }[]>(
-  initialBathroomtoilecleaning.map(item => {
-    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  initialBathroomtoilecleaning.map(bathroomtoilecleaning => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === bathroomtoilecleaning.name);
     return {
-      ...item,
+      ...bathroomtoilecleaning,
       count: basketItem ? basketItem.quantity : 0,
     };
   })
 );
 
 const [pesticideproducts, setPesticideproducts] = useState<{ name: string; image: string | null; count: number }[]>(
-  initialPesticideproducts.map(item => {
-    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  initialPesticideproducts.map(pesticideproducts => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === pesticideproducts.name);
     return {
-      ...item,
+      ...pesticideproducts,
       count: basketItem ? basketItem.quantity : 0,
     };
   })
 );
 
 const [cleaningaccessories, setCleaningaccessories] = useState<{ name: string; image: string | null; count: number }[]>(
-  initialCleaningaccessories.map(item => {
-    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  initialCleaningaccessories.map(cleaningaccessories => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === cleaningaccessories.name);
     return {
-      ...item,
+      ...cleaningaccessories,
       count: basketItem ? basketItem.quantity : 0,
     };
   })
 );
 
 const [disposableproducts, setDisposableproducts] = useState<{ name: string; image: string | null; count: number }[]>(
-  initialDisposableproducts.map(item => {
-    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  initialDisposableproducts.map(disposableproducts => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === disposableproducts.name);
     return {
-      ...item,
+      ...disposableproducts,
       count: basketItem ? basketItem.quantity : 0,
     };
   })
 );
 
 const [bagspackagingproducts, setBagspackagingproducts] = useState<{ name: string; image: string | null; count: number }[]>(
-  initialBagspackagingproducts.map(item => {
-    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  initialBagspackagingproducts.map(bagspackagingproducts => {
+    const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === bagspackagingproducts.name);
     return {
-      ...item,
+      ...bagspackagingproducts,
       count: basketItem ? basketItem.quantity : 0,
     };
   })
@@ -778,11 +1322,11 @@ useEffect(() => {
     setKitchencleaning(kitchencleaning.map(kitchencleaning => kitchencleaning.name === name ? { ...kitchencleaning, count: kitchencleaning.count + 1 } : kitchencleaning));
     setGeneralcleaning(generalcleaning.map(generalcleaning => generalcleaning.name === name ? { ...generalcleaning, count: generalcleaning.count + 1 } : generalcleaning));
     setFloorcleaning(floorcleaning.map(floorcleaning => floorcleaning.name === name ? { ...floorcleaning, count: floorcleaning.count + 1 } : floorcleaning));
-    setBathroomtoilecleaning(bathroomtoilecleaning.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
-    setPesticideproducts(pesticideproducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
-    setCleaningaccessories(cleaningaccessories.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
-    setDisposableproducts(disposableproducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
-    setBagspackagingproducts(bagspackagingproducts.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
+    setBathroomtoilecleaning(bathroomtoilecleaning.map(bathroomtoilecleaning => bathroomtoilecleaning.name === name ? { ...bathroomtoilecleaning, count: bathroomtoilecleaning.count + 1 } : bathroomtoilecleaning));
+    setPesticideproducts(pesticideproducts.map(pesticideproducts => pesticideproducts.name === name ? { ...pesticideproducts, count: pesticideproducts.count + 1 } : pesticideproducts));
+    setCleaningaccessories(cleaningaccessories.map(cleaningaccessories => cleaningaccessories.name === name ? { ...cleaningaccessories, count: cleaningaccessories.count + 1 } : cleaningaccessories));
+    setDisposableproducts(disposableproducts.map(disposableproducts => disposableproducts.name === name ? { ...disposableproducts, count: disposableproducts.count + 1 } : disposableproducts));
+    setBagspackagingproducts(bagspackagingproducts.map(bagspackagingproducts => bagspackagingproducts.name === name ? { ...bagspackagingproducts, count: bagspackagingproducts.count + 1 } : bagspackagingproducts));
   };
 
   const handleDecrement = (name: string) => {
@@ -852,59 +1396,59 @@ useEffect(() => {
       return floorcleaning;
     }));
     
-    setBathroomtoilecleaning(bathroomtoilecleaning.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setBathroomtoilecleaning(bathroomtoilecleaning.map(bathroomtoilecleaning => {
+      if (bathroomtoilecleaning.name === name && bathroomtoilecleaning.count > 0) {
+        const newCount = bathroomtoilecleaning.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(bathroomtoilecleaning.name);
         }
-        return { ...item, count: newCount };
+        return { ...bathroomtoilecleaning, count: newCount };
       }
-      return item;
+      return bathroomtoilecleaning;
     }));
     
-    setPesticideproducts(pesticideproducts.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setPesticideproducts(pesticideproducts.map(pesticideproducts => {
+      if (pesticideproducts.name === name && pesticideproducts.count > 0) {
+        const newCount = pesticideproducts.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(pesticideproducts.name);
         }
-        return { ...item, count: newCount };
+        return { ...pesticideproducts, count: newCount };
       }
-      return item;
+      return pesticideproducts;
     }));
     
-    setCleaningaccessories(cleaningaccessories.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setCleaningaccessories(cleaningaccessories.map(cleaningaccessories => {
+      if (cleaningaccessories.name === name && cleaningaccessories.count > 0) {
+        const newCount = cleaningaccessories.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(cleaningaccessories.name);
         }
-        return { ...item, count: newCount };
+        return { ...cleaningaccessories, count: newCount };
       }
-      return item;
+      return cleaningaccessories;
     }));
     
-    setDisposableproducts(disposableproducts.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setDisposableproducts(disposableproducts.map(disposableproducts => {
+      if (disposableproducts.name === name && disposableproducts.count > 0) {
+        const newCount = disposableproducts.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(disposableproducts.name);
         }
-        return { ...item, count: newCount };
+        return { ...disposableproducts, count: newCount };
       }
-      return item;
+      return disposableproducts;
     }));
     
-    setBagspackagingproducts(bagspackagingproducts.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
+    setBagspackagingproducts(bagspackagingproducts.map(bagspackagingproducts => {
+      if (bagspackagingproducts.name === name && bagspackagingproducts.count > 0) {
+        const newCount = bagspackagingproducts.count - 1;
         if (newCount === 0) {
-          removeProduct(item.name);
+          removeProduct(bagspackagingproducts.name);
         }
-        return { ...item, count: newCount };
+        return { ...bagspackagingproducts, count: newCount };
       }
-      return item;
+      return bagspackagingproducts;
     }));
    };
 
@@ -915,11 +1459,11 @@ useEffect(() => {
     const kitchencleaningToSave = kitchencleaning.filter(kitchencleaning => kitchencleaning.count > 0).map(kitchencleaning => ({ ...kitchencleaning, quantity: kitchencleaning.count }));
     const generalcleaningToSave = generalcleaning.filter(generalcleaning => generalcleaning.count > 0).map(generalcleaning => ({ ...generalcleaning, quantity: generalcleaning.count }));
     const floorcleaningToSave = floorcleaning.filter(floorcleaning => floorcleaning.count > 0).map(floorcleaning => ({ ...floorcleaning, quantity: floorcleaning.count }));
-    const bathroomtoilecleaningToSave = bathroomtoilecleaning.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const pesticideproductsToSave = pesticideproducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const cleaningaccessoriesToSave = cleaningaccessories.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const disposableproductsToSave = disposableproducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
-    const bagspackagingproductsToSave = bagspackagingproducts.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
+    const bathroomtoilecleaningToSave = bathroomtoilecleaning.filter(bathroomtoilecleaning => bathroomtoilecleaning.count > 0).map(bathroomtoilecleaning => ({ ...bathroomtoilecleaning, quantity: bathroomtoilecleaning.count }));
+    const pesticideproductsToSave = pesticideproducts.filter(pesticideproducts => pesticideproducts.count > 0).map(pesticideproducts => ({ ...pesticideproducts, quantity: pesticideproducts.count }));
+    const cleaningaccessoriesToSave = cleaningaccessories.filter(cleaningaccessories => cleaningaccessories.count > 0).map(cleaningaccessories => ({ ...cleaningaccessories, quantity: cleaningaccessories.count }));
+    const disposableproductsToSave = disposableproducts.filter(disposableproducts => disposableproducts.count > 0).map(disposableproducts => ({ ...disposableproducts, quantity: disposableproducts.count }));
+    const bagspackagingproductsToSave = bagspackagingproducts.filter(bagspackagingproducts => bagspackagingproducts.count > 0).map(bagspackagingproducts => ({ ...bagspackagingproducts, quantity: bagspackagingproducts.count }));
 
     const allCleaningDisposable= [
       ...paperToSave,
@@ -1014,7 +1558,7 @@ useEffect(() => {
       <div>
         <ProductsPage
           products={pesticideproducts}
-          categoryTitle="מוצרי הדברה"
+          categoryTitle="מוצרי הדברה ואינסטלציה"
           icon={<img alt="" src={importImage('pesticide_icon.png')} />}
           onIncrement={handleIncrement}
           onDecrement={handleDecrement}
