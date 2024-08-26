@@ -13,7 +13,7 @@ const importImage = (imageName: string) => {
 
 const ComparingCarts: React.FC = () => {
   const location = useLocation();
-  const { superCarts, client_info } = location.state || {};
+  const { superCarts, missingProducts , client_info } = location.state || {};
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -102,6 +102,14 @@ const ComparingCarts: React.FC = () => {
     }
   };
 
+  const renderMissingProducts = (cartName: string) => {
+    const myMissingProducts = missingProducts.find((item) => item.name === cartName);
+    if (!myMissingProducts || myMissingProducts.products.length === 0) {
+      return 'אין חוסרים';
+    }
+    return myMissingProducts.products.map((p) => p.name).join(', ');
+  };
+
   return (
     <div className="comparing-carts-container">
       <h1 className="result-header">:תוצאה</h1>
@@ -120,6 +128,10 @@ const ComparingCarts: React.FC = () => {
               <div className="cart-content">
                 {logo && <img src={logo} alt={`${cart.name} Logo`} className="cart-logo" />}
                 <h2 className="cart-header">{cart.name}</h2>
+                <div>
+                <p className="cart-missingProducts">:מוצרים חסרים</p>
+                <p className="cart-missingProducts-list">{renderMissingProducts(cart.name)}</p>
+                </div>
                 <p className="cart-price">מחיר סל: {cart.totalPrice.toFixed(2)}</p>
                 <p className="delivery-price">דמי משלוח: {deliveryPrice}</p>
                 <p className="total-price">סה"כ לתשלום: {totalWithDelivery.toFixed(2)}</p>

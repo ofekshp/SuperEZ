@@ -88,7 +88,7 @@ interface Product {
           body: JSON.stringify({ products: myCart }),
         });
         const data = await response.json();
-        console.log(data);
+        console.log("my data:", data);
         return data;
       } catch (error) {
         console.error('Error get CHEAP CART:', error);

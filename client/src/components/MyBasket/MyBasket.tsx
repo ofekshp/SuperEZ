@@ -73,7 +73,8 @@ const MyBasket: React.FC = () => {
       const response = await cartService.getCheapCart(basketProducts);
       navigate('/comparingCarts', { 
         state: { 
-          superCarts: response,
+          superCarts: response.sortedCarts,
+          missingProducts: response.storeNull,
           client_info: client_info,
           basketProducts: basketProducts
         } 
