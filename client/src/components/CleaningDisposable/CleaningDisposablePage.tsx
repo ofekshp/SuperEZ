@@ -1489,7 +1489,6 @@ const CleaningDisposablePage: React.FC = () => {
   initialDisposableproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialBagspackagingproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-
 const [paper, setPaper] = useState<{ name: string; image: string | null; count: number }[]>(
   initialPaper.map(paper => {
     const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === paper.name);

@@ -2,7 +2,6 @@ const CompareCart = require('../models/CompareCart');
 
 const compareCart = async (req, res) => {
   const { products } = req.body;
-  console.log(' My products:', products);
   try {
     const carts = [
       { name: 'רמי לוי', totalPrice: 0, products: [] },
@@ -20,19 +19,19 @@ const compareCart = async (req, res) => {
 
     const getCategoryById = {
       1: "ירקות ופירות טריים",
-      2: "פירות יבשים פיצוחים ואגוזים",
+      2: "פירות יבשים, פיצוחים ואגוזים",
       3: "תבלינים",
-      4: "חלב ביצים ותחליפים ומשקאות צמחיים",
-      5: "סלטים רטבים ממרחים",
+      4: "מוצרי חלב, תחליפים וביצים",
+      5: "סלטים רטבים וממרחים",
       6: "עוף, בשר, נקניקים ודגים",
       7: "אורגני ובריאות",
       8: "קפואים",
       9: "שימורים",
-      10: "אפיה ובישול",
+      10: "אפייה ובישול",
       11: "אסיאתי",
       12: "קטניות ודגנים",
       13: "מתוקים וחטיפים",
-      14: "אחזקת הבית ובעלי חיים (אביזרי ניקיון, ניקוי כללי, אחסון קופסאות וכו׳)",
+      14: "אחזקת הבית ובעלי חיים",
       15: "משקאות",
       16: "חד פעמי",
       17: "פארם ותינוקות"
@@ -49,12 +48,19 @@ const compareCart = async (req, res) => {
         while (index < dbProductCategory.length) {
           dbProduct = dbProductCategory.find((dbProduct, i) => {
             if (i >= index) {
-              const regex = new RegExp(product.name.split(' ').join('.*'), 'i');
+              const regexPattern = product.name
+                .split(/\s+/)
+                .map(word => word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+                .join('.*');
+              
+              const regex = new RegExp(regexPattern, 'i');
+              
               const match = regex.test(dbProduct.name);
               return match;
             }
             return false;
           });
+          
   
           if (dbProduct && dbProduct.prices[0]._doc[cart.name]) {
             break;
