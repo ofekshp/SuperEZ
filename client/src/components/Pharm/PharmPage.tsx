@@ -67,8 +67,23 @@ const PharmPage: React.FC = () => {
     { name: "מבשם אוויר אריגים וארונות בניחוח מאסק", image: importImage('musk-scented_fabric_and_closet_air_freshener.jpeg') },
   ];
   const initialCandlesmatches = [
-    { name: "נר נשמה 26 שעות", image: importImage('26_hour_soul_candle.jpeg') },
-  ];
+      { name: "נר נשמה 26 שעות", image: importImage('ner_neshama_26_hours.jpg'), id: 17 },
+      { name: "נר נשמה 48 שעות", image: importImage('ner_neshama_48_hours.jpg'), id: 17 },
+      { name: "נר נשמה 72 שעות", image: importImage('ner_neshama_72_hours.jpg'), id: 17 },
+
+      { name: "נר נשמה 7 ימים", image: importImage('ner_neshama_7_days.jpg'), id: 17 },
+      { name: "נרות שבת", image: importImage('shabbat_candles.jpg'), id: 17 },
+      { name: "נרות חימום", image: importImage('heating_candles.jpg'), id: 17 },
+      { name: "נריות לכוסיות", image: importImage('candles_for_cups.jpg'), id: 17 },
+      { name: "נר הבדלה", image: importImage('havdalah_candle.jpg'), id: 17 },
+      { name: "גפרורים", image: importImage('matches_pack.png'), id: 17 },
+      { name: "גפרור ארוך", image: importImage('long_matches.png'), id: 17 },
+      { name: "גפרורי בטיחות - גפרורים ארוכים", image: importImage('safety_long_matches.png'), id: 17 },
+      { name: "מגן פמוט", image: importImage('candle_holder_protector.jpg'), id: 17 },
+      { name: "נרות", image: importImage('candles.jpg'), id: 17 },
+      { name: "נרות במעטפת מתכתית", image: importImage('candles_metal_wrap.png'), id: 17 }
+    
+      ];
 
 const [shampoo, setShampoo] = useState<{ name: string; image: string | null; count: number }[]>(
   initialShampoo.map(item => {
