@@ -1489,7 +1489,6 @@ const CleaningDisposablePage: React.FC = () => {
   initialDisposableproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialBagspackagingproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
-
 const [paper, setPaper] = useState<{ name: string; image: string | null; count: number }[]>(
   initialPaper.map(paper => {
     const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === paper.name);
@@ -1771,119 +1770,236 @@ useEffect(() => {
     allCleaningDisposable.forEach(item => addProduct(item));
 
   };
+  
+const [searchTerm, setSearchTerm] = useState("");
+
+const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(event.target.value);
+};
+
+  const filterPaper = paper.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterLaundryProducts = laundryproducts.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterCleaningProducts = cleaningproducts.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterKitchenCleaning = kitchencleaning.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterGeneralCleaning = generalcleaning.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterFloorCleaning = floorcleaning.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterBathroomToileCleaning = bathroomtoilecleaning.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterPesticideProducts = pesticideproducts.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterCleaningAccessories = cleaningaccessories.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterDisposableProducts = disposableproducts.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
+  const filterBagsPackagingProducts = bagspackagingproducts.filter(item =>
+    item.name.includes(searchTerm)
+  );
+  
 
   return (
-    <div>
-      <div>
-        <ProductsPage
-          products={paper}
-          categoryTitle="נייר ומוצריו"
-          icon={<img alt="" src={importImage('paper_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={laundryproducts}
-          categoryTitle="מוצרי כביסה"
-          icon={<img alt="" src={importImage('laundryproducts_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={cleaningproducts}
-          categoryTitle="ניקוי כלים"
-          icon={<img alt="" src={importImage('cleaningproducts_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={kitchencleaning}
-          categoryTitle="ניקוי מטבח"
-          icon={<img alt="" src={importImage('kitchen_cleaning_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={generalcleaning}
-          categoryTitle="ניקוי כללי"
-          icon={<img alt="" src={importImage('general_cleaning_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={floorcleaning}
-          categoryTitle="ניקוי רצפה"
-          icon={<img alt="" src={importImage('floor_cleaning_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={bathroomtoilecleaning}
-          categoryTitle="ניקוי אמבטיה ושירותים"
-          icon={<img alt="" src={importImage('bathroom_cleaning_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={pesticideproducts}
-          categoryTitle="מוצרי הדברה ואינסטלציה"
-          icon={<img alt="" src={importImage('pesticide_icon.png')} />}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={cleaningaccessories}
-          categoryTitle="אביזרי ניקוי"
-          icon={<img alt="" src={importImage('cleaning_accessories_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={disposableproducts}
-          categoryTitle="מוצרים חד פעמיים"
-          icon={<img alt="" src={importImage('disposable_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={bagspackagingproducts}
-          categoryTitle="שקיות ומוצרי אריזה"
-          icon={<img alt="" src={importImage('bag_packaging_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
+    <div> 
+    <div style={{
+       position: 'absolute',
+       marginTop: '100px',
+       width: '100%',
+       display: 'flex',
+       justifyContent: 'center',
+     }}>
+       <div style={{ position: 'relative' }}>
+         <input
+           type="text"
+           placeholder="חפש מוצר נקיון/חד-פעמי"
+           value={searchTerm}
+           onChange={handleSearch}
+           style={{
+             width: '100%',
+             padding: '5px 40px 5px 5px',
+             borderRadius: '8px',
+             border: '1px solid #ccc',
+             textAlign: 'right',
+             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+           }}
+         />
+         <i className="fas fa-search" style={{
+           position: 'absolute',
+           right: '-33px',
+           top: '50%',
+           transform: 'translateY(-50%)',
+           color: '#aaa',
+           pointerEvents: 'none',
+         }}></i>
+       </div>
+   </div>
+   <div>
+  {filterPaper.length > 0 && (
+    <ProductsPage
+      products={filterPaper}
+      categoryTitle="נייר ומוצריו"
+      icon={<img alt="" src={importImage('paper_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterLaundryProducts.length > 0 && (
+    <ProductsPage
+      products={filterLaundryProducts}
+      categoryTitle="מוצרי כביסה"
+      icon={<img alt="" src={importImage('laundryproducts_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterCleaningProducts.length > 0 && (
+    <ProductsPage
+      products={filterCleaningProducts}
+      categoryTitle="ניקוי כלים"
+      icon={<img alt="" src={importImage('cleaningproducts_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterKitchenCleaning.length > 0 && (
+    <ProductsPage
+      products={filterKitchenCleaning}
+      categoryTitle="ניקוי מטבח"
+      icon={<img alt="" src={importImage('kitchen_cleaning_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterGeneralCleaning.length > 0 && (
+    <ProductsPage
+      products={filterGeneralCleaning}
+      categoryTitle="ניקוי כללי"
+      icon={<img alt="" src={importImage('general_cleaning_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterFloorCleaning.length > 0 && (
+    <ProductsPage
+      products={filterFloorCleaning}
+      categoryTitle="ניקוי רצפה"
+      icon={<img alt="" src={importImage('floor_cleaning_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterBathroomToileCleaning.length > 0 && (
+    <ProductsPage
+      products={filterBathroomToileCleaning}
+      categoryTitle="ניקוי אמבטיה ושירותים"
+      icon={<img alt="" src={importImage('bathroom_cleaning_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterPesticideProducts.length > 0 && (
+    <ProductsPage
+      products={filterPesticideProducts}
+      categoryTitle="מוצרי הדברה ואינסטלציה"
+      icon={<img alt="" src={importImage('pesticide_icon.png')} />}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterCleaningAccessories.length > 0 && (
+    <ProductsPage
+      products={filterCleaningAccessories}
+      categoryTitle="אביזרי ניקוי"
+      icon={<img alt="" src={importImage('cleaning_accessories_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterDisposableProducts.length > 0 && (
+    <ProductsPage
+      products={filterDisposableProducts}
+      categoryTitle="מוצרים חד פעמיים"
+      icon={<img alt="" src={importImage('disposable_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+<div>
+  {filterBagsPackagingProducts.length > 0 && (
+    <ProductsPage
+      products={filterBagsPackagingProducts}
+      categoryTitle="שקיות ומוצרי אריזה"
+      icon={<img alt="" src={importImage('bag_packaging_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
+
     </div>
   );
 };

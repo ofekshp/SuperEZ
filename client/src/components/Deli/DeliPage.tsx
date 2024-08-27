@@ -33,7 +33,7 @@ const DeliPage: React.FC = () => {
       id: 4,
     },
     { 
-      name: "חלב בקרטון 1%", 
+      name: "חלב 1% קרטון", 
       image: importImage('milk_carton_1_percent.jpeg'), 
       id: 4,
     },
