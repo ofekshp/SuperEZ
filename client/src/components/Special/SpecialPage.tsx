@@ -1565,74 +1565,137 @@ useEffect(() => {
   return (
     <div>
       <div>
-        <ProductsPage
-          products={organic}
-          categoryTitle="אורגני"
-          icon={<img alt="" src={importImage('organic_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
+      <ProductsPage
+    products={organic}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>אורגני</span>
+        <img 
+          src={importImage('organic_icon.png')} 
+          alt="" 
+          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
-      <div>
-        <ProductsPage
-          products={glutenfree}
-          categoryTitle="ללא גלוטן"
-          icon={<img alt="" src={importImage('glutenfree_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
       </div>
       <div>
-        <ProductsPage
-          products={noaddedsugar}
-          categoryTitle="ללא תוספת סוכר"
-          icon={<img alt="" src={importImage('noaddedsugar_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
+      <ProductsPage
+    products={glutenfree}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>ללא גלוטן</span>
+        <img 
+          src={importImage('glutenfree_icon.png')} 
+          alt="" 
+          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
-      <div>
-        <ProductsPage
-          products={herbaldrinks}
-          categoryTitle="משקאות צמחיים"
-          icon={<img alt="" src={importImage('herbaldrinks_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
       </div>
       <div>
-        <ProductsPage
-          products={cheesesubstitutes}
-          categoryTitle="תחליפי גבינה, מעדנים ורטבים"
-          icon={<img alt="" src={importImage('cheesesubstitutes_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
+      <ProductsPage
+    products={noaddedsugar}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>ללא תוספת סוכר</span>
+        <img 
+          src={importImage('noaddedsugar_icon.png')} 
+          alt="" 
+          style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
-      <div>
-        <ProductsPage
-          products={tofuseitanmeatsubstitutes}
-          categoryTitle="טופו, סייטן ותחליפי בשר"
-          icon={<img alt="" src={importImage('tofuseitanmeatsubstitutes_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
       </div>
       <div>
-        <ProductsPage
-          products={frozenfromtheplant}
-          categoryTitle="קפואים מן הצומח"
-          icon={<img alt="" src={importImage('frozenfromtheplant_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
+      <ProductsPage
+    products={herbaldrinks}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>משקאות צמחיים</span>
+        <img 
+          src={importImage('herbaldrinks_icon.png')} 
+          alt="" 
+          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+      </div>
+      <div>
+      <ProductsPage
+    products={cheesesubstitutes}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>תחליפי גבינה, מעדנים ורטבים</span>
+        <img 
+          src={importImage('cheesesubstitutes_icon.png')} 
+          alt="" 
+          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+      </div>
+      <div>
+      <ProductsPage
+    products={tofuseitanmeatsubstitutes}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>טופו סייטן ותחליפי בשר</span>
+        <img 
+          src={importImage('tofuseitanmeatsubstitutes_icon.png')} 
+          alt="" 
+          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
+      </div>
+      <div>
+      <ProductsPage
+    products={frozenfromtheplant}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>קפואים מן הצומח</span>
+        <img 
+          src={importImage('frozenfromtheplant_icon.png')} 
+          alt="" 
+          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
       </div>
     </div>
   );
