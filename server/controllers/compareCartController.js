@@ -1,8 +1,26 @@
 const CompareCart = require('../models/CompareCart');
 
+function filterIrrelevantWords(words, irrelevantWords) {
+  return words.filter(word => !irrelevantWords.includes(word));
+}
+function extractSearchTerms(productName) {
+  return productName.split(/\s+/).filter(word => word.length > 0);
+}
+
+function calculateMatchScore(productName, dbProductName) {
+  const irrelevantWordsInSite = ['קפוא','בטעם','ניקוי','ותמצית','תמצית','בתוספת','בריח','בניחוח','עם','ממרח', 'קלאסי', 'איטלקי', 'טרי', 'מהדרין']; // website
+  const irrelevantWordsInDb = ['קפוא','להקפצה','יטבתה','רמי לוי','תנובה','של','עם','אריאל', 'מיכל', 'קלאסי', 'אנסקי','בניחוח','בריח']; //  database
+
+  const productWords = filterIrrelevantWords(extractSearchTerms(productName), irrelevantWordsInSite);
+  const dbProductWords = filterIrrelevantWords(extractSearchTerms(dbProductName), irrelevantWordsInDb);
+
+  const commonWords = productWords.filter(word => dbProductWords.includes(word));
+  return commonWords.length / productWords.length;
+}
+
 const compareCart = async (req, res) => {
   const { products } = req.body;
-  console.log(' My products:', products);
+
   try {
     const carts = [
       { name: 'רמי לוי', totalPrice: 0, products: [] },
@@ -18,56 +36,37 @@ const compareCart = async (req, res) => {
       { name: 'טיב טעם', products: [] }
     ];
 
-    const getCategoryById = {
-      1: "ירקות ופירות טריים",
-      2: "פירות יבשים פיצוחים ואגוזים",
-      3: "תבלינים",
-      4: "חלב ביצים ותחליפים ומשקאות צמחיים",
-      5: "סלטים רטבים ממרחים",
-      6: "עוף, בשר, נקניקים ודגים",
-      7: "אורגני ובריאות",
-      8: "קפואים",
-      9: "שימורים",
-      10: "אפיה ובישול",
-      11: "אסיאתי",
-      12: "קטניות ודגנים",
-      13: "מתוקים וחטיפים",
-      14: "אחזקת הבית ובעלי חיים (אביזרי ניקיון, ניקוי כללי, אחסון קופסאות וכו׳)",
-      15: "משקאות",
-      16: "חד פעמי",
-      17: "פארם ותינוקות"
-    };
-
     for (const product of products) {
-      const categoryName = getCategoryById[product.id];
-      const dbProductCategory = await CompareCart.find({ category: categoryName });
-    
-      for (const cart of carts) {
-        let dbProduct;
-        let index = 0;
+      const searchTerms = extractSearchTerms(product.name);
 
-        while (index < dbProductCategory.length) {
-          dbProduct = dbProductCategory.find((dbProduct, i) => {
-            if (i >= index) {
-              const regex = new RegExp(product.name.split(' ').join('.*'), 'i');
-              const match = regex.test(dbProduct.name);
-              return match;
+      const query = {
+        $and: searchTerms.map(term => ({
+          name: { $regex: term, $options: 'i' }
+        }))
+      };
+
+      const dbProducts = await CompareCart.find(query);
+
+      for (const cart of carts) {
+        let bestMatch = null;
+        let lowestPrice = Number.MAX_VALUE;
+
+        dbProducts.forEach(dbProduct => {
+          const score = calculateMatchScore(product.name, dbProduct.name);
+          if (score > 0) {
+            const priceStore = dbProduct.prices[0]._doc[cart.name];
+            if (priceStore < lowestPrice) {
+              lowestPrice = priceStore;
+              bestMatch = dbProduct;
             }
-            return false;
-          });
-  
-          if (dbProduct && dbProduct.prices[0]._doc[cart.name]) {
-            break;
           }
-          index++;
-        }
-    
-        if (dbProduct && dbProduct.prices[0]._doc[cart.name]) {
-          const priceStore = dbProduct.prices[0]._doc[cart.name];
-          cart.totalPrice += (priceStore * product.quantity);
+        });
+
+        if (bestMatch && lowestPrice < Number.MAX_VALUE) {
+          cart.totalPrice += lowestPrice * product.quantity;
           cart.products.push({
-            name: dbProduct.name,
-            price: priceStore.toFixed(2),
+            name: bestMatch.name,
+            price: lowestPrice.toFixed(2),
             quantity: product.quantity,
           });
         } else {
@@ -78,7 +77,7 @@ const compareCart = async (req, res) => {
 
     console.log('storeNull:', storeNull);
     const sortedCarts = carts.sort((a, b) => a.totalPrice - b.totalPrice);
-    res.status(200).json({sortedCarts , storeNull});
+    res.status(200).json({ sortedCarts, storeNull });
 
   } catch (error) {
     console.error('Error comparing products:', error);

@@ -14,6 +14,7 @@ const importImage = (imageName: string) => {
 const DrinksPage: React.FC = () => {
   const { addProduct , removeProduct } = useBasket();
   const savedBasket = JSON.parse(localStorage.getItem('basketProducts') || '[]');
+  
   const initialWaterDrinks = [
     // { name: "מים מינרליים<br />בקבוק 500 מ״ל", image: importImage('mineral_water_500ml.jpeg'), id: 15 },
     { name: "מים מינרליים", image: importImage('mineral_water_1l.jpg'), id: 15 },
