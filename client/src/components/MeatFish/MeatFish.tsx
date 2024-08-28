@@ -902,96 +902,159 @@ const filterFrozenFishProducts = frozenFishProducts.filter(product =>
       </div>
   
   </div>
+  <div>
+
   {filterChickenProducts.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterChickenProducts}
-      categoryTitle="מוצרי עוף"
-      icon={<img alt="" src={importImage('chicken_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+         <ProductsPage
+         products={filterChickenProducts}
+         categoryTitle={
+           <div style={{ display: 'flex', alignItems: 'center' }}>
+             <span style={{ verticalAlign: 'middle' }}>מוצרי עוף</span>
+             <img 
+               src={importImage('chicken.png')} 
+               alt="" 
+               style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+             />
+           </div>
+         }
+         icon={null}
+         onIncrement={handleIncrement}
+         onDecrement={handleDecrement}
+         onSave={handleSave}
+         />
 )}
-
+</div>
+<div>
 {filterIndiaProducts.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterIndiaProducts}
-      categoryTitle="מוצרי הודו"
-      icon={<img alt="" src={importImage('india_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+     <ProductsPage
+     products={filterIndiaProducts}
+     categoryTitle={
+       <div style={{ display: 'flex', alignItems: 'center' }}>
+         <span style={{ verticalAlign: 'middle' }}>מוצרי הודו</span>
+         <img 
+           src={importImage('india.png')} 
+           alt="" 
+           style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+         />
+       </div>
+     }
+     icon={null}
+     onIncrement={handleIncrement}
+     onDecrement={handleDecrement}
+     onSave={handleSave}
+     />
 )}
-
+</div>
+<div>
 {filterBeefLambProducts.length > 0 && (
-  <div>
     <ProductsPage
-      products={filterBeefLambProducts}
-      categoryTitle="בשר בקר וכבש"
-      icon={<img alt="" src={importImage('beef_lamb_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
+    products={filterBeefLambProducts}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>בשר בקר וכבש</span>
+        <img 
+          src={importImage('beef_lamb.png')} 
+          alt="" 
+          style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
     />
-  </div>
 )}
+</div>
+<div>
 
 {filterFrozenBeefChickenProducts.length > 0 && (
-  <div>
     <ProductsPage
-      products={filterFrozenBeefChickenProducts}
-      categoryTitle="בשר בקר ועוף קפוא"
-      icon={<img alt="" src={importImage('frozen_beef_chicken_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
+    products={filterFrozenBeefChickenProducts}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>בשר בקר ועוף קפוא</span>
+        <img 
+          src={importImage('frozen_beef_chicken.png')} 
+          alt="" 
+          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
     />
-  </div>
 )}
+</div>
+<div>
 
 {filterSausageProducts.length > 0 && (
-  <div>
-    <ProductsPage
+      <ProductsPage
       products={filterSausageProducts}
-      categoryTitle="נקניקיות"
-      icon={<img alt="" src={importImage('sausage_icon.png')} />}
+      categoryTitle={
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <span style={{ verticalAlign: 'middle' }}>נקניקיות</span>
+          <img 
+            src={importImage('sausage.png')} 
+            alt="" 
+            style={{ width: '60px', height: '40px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+          />
+        </div>
+      }
+      icon={null}
       onIncrement={handleIncrement}
       onDecrement={handleDecrement}
       onSave={handleSave}
-    />
-  </div>
+      />
 )}
+</div>
+<div>
 
 {filterFreshFishProducts.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterFreshFishProducts}
-      categoryTitle="דגים טריים"
-      icon={<img alt="" src={importImage('fresh_fish_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+       <ProductsPage
+       products={filterFreshFishProducts}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>דגים טריים</span>
+           <img 
+             src={importImage('fresh_fish.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+       />
 )}
+</div>
+<div>
 
 {filterFrozenFishProducts.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterFrozenFishProducts}
-      categoryTitle="דגים קפואים"
-      icon={<img alt="" src={importImage('frozen_fish_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+        <ProductsPage
+        products={filterFrozenFishProducts}
+        categoryTitle={
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ verticalAlign: 'middle' }}>דגים קפואים</span>
+            <img 
+              src={importImage('frozen_fish.png')} 
+              alt="" 
+              style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+            />
+          </div>
+        }
+        icon={null}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onSave={handleSave}
+        />
 )}
+</div>
+
   </div>
   );
 };
