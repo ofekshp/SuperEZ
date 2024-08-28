@@ -22,8 +22,11 @@ const PharmPage: React.FC = () => {
     { name: "שמפו לשיער יבש בתוספת קרטין", image: importImage('shampoo_for_dry_hair_with_keratin.jpg'), id: 17 },
     { name: "שמפו לשיער יבש בתוספת שמן מרוקאי", image: importImage('shampoo_for_dry_hair_with_moroccan_oil.jpg'), id: 17 },
     { name: "שמפו קרטין שמן מרולה", image: importImage('shampoo_with_keratin_and_marula_oil.jpg'), id: 17 },
+    { name: "שמפו גוג'י ברי", image: importImage('shampoo_goji_berry.jpg'), id: 17 },
+    { name: "שמפו מאצ'ה ומלפפון", image: importImage('shampoo_matcha_and_cucumber.jpg'), id: 17 },
     { name: "שמפו לקרקפת שומנית", image: importImage('shampoo_for_oily_hair.jpg'), id: 17 },
-    { name: "שמפו תפוח", image: importImage('shampoo_with_apple.jpg'), id: 17 },
+    { name: "שמפו חומץ תפוחים", image: importImage('shampoo_apple_vinegar.jpg'), id: 17 },
+    { name: "שמפו תפוח וזרעי צ׳יה", image: importImage('shampoo_apple_and_chia_seeds.jpg'), id: 17 },
     { name: "שמפו שמן אבוקדו ותמצית קלנדולה", image: importImage('shampoo_with_Avocado_oil_and_calendula.avif'), id: 17 },
     { name: "שמפו ויטמין C", image: importImage('shampoo_with_vitamin_C.jpg'), id: 17 },
     { name: "שמפו ויטמין E", image: importImage('shampoo_with_vitamin_E.jpg'), id: 17 },
@@ -46,8 +49,11 @@ const PharmPage: React.FC = () => {
     { name: "שמפו לחות מוגברת", image: importImage('shampoo_increased_moisture.jpg'), id: 17 },
     { name: "שמפו עם שמני הזנה", image: importImage('shampoo_with_nourishing_oils.jpg'), id: 17 },
     { name: "שמפו קרטין לאחר החלקה ועיצוב בחום", image: importImage('shampoo_keratin_after_heat_styling.jpg'), id: 17 },
+    { name: "שמפו למניעת קשקשים שמן עץ התה ואסאי", image: importImage('anti_dandruff_shampoo_with_tea_tree_oil_and_acai.jpg'), id: 17 },
     { name: "שמפו סילבר לשיער כסוף", image: importImage('silver_shampoo_for_gray_hair.webp'), id: 17 },
     { name: "שמפו לשיער בלונדיני בהיר", image: importImage('shampoo_for_light_blonde_hair.jpg'), id: 17 },
+    { name: "שמפו קרטין ושמן קיק", image: importImage('shampoo_keratin_and_castor_oil.jpg'), id: 17 },
+    { name: "שמפו לחיזוק סיב השערה", image: importImage('shampoo_for_strengthening_hair_fiber.jpg'), id: 17 },
     { name: "שמפו קרטין לשיער עדין או חלש", image: importImage('shampoo_for_weak_hair.jpg'), id: 17 },
     { name: "שמפו רך כמשי", image: importImage('shampoo_silky_soft.jpg'), id: 17 },
     { name: "שמפו טיפוח יום יומי", image: importImage('daily_care_shampoo.jpg'), id: 17 },
@@ -76,6 +82,47 @@ const PharmPage: React.FC = () => {
 
   const initialConditioner = [
     { name: "מרכך לשיער רגיל", image: importImage('conditioner_for_normal_hair.jpg') },
+    { name: "מרכך לשיער יבש / פגום", image: importImage('conditioner_for_dry_damaged_hair.jpg'), id: 17 },
+    { name: "מרכך שמן קוקוס", image: importImage('conditioner_with_coconut_oil.jpg'), id: 17 },
+    { name: "מרכך בתוספת קרטין", image: importImage('conditioner_with_keratin.webp'), id: 17 },
+   { name: "מרכך לשיער יבש בתוספת שמן מרוקאי", image: importImage('conditioner_with_moroccan_oil.jpg'), id: 17 },
+    { name: "מרכך קרטין שמן מרולה", image: importImage('conditioner_with_keratin_and_marula_oil.jpg'), id: 17 },
+    { name: "מרכך גוג'י ברי", image: importImage('conditioner_goji_berry.webp'), id: 17 },
+    { name: "מרכך מאצ'ה ומלפפון", image: importImage('conditioner_matcha_and_cucumber.jpg'), id: 17 },
+    { name: "מרכך לקרקפת שומנית", image: importImage('conditioner_for_oily_hair.jpg'), id: 17 },
+    { name: "מרכך חומץ תפוחים", image: importImage('conditioner_with_apple_vinegar.jpg'), id: 17 },
+    { name: "מרכך  תפוח וזרעי צ׳יה", image: importImage('conditioner_with_apple_and_chia_seed.jpg'), id: 17 },
+    { name: "מרכך שמן אבוקדו ותמצית קלנדולה", image: importImage('conditioner_with_Avocado_oil_and_calendula.jpg'), id: 17 },
+    { name: "מרכך ויטמין C", image: importImage('conditioner_with_vitamin_C.jpg'), id: 17 },
+    { name: "מרכך ויטמין E", image: importImage('conditioner_with_vitamin_E.jpg'), id: 17 },
+    { name: "מרכך לשיער צבוע", image: importImage('conditioner_for_colored_hair.webp'), id: 17 },
+    { name: "מרכך ארגן", image: importImage('conditioner_with_aragan.jpg'), id: 17 },
+    { name: "מרכך שמן קוקוס כורכום", image: importImage('conditioner_with_coconut_oil_and_turmeric.jpg'), id: 17 },
+    { name: "מרכך מעניק נפח לשיער דק יסמין", image: importImage('conditioner_with_jasmine_for_thin_hair.jpg'), id: 17 },
+    { name: "מרכך הד אנד שולדרס קלאסי", image: importImage('head_and_shoulders_classic_conditioner.jpg'), id: 17 },
+    { name: "מרכך לשיער מתולתל", image: importImage('conditioner_for_curly_hair.webp'), id: 17 },
+    { name: "מרכך ללא סולפטים", image: importImage('sulfate_free_conditioner.jpg'), id: 17 },
+    { name: "מרכך אלוורה", image: importImage('aloe_vera_conditioner.jpg'), id: 17 },
+    { name: "מרכך חימר", image: importImage('clay_conditioner.jpg'), id: 17 },
+    { name: "מרכך תות ומנטה", image: importImage('conditioner_strawberry_mint.webp'), id: 17 },
+    { name: "מרכך פריחת הדובדבן", image: importImage('conditioner_cherry_blossom.webp'), id: 17 },
+    { name: "מרכך מי קקטוס ושמן באבאסו", image: importImage('conditioner_cactus_water_and_babassu_oil.jpg'), id: 17 },
+    { name: "מרכך אמפולה לטיפול אינטנסיבי לשיער יבש, צבוע ופגום", image: importImage('conditioner_ampoule_intensive_treatment.jpg'), id: 17 },
+    { name: "מרכך ורד", image: importImage('conditioner_with_rose.jpg'), id: 17 },
+    { name: "מרכך לחות מוגברת אפרסק וחמאת מורומורו", image: importImage('conditioner_peach_and_morumoro_butter.jpg'), id: 17 },
+    { name: "מרכך לחות מוגברת", image: importImage('conditioner_increased_moisture.webp'), id: 17 },
+    { name: "מרכך עם שמני הזנה", image: importImage('conditioner_with_nourishing_oils.jpg'), id: 17 },
+    { name: "מרכך קרטין לאחר החלקה ועיצוב בחום", image: importImage('conditioner_keratin_after_heat_styling.jpg'), id: 17 },
+    { name: "מרכך למניעת קשקשים שמן עץ התה ואסאי", image: importImage('anti_dandruff_conditioner_with_tea_tree_oil_and_acai.jpg'), id: 17 },
+    { name: "מרכך סילבר לשיער כסוף", image: importImage('silver_conditioner_for_gray_hair.webp'), id: 17 },
+    { name: "מרכך לשיער בלונדיני בהיר", image: importImage('conditioner_for_light_blonde_hair.jpg'), id: 17 },
+    { name: "מרכך מתי קשרים לשיער ארוך", image: importImage('conditioner_detangling_for_long_hair.jpg'), id: 17 },
+    { name: "מרכך לחיזוק סיב השערה", image: importImage('conditioner_for_strengthening_hair_fiber.jpeg'), id: 17 },
+    { name: "מרכך קרטין לשיער עדין או חלש", image: importImage('conditioner_for_weak_hair.jpg'), id: 17 },
+    { name: "מרכך רך כמשי", image: importImage('conditioner_silky_soft.jpg'), id: 17 },
+    { name: "מרכך טיפוח יום יומי", image: importImage('daily_care_conditioner.jpg'), id: 17 },
+    { name: "מרכך לשיער ארוך ופגום", image: importImage('conditioner_for_long_damaged_hair.jpg'), id: 17 },
+    { name: "מרכך קרטין, שמן קיק ומי ורדים", image: importImage('conditioner_keratin_castor_oil_rose_water.jpg'), id: 17 },
   ];
   
   const initialBathsoap = [
@@ -579,7 +626,7 @@ useEffect(() => {
       />
       <ProductsPage
         products={bathsoap}
-        categoryTitle="תחליב רחצה"
+        categoryTitle="סבוני רחצה"
         icon={<img alt="" src={importImage('bathsoap_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
@@ -675,7 +722,7 @@ useEffect(() => {
       />
       <ProductsPage
         products={firstaid}
-        categoryTitle="ערכות עזרה ראשונה"
+        categoryTitle="עזרה ראשונה"
         icon={<img alt="" src={importImage('firstaid_icon.png')} />}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
