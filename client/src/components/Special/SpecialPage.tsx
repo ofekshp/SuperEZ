@@ -1562,78 +1562,160 @@ useEffect(() => {
     allSpecial.forEach(item => addProduct(item));
   };
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(event.target.value);
+};
+const filterOrganic = organic.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterGlutenfree = glutenfree.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterNoAddedSugar = noaddedsugar.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterHerbalDrinks = herbaldrinks.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterCheeseSubstitutes = cheesesubstitutes.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterTofuSeitanMeatSubstitutes = tofuseitanmeatsubstitutes.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterFrozenFromThePlant = frozenfromtheplant.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+
   return (
-    <div>
-      <div>
-        <ProductsPage
-          products={organic}
-          categoryTitle="אורגני"
-          icon={<img alt="" src={importImage('organic_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={glutenfree}
-          categoryTitle="ללא גלוטן"
-          icon={<img alt="" src={importImage('glutenfree_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={noaddedsugar}
-          categoryTitle="ללא תוספת סוכר"
-          icon={<img alt="" src={importImage('noaddedsugar_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={herbaldrinks}
-          categoryTitle="משקאות צמחיים"
-          icon={<img alt="" src={importImage('herbaldrinks_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={cheesesubstitutes}
-          categoryTitle="תחליפי גבינה, מעדנים ורטבים"
-          icon={<img alt="" src={importImage('cheesesubstitutes_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={tofuseitanmeatsubstitutes}
-          categoryTitle="טופו, סייטן ותחליפי בשר"
-          icon={<img alt="" src={importImage('tofuseitanmeatsubstitutes_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
-      <div>
-        <ProductsPage
-          products={frozenfromtheplant}
-          categoryTitle="קפואים מן הצומח"
-          icon={<img alt="" src={importImage('frozenfromtheplant_icon.png')} />} 
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          onSave={handleSave}
-        />
-      </div>
+<div>
+  <div style={{
+    position: 'absolute',
+    marginTop: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  }}>
+    <div style={{ position: 'relative' }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר אורגני\ללא סוכר\ללא גלוטן\צמחוני"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '100%',
+      
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '-30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        pointerEvents: 'none',
+      }}></i>
+    </div>
+
+</div>       <div>
+  {filterOrganic.length > 0 && (
+    <ProductsPage
+      products={filterOrganic}
+      categoryTitle="אורגני"
+      icon={<img alt="" src={importImage('organic_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterGlutenfree.length > 0 && (
+    <ProductsPage
+      products={filterGlutenfree}
+      categoryTitle="ללא גלוטן"
+      icon={<img alt="" src={importImage('glutenfree_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterNoAddedSugar.length > 0 && (
+    <ProductsPage
+      products={filterNoAddedSugar}
+      categoryTitle="ללא תוספת סוכר"
+      icon={<img alt="" src={importImage('noaddedsugar_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterHerbalDrinks.length > 0 && (
+    <ProductsPage
+      products={filterHerbalDrinks}
+      categoryTitle="משקאות צמחיים"
+      icon={<img alt="" src={importImage('herbaldrinks_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterCheeseSubstitutes.length > 0 && (
+    <ProductsPage
+      products={filterCheeseSubstitutes}
+      categoryTitle="תחליפי גבינה, מעדנים ורטבים"
+      icon={<img alt="" src={importImage('cheesesubstitutes_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterTofuSeitanMeatSubstitutes.length > 0 && (
+    <ProductsPage
+      products={filterTofuSeitanMeatSubstitutes}
+      categoryTitle="טופו, סייטן ותחליפי בשר"
+      icon={<img alt="" src={importImage('tofuseitanmeatsubstitutes_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+<div>
+  {filterFrozenFromThePlant.length > 0 && (
+    <ProductsPage
+      products={filterFrozenFromThePlant}
+      categoryTitle="קפואים מן הצומח"
+      icon={<img alt="" src={importImage('frozenfromtheplant_icon.png')} />} 
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+  )}
+</div>
+
     </div>
   );
 };
