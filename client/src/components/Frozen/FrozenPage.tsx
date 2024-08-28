@@ -119,7 +119,7 @@ const FrozenPage: React.FC = () => {
       id: 8,
     },
     {
-      name: "לקט ירקות עם פסטה פוזילי",
+      name: "לקט עם פסטה פוזילי",
       image: importImage('stir_fry_with_fusilli.jpeg'),
       id: 8,
     },
