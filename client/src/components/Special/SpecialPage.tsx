@@ -1562,18 +1562,86 @@ useEffect(() => {
     allSpecial.forEach(item => addProduct(item));
   };
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+  setSearchTerm(event.target.value);
+};
+const filterOrganic = organic.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterGlutenfree = glutenfree.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterNoAddedSugar = noaddedsugar.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterHerbalDrinks = herbaldrinks.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterCheeseSubstitutes = cheesesubstitutes.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterTofuSeitanMeatSubstitutes = tofuseitanmeatsubstitutes.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+const filterFrozenFromThePlant = frozenfromtheplant.filter(item =>
+  item.name.includes(searchTerm)
+);
+
+
   return (
-    <div>
-      <div>
-      <ProductsPage
-    products={organic}
+<div>
+  <div style={{
+    position: 'absolute',
+    marginTop: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  }}>
+    <div style={{ position: 'relative' }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר אורגני\ללא סוכר\ללא גלוטן\צמחוני"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '100%',
+      
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '-30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        pointerEvents: 'none',
+      }}></i>
+    </div>
+
+</div>       <div>
+  {filterOrganic.length > 0 && (
+    <ProductsPage
+    products={filterOrganic}
     categoryTitle={
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <span style={{ verticalAlign: 'middle' }}>אורגני</span>
         <img 
           src={importImage('organic_icon.png')} 
           alt="" 
-          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '40px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
     }
@@ -1582,10 +1650,12 @@ useEffect(() => {
     onDecrement={handleDecrement}
     onSave={handleSave}
   />
-      </div>
-      <div>
-      <ProductsPage
-    products={glutenfree}
+  )}
+</div>
+<div>
+  {filterGlutenfree.length > 0 && (
+    <ProductsPage
+    products={filterGlutenfree}
     categoryTitle={
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <span style={{ verticalAlign: 'middle' }}>ללא גלוטן</span>
@@ -1601,17 +1671,19 @@ useEffect(() => {
     onDecrement={handleDecrement}
     onSave={handleSave}
   />
-      </div>
-      <div>
-      <ProductsPage
-    products={noaddedsugar}
+  )}
+</div>
+<div>
+  {filterNoAddedSugar.length > 0 && (
+    <ProductsPage
+    products={filterNoAddedSugar}
     categoryTitle={
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <span style={{ verticalAlign: 'middle' }}>ללא תוספת סוכר</span>
         <img 
           src={importImage('noaddedsugar_icon.png')} 
           alt="" 
-          style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '40px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
     }
@@ -1620,29 +1692,33 @@ useEffect(() => {
     onDecrement={handleDecrement}
     onSave={handleSave}
   />
-      </div>
-      <div>
-      <ProductsPage
-    products={herbaldrinks}
-    categoryTitle={
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ verticalAlign: 'middle' }}>משקאות צמחיים</span>
-        <img 
-          src={importImage('herbaldrinks_icon.png')} 
-          alt="" 
-          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
-        />
-      </div>
-    }
-    icon={null}
-    onIncrement={handleIncrement}
-    onDecrement={handleDecrement}
-    onSave={handleSave}
-  />
-      </div>
-      <div>
-      <ProductsPage
-    products={cheesesubstitutes}
+  )}
+</div>
+<div>
+  {filterHerbalDrinks.length > 0 && (
+     <ProductsPage
+     products={filterHerbalDrinks}
+     categoryTitle={
+       <div style={{ display: 'flex', alignItems: 'center' }}>
+         <span style={{ verticalAlign: 'middle' }}>משקאות צמחיים</span>
+         <img 
+           src={importImage('herbaldrinks_icon.png')} 
+           alt="" 
+           style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+         />
+       </div>
+     }
+     icon={null}
+     onIncrement={handleIncrement}
+     onDecrement={handleDecrement}
+     onSave={handleSave}
+   />
+  )}
+</div>
+<div>
+  {filterCheeseSubstitutes.length > 0 && (
+    <ProductsPage
+    products={filterCheeseSubstitutes}
     categoryTitle={
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <span style={{ verticalAlign: 'middle' }}>תחליפי גבינה, מעדנים ורטבים</span>
@@ -1658,13 +1734,15 @@ useEffect(() => {
     onDecrement={handleDecrement}
     onSave={handleSave}
   />
-      </div>
-      <div>
-      <ProductsPage
-    products={tofuseitanmeatsubstitutes}
+  )}
+</div>
+<div>
+  {filterTofuSeitanMeatSubstitutes.length > 0 && (
+    <ProductsPage
+    products={filterTofuSeitanMeatSubstitutes}
     categoryTitle={
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <span style={{ verticalAlign: 'middle' }}>טופו סייטן ותחליפי בשר</span>
+        <span style={{ verticalAlign: 'middle' }}>טופו, סייטן ותחליפי בשר</span>
         <img 
           src={importImage('tofuseitanmeatsubstitutes_icon.png')} 
           alt="" 
@@ -1677,17 +1755,19 @@ useEffect(() => {
     onDecrement={handleDecrement}
     onSave={handleSave}
   />
-      </div>
-      <div>
-      <ProductsPage
-    products={frozenfromtheplant}
+  )}
+</div>
+<div>
+  {filterFrozenFromThePlant.length > 0 && (
+    <ProductsPage
+    products={filterFrozenFromThePlant}
     categoryTitle={
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <span style={{ verticalAlign: 'middle' }}>קפואים מן הצומח</span>
         <img 
           src={importImage('frozenfromtheplant_icon.png')} 
           alt="" 
-          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
     }
@@ -1696,7 +1776,9 @@ useEffect(() => {
     onDecrement={handleDecrement}
     onSave={handleSave}
   />
-      </div>
+  )}
+</div>
+
     </div>
   );
 };
