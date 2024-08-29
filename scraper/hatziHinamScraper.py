@@ -128,7 +128,7 @@ class HatziHinamScraper:
                     if quantity > 1:
                         for _ in range(quantity - 1):
                             await add_to_cart_button.click()
-                            await asyncio.sleep(0.5)
+                            await asyncio.sleep(1)
                         logger.info(f"Added {quantity} x {product['name']} to cart")
                 else:
                     logger.warning(f"Could not find 'Add to Cart' button for {product['name']}")
