@@ -770,125 +770,134 @@ SUPERMARKETS = [
     #         "price": ".tag-price"
     #     }
     # },
-    # {
-    #     "name": "רמי לוי",
-    #     "id": "rami_levi",
-    #     "categories": [
-    #         {
-    #             "name": "עוף, בשר, נקניקים ודגים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%A2%D7%95%D7%A3-%D7%98%D7%A8%D7%99",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%A2%D7%95%D7%A3-%D7%A7%D7%A4%D7%95%D7%90",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%91%D7%A9%D7%A8-%D7%91%D7%A7%D7%A8-%D7%95%D7%9B%D7%91%D7%A9-%D7%98%D7%A8%D7%99",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%91%D7%A9%D7%A8-%D7%A7%D7%A4%D7%95%D7%90",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%AA-%D7%95%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%91%D7%A9%D7%A8%D7%99%D7%9D-%D7%A2%D7%9C-%D7%94%D7%90%D7%A9",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%93%D7%92%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "אורגני ובריאות",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%AA%D7%95%D7%A1%D7%A4%D7%99%D7%9D-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%A0%D7%98%D7%95%D7%9C-%D7%95%D7%9E%D7%95%D7%A4%D7%97%D7%AA-%D7%A1%D7%95%D7%9B%D7%A8",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%A1%D7%95%D7%99%D7%94-%D7%95%D7%9C%D7%9C%D7%90-%D7%9C%D7%A7%D7%98%D7%95%D7%96"
-    #             ]
-    #         },
-    #         {
-    #             "name": "קפואים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%92%D7%9C%D7%99%D7%93%D7%95%D7%AA-%D7%95%D7%90%D7%A8%D7%98%D7%99%D7%A7%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%90%D7%95%D7%9B%D7%9C-%D7%9E%D7%95%D7%9B%D7%9F",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%99%D7%A8%D7%A7%D7%95%D7%AA-%D7%A4%D7%99%D7%A8%D7%95%D7%AA-%D7%95%D7%A6-%D7%99%D7%A4%D7%A1-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%95%D7%AA-%D7%9E%D7%90%D7%A4%D7%99%D7%9D-%D7%95%D7%91%D7%A6%D7%A7%D7%99%D7%9D-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%AA%D7%97%D7%9C%D7%99%D7%A4%D7%99-%D7%91%D7%A9%D7%A8-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "שימורים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D"
-    #             ]
-    #         }
-    #     ],
-    #     "selectors": {
-    #         "category": ".category-item",
-    #         "product": ".product-flex",
-    #         "name": ".inner-text",
-    #         "price": ".tag-price"
-    #     }
-    # },
-    # {
-    #     "name": "רמי לוי",
-    #     "id": "rami_levi",
-    #     "categories": [
-    #         {
-    #             "name": "אפייה ובישול",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A7%D7%9E%D7%97-%D7%95%D7%A4%D7%99%D7%A8%D7%95%D7%A8%D7%99-%D7%9C%D7%97%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A9%D7%9E%D7%9F-%D7%97%D7%95%D7%9E%D7%A5-%D7%95%D7%9E%D7%99%D7%A5-%D7%9C%D7%99%D7%9E%D7%95%D7%9F",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%9E%D7%A8%D7%A7%D7%99%D7%9D-%D7%95%D7%AA%D7%91%D7%A9%D7%99%D7%9C%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%90%D7%A4%D7%99%D7%94"
-    #             ]
-    #         },
-    #         {
-    #             "name": "אסייתי",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%94%D7%9E%D7%98%D7%91%D7%97-%D7%94%D7%90%D7%A1%D7%99%D7%99%D7%90%D7%AA%D7%99"
-    #             ]
-    #         },
-    #         {
-    #             "name": "קטניות ודגנים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%9C%D7%91-%D7%91%D7%99%D7%A6%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D/%D7%9E%D7%96%D7%95%D7%9F-%D7%9E%D7%A6%D7%95%D7%A0%D7%9F",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%98%D7%A0%D7%99%D7%95%D7%AA-%D7%95%D7%93%D7%92%D7%A0%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "מתוקים וחטיפים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%95%D7%9E%D7%AA%D7%95%D7%A7%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "משקאות",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%A7%D7%9C%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%97%D7%9E%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%AA%D7%A8%D7%9B%D7%99%D7%96%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%99%D7%99%D7%A0%D7%95%D7%AA",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%90%D7%9C%D7%9B%D7%95%D7%94%D7%95%D7%9C-%D7%95%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94",
-    #                 ""
-    #             ]
-    #         },
-    #         {
-    #             "name": "אחזקת הבית ובעלי חיים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97"
-    #             ]
-    #         },
-    #         {
-    #             "name": "חד פעמי",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%93-%D7%A4%D7%A2%D7%9E%D7%99-%D7%95%D7%9E%D7%AA%D7%9B%D7%9C%D7%94"
-    #             ]
-    #         },
-    #         {
-    #             "name": "פארם ותינוקות",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A4%D7%90%D7%A8%D7%9D-%D7%95%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA"
-    #             ]
-    #         }
-    #     ],
-    #     "selectors": {
-    #         "category": ".category-item",
-    #         "product": ".product-flex",
-    #         "name": ".inner-text",
-    #         "price": ".tag-price"
-    #     }
-    # },
+    {
+        "name": "רמי לוי",
+        "id": "rami_levi",
+        "categories": [
+            {
+                "name": "עוף, בשר, נקניקים ודגים",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%A2%D7%95%D7%A3-%D7%98%D7%A8%D7%99",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%A2%D7%95%D7%A3-%D7%A7%D7%A4%D7%95%D7%90",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%91%D7%A9%D7%A8-%D7%91%D7%A7%D7%A8-%D7%95%D7%9B%D7%91%D7%A9-%D7%98%D7%A8%D7%99",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%91%D7%A9%D7%A8-%D7%A7%D7%A4%D7%95%D7%90",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%AA-%D7%95%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%91%D7%A9%D7%A8%D7%99%D7%9D-%D7%A2%D7%9C-%D7%94%D7%90%D7%A9",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%93%D7%92%D7%99%D7%9D"
+                ]
+            },
+            {
+                "name": "אורגני ובריאות",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%AA%D7%95%D7%A1%D7%A4%D7%99%D7%9D-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%A0%D7%98%D7%95%D7%9C-%D7%95%D7%9E%D7%95%D7%A4%D7%97%D7%AA-%D7%A1%D7%95%D7%9B%D7%A8",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%A1%D7%95%D7%99%D7%94-%D7%95%D7%9C%D7%9C%D7%90-%D7%9C%D7%A7%D7%98%D7%95%D7%96"
+                ]
+            },
+            {
+                "name": "קפואים",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%92%D7%9C%D7%99%D7%93%D7%95%D7%AA-%D7%95%D7%90%D7%A8%D7%98%D7%99%D7%A7%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%90%D7%95%D7%9B%D7%9C-%D7%9E%D7%95%D7%9B%D7%9F",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%99%D7%A8%D7%A7%D7%95%D7%AA-%D7%A4%D7%99%D7%A8%D7%95%D7%AA-%D7%95%D7%A6-%D7%99%D7%A4%D7%A1-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%95%D7%AA-%D7%9E%D7%90%D7%A4%D7%99%D7%9D-%D7%95%D7%91%D7%A6%D7%A7%D7%99%D7%9D-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%AA%D7%97%D7%9C%D7%99%D7%A4%D7%99-%D7%91%D7%A9%D7%A8-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D"
+                ]
+            },
+            {
+                "name": "שימורים",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D"
+                ]
+            }
+        ],
+        "selectors": {
+            "category": ".category-item",
+            "product": ".product-flex",
+            "name": ".inner-text",
+            "price": ".tag-price"
+        }
+    },
+    {
+        "name": "רמי לוי",
+        "id": "rami_levi",
+        "categories": [
+            # {
+            #     "name": "אפייה ובישול",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A7%D7%9E%D7%97-%D7%95%D7%A4%D7%99%D7%A8%D7%95%D7%A8%D7%99-%D7%9C%D7%97%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A9%D7%9E%D7%9F-%D7%97%D7%95%D7%9E%D7%A5-%D7%95%D7%9E%D7%99%D7%A5-%D7%9C%D7%99%D7%9E%D7%95%D7%9F",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%9E%D7%A8%D7%A7%D7%99%D7%9D-%D7%95%D7%AA%D7%91%D7%A9%D7%99%D7%9C%D7%99%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%90%D7%A4%D7%99%D7%94"
+            #     ]
+            # },
+            # {
+            #     "name": "אסייתי",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%94%D7%9E%D7%98%D7%91%D7%97-%D7%94%D7%90%D7%A1%D7%99%D7%99%D7%90%D7%AA%D7%99"
+            #     ]
+            # },
+            # {
+            #     "name": "קטניות ודגנים",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%9C%D7%91-%D7%91%D7%99%D7%A6%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D/%D7%9E%D7%96%D7%95%D7%9F-%D7%9E%D7%A6%D7%95%D7%A0%D7%9F",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%98%D7%A0%D7%99%D7%95%D7%AA-%D7%95%D7%93%D7%92%D7%A0%D7%99%D7%9D"
+            #     ]
+            # },
+            # {
+            #     "name": "מתוקים וחטיפים",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%95%D7%9E%D7%AA%D7%95%D7%A7%D7%99%D7%9D"
+            #     ]
+            # },
+            # {
+            #     "name": "משקאות",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%A7%D7%9C%D7%99%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%97%D7%9E%D7%99%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%AA%D7%A8%D7%9B%D7%99%D7%96%D7%99%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%99%D7%99%D7%A0%D7%95%D7%AA",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%90%D7%9C%D7%9B%D7%95%D7%94%D7%95%D7%9C-%D7%95%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94",
+            #         ""
+            #     ]
+            # },
+            {
+                "name": "אחזקת הבית ובעלי חיים",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F-%D7%9C%D7%91%D7%99%D7%AA",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%97%D7%A9%D7%9E%D7%9C",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99-%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%9B%D7%91%D7%99%D7%A1%D7%94",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9B%D7%9C%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%A7%D7%95%D7%98%D7%9C-%D7%97%D7%A8%D7%A7%D7%99%D7%9D-%D7%95%D7%9E%D7%91%D7%A9%D7%9E%D7%99-%D7%90%D7%95%D7%99%D7%A8",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9B%D7%9C%D7%99-%D7%91%D7%99%D7%AA",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%91%D7%99%D7%92%D7%95%D7%93",
+                    ""
+                ]
+            },
+            {
+                "name": "חד פעמי",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%93-%D7%A4%D7%A2%D7%9E%D7%99-%D7%95%D7%9E%D7%AA%D7%9B%D7%9C%D7%94"
+                ]
+            },
+            {
+                "name": "פארם ותינוקות",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A4%D7%90%D7%A8%D7%9D-%D7%95%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D"
+                ]
+            }
+        ],
+        "selectors": {
+            "category": ".category-item",
+            "product": ".product-flex",
+            "name": ".inner-text",
+            "price": ".tag-price"
+        }
+    },
     # {
     #     "name": "חצי חינם",
     #     "id": "hatzi_hinam",
@@ -1530,54 +1539,54 @@ SUPERMARKETS = [
   #           "price": ".product-price"
   #       }
   #   },
-  #   {
-  #       "id": "tiv_taam",
-  #       "name": "טיב טעם",
-  #       "categories": [
-  #           {
-  #               "name": "אורגני ובריאות",
-  #               "urls": [
-  #                   "https://www.tivtaam.co.il/categories/94410/products",
-  #                   "https://www.tivtaam.co.il/categories/90333/products",
-  #                   "https://www.tivtaam.co.il/categories/90342/products",
-  #                   "https://www.tivtaam.co.il/categories/96535/products"
-  #               ]
-  #           },
-  #           {
-  #               "name": "קפואים",
-  #               "urls": [
-  #                   "https://www.tivtaam.co.il/categories/90276/products",
-  #                   "https://www.tivtaam.co.il/categories/90277/products",
-  #                   "https://www.tivtaam.co.il/categories/90282/products",
-  #                   "https://www.tivtaam.co.il/categories/90283/products",
-  #                   "https://www.tivtaam.co.il/categories/90281/products",
-  #                   "https://www.tivtaam.co.il/categories/119730/products"
-  #               ]
-  #           },
-  #           {
-  #               "name": "שימורים",
-  #               "urls": [
-  #                   "https://www.tivtaam.co.il/categories/90135/products",
-  #
-  #               ]
-  #           },
-  #           {
-  #               "name": "אפייה ובישול",
-  #               "urls": [
-  #                   "https://www.tivtaam.co.il/categories/90184/products",
-  #                   "https://www.tivtaam.co.il/categories/90167/products",
-  #                   "https://www.tivtaam.co.il/categories/90225/products",
-  #                   "https://www.tivtaam.co.il/categories/90236/products"
-  #               ]
-  #           }
-  #       ],
-  #       "selectors": {
-  #           "category": ".category-item",
-  #           "product": ".product-item",
-  #           "name": ".name",
-  #           "price": ".product-price"
-  #       }
-  #   },
+    {
+        "id": "tiv_taam",
+        "name": "טיב טעם",
+        "categories": [
+            {
+                "name": "אורגני ובריאות",
+                "urls": [
+                    "https://www.tivtaam.co.il/categories/94410/products",
+                    "https://www.tivtaam.co.il/categories/90333/products",
+                    "https://www.tivtaam.co.il/categories/90342/products",
+                    "https://www.tivtaam.co.il/categories/96535/products"
+                ]
+            },
+            {
+                "name": "קפואים",
+                "urls": [
+                    "https://www.tivtaam.co.il/categories/90276/products",
+                    "https://www.tivtaam.co.il/categories/90277/products",
+                    "https://www.tivtaam.co.il/categories/90282/products",
+                    "https://www.tivtaam.co.il/categories/90283/products",
+                    "https://www.tivtaam.co.il/categories/90281/products",
+                    "https://www.tivtaam.co.il/categories/119730/products"
+                ]
+            },
+            {
+                "name": "שימורים",
+                "urls": [
+                    "https://www.tivtaam.co.il/categories/90135/products",
+
+                ]
+            },
+            {
+                "name": "אפייה ובישול",
+                "urls": [
+                    "https://www.tivtaam.co.il/categories/90184/products",
+                    "https://www.tivtaam.co.il/categories/90167/products",
+                    "https://www.tivtaam.co.il/categories/90225/products",
+                    "https://www.tivtaam.co.il/categories/90236/products"
+                ]
+            }
+        ],
+        "selectors": {
+            "category": ".category-item",
+            "product": ".product-item",
+            "name": ".name",
+            "price": ".product-price"
+        }
+    },
   #   {
   #       "id": "tiv_taam",
   #       "name": "טיב טעם",
