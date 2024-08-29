@@ -891,100 +891,173 @@ const initialAlcoholDrinks = [
       }}></i>
     </div>
 
-</div>   <div>
+</div>  
+<div>
   {filterWaterDrinks.length > 0 && (
-    <ProductsPage
+      <ProductsPage
       products={filterWaterDrinks}
-      categoryTitle="מים וסודה"
-      icon={<img alt="" src={importImage('')} />}
+      categoryTitle={
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <span style={{ verticalAlign: 'middle' }}>מים וסודה</span>
+          <img 
+            src={importImage('water.png')} 
+            alt="" 
+            style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+          />
+        </div>
+      }
+      icon={null}
       onIncrement={handleIncrement}
       onDecrement={handleDecrement}
       onSave={handleSave}
     />
   )}
-</div>
+  </div>
 <div>
   {filterCarbonatedDrinks.length > 0 && (
-    <ProductsPage
-      products={filterCarbonatedDrinks}
-      categoryTitle="משקאות מוגזים"
-      icon={<img alt="" src={importImage('carbonated_drinks_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+        <ProductsPage
+        products={filterCarbonatedDrinks}
+        categoryTitle={
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ verticalAlign: 'middle' }}>משקאות מוגזים</span>
+            <img 
+              src={importImage('carbonated_drinks.png')} 
+              alt="" 
+              style={{ width: '60px', height: '50px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+            />
+          </div>
+        }
+        icon={null}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onSave={handleSave}
+      />
   )}
-</div>
+  </div>
 <div>
   {filterSweets.length > 0 && (
-    <ProductsPage
-      products={filterSweets}
-      categoryTitle="משקאות קלים"
-      icon={<img alt="" src={importImage('sweet_drinks_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+          <ProductsPage
+            products={filterSweets}
+            categoryTitle={
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <span style={{ verticalAlign: 'middle' }}>משקאות קלים</span>
+                <img
+                  src={importImage('sweet_drinks.png')}
+                  alt=""
+                  style={{ width: '60px', height: '50px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }}
+                />
+              </div>
+            }
+            icon={null}
+            onIncrement={handleIncrement}
+            onDecrement={handleDecrement}
+            onSave={handleSave}
+          />
   )}
 </div>
 <div>
   {filterConcentrates.length > 0 && (
-    <ProductsPage
-      products={filterConcentrates}
-      categoryTitle="תרכיזים"
-      icon={<img alt="" src={importImage('concentrates_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+            <ProductsPage
+            products={filterConcentrates}
+            categoryTitle={
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <span style={{ verticalAlign: 'middle' }}>תרכיזים</span>
+                <img 
+                  src={importImage('concentrates.png')} 
+                  alt="" 
+                  style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+                />
+              </div>
+            }
+            icon={null}
+            onIncrement={handleIncrement}
+            onDecrement={handleDecrement}
+            onSave={handleSave}
+          />
   )}
 </div>
 <div>
   {filterEnergyDrinks.length > 0 && (
-    <ProductsPage
-      products={filterEnergyDrinks}
-      categoryTitle="משקאות אנרגיה"
-      icon={<img alt="" src={importImage('energy_drinks_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+               <ProductsPage
+               products={filterEnergyDrinks}
+               categoryTitle={
+                 <div style={{ display: 'flex', alignItems: 'center' }}>
+                   <span style={{ verticalAlign: 'middle' }}>משקאות אנרגיה</span>
+                   <img 
+                     src={importImage('energy_drinks.png')} 
+                     alt="" 
+                     style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+                   />
+                 </div>
+               }
+               icon={null}
+               onIncrement={handleIncrement}
+               onDecrement={handleDecrement}
+               onSave={handleSave}
+             />
   )}
 </div>
 <div>
   {filterBeers.length > 0 && (
-    <ProductsPage
-      products={filterBeers}
-      categoryTitle="בירות"
-      icon={<img alt="" src={importImage('beer_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+          <ProductsPage
+          products={filterBeers}
+          categoryTitle={
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span style={{ verticalAlign: 'middle' }}>בירות</span>
+              <img 
+                src={importImage('beer_icon.png')} 
+                alt="" 
+                style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+              />
+            </div>
+          }
+          icon={null}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          onSave={handleSave}
+        />
   )}
 </div>
 <div>
   {filterWines.length > 0 && (
-    <ProductsPage
-      products={filterWines}
-      categoryTitle="יינות"
-      icon={<img alt="" src={importImage('wine_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+       <ProductsPage
+       products={filterWines}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>יינות</span>
+           <img 
+             src={importImage('wine_icon.png')} 
+             alt="" 
+             style={{ width: '40px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
   )}
 </div>
 <div>
   {filterAlcohols.length > 0 && (
-    <ProductsPage
-      products={filterAlcohols}
-      categoryTitle="שתייה חריפה"
-      icon={<img alt="" src={importImage('alcohol_drinks_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+         <ProductsPage
+         products={filterAlcohols}
+         categoryTitle={
+           <div style={{ display: 'flex', alignItems: 'center' }}>
+             <span style={{ verticalAlign: 'middle' }}>שתייה חריפה</span>
+             <img 
+               src={importImage('alcohol_drinks_icon.png')} 
+               alt="" 
+               style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+             />
+           </div>
+         }
+         icon={null}
+         onIncrement={handleIncrement}
+         onDecrement={handleDecrement}
+         onSave={handleSave}
+       />
   )}
 </div>
 
