@@ -8,7 +8,7 @@ function extractSearchTerms(productName) {
 }
 
 function calculateMatchScore(productName, dbProductName) {
-  const irrelevantWordsInSite = ['קפוא','בטעם','ניקוי','ותמצית','תמצית','בתוספת','בריח','בניחוח','עם','ממרח', 'קלאסי', 'איטלקי', 'טרי', 'מהדרין']; // website
+  const irrelevantWordsInSite = ['קפוא','בטעם','ניקוי','ותמצית','תמצית','בתמצית','בתוספת','מועשר','בריח','בניחוח','וניחוח','עם','מארז','ממרח', 'קלאסי', 'איטלקי', 'טרי', 'מהדרין']; // website
   const irrelevantWordsInDb = ['קפוא','להקפצה','יטבתה','רמי לוי','תנובה','של','עם','אריאל', 'מיכל', 'קלאסי', 'אנסקי','בניחוח','בריח']; //  database
 
   const productWords = filterIrrelevantWords(extractSearchTerms(productName), irrelevantWordsInSite);
