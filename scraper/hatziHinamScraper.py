@@ -86,6 +86,7 @@ class HatziHinamScraper:
                 add_to_cart_button = await page.query_selector('.product_cube-add')
                 if add_to_cart_button:
                     await add_to_cart_button.click()
+                    await asyncio.sleep(0.5)
                     logger.info(f"Clicked 'Add to Cart' button for {product['name']}")
 
                     # Handle delivery modal
@@ -128,7 +129,7 @@ class HatziHinamScraper:
                     if quantity > 1:
                         for _ in range(quantity - 1):
                             await add_to_cart_button.click()
-                            await asyncio.sleep(0.5)
+                            await asyncio.sleep(3)
                         logger.info(f"Added {quantity} x {product['name']} to cart")
                 else:
                     logger.warning(f"Could not find 'Add to Cart' button for {product['name']}")
