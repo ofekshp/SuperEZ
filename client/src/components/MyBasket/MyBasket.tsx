@@ -80,6 +80,7 @@ const MyBasket: React.FC = () => {
         } 
       });
       localStorage.setItem('basketProducts', '[]');
+      window.location.reload();
       console.log(response);
     }catch (error) {
       console.error('Error add product:', error);

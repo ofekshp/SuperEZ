@@ -128,6 +128,11 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
+            <Link to="/Special" className="navbar-link">
+              מיוחדים
+            </Link>
+          </li>
+          <li>
             <Link to="/cleaning" className="navbar-link">
               ניקיון/חד"פ
             </Link>

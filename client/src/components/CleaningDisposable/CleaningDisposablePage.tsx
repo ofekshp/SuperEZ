@@ -17,62 +17,62 @@ const CleaningDisposablePage: React.FC = () => {
 
   const initialPaper = [
     {
-      name: "נייר טואלט דו שכבתי - מארז 48 גלילים",
+      name: "נייר טואלט דו שכבתי",
       image: importImage("toilet_paper_48_pack.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט דו שכבתי - מארז 32 גלילים",
+      name: "נייר טואלט דו שכבתי",
       image: importImage("toilet_paper_32_pack.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט תלת שכבתי - מארז 32 גלילים",
+      name: "נייר טואלט תלת שכבתי",
       image: importImage("silk_touch_toilet_paper_32_pack.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט דו שכבתי גליל ארוך פי 2",
+      name: "נייר טואלט דו שכבתי גליל ארוך",
       image: importImage("perfect_double_roll_toilet_paper.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט קלאסיק 30 גלילים",
+      name: "נייר טואלט קלאסיק",
       image: importImage("lily_classic_toilet_paper_30_pack.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט דו שכבתי 18 גלילים כפולים",
+      name: "נייר טואלט דו שכבתי כפולים",
       image: importImage("soft_double_roll_toilet_paper_18_pack.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט 4 שכבות - מארז 18 גלילים",
+      name: "נייר טואלט 4 שכבות",
       image: importImage("soft_premium_4_layer_toilet_paper_18_pack.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט - מארז 40 גלילים",
+      name: "נייר טואלט",
       image: importImage("molett_toilet_paper_40_pack.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט לבן - מארז 9 גלילים",
+      name: "נייר טואלט לבן",
       image: importImage("kleenex_premium_white_toilet_paper_9_pack.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט צהוב - מארז 9 גלילים",
+      name: "נייר טואלט צהוב",
       image: importImage("kleenex_premium_yellow_toilet_paper_9_pack.jpeg"),
       id: 14,
     },
     {
-      name: "נייר טואלט ורוד 3 שכבות - 32 גליל",
+      name: "נייר טואלט ורוד 3 שכבות",
       image: importImage("exclusive_comfort_pink_toilet_paper_32_pack.jpeg"),
       id: 14,
     },
     {
-      name: "מגבוני טואלט לחים להיגיינה אישית - מארז שלישייה",
+      name: "מגבוני טואלט לחים",
       image: importImage("wet_wipes_toilet_hygiene_trio_pack.jpeg"),
       id: 14,
     },
@@ -82,135 +82,134 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "נייר טואלט לח רביעייה",
+      name: "נייר טואלט לח",
       image: importImage("lily_pure_wet_toilet_paper_4_pack.jpeg"),
       id: 14,
     },
     {
-      name: "מגבות נייר - מארז 8 גלילים",
+      name: "מגבות נייר",
       image: importImage("paper_towels_8_roll_pack.jpeg"),
       id: 14,
     },
     {
-      name: "מגבת נייר ג'מבו - גליל ענק",
+      name: "מגבת נייר ג'מבו",
       image: importImage("jumbo_paper_towel_6_rolls.jpeg"),
       id: 14,
     },
     {
-      name: "מגבות הפלא - מארז 6 גלילים",
+      name: "מגבות הפלא",
       image: importImage("magic_towels_6_roll_pack.jpeg"),
       id: 14,
     },
     {
-      name: "מגבות הפלא גליל כפול - מארז שישייה",
+      name: "מגבות הפלא גליל כפול",
       image: importImage("magic_towels_double_roll_6_pack.jpeg"),
       id: 14,
     },
     {
-      name: "מגבות הפלא גליל ארוך פי 3",
+      name: "מגבות הפלא גליל ארוך",
       image: importImage("sano_sushi_magic_towels_triple_roll.jpeg"),
       id: 14,
     },
     {
-      name: "ממחטות נייר - מארז חמישייה",
+      name: "ממחטות נייר",
       image: importImage("tissue_paper_5_pack.jpeg"),
       id: 14,
     },
-  ];  
-
+  ];
   const initialLaundryproducts = [
     {
-      name: "אבקת כביסה לכביסה לבנה וצבעונית",
+      name: "אבקת כביסה לבנה צבעונית",
       image: importImage("laundry_powder_white_color_2.5kg.jpeg"),
       id: 14,
     },
     {
-      name: "אבקת כביסה בניחוח מאסק Musk",
+      name: "אבקת כביסה בניחוח מאסק ",
       image: importImage("sano_maxima_musk_powder_1.25kg.jpeg"),
       id: 14,
     },
     {
-      name: "אבקת כביסה לכתמים קשים",
+      name: "אבקת כביסה כתמים קשים",
       image: importImage("sano_maxima_bio_powder_1.25kg.jpeg"),
       id: 14,
     },
     {
-      name: "אבקת כביסה לצבעים כהים",
+      name: "אבקת כביסה צבעים כהים",
       image: importImage("sano_maxima_black_powder_1.25kg.jpeg"),
       id: 14,
     },
     {
-      name: "אבקת כביסה לבגדי תינוקות ולעור רגיש",
+      name: "אבקת כביסה בגדי תינוקות עור רגיש",
       image: importImage("sano_maxima_baby_powder_1.25kg.jpeg"),
       id: 14,
     },
     {
-      name: "אבקת כביסה בניחוח שושן צחור",
+      name: "אבקת כביסה שושן צחור",
       image: importImage("ariel_white_powder_1.25kg.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל מרוכז לכביסה לבנה וצבעונית",
+      name: "ג'ל כביסה לבנה צבעונית",
       image: importImage("perfect_white_color_gel_3l.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל כביסה מרוכז בניחוח פרחים",
+      name: "ג'ל כביסה בניחוח פרחים",
       image: importImage("perfect_flower_gel_5l.jpg"),
       id: 14,
     },
     {
-      name: "ג'ל כביסה מרוכז בניחוח מאסק Musk",
+      name: "ג'ל כביסה בניחוח מאסק ",
       image: importImage("sano_maxima_musk_gel_3l.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל כביסה מרוכז לתינוקות",
+      name: "ג'ל כביסה תינוקות",
       image: importImage("sano_maxima_baby_gel_3l.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל כביסה לבגדי תינוקות ובעלי עור רגיש",
+      name: "ג'ל כביסה עור רגיש",
       image: importImage("persil_sensitive_gel_2.5l.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל כביסה לבגדים כהים",
+      name: "ג'ל כביסה כהים",
       image: importImage("persil_black_gel_2.5l.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל כביסה מרוכז קלאסי",
+      name: "ג'ל כביסה קלאסי",
       image: importImage("colon_classic_gel_4l.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל כביסה מרוכז בניחוח לבנדר",
+      name: "ג'ל כביסה בניחוח לבנדר",
       image: importImage("colon_lavender_gel_4l.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לכביסה ביד",
+      name: "ג'ל כביסה ביד",
       image: importImage("sod_hand_wash_gel_1l.jpeg"),
       id: 14,
     },
     {
-      name: "קפסולות לכביסה",
+      name: "קפסולות כביסה",
       image: importImage("sano_maxima_floral_burst_capsules_40_units.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל כביסה בניחוח ארומטי",
+      name: "נוזל כביסה ארומטי",
       image: importImage("kabiscal_aromatic_detergent_2l.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל כביסה בניחוח ספא",
+      name: "נוזל כביסה ספא",
       image: importImage("kabiscal_spa_detergent_2l.jpeg"),
       id: 14,
     },
     {
-      name: "מרכך כביסה מבושם לתינוק",
+      name: "מרכך כביסה תינוק",
       image: importImage("perfect_baby_fabric_softener_4l.jpeg"),
       id: 14,
     },
@@ -220,27 +219,27 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "מרכך כביסה היפואלרגני עם אלוורה לתינוקות",
+      name: "מרכך כביסה היפואלרגני אלוורה",
       image: importImage("sano_aloe_vera_baby_fabric_softener_4l.jpeg"),
       id: 14,
     },
     {
-      name: "מרכך כביסה בניחוח לבנדר פצ'ולי",
+      name: "מרכך כביסה לבנדר פצ'ולי",
       image: importImage("sano_lavender_patchouli_fabric_softener_4l.jpeg"),
       id: 14,
     },
     {
-      name: "מרכך כביסה ארומתראפי בניחוח מאסק",
+      name: "מרכך כביסה ארומתרפי מאסק",
       image: importImage("sano_aromatherapy_musk_fabric_softener_4l.jpeg"),
       id: 14,
     },
     {
-      name: "מרכך כביסה בניחוח סחלבים",
+      name: "מרכך כביסה סחלבים",
       image: importImage("badan_wild_orchid_fabric_softener_960ml.jpeg"),
       id: 14,
     },
     {
-      name: "מרכך כביסה מרוכז בבישום עוצמתי",
+      name: "מרכך כביסה עוצמתי",
       image: importImage("sano_moments_of_calm_fabric_softener_1l.jpeg"),
       id: 14,
     },
@@ -255,120 +254,121 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "מסיר כתמים ללא אקונומיקה",
+      name: "מסיר כתמים אקונומיקה",
       image: importImage("sano_oxygen_stain_remover_gel_3l.jpeg"),
       id: 14,
     },
     {
-      name: "מסיר כתמים לכביסה לבנה",
+      name: "מסיר כתמים כביסה לבנה",
       image: importImage("sano_oxygen_power_stain_remover_750ml.jpeg"),
       id: 14,
     },
     {
-      name: "תוסף להסרת כתמים קשים",
+      name: " הסרת כתמים קשים",
       image: importImage("sano_oxygen_power_stain_remover_1400g.jpeg"),
       id: 14,
     },
     {
-      name: "תוסף להסרת כתמים קשים מכביסה לבנה",
+      name: " הסרת כתמים כביסה לבנה",
       image: importImage("sano_oxygen_stain_remover_for_white_laundry_1400g.jpeg"),
       id: 14,
     },
     {
-      name: "מסיר כתמים לתינוק",
+      name: "מסיר כתמים תינוק",
       image: importImage("sano_oxygen_baby_stain_remover_gel_3l.jpeg"),
       id: 14,
     },
     {
-      name: "ספריי להסרת כתמים",
+      name: "ספריי הסרת כתמים",
       image: importImage("kalia_vanish_stain_remover_spray_750ml.jpeg"),
       id: 14,
     },
     {
-      name: "מרכך ומבשם כביסה למייבש בניחוח מאסק",
+      name: "מרכך כביסה מייבש מאסק",
       image: importImage("sano_maxima_musk_dryer_softener_750ml.jpeg"),
       id: 14,
     },
     {
-      name: "מרכך ומבשם כביסה למייבש אולטרה פרש",
+      name: "מרכך כביסה מייבש אולטרה פרש",
       image: importImage("sano_maxima_ultra_fresh_dryer_softener_750ml.jpeg"),
       id: 14,
     },
     {
-      name: "מרכך ומבשם כביסה למייבש בניחוח לבנדר",
+      name: "מרכך כביסה מייבש לבנדר",
       image: importImage("sano_maxima_lavender_dryer_softener_750ml.jpeg"),
       id: 14,
     },
     {
-      name: "מבשם ומרכך למייבש כביסה לתינוקות ולעור רגיש",
+      name: "מרכך כביסה מייבש תינוקות עור רגיש",
       image: importImage("sano_maxima_baby_dryer_softener_750ml.jpeg"),
       id: 14,
     },
     {
-      name: "דפי מרכך למייבש כביסה",
+      name: "דפי מרכך מייבש",
       image: importImage("baddin_blue_dryer_sheets_40pcs.jpeg"),
       id: 14,
     },
     {
-      name: "כדוריות הבושם בניחוח סחלב",
+      name: "כדוריות בושם סחלב",
       image: importImage("lenor_orchid_perfume_beads_210g.jpeg"),
       id: 14,
     },
     {
-      name: "כדוריות הבושם בניחוח רענן",
+      name: "כדוריות בושם רענן",
       image: importImage("lenor_fresh_perfume_beads_210g.jpeg"),
       id: 14,
     },
     {
-      name: "כדוריות הבושם רעננות האוקיינוס",
+      name: "כדוריות בושם רעננות אוקיינוס",
       image: importImage("lenor_ocean_fresh_perfume_beads_210g.jpeg"),
       id: 14,
     },
     {
-      name: "כדוריות הבושם בניחוח אריאל",
+      name: "כדוריות בושם אריאל",
       image: importImage("lenor_ariel_perfume_beads_210g.jpeg"),
       id: 14,
     },
     {
-      name: "תרסיס לגיהוץ",
+      name: "תרסיס גיהוץ",
       image: importImage("merito_easy_ironing_spray_500ml.jpeg"),
       id: 14,
     },
     {
-      name: "מגן + מבשם דוחה עש בניחוח לבנדר",
+      name: "מגן דוחה עש לבנדר",
       image: importImage("hepi_lavender_moth_repellent_2pcs.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל למניעת אבנית",
+      name: "ג'ל מניעת אבנית",
       image: importImage("calgon_antiscale_gel_2in1_750ml.jpeg"),
       id: 14,
     },
     {
-      name: "אבקה למניעת אבנית במכונת כביסה",
+      name: "אבקה מניעת אבנית מכונת כביסה",
       image: importImage("calgon_antiscale_powder_2in1_1kg.jpeg"),
       id: 14,
     },
     {
-      name: "מנקה מכונת כביסה בניחוח נקי ורענן",
+      name: "מנקה מכונת כביסה ",
       image: importImage("colon_washing_machine_cleaner_250ml.jpeg"),
       id: 14,
     },
     {
-      name: "ניקוי וחיטוי מכונת הכביסה בתוספת חומץ",
+      name: "ניקוי מכונת כביסה חומץ",
       image: importImage("sano_maxima_washing_machine_cleaner_500ml.jpeg"),
       id: 14,
-    },    
+    },
   ];
+  
 
   const initialCleaningproducts = [
     {
-      name: "נוזל לניקוי כלים בניחוח לימון",
+      name: " ניקוי כלים בניחוח לימון",
       image: importImage('dish_liquid_lemon_750ml.jpeg'),
       id: 14,
     },
     {
-      name: "נוזל לניקוי כלים בניחוח תפוח",
+      name: " ניקוי כלים בניחוח תפוח",
       image: importImage('dish_liquid_apple_750ml.jpeg'),
       id: 14,
     },
@@ -378,12 +378,12 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "נוזל לניקוי כלים בניחוח לבנדר",
+      name: " ניקוי כלים לבנדר",
       image: importImage('spark_dish_liquid_lavender_700ml.jpeg'),
       id: 14,
     },
     {
-      name: "נוזל לניקוי כלים קלאסי",
+      name: " ניקוי כלים קלאסי",
       image: importImage('spark_dish_liquid_classic_700ml.jpeg'),
       id: 14,
     },
@@ -393,65 +393,62 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "טבליות למדיח בניחוח מרענן",
+      name: "טבליות מדיח מרענן",
       image: importImage('finish_power_tablets_fresh_40_units.jpeg'),
       id: 14,
     },
     {
-      name: "ג'ל מרוכז למדיח",
+      name: "ג'ל מרוכז מדיח",
       image: importImage('finish_all_in_one_max_gel_600ml.jpeg'),
       id: 14,
     },
     {
-      name: "ג'ל מרוכז למדיח בניחוח לימון",
+      name: "ג'ל מרוכז מדיח לימון",
       image: importImage('finish_all_in_one_max_lemon_gel_600ml.jpeg'),
       id: 14,
     },
     {
-      name: "מפיץ ריח למדיח",
+      name: "מפיץ ריח מדיח",
       image: importImage('finish_dishwasher_deodorizer_10ml.jpeg'),
       id: 14,
     },
     {
-      name: "מלח למדיח",
+      name: "מלח מדיח",
       image: importImage('finish_dishwasher_salt_2kg.jpeg'),
       id: 14,
     },
-    {
-      name: "תרסיס מסיר שומנים",
-      image: importImage('astonish_grease_remover_spray_750ml.jpeg'),
-      id: 14,
-    },
+  
   ];  
 
-  const initialKitchencleaning = [
+  const initialKitchencleaning = [ 
+  
     {
       name: "מסיר שומנים",
       image: importImage("cillit_bang_grease_remover.jpeg"),
       id: 14,
     },
     {
-      name: "מסיר שומנים להסרת לכלוך קשה",
+      name: "מסיר שומנים קשה",
       image: importImage("tough_grease_remover.jpeg"),
       id: 14,
     },
     {
-      name: "מנקה ומחטא עוצמתי למטבח ללא אקונומיקה",
+      name: "מנקה מחטא למטבח ללא אקונומיקה",
       image: importImage("powerful_kitchen_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות למטבח",
+      name: "מטליות לחות ",
       image: importImage("kitchen_cleaning_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "ספריי לניקוי והברקה של משטחי נירוסטה",
+      name: "ספריי לניקוי משטחי נירוסטה",
       image: importImage("stainless_steel_cleaning_spray.jpeg"),
       id: 14,
     },
     {
-      name: "מסיר אבנית מקומקומים",
+      name: "מסיר אבנית קומקומים",
       image: importImage("anti_kalk_descaler.jpeg"),
       id: 14,
     },
@@ -461,12 +458,12 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "תרסיס ניקוי רב עוצמתי למטבח",
+      name: "תרסיס ניקוי רב עוצמתי מטבח",
       image: importImage("astonish_powerful_kitchen_spray.jpeg"),
       id: 14,
     },
     {
-      name: "מסיר לכלוך קשה ודביק",
+      name: "מסיר לכלוך קשה ",
       image: importImage("saint_moritz_kitchen_cleaner.jpeg"),
       id: 14,
     },
@@ -479,27 +476,27 @@ const CleaningDisposablePage: React.FC = () => {
 
   const initialGeneralcleaning = [
     {
-      name: "תרסיס ניקוי והברקת נירוסטה",
+      name: " ניקוי נירוסטה",
       image: importImage("stainless_steel_cleaning_spray.jpeg"),
       id: 14,
     },
     {
-      name: "אקונומיקה בניחוח לימון",
+      name: "אקונומיקה לימון",
       image: importImage("lemon_scented_bleach.jpeg"),
       id: 14,
     },
     {
-      name: "אקונומיקה בניחוח פרחים",
+      name: "אקונומיקה פרחים",
       image: importImage("flower_scented_bleach.jpeg"),
       id: 14,
     },
     {
-      name: "מסיר אבנית ולכלוך קשה",
+      name: "מסיר אבנית",
       image: importImage("tough_scale_remover.jpeg"),
       id: 14,
     },
     {
-      name: "תרסיס לניקוי כללי בתוספת אבקת סודה",
+      name: "תרסיס לניקוי כללי אבקת סודה",
       image: importImage("general_cleaning_spray_with_soda.jpeg"),
       id: 14,
     },
@@ -509,27 +506,27 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "אקונומיקה בניחוח לבנדר",
+      name: "אקונומיקה  לבנדר",
       image: importImage("lavender_scented_bleach.jpeg"),
       id: 14,
     },
     {
-      name: "אקונומיקה בניחוח פריחה לבנה",
+      name: "אקונומיקה  פריחה לבנה",
       image: importImage("white_blossom_scented_bleach.jpeg"),
       id: 14,
     },
     {
-      name: "קצף ניקוי בתוספת אקונומיקה בריח לימון",
+      name: "קצף ניקוי אקונומיקה  לימון",
       image: importImage("cleaning_foam_with_lemon_bleach.jpeg"),
       id: 14,
     },
     {
-      name: "קצף ניקוי בתוספת אקונומיקה בריח לבנדר",
+      name: "קצף ניקוי  אקונומיקה  לבנדר",
       image: importImage("cleaning_foam_with_lavender_bleach.jpeg"),
       id: 14,
     },
     {
-      name: "קצף ניקוי בניחוח פריחה לבנה",
+      name: "קצף ניקוי  פריחה לבנה",
       image: importImage("sano_cleaning_foam_white_blossom.jpeg"),
       id: 14,
     },
@@ -539,7 +536,7 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "נוזל ניקוי כללי אקולוגי",
+      name: " ניקוי כללי אקולוגי",
       image: importImage("green_power_general_cleaner.jpeg"),
       id: 14,
     },
@@ -549,22 +546,22 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "מארז מטליות לחיטוי וניקוי",
+      name: "מארז מטליות  ניקוי",
       image: importImage("antibacterial_wipes_99_9.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לניקוי כללי על בסיס שמן אורנים טבעי",
+      name: "ג'ל ניקוי כללי  שמן אורנים ",
       image: importImage("pine_oil_cleaning_gel.jpeg"),
       id: 14,
     },
     {
-      name: "מסיר עובש בניחוח לימון",
+      name: "מסיר עובש  לימון",
       image: importImage("lemon_scented_mold_remover.jpeg"),
       id: 14,
     },
     {
-      name: "חיטוי וניקוי בסביבת התינוק",
+      name: "חיטוי  בסביבת התינוק",
       image: importImage("baby_safe_disinfectant_99_9.jpeg"),
       id: 14,
     },
@@ -574,37 +571,37 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "מטליות לחות לניקוי כללי",
+      name: "מטליות לחות ניקוי כללי",
       image: importImage("general_cleaning_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "ניקוי וחיטוי רצפות ומשטחים בניחוח אקליפטוס",
+      name: "ניקוי  רצפות ומשטחים  אקליפטוס",
       image: importImage("eucalyptus_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "מארז מטליות הפלא לניקוי כללי",
+      name: " מטליות הפלא ניקוי כללי",
       image: importImage("trio_miracle_cleaning_cloths_decor_sano_sushi.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לניקוי כללי בניחוח לימון",
+      name: "מטליות לחות ניקוי כללי  לימון",
       image: importImage("lemon_scented_general_cleaning_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לניקוי כללי בניחוח מרכך כביסה",
+      name: "מטליות לחות ניקוי כללי  מרכך כביסה",
       image: importImage("fabric_softener_scented_cleaning_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לניקוי משטחים אנטיבקטריאלי",
+      name: "מטליות לחות ניקוי משטחים אנטיבקטריאלי",
       image: importImage("antibacterial_surface_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל רב תכליתי מנקה ומבריק",
+      name: "נוזל רב תכליתי מנקה ",
       image: importImage("multi_purpose_cleaner_shine.jpeg"),
       id: 14,
     },
@@ -614,32 +611,32 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "נוזל שמשות לרכב",
+      name: "נוזל שמשות רכב",
       image: importImage("car_window_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "סבון שטיחים דוחה קרדית אבק הבית",
+      name: "סבון שטיחים דוחה קרדית אבק ",
       image: importImage("carpet_shampoo_dust_mite_repellent.jpeg"),
       id: 14,
     },
     {
-      name: "תרסיס לניקוי רהיטים",
+      name: "תרסיס ניקוי רהיטים",
       image: importImage("furniture_cleaning_spray.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לניקוי והברקת רהיטים",
+      name: "מטליות לחות ניקוי  רהיטים",
       image: importImage("furniture_cleaning_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "ניקוי וטיפול במוצרי עור",
+      name: "ניקוי וטיפול עור",
       image: importImage("leather_care_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לניקוי משקפיים",
+      name: "מטליות ניקוי משקפיים",
       image: importImage("glasses_cleaning_wipes.jpeg"),
       id: 14,
     },
@@ -652,102 +649,92 @@ const CleaningDisposablePage: React.FC = () => {
 
   const initialFloorcleaning = [
     {
-      name: "נוזל מנקה רצפות בניחוח לבנדר",
+      name: " נוזל רצפות לבנדר",
       image: importImage("lavender_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל מנקה רצפות בניחוח אורנים",
+      name: " נוזל רצפות  אורנים",
       image: importImage("pine_scented_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל מנקה רצפות בניחוח מאסק",
+      name: " נוזל רצפות מאסק",
       image: importImage("musk_scented_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל מנקה פרקט",
+      name: " נוזל פרקט",
       image: importImage("parquet_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל לניקוי רצפה דוחה תיקנים",
+      name: " נוזל רצפות דוחה תיקנים",
       image: importImage("roach_repellent_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל בניחוח פנטזיה לניקוי הרצפה",
+      name: "נוזל רצפות פנטזיה ",
       image: importImage("fantasy_scented_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל לניקוי רצפה בניחוח מאסק",
-      image: importImage("fresh_musk_floor_cleaner.jpeg"),
-      id: 14,
-    },
-    {
-      name: "נוזל לניקוי רצפה בניחוח לילך לבנדר",
-      image: importImage("fresh_lavender_lilac_floor_cleaner.jpeg"),
-      id: 14,
-    },
-    {
-      name: "נוזל לניקוי רצפה בניחוח ספא מרגיע",
+      name: "נוזל רצפות ספא מרגיע",
       image: importImage("spa_scented_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל לניקוי רצפה בניחוח כותנה מלטפת",
+      name: "נוזל רצפות כותנה מלטפת",
       image: importImage("home_cotton_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל לניקוי רצפה בריח אפרסק",
+      name: "נוזל רצפות אפרסק",
       image: importImage("peach_scented_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל לניקוי רצפה בניחוח לימון מרענן",
+      name: "נוזל רצפות לימון מרענן",
       image: importImage("fresh_lemon_scented_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל לניקוי רצפה בניחוח יסמין",
+      name: "נוזל רצפות יסמין",
       image: importImage("jasmine_scented_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "נוזל לניקוי רצפה בניחוח פסיפלורה",
+      name: "נוזל רצפות פסיפלורה",
       image: importImage("passionfruit_scented_floor_cleaner.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לניקוי רצפות",
+      name: "מטליות לחות ניקוי רצפות",
       image: importImage("floor_cleaning_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לניקוי הרצפה בניחוח מאסק",
+      name: "מטליות לחות ניקוי רצפות מאסק",
       image: importImage("musk_scented_floor_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לרצפה בניחוח מרכך כביסה",
+      name: "מטליות לחות ניקוי רצפות מרכך כביסה",
       image: importImage("thick_floor_wipes_fabric_softener_scent.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לניקוי הרצפה בניחוח מלון מפנק",
+      name: "מטליות לחות ניקוי רצפות מלון מפנק",
       image: importImage("luxury_hotel_floor_wipes_70x40.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לניקוי הרצפה בניחוח מלון בוטיק",
+      name: "מטליות לחות ניקוי רצפות מלון בוטיק",
       image: importImage("boutique_hotel_floor_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לרצפה בניחוח לימון",
+      name: "מטליות לחות ניקוי רצפות לימון",
       image: importImage("lemon_scented_floor_wipes.jpeg"),
       id: 14,
     },
@@ -760,22 +747,22 @@ const CleaningDisposablePage: React.FC = () => {
 
   const initialBathroomtoilecleaning = [
     {
-      name: "מסיר עובש בניחוח לימון",
+      name: "מסיר עובש  לימון",
       image: importImage("lemon_mold_remover.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לניקוי אסלות בניחוח אורנים",
+      name: "ג'ל ניקוי אסלות  אורנים",
       image: importImage("pine_scented_toilet_gel.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לניקוי אסלות בניחוח לימון",
+      name: "ג'ל ניקוי אסלות בניחוח לימון",
       image: importImage("lemon_scented_toilet_gel.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לניקוי אסלות בניחוח לבנדר",
+      name: "ג'ל ניקוי אסלות  לבנדר",
       image: importImage("lavender_scented_toilet_gel.jpeg"),
       id: 14,
     },
@@ -785,17 +772,17 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "ג'ל לניקוי אסלות לוטוס וסחלב",
+      name: "ג'ל ניקוי אסלות לוטוס וסחלב",
       image: importImage("lotus_orchid_toilet_gel.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לניקוי אסלות עם אפקט בישום מוגבר מגנוליה ונרולי",
+      name: "ג'ל ניקוי אסלות   בישום מוגבר מגנוליה ונרולי",
       image: importImage("magnolia_neroli_scented_toilet_gel.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל בתוספת אקונומיקה בניחוח לימון",
+      name: "ג'ל  אקונומיקה  לימון",
       image: importImage("lemon_bleach_toilet_gel.jpeg"),
       id: 14,
     },
@@ -805,92 +792,92 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "ג'ל לניקוי מתקדם בניחוח ים",
+      name: "ג'ל ניקוי מתקדם  ים",
       image: importImage("sea_breeze_advanced_toilet_gel.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לניקוי מתקדם בניחוח רענן",
+      name: "ג'ל ניקוי מתקדם  רענן",
       image: importImage("fresh_scented_advanced_toilet_gel.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לניקוי עם אקונומיקה מקציפה בניחוח הדרים",
+      name: "ג'ל ניקוי  אקונומיקה מקציפה  הדרים",
       image: importImage("citrus_bleach_foam_toilet_gel.jpeg"),
       id: 14,
     },
     {
-      name: "ספריי לחדר אמבט",
+      name: "ספריי חדר אמבט",
       image: importImage("astonish_bathroom_spray.jpeg"),
       id: 14,
     },
     {
-      name: "מטליות לחות לחדרי אמבטיה ושירותים",
+      name: "מטליות לחות  אמבטיה שירותים",
       image: importImage("bathroom_toilet_wipes.jpeg"),
       id: 14,
     },
     {
-      name: "סנובון מוצק כחול מגנוליה ונרולי",
+      name: "סנובון   מגנוליה נרולי",
       image: importImage("snobon_solid_blue_magnolia_neroli.jpeg"),
       id: 14,
     },
     {
-      name: "סנובון מוצק כחול לוטוס וסחלב",
+      name: "סנובון   לוטוס סחלב",
       image: importImage("snobon_solid_blue_lotus_orchid.jpeg"),
       id: 14,
     },
     {
-      name: "סנובון סבון אסלה כחול קלאסיק",
+      name: "סנובון קלאסיק",
       image: importImage("snobon_solid_blue_classic.jpeg"),
       id: 14,
     },
     {
-      name: "סנובון סבון אסלה בריח לימון",
+      name: "סנובון לימון",
       image: importImage("snobon_solid_lemon_scented.jpeg"),
       id: 14,
     },
     {
-      name: "סנובון סבון אסלה בניחוח לובר",
+      name: "סנובון לובר",
       image: importImage("snobon_solid_louber_scented.jpeg"),
       id: 14,
     },
     {
-      name: "סנובון סבון אסלה בריח תות",
+      name: "סנובון תות",
       image: importImage("snobon_solid_strawberry_scented.jpeg"),
       id: 14,
     },
     {
-      name: "סנובון סבון אסלה כחול בניחוח אפרסק",
+      name: "סנובון  אפרסק",
       image: importImage("snobon_blue_peach_scented.jpeg"),
       id: 14,
     },
     {
-      name: "סנובון סבון אסלה כחול בניחוח תפוח",
+      name: "סנובון תפוח",
       image: importImage("snobon_blue_apple_scented.jpeg"),
       id: 14,
     },
     {
-      name: "סנובון סבון אסלה בניחוח מאסק",
+      name: "סנובון מאסק",
       image: importImage("snobon_musk_scented_toilet_soap.jpeg"),
       id: 14,
     },
     {
-      name: "טבליות הפלא לאסלה בניחוח אקליפטוס",
+      name: "טבליות הפלא אסלה אקליפטוס",
       image: importImage("astonish_eucalyptus_toilet_tablets.jpeg"),
       id: 14,
     },
     {
-      name: "טבליות הפלא לאסלה בניחוח ורדים",
+      name: "טבליות הפלא אסלה ורדים",
       image: importImage("astonish_rose_toilet_tablets.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לניקוי אסלות + חומץ ומלח לימון בריח הדרים",
+      name: "ג'ל ניקוי אסלות חומץ ומלח לימון הדרים",
       image: importImage("citrus_vinegar_lemon_toilet_gel.jpeg"),
       id: 14,
     },
     {
-      name: "ג'ל לניקוי אסלות + חומץ ומלח לימון בריח לבנדר",
+      name: "ג'ל ניקוי אסלות חומץ ומלח לימון לבנדר",
       image: importImage("lavender_vinegar_lemon_toilet_gel.jpeg"),
       id: 14,
     },
@@ -900,17 +887,17 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "תרסיס לניקוי מקלחון",
+      name: "תרסיס ניקוי מקלחון",
       image: importImage("durgol_shower_cleaner_spray.jpeg"),
       id: 14,
     },
     {
-      name: "טבליות לניקוי תחתית האסלה",
+      name: "טבליות ניקוי תחתית האסלה",
       image: importImage("hepi_toilet_cleaning_tablets.jpeg"),
       id: 14,
     },
     {
-      name: "ספריי לחיטוי וניקוי חדר האמבטיה",
+      name: "ספריי חיטוי חדר האמבטיה",
       image: importImage("jet_bathroom_disinfectant.jpeg"),
       id: 14,
     },
@@ -928,7 +915,7 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "K3 תחנת פיתיון קוטל תיקנים",
+      name: "K3 פיתיון קוטל תיקנים",
       image: importImage("k3_cockroach_bait_station.jpeg"),
       id: 14,
     },
@@ -953,7 +940,7 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "קוטל יבש ליתושים מזיקי ספרים וארגזים K600",
+      name: "קוטל יבש יתושים מזיקי ספרים וארגזים K600",
       image: importImage("k600_dry_insect_killer.jpeg"),
       id: 14,
     },
@@ -968,45 +955,40 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "רול און נגד יתושים",
+      name: "רול נגד יתושים",
       image: importImage("sano_di_mosquito_rollon.jpeg"),
       id: 14,
     },
     {
-      name: "רול און פלוס אלוורה",
+      name: "רול פלוס אלוורה",
       image: importImage("sano_di_aloe_vera_rollon.jpeg"),
       id: 14,
     },
     {
-      name: "תחליב רול און דוחה יתושים לתינוקות ולילדים",
+      name: " רול דוחה יתושים לתינוקות ולילדים",
       image: importImage("sano_di_kids_repellent.jpeg"),
       id: 14,
     },
     {
-      name: "דוחה יתושים עם קמומיל לילדים",
+      name: "דוחה יתושים קמומיל לילדים",
       image: importImage("sano_di_kids_chamomile.jpeg"),
       id: 14,
     },
     {
-      name: "דוחה יתושים נוזלי + מכשיר",
+      name: "דוחה יתושים נוזלי ",
       image: importImage("sanomat_mosquito_repellant_device.jpeg"),
       id: 14,
     },
     {
-      name: "פותח סתימות בצנרת ניקוז ובכיורים",
+      name: "פותח סתימות בצנרת ",
       image: importImage("drain_opener_pipes.jpeg"),
-      id: 14,
-    },
-    {
-      name: "נוזל פותח סתימות בצנרת ניקוז",
-      image: importImage("drain_out_extra_liquid.jpeg"),
       id: 14,
     },
   ];  
 
   const initialCleaningaccessories = [
     {
-      name: "מטליות מיקרופייבר למשטחים",
+      name: "מטליות מיקרופייבר משטחים",
       image: importImage("microfiber_surface_cloths_3pack.jpeg"),
       id: 14,
     },
@@ -1016,12 +998,12 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "מטלית הפלא מיקרופייבר לכל סוגי המשטחים",
+      name: "מטלית הפלא מיקרופייבר לכל  המשטחים",
       image: importImage("microfiber_magic_cloth_30x30.jpeg"),
       id: 14,
     },
     {
-      name: "מטלית מיקרופייבר לרצפה",
+      name: "מטלית מיקרופייבר רצפה",
       image: importImage("microfiber_floor_cloth.jpeg"),
       id: 14,
     },
@@ -1111,7 +1093,7 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "משטח מיקרופייבר לייבוש כלים",
+      name: "משטח מיקרופייבר ייבוש כלים",
       image: importImage("microfiber_dish_drying_mat.jpeg"),
       id: 14,
     },
@@ -1488,7 +1470,6 @@ const CleaningDisposablePage: React.FC = () => {
   initialCleaningaccessories.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialDisposableproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialBagspackagingproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-
 
 const [paper, setPaper] = useState<{ name: string; image: string | null; count: number }[]>(
   initialPaper.map(paper => {

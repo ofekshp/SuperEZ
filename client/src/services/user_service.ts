@@ -51,7 +51,6 @@ class UserService {
           console.log('Data:', data);
           localStorage.setItem('userEmail', data.user.email);
           localStorage.setItem('userId', data.user._id);
-          localStorage.setItem('basketProducts', '[]');
           document.cookie = `isLoggedIn=true;path=/`;
           return true;
         } else {
@@ -68,42 +67,6 @@ class UserService {
     }
   };
 
-    // loginUser = async (user: IUser) => {
-    //     const serverUrl = process.env.REACT_APP_SERVER_URL;
-    //     const port = process.env.REACT_APP_SERVER_PORT;
-    //     const apiUrl = ${serverUrl}:${port}/users/login;
-    //     try {
-    //         const response = await fetch(apiUrl, {
-    //           method: 'POST',
-    //           headers: {
-    //             'Content-Type': 'application/json',
-    //           },
-    //           body: JSON.stringify(user),
-    //         });
-    //         console.log('Response:', response);                 
-    //         if (response.ok) {
-    //           const data = await response.json();
-    //           if (data.message === 'Login successful') {
-    //             console.log('Data:', data);
-    //             localStorage.removeItem('basketProducts');
-    //             localStorage.setItem('userEmail', data.user.email);
-    //             localStorage.setItem('userId', data.user._id);
-    //             document.cookie = isLoggedIn=true;path=/;
-    //             return true;
-    //           } else {
-    //             console.log('Invalid data format:', data);
-    //             return false;
-    //           }
-    //         } else {
-    //           const errorData = await response.json();
-    //           console.error('Error:', errorData); // Log error details
-    //           return false;           
-    //         }
-    //       } catch (error) {
-    //         console.error('Login error:', error); // Log fetch error          
-    //       }
-    //     };
-
   logoutUser = async () => {
     const serverUrl = process.env.REACT_APP_SERVER_URL;
     const port = process.env.REACT_APP_SERVER_PORT;
@@ -115,7 +78,7 @@ class UserService {
       if (response.ok) {
         localStorage.removeItem('userEmail');
         localStorage.removeItem('userId');
-        localStorage.removeItem('basketProducts');
+
         return true;
       } else {
         return false;
