@@ -4554,12 +4554,12 @@ const initialGranolaoats = [
           <ProductsPage
           products={filterBreads}
           categoryTitle={
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '15px' }}>
               <span style={{ verticalAlign: 'middle' }}>לחם, חלה, לחמניות, פיתות וטורטייה</span>
               <img 
                 src={importImage('breads_icon.png')} 
                 alt="" 
-                style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+                style={{ width: '60px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
               />
             </div>
           }
@@ -4576,12 +4576,12 @@ const initialGranolaoats = [
            <ProductsPage
            products={filterCakes}
            categoryTitle={
-             <div style={{ display: 'flex', alignItems: 'center' }}>
+             <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '15px' }}>
                <span style={{ verticalAlign: 'middle' }}>עוגות ועוגיות אישיות</span>
                <img 
-                 src={importImage('cakes_icon.png')} 
+                 src={importImage('cake_slice_icon.png')} 
                  alt="" 
-                 style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+                 style={{ width: '46px', height: '36px', marginLeft: '5px', verticalAlign: 'middle' }} 
                />
              </div>
            }
@@ -4598,7 +4598,7 @@ const initialGranolaoats = [
             <ProductsPage
             products={filterCookies}
             categoryTitle={
-              <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '15px' }}>
                 <span style={{ verticalAlign: 'middle' }}>עוגיות, וופלים, ביסקוויטים וגביעי גלידה</span>
                 <img 
                   src={importImage('cookies_icon.png')} 
@@ -4621,11 +4621,11 @@ const initialGranolaoats = [
           products={filterCrackers}
           categoryTitle={
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <span style={{ verticalAlign: 'middle' }}>פריכיות,צנימים וקרקרים</span>
+              <span style={{ verticalAlign: 'middle' }}>פריכיות, צנימים וקרקרים</span>
               <img 
                 src={importImage('crackers_icon.png')} 
                 alt="" 
-                style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+                style={{ width: '80px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
               />
             </div>
           }
@@ -4779,7 +4779,7 @@ const initialGranolaoats = [
                   <img 
                     src={importImage('coffeecapsules_icon.png')} 
                     alt="" 
-                    style={{ width: '70px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+                    style={{ width: '100px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
                   />
                 </div>
               }
@@ -4823,7 +4823,7 @@ const initialGranolaoats = [
                 <img 
                   src={importImage('teainfusions_icon.png')} 
                   alt="" 
-                  style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+                  style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
                 />
               </div>
             }
@@ -4843,7 +4843,7 @@ const initialGranolaoats = [
                   <div style={{ display: 'flex', alignItems: 'center' }}>
                     <span style={{ verticalAlign: 'middle' }}>טחינה</span>
                     <img 
-                      src={importImage('tahini_icon.png')} 
+                      src={importImage('tahini_sauce_icon.png')} 
                       alt="" 
                       style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
                     />
@@ -4911,7 +4911,7 @@ const initialGranolaoats = [
           <img 
             src={importImage('cannedcucumbers_icon.png')} 
             alt="" 
-            style={{ width: '50px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+            style={{ width: '48px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
           />
         </div>
       }
@@ -4955,7 +4955,7 @@ const initialGranolaoats = [
         <img 
           src={importImage('cannedtomatoes_icon.png')} 
           alt="" 
-          style={{ width: '40px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '38px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
     }
@@ -4975,9 +4975,9 @@ const initialGranolaoats = [
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <span style={{ verticalAlign: 'middle' }}>שימורי דגים</span>
         <img 
-          src={importImage('cannedfish_icon.png')} 
+          src={importImage('canned_fish_icon.png')} 
           alt="" 
-          style={{ width: '40px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '55px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
     }
@@ -4999,7 +4999,7 @@ const initialGranolaoats = [
         <img 
           src={importImage('cannedtuna_icon.png')} 
           alt="" 
-          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '60px', height: '60px', marginLeft: '7px', verticalAlign: 'middle', marginTop: '-20px' }} 
         />
       </div>
     }
@@ -5043,7 +5043,7 @@ const initialGranolaoats = [
         <img 
           src={importImage('cracks_icon.png')} 
           alt="" 
-          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '80px', height: '60px', marginLeft: '0px', verticalAlign: 'middle' }} 
         />
       </div>
     }
@@ -5060,12 +5060,12 @@ const initialGranolaoats = [
     <ProductsPage
     products={filterDriedFruits}
     categoryTitle={
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '20px' }}>
         <span style={{ verticalAlign: 'middle' }}>פירות יבשים</span>
         <img 
-          src={importImage('driedfruits_icon.png')} 
+          src={importImage('dried_fruits_icon.png')} 
           alt="" 
-          style={{ width: '55px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '65px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
     }
@@ -5087,7 +5087,7 @@ const initialGranolaoats = [
         <img 
           src={importImage('granola_oats_icon.png')} 
           alt="" 
-          style={{ width: '60px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '60px', height: '55px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
     }

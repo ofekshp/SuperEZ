@@ -287,7 +287,7 @@ const DrinksPage: React.FC = () => {
     { name: "סירופ בטעם פטל דיאט", image: importImage('diet_raspberry_1l.jpg'), id: 15 },
     { name: "סירופ בטעם לימון", image: importImage('diet_lemon_750ml.jpg'), id: 15 },
     { name: "סירופ בטעם תפוזים", image: importImage('diet_orange_750ml.jpg'), id: 15 },
-    { name: "בנפייבר סיבים תזונתיים אבקת דקסטרין חיטה", image: importImage('benefiber_wheat_dextrin_powder_261g.jpg'), id: 15 },
+    // { name: "בנפייבר סיבים תזונתיים אבקת דקסטרין חיטה", image: importImage('benefiber_wheat_dextrin_powder_261g.jpg'), id: 15 },
     { name: "סירופ בטעם פטל ללא תוספת סוכר", image: importImage('no_sugar_raspberry_1l.jpg'), id: 15 },
     { name: "סירופ בטעם ענבים ללא תוספת סוכר", image: importImage('no_sugar_grape_1l.jpg'), id: 15 },
     { name: "סירופ בטעם תפוחים ללא תוספת סוכר", image: importImage('no_sugar_apple_1l.jpg'), id: 15 },
@@ -528,6 +528,7 @@ const initialAlcoholDrinks = [
 { name: "בריזר מנגו פסיפלורה", image: importImage('breezer_mango_passionfruit.jpg'), id: 15 },
 
 ];
+
 
   const [sweets, setSweets] = useState<{ name: string; image: string | null; count: number }[]>(
     initialSweetDrinks.map(drink => {

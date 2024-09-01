@@ -1980,7 +1980,7 @@ const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         <img 
           src={importImage('bathroom_cleaning_icon.png')} 
           alt="" 
-          style={{ width: '60px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          style={{ width: '80px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
         />
       </div>
     }

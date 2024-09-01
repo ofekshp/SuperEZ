@@ -1273,6 +1273,11 @@ const initialBakeryproducts = [
       image: importImage("dry_yeast_shemarit_125g.jpeg"),
       id: 10,
     },
+    {
+      name: "שמרים טריים לאפיה בגרגרים",
+      image: importImage('fresh_yeast_for_baking.jpeg'),
+      id: 4
+    },
 ];
   
 const initialJams = [

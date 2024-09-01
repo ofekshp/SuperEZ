@@ -991,11 +991,6 @@ const DeliPage: React.FC = () => {
       id: 4
     },
     {
-      name: "שמרים טריים לאפיה בגרגרים",
-      image: importImage('fresh_yeast_for_baking.jpeg'),
-      id: 4
-    },
-    {
       name: "שמנת מועשרת 15%",
       image: importImage('yotvata_enriched_cream_15.jpeg'),
       id: 4
@@ -2387,7 +2382,7 @@ useEffect(() => {
    products={filterCreamWhippedCreamCookingBaking}
    categoryTitle={
      <div style={{ display: 'flex', alignItems: 'center' }}>
-       <span style={{ verticalAlign: 'middle' }}>שמנת, קצפת בישול ואפייה</span>
+       <span style={{ verticalAlign: 'middle' }}>שמנת וקצפת לבישול ולאפייה</span>
        <img 
          src={importImage('cream_whipped_cream_cooking_baking.png')} 
          alt="" 
@@ -2455,7 +2450,7 @@ useEffect(() => {
        <div style={{ display: 'flex', alignItems: 'center' }}>
          <span style={{ verticalAlign: 'middle' }}>נקניקים ופסטרמה</span>
          <img 
-           src={importImage('sausages_pastrami.png')} 
+           src={importImage('salami_slices_icon.png')} 
            alt="" 
            style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
          />
