@@ -3,25 +3,28 @@ const CompareCart = require('../models/CompareCart');
 function filterIrrelevantWords(words, irrelevantWords) {
   return words.filter(word => !irrelevantWords.includes(word));
 }
+
 function extractSearchTerms(productName) {
   return productName.split(/\s+/).filter(word => word.length > 0);
 }
 
-function calculateMatchScore(productName, dbProductName) {
-  const irrelevantWordsInSite = ['קפוא','בטעם','ניקוי','ותמצית','תמצית','בתוספת','בריח','בניחוח','עם','ממרח', 'קלאסי', 'איטלקי', 'טרי', 'מהדרין']; // website
-  const irrelevantWordsInDb = ['קפוא','להקפצה','יטבתה','רמי לוי','תנובה','של','עם','אריאל', 'מיכל', 'קלאסי', 'אנסקי','בניחוח','בריח']; //  database
-
+function calculateMatchScore(productName, dbProductName, irrelevantWordsInSite, irrelevantWordsInDb) {
   const productWords = filterIrrelevantWords(extractSearchTerms(productName), irrelevantWordsInSite);
   const dbProductWords = filterIrrelevantWords(extractSearchTerms(dbProductName), irrelevantWordsInDb);
 
   const commonWords = productWords.filter(word => dbProductWords.includes(word));
-  return commonWords.length / productWords.length;
+  const matchRatio = commonWords.length / productWords.length;
+  
+  return matchRatio;
 }
 
 const compareCart = async (req, res) => {
   const { products } = req.body;
 
   try {
+    const irrelevantWordsInSite = ['טבסקו', 'בפאלו', 'קפוא','מים', 'ניקוי', 'ותמצית', 'תמצית', 'בתוספת', 'בריח', 'בניחוח', 'עם', 'ממרח', 'קלאסי', 'איטלקי', 'טרי', 'מהדרין']; // website
+    const irrelevantWordsInDb = ['תוספת','ווילי פוד','מקסימה','פיירי','אסם','שטראוס','טיב טעם','קפוא', 'להקפצה', 'יטבתה', 'רמי לוי', 'תנובה', 'של', 'עם', 'אריאל', 'מיכל', 'קלאסי', 'אנסקי', 'בניחוח', 'בריח']; // database
+
     const carts = [
       { name: 'רמי לוי', totalPrice: 0, products: [] },
       { name: 'חצי חינם', totalPrice: 0, products: [] },
@@ -37,10 +40,12 @@ const compareCart = async (req, res) => {
     ];
 
     for (const product of products) {
-      const searchTerms = extractSearchTerms(product.name);
+      // סינון מילים לא רלוונטיות לפני החיפוש
+      const searchTerms = filterIrrelevantWords(extractSearchTerms(product.name), irrelevantWordsInSite);
 
+      // חיפוש בבסיס הנתונים עם המילים המסוננות
       const query = {
-        $and: searchTerms.map(term => ({
+        $or: searchTerms.map(term => ({
           name: { $regex: term, $options: 'i' }
         }))
       };
@@ -50,14 +55,16 @@ const compareCart = async (req, res) => {
       for (const cart of carts) {
         let bestMatch = null;
         let lowestPrice = Number.MAX_VALUE;
+        let bestMatchScore = 0.5; // הגדרת ציון מינימלי לקבלת התאמה
 
         dbProducts.forEach(dbProduct => {
-          const score = calculateMatchScore(product.name, dbProduct.name);
-          if (score > 0) {
+          const score = calculateMatchScore(product.name, dbProduct.name, irrelevantWordsInSite, irrelevantWordsInDb);
+          if (score > bestMatchScore) {
             const priceStore = dbProduct.prices[0]._doc[cart.name];
             if (priceStore < lowestPrice) {
               lowestPrice = priceStore;
               bestMatch = dbProduct;
+              bestMatchScore = score; // עדכון ציון ההתאמה הכי טוב
             }
           }
         });
