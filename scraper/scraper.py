@@ -760,88 +760,6 @@ SUPERMARKETS = [
     #                 "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%9C%D7%91-%D7%91%D7%99%D7%A6%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D/%D7%A1%D7%9C%D7%98%D7%99%D7%9D",
     #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A8%D7%98%D7%91%D7%99%D7%9D",
     #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%93%D7%91%D7%A9-%D7%A8%D7%99%D7%91%D7%94-%D7%95%D7%9E%D7%9E%D7%A8%D7%97%D7%99%D7%9D",
-
-
-    #             ]
-    #         },
-    #         {
-    #             "name": "עוף, בשר, נקניקים ודגים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "אורגני ובריאות",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%AA%D7%95%D7%A1%D7%A4%D7%99%D7%9D-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%A0%D7%98%D7%95%D7%9C-%D7%95%D7%9E%D7%95%D7%A4%D7%97%D7%AA-%D7%A1%D7%95%D7%9B%D7%A8",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%A1%D7%95%D7%99%D7%94-%D7%95%D7%9C%D7%9C%D7%90-%D7%9C%D7%A7%D7%98%D7%95%D7%96"
-    #             ]
-    #         },
-    #         {
-    #             "name": "קפואים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "שימורים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "אפייה ובישול",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A7%D7%9E%D7%97-%D7%95%D7%A4%D7%99%D7%A8%D7%95%D7%A8%D7%99-%D7%9C%D7%97%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A9%D7%9E%D7%9F-%D7%97%D7%95%D7%9E%D7%A5-%D7%95%D7%9E%D7%99%D7%A5-%D7%9C%D7%99%D7%9E%D7%95%D7%9F",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%9E%D7%A8%D7%A7%D7%99%D7%9D-%D7%95%D7%AA%D7%91%D7%A9%D7%99%D7%9C%D7%99%D7%9D",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%90%D7%A4%D7%99%D7%94"
-    #             ]
-    #         },
-    #         {
-    #             "name": "אסייתי",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%94%D7%9E%D7%98%D7%91%D7%97-%D7%94%D7%90%D7%A1%D7%99%D7%99%D7%90%D7%AA%D7%99"
-    #             ]
-    #         },
-    #         {
-    #             "name": "קטניות ודגנים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%9C%D7%91-%D7%91%D7%99%D7%A6%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D/%D7%9E%D7%96%D7%95%D7%9F-%D7%9E%D7%A6%D7%95%D7%A0%D7%9F",
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%98%D7%A0%D7%99%D7%95%D7%AA-%D7%95%D7%93%D7%92%D7%A0%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "מתוקים וחטיפים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%95%D7%9E%D7%AA%D7%95%D7%A7%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "משקאות",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA"
-    #             ]
-    #         },
-    #         {
-    #             "name": "אחזקת הבית ובעלי חיים",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97"
-    #             ]
-    #         },
-    #         {
-    #             "name": "חד פעמי",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%93-%D7%A4%D7%A2%D7%9E%D7%99-%D7%95%D7%9E%D7%AA%D7%9B%D7%9C%D7%94"
-    #             ]
-    #         },
-    #         {
-    #             "name": "פארם ותינוקות",
-    #             "urls": [
-    #                 "https://www.rami-levy.co.il/he/online/market/%D7%A4%D7%90%D7%A8%D7%9D-%D7%95%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA"
     #             ]
     #         }
     #     ],
@@ -852,6 +770,134 @@ SUPERMARKETS = [
     #         "price": ".tag-price"
     #     }
     # },
+    {
+        "name": "רמי לוי",
+        "id": "rami_levi",
+        "categories": [
+            {
+                "name": "עוף, בשר, נקניקים ודגים",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%A2%D7%95%D7%A3-%D7%98%D7%A8%D7%99",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%A2%D7%95%D7%A3-%D7%A7%D7%A4%D7%95%D7%90",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%91%D7%A9%D7%A8-%D7%91%D7%A7%D7%A8-%D7%95%D7%9B%D7%91%D7%A9-%D7%98%D7%A8%D7%99",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%91%D7%A9%D7%A8-%D7%A7%D7%A4%D7%95%D7%90",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%AA-%D7%95%D7%A0%D7%A7%D7%A0%D7%99%D7%A7%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%91%D7%A9%D7%A8%D7%99%D7%9D-%D7%A2%D7%9C-%D7%94%D7%90%D7%A9",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%91%D7%A9%D7%A8-%D7%95%D7%93%D7%92%D7%99%D7%9D/%D7%93%D7%92%D7%99%D7%9D"
+                ]
+            },
+            {
+                "name": "אורגני ובריאות",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%AA%D7%95%D7%A1%D7%A4%D7%99%D7%9D-%D7%9C%D7%A1%D7%A4%D7%95%D7%A8%D7%98%D7%90%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%A0%D7%98%D7%95%D7%9C-%D7%95%D7%9E%D7%95%D7%A4%D7%97%D7%AA-%D7%A1%D7%95%D7%9B%D7%A8",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%98%D7%91%D7%A2%D7%95%D7%A0%D7%99",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%9C%D7%9C%D7%90-%D7%92%D7%9C%D7%95%D7%98%D7%9F",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%95%D7%A8%D7%92%D7%A0%D7%99-%D7%95%D7%91%D7%A8%D7%99%D7%90%D7%95%D7%AA/%D7%A1%D7%95%D7%99%D7%94-%D7%95%D7%9C%D7%9C%D7%90-%D7%9C%D7%A7%D7%98%D7%95%D7%96"
+                ]
+            },
+            {
+                "name": "קפואים",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%92%D7%9C%D7%99%D7%93%D7%95%D7%AA-%D7%95%D7%90%D7%A8%D7%98%D7%99%D7%A7%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%90%D7%95%D7%9B%D7%9C-%D7%9E%D7%95%D7%9B%D7%9F",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%99%D7%A8%D7%A7%D7%95%D7%AA-%D7%A4%D7%99%D7%A8%D7%95%D7%AA-%D7%95%D7%A6-%D7%99%D7%A4%D7%A1-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%A4%D7%99%D7%A6%D7%95%D7%AA-%D7%9E%D7%90%D7%A4%D7%99%D7%9D-%D7%95%D7%91%D7%A6%D7%A7%D7%99%D7%9D-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/%D7%AA%D7%97%D7%9C%D7%99%D7%A4%D7%99-%D7%91%D7%A9%D7%A8-%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D"
+                ]
+            },
+            {
+                "name": "שימורים",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D"
+                ]
+            }
+        ],
+        "selectors": {
+            "category": ".category-item",
+            "product": ".product-flex",
+            "name": ".inner-text",
+            "price": ".tag-price"
+        }
+    },
+    {
+        "name": "רמי לוי",
+        "id": "rami_levi",
+        "categories": [
+            # {
+            #     "name": "אפייה ובישול",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A7%D7%9E%D7%97-%D7%95%D7%A4%D7%99%D7%A8%D7%95%D7%A8%D7%99-%D7%9C%D7%97%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%A9%D7%9E%D7%9F-%D7%97%D7%95%D7%9E%D7%A5-%D7%95%D7%9E%D7%99%D7%A5-%D7%9C%D7%99%D7%9E%D7%95%D7%9F",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%9E%D7%A8%D7%A7%D7%99%D7%9D-%D7%95%D7%AA%D7%91%D7%A9%D7%99%D7%9C%D7%99%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%90%D7%A4%D7%99%D7%94"
+            #     ]
+            # },
+            # {
+            #     "name": "אסייתי",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D-%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94/%D7%94%D7%9E%D7%98%D7%91%D7%97-%D7%94%D7%90%D7%A1%D7%99%D7%99%D7%90%D7%AA%D7%99"
+            #     ]
+            # },
+            # {
+            #     "name": "קטניות ודגנים",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%9C%D7%91-%D7%91%D7%99%D7%A6%D7%99%D7%9D-%D7%95%D7%A1%D7%9C%D7%98%D7%99%D7%9D/%D7%9E%D7%96%D7%95%D7%9F-%D7%9E%D7%A6%D7%95%D7%A0%D7%9F",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%A7%D7%98%D7%A0%D7%99%D7%95%D7%AA-%D7%95%D7%93%D7%92%D7%A0%D7%99%D7%9D"
+            #     ]
+            # },
+            # {
+            #     "name": "מתוקים וחטיפים",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%95%D7%9E%D7%AA%D7%95%D7%A7%D7%99%D7%9D"
+            #     ]
+            # },
+            # {
+            #     "name": "משקאות",
+            #     "urls": [
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%A7%D7%9C%D7%99%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%97%D7%9E%D7%99%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%AA%D7%A8%D7%9B%D7%99%D7%96%D7%99%D7%9D",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%99%D7%99%D7%A0%D7%95%D7%AA",
+            #         "https://www.rami-levy.co.il/he/online/market/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%90%D7%9C%D7%9B%D7%95%D7%94%D7%95%D7%9C-%D7%95%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94",
+            #         ""
+            #     ]
+            # },
+            {
+                "name": "אחזקת הבית ובעלי חיים",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F-%D7%9C%D7%91%D7%99%D7%AA",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%97%D7%A9%D7%9E%D7%9C",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99-%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%9B%D7%91%D7%99%D7%A1%D7%94",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9B%D7%9C%D7%99%D7%9D",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%A7%D7%95%D7%98%D7%9C-%D7%97%D7%A8%D7%A7%D7%99%D7%9D-%D7%95%D7%9E%D7%91%D7%A9%D7%9E%D7%99-%D7%90%D7%95%D7%99%D7%A8",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9B%D7%9C%D7%99-%D7%91%D7%99%D7%AA",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%91%D7%99%D7%92%D7%95%D7%93",
+                    ""
+                ]
+            },
+            {
+                "name": "חד פעמי",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%97%D7%93-%D7%A4%D7%A2%D7%9E%D7%99-%D7%95%D7%9E%D7%AA%D7%9B%D7%9C%D7%94"
+                ]
+            },
+            {
+                "name": "פארם ותינוקות",
+                "urls": [
+                    "https://www.rami-levy.co.il/he/online/market/%D7%A4%D7%90%D7%A8%D7%9D-%D7%95%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA",
+                    "https://www.rami-levy.co.il/he/online/market/%D7%90%D7%97%D7%96%D7%A7%D7%AA-%D7%94%D7%91%D7%99%D7%AA-%D7%95%D7%91%D7%A2-%D7%97/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%99%D7%9C%D7%93%D7%99%D7%9D"
+                ]
+            }
+        ],
+        "selectors": {
+            "category": ".category-item",
+            "product": ".product-flex",
+            "name": ".inner-text",
+            "price": ".tag-price"
+        }
+    },
     # {
     #     "name": "חצי חינם",
     #     "id": "hatzi_hinam",
@@ -879,7 +925,19 @@ SUPERMARKETS = [
     #                 "https://shop.hazi-hinam.co.il/catalog/71/%D7%A4%D7%99%D7%A6%D7%95%D7%97%D7%99%D7%9D--%D7%AA%D7%91%D7%9C%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%A4%D7%99%D7%A8%D7%95%D7%AA-%D7%99%D7%91%D7%A9%D7%99%D7%9D/10863/%D7%AA%D7%91%D7%9C%D7%99%D7%A0%D7%99%D7%9D-%D7%90%D7%A8%D7%95%D7%96%D7%99%D7%9D",
     #                 "https://shop.hazi-hinam.co.il/catalog/71/%D7%A4%D7%99%D7%A6%D7%95%D7%97%D7%99%D7%9D--%D7%AA%D7%91%D7%9C%D7%99%D7%A0%D7%99%D7%9D-%D7%95%D7%A4%D7%99%D7%A8%D7%95%D7%AA-%D7%99%D7%91%D7%A9%D7%99%D7%9D/11138/%D7%AA%D7%91%D7%9C%D7%99%D7%A0%D7%99%D7%9D-%D7%91%D7%9E%D7%A9%D7%A7%D7%9C"
     #             ]
-    #         },
+    #         }
+    #     ],
+    #     "selectors": {
+    #         "category": "catalog",
+    #         "product": ".product-info[role='link']",
+    #         "name": ".title",
+    #         "price": ".price-regular"
+    #     }
+    # },
+    # {
+    #     "name": "חצי חינם",
+    #     "id": "hatzi_hinam",
+    #     "categories": [
     #         {
     #             "name": "מוצרי חלב, תחליפים וביצים",
     #             "urls": [
@@ -898,7 +956,19 @@ SUPERMARKETS = [
     #                 "https://shop.hazi-hinam.co.il/catalog/78/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%97%D7%9C%D7%91-%D7%95%D7%91%D7%99%D7%A6%D7%99%D7%9D/11213/%D7%91%D7%99%D7%A6%D7%99%D7%9D",
     #                 "https://shop.hazi-hinam.co.il/catalog/78/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%97%D7%9C%D7%91-%D7%95%D7%91%D7%99%D7%A6%D7%99%D7%9D/11592/%D7%A4%D7%A1%D7%98%D7%95%D7%AA-%D7%9E%D7%A6%D7%95%D7%A0%D7%A0%D7%95%D7%AA",
     #             ]
-    #         },
+    #         }
+    #     ],
+    #     "selectors": {
+    #         "category": "catalog",
+    #         "product": ".product-info[role='link']",
+    #         "name": ".title",
+    #         "price": ".price-regular"
+    #     }
+    # },
+    # {
+    #     "name": "חצי חינם",
+    #     "id": "hatzi_hinam",
+    #     "categories": [
     #         {
     #             "name": "סלטים רטבים וממרחים",
     #             "urls": [
@@ -913,9 +983,21 @@ SUPERMARKETS = [
     #                 "https://shop.hazi-hinam.co.il/catalog/74/%D7%A4%D7%A1%D7%98%D7%94--%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%AA%D7%99%D7%91%D7%95%D7%9C/11539/%D7%98%D7%97%D7%99%D7%A0%D7%94-%D7%92%D7%95%D7%9C%D7%9E%D7%99%D7%AA",
     #                 "https://shop.hazi-hinam.co.il/catalog/74/%D7%A4%D7%A1%D7%98%D7%94--%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%AA%D7%99%D7%91%D7%95%D7%9C/11540/%D7%A7%D7%98%D7%A9%D7%95%D7%A4--%D7%9E%D7%99%D7%95%D7%A0%D7%96-%D7%95%D7%97%D7%A8%D7%93%D7%9C",
     #                 "https://shop.hazi-hinam.co.il/catalog/74/%D7%A4%D7%A1%D7%98%D7%94--%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%AA%D7%99%D7%91%D7%95%D7%9C/10840/%D7%9E%D7%9E%D7%A8%D7%97%D7%99%D7%9D-%D7%95%D7%A8%D7%98%D7%91%D7%99%D7%9D"
-
+    #
     #             ]
     #         },
+    #     ],
+    #     "selectors": {
+    #         "category": "catalog",
+    #         "product": ".product-info[role='link']",
+    #         "name": ".title",
+    #         "price": ".price-regular"
+    #     }
+    # },
+    # {
+    #     "name": "חצי חינם",
+    #     "id": "hatzi_hinam",
+    #     "categories": [
     #         {
     #             "name": "עוף, בשר, נקניקים ודגים",
     #             "urls": [
@@ -930,6 +1012,18 @@ SUPERMARKETS = [
     #                 "https://shop.hazi-hinam.co.il/catalog/87/%D7%93%D7%92%D7%99%D7%94/11233/%D7%93%D7%92%D7%99%D7%9D-%D7%98%D7%A8%D7%99%D7%99%D7%9D"
     #             ]
     #         },
+    #     ],
+    #     "selectors": {
+    #         "category": "catalog",
+    #         "product": ".product-info[role='link']",
+    #         "name": ".title",
+    #         "price": ".price-regular"
+    #     }
+    # },
+    # {
+    #     "name": "חצי חינם",
+    #     "id": "hatzi_hinam",
+    #     "categories": [
     #         {
     #             "name": "אורגני ובריאות",
     #             "urls": [
@@ -954,6 +1048,18 @@ SUPERMARKETS = [
     #                 "https://shop.hazi-hinam.co.il/catalog/80/%D7%A7%D7%A4%D7%95%D7%90%D7%99%D7%9D/11217/%D7%90%D7%A6%D7%91%D7%A2%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94"
     #             ]
     #         },
+    #     ],
+    #     "selectors": {
+    #         "category": "catalog",
+    #         "product": ".product-info[role='link']",
+    #         "name": ".title",
+    #         "price": ".price-regular"
+    #     }
+    # },
+    # {
+    #     "name": "חצי חינם",
+    #     "id": "hatzi_hinam",
+    #     "categories": [
     #         {
     #             "name": "שימורים",
     #             "urls": [
@@ -965,7 +1071,19 @@ SUPERMARKETS = [
     #                 "https://shop.hazi-hinam.co.il/catalog/84/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D/11185/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99-%D7%98%D7%95%D7%A0%D7%94",
     #                 "https://shop.hazi-hinam.co.il/catalog/84/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99%D7%9D/11186/%D7%A9%D7%99%D7%9E%D7%95%D7%A8%D7%99-%D7%A4%D7%99%D7%A8%D7%95%D7%AA"
     #             ]
-    #         },
+    #         }
+    #     ],
+    #     "selectors": {
+    #         "category": "catalog",
+    #         "product": ".product-info[role='link']",
+    #         "name": ".title",
+    #         "price": ".price-regular"
+    #     }
+    # },
+    # {
+    #     "name": "חצי חינם",
+    #     "id": "hatzi_hinam",
+    #     "categories": [
     #         {
     #             "name": "אפייה ובישול",
     #             "urls": [
@@ -979,7 +1097,19 @@ SUPERMARKETS = [
     #                 "https://shop.hazi-hinam.co.il/catalog/72/%D7%A7%D7%98%D7%A0%D7%99%D7%95%D7%AA-%D7%95%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%99%D7%A1%D7%95%D7%93/11666/%D7%A4%D7%99%D7%A8%D7%95%D7%A8%D7%99-%D7%9C%D7%97%D7%9D",
     #                 "https://shop.hazi-hinam.co.il/catalog/77/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%90%D7%A4%D7%99%D7%94-%D7%95%D7%9E%D7%9E%D7%A8%D7%97%D7%99%D7%9D/10835/%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%90%D7%A4%D7%99%D7%94"
     #             ]
-    #         },
+    #         }
+    #     ],
+    #     "selectors": {
+    #         "category": "catalog",
+    #         "product": ".product-info[role='link']",
+    #         "name": ".title",
+    #         "price": ".price-regular"
+    #     }
+    # },
+    # {
+    #     "name": "חצי חינם",
+    #     "id": "hatzi_hinam",
+    #     "categories": [
     #         {
     #             "name": "אסייתי",
     #             "urls": [
@@ -994,96 +1124,7 @@ SUPERMARKETS = [
     #                 "https://shop.hazi-hinam.co.il/catalog/136/%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%9D-%D7%A2%D7%9D-%D7%97%D7%9C%D7%91%D7%95%D7%9F/11634/%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%A2%D7%9D-%D7%97%D7%9C%D7%91%D7%95%D7%9F",
     #                 "https://shop.hazi-hinam.co.il/catalog/67/%D7%9C%D7%97%D7%9E%D7%99%D7%9D--%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%95%D7%A2%D7%95%D7%92%D7%99%D7%95%D7%AA/11237/%D7%9C%D7%97%D7%9D--%D7%97%D7%9C%D7%94--%D7%9C%D7%97%D7%9E%D7%A0%D7%99%D7%95%D7%AA--%D7%A4%D7%99%D7%AA%D7%95%D7%AA-%D7%95%D7%98%D7%95%D7%A8%D7%98%D7%99%D7%99%D7%94",
     #                 "https://shop.hazi-hinam.co.il/catalog/67/%D7%9C%D7%97%D7%9E%D7%99%D7%9D--%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%95%D7%A2%D7%95%D7%92%D7%99%D7%95%D7%AA/10859/%D7%A4%D7%A8%D7%99%D7%9B%D7%99%D7%95%D7%AA--%D7%A6%D7%A0%D7%99%D7%9E%D7%99%D7%9D-%D7%95%D7%A7%D7%A8%D7%A7%D7%A8%D7%99%D7%9D",
-                    
-    #             ]
-    #         },
-    #         {
-    #             "name": "מתוקים וחטיפים",
-    #             "urls": [
-    #                 "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/10842/%D7%98%D7%91%D7%9C%D7%90%D7%95%D7%AA-%D7%A9%D7%95%D7%A7%D7%95%D7%9C%D7%93",
-    #                 "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/10843/%D7%97%D7%98%D7%99%D7%A4%D7%99-%D7%A9%D7%95%D7%A7%D7%95%D7%9C%D7%93",
-    #                 "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/10844/%D7%91%D7%95%D7%A0%D7%91%D7%95%D7%A0%D7%99%D7%99%D7%A8%D7%95%D7%AA",
-    #                 "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/11207/%D7%A1%D7%95%D7%9B%D7%A8%D7%99%D7%95%D7%AA-%D7%95%D7%9E%D7%A8%D7%A9%D7%9E%D7%9C%D7%95",
-    #                 "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/11583/%D7%9E%D7%A1%D7%98%D7%99%D7%A7%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/11208/%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%9E%D7%9C%D7%95%D7%97%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/11579/%D7%91%D7%99%D7%99%D7%92%D7%9C%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/67/%D7%9C%D7%97%D7%9E%D7%99%D7%9D--%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%95%D7%A2%D7%95%D7%92%D7%99%D7%95%D7%AA/11485/%D7%A2%D7%95%D7%92%D7%99%D7%95%D7%AA--%D7%95%D7%95%D7%A4%D7%9C%D7%99%D7%9D--%D7%91%D7%99%D7%A1%D7%A7%D7%95%D7%95%D7%98%D7%99%D7%9D-%D7%95%D7%92%D7%91%D7%99%D7%A2%D7%99-%D7%92%D7%9C%D7%99%D7%93%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/67/%D7%9C%D7%97%D7%9E%D7%99%D7%9D--%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%95%D7%A2%D7%95%D7%92%D7%99%D7%95%D7%AA/10847/%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%95%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%90%D7%99%D7%A9%D7%99%D7%95%D7%AA"
-    #             ]
-    #         },
-    #         {
-    #             "name": "משקאות",
-    #             "urls": [
-    #                 "https://shop.hazi-hinam.co.il/catalog/70/%D7%A7%D7%A4%D7%94--%D7%AA%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94/10845/%D7%A7%D7%A4%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/70/%D7%A7%D7%A4%D7%94--%D7%AA%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94/11595/%D7%A7%D7%A4%D7%A1%D7%95%D7%9C%D7%95%D7%AA-%D7%A7%D7%A4%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/70/%D7%A7%D7%A4%D7%94--%D7%AA%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94/10846/%D7%AA%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/70/%D7%A7%D7%A4%D7%94--%D7%AA%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94/11620/%D7%97%D7%9C%D7%99%D7%98%D7%95%D7%AA",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/10852/%D7%9E%D7%99%D7%9D-%D7%95%D7%A1%D7%95%D7%93%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11424/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%9E%D7%95%D7%92%D7%96%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/10851/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%A7%D7%9C%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11210/%D7%AA%D7%A8%D7%9B%D7%99%D7%96%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11209/%D7%91%D7%99%D7%A8%D7%94-%D7%95%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/10850/%D7%99%D7%99%D7%A0%D7%95%D7%AA",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11384/%D7%95%D7%95%D7%93%D7%A7%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11385/%D7%A2%D7%A8%D7%A7-%D7%95%D7%90%D7%95%D7%96%D7%95",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11386/%D7%9C%D7%99%D7%A7%D7%A8-%D7%95%D7%A7%D7%95%D7%A7%D7%98%D7%99%D7%99%D7%9C",
-    #                 "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11387/%D7%95%D7%95%D7%99%D7%A1%D7%A7%D7%99-%D7%95%D7%91%D7%A8%D7%A0%D7%93%D7%99"
-
-    #             ]
-    #         },
-    #         {
-    #             "name": "אחזקת הבית ובעלי חיים",
-    #             "urls": [
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11219/%D7%A0%D7%99%D7%99%D7%A8-%D7%95%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%95",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10813/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9B%D7%91%D7%99%D7%A1%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10814/%D7%9E%D7%A8%D7%9B%D7%9A-%D7%9B%D7%91%D7%99%D7%A1%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10815/%D7%9E%D7%A1%D7%99%D7%A8%D7%99-%D7%9B%D7%AA%D7%9E%D7%99%D7%9D-%D7%95%D7%A2%D7%96%D7%A8%D7%99-%D7%9B%D7%91%D7%99%D7%A1%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10816/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9B%D7%9C%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10817/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9E%D7%98%D7%91%D7%97",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10818/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9B%D7%9C%D7%9C%D7%99",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10819/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%A8%D7%A6%D7%A4%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10820/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%90%D7%9E%D7%91%D7%98%D7%99%D7%94-%D7%95%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11199/%D7%94%D7%93%D7%91%D7%A8%D7%94-%D7%95%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10822/%D7%91%D7%99%D7%A9%D7%95%D7%9D-%D7%90%D7%95%D7%95%D7%99%D7%A8",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10946/%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99-%D7%A0%D7%99%D7%A7%D7%95%D7%99",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11218/%D7%A6%D7%97%D7%A6%D7%95%D7%97-%D7%A0%D7%A2%D7%9C%D7%99%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11269/%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%9D-%D7%97%D7%93-%D7%A4%D7%A2%D7%9E%D7%99%D7%99%D7%9D-%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%97",
-    #                 "https://shop.hazi-hinam.co.il/catalog/128/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%A6%D7%99%D7%95%D7%93-%D7%9C%D7%91%D7%A2%D7%9C%D7%99-%D7%97%D7%99%D7%99%D7%9D/11410/%D7%9E%D7%96%D7%95%D7%9F-%D7%9C%D7%97%D7%AA%D7%95%D7%9C%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/128/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%A6%D7%99%D7%95%D7%93-%D7%9C%D7%91%D7%A2%D7%9C%D7%99-%D7%97%D7%99%D7%99%D7%9D/11411/%D7%9E%D7%96%D7%95%D7%9F-%D7%9C%D7%9B%D7%9C%D7%91%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/128/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%A6%D7%99%D7%95%D7%93-%D7%9C%D7%91%D7%A2%D7%9C%D7%99-%D7%97%D7%99%D7%99%D7%9D/11412/%D7%A6%D7%99%D7%95%D7%93-%D7%9C%D7%91%D7%A2%D7%9C%D7%99-%D7%97%D7%99%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "חד פעמי",
-    #             "urls": [
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11270/%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%9D-%D7%97%D7%93-%D7%A4%D7%A2%D7%9E%D7%99%D7%99%D7%9D-%D7%9C%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11271/%D7%A9%D7%A7%D7%99%D7%95%D7%AA-%D7%95%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%90%D7%A8%D7%99%D7%96%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11272/%D7%A0%D7%A8%D7%95%D7%AA-%D7%95%D7%92%D7%A4%D7%A8%D7%95%D7%A8%D7%99%D7%9D"
-    #             ]
-    #         },
-    #         {
-    #             "name": "פארם ותינוקות",
-    #             "urls": [
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10824/%D7%A9%D7%9E%D7%A4%D7%95",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10825/%D7%9E%D7%A8%D7%9B%D7%9A",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10826/%D7%A1%D7%91%D7%95%D7%9F-%D7%A8%D7%97%D7%A6%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10827/%D7%93%D7%90%D7%95%D7%93%D7%95%D7%A8%D7%A0%D7%98-%D7%9C%D7%90%D7%99%D7%A9%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11409/%D7%93%D7%90%D7%95%D7%93%D7%95%D7%A8%D7%A0%D7%98-%D7%9C%D7%92%D7%91%D7%A8",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11599/%D7%94%D7%92%D7%A0%D7%94-%D7%9E%D7%94%D7%A9%D7%9E%D7%A9",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10828/%D7%AA%D7%9B%D7%A9%D7%99%D7%A8%D7%99%D7%9D-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%9C%D7%92%D7%99%D7%9C%D7%95%D7%97",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10829/%D7%9E%D7%A9%D7%97%D7%95%D7%AA-%D7%A9%D7%99%D7%A0%D7%99%D7%99%D7%9D-%D7%95%D7%9E%D7%99-%D7%A4%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10830/%D7%9E%D7%91%D7%A8%D7%A9%D7%95%D7%AA-%D7%A9%D7%99%D7%A0%D7%99%D7%99%D7%9D-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%93%D7%A0%D7%98%D7%9C%D7%99%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10831/%D7%A7%D7%95%D7%A1%D7%9E%D7%98%D7%99%D7%A7%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97-%D7%94%D7%A4%D7%A0%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10832/%D7%98%D7%99%D7%A4%D7%95%D7%97-%D7%95%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%A9%D7%99%D7%A2%D7%A8",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11277/%D7%A6%D7%91%D7%A2%D7%99-%D7%A9%D7%99%D7%A2%D7%A8",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10947/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%A0%D7%A9%D7%99%D7%AA-%D7%95%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%A1%D7%A4%D7%99%D7%92%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11200/%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99-%D7%98%D7%99%D7%A4%D7%95%D7%97",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11201/%D7%98%D7%99%D7%A4%D7%95%D7%97-%D7%94%D7%92%D7%95%D7%A3",
-    #                 "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11202/%D7%A2%D7%96%D7%A8%D7%94-%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94",
-    #                 "https://shop.hazi-hinam.co.il/catalog/62/%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA-%D7%95%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA/10833/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%AA-%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA",
-    #                 "https://shop.hazi-hinam.co.il/catalog/62/%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA-%D7%95%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA/10834/%D7%9E%D7%96%D7%95%D7%9F-%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA",
-    #                 "https://shop.hazi-hinam.co.il/catalog/62/%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA-%D7%95%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA/10812/%D7%97%D7%99%D7%AA%D7%95%D7%9C%D7%99%D7%9D-%D7%95%D7%9E%D7%92%D7%91%D7%95%D7%A0%D7%99%D7%9D",
-    #                 "https://shop.hazi-hinam.co.il/catalog/62/%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA-%D7%95%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA/11179/%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99-%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA"
+    #
     #             ]
     #         }
     #     ],
@@ -1094,6 +1135,144 @@ SUPERMARKETS = [
     #         "price": ".price-regular"
     #     }
     # },
+#     {
+#         "name": "חצי חינם",
+#         "id": "hatzi_hinam",
+#         "categories": [
+#             {
+#                 "name": "מתוקים וחטיפים",
+#                 "urls": [
+#                     "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/10842/%D7%98%D7%91%D7%9C%D7%90%D7%95%D7%AA-%D7%A9%D7%95%D7%A7%D7%95%D7%9C%D7%93",
+#                     "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/10843/%D7%97%D7%98%D7%99%D7%A4%D7%99-%D7%A9%D7%95%D7%A7%D7%95%D7%9C%D7%93",
+#                     "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/10844/%D7%91%D7%95%D7%A0%D7%91%D7%95%D7%A0%D7%99%D7%99%D7%A8%D7%95%D7%AA",
+#                     "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/11207/%D7%A1%D7%95%D7%9B%D7%A8%D7%99%D7%95%D7%AA-%D7%95%D7%9E%D7%A8%D7%A9%D7%9E%D7%9C%D7%95",
+#                     "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/11583/%D7%9E%D7%A1%D7%98%D7%99%D7%A7%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/11208/%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D-%D7%9E%D7%9C%D7%95%D7%97%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/66/%D7%9E%D7%9E%D7%AA%D7%A7%D7%99%D7%9D-%D7%95%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D/11579/%D7%91%D7%99%D7%99%D7%92%D7%9C%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/67/%D7%9C%D7%97%D7%9E%D7%99%D7%9D--%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%95%D7%A2%D7%95%D7%92%D7%99%D7%95%D7%AA/11485/%D7%A2%D7%95%D7%92%D7%99%D7%95%D7%AA--%D7%95%D7%95%D7%A4%D7%9C%D7%99%D7%9D--%D7%91%D7%99%D7%A1%D7%A7%D7%95%D7%95%D7%98%D7%99%D7%9D-%D7%95%D7%92%D7%91%D7%99%D7%A2%D7%99-%D7%92%D7%9C%D7%99%D7%93%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/67/%D7%9C%D7%97%D7%9E%D7%99%D7%9D--%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%95%D7%A2%D7%95%D7%92%D7%99%D7%95%D7%AA/10847/%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%95%D7%A2%D7%95%D7%92%D7%95%D7%AA-%D7%90%D7%99%D7%A9%D7%99%D7%95%D7%AA"
+#                 ]
+#             },
+#         ],
+#         "selectors": {
+#             "category": "catalog",
+#             "product": ".product-info[role='link']",
+#             "name": ".title",
+#             "price": ".price-regular"
+#         }
+#     },
+#     {
+#         "name": "חצי חינם",
+#         "id": "hatzi_hinam",
+#         "categories": [
+#             {
+#                 "name": "משקאות",
+#                 "urls": [
+#                     "https://shop.hazi-hinam.co.il/catalog/70/%D7%A7%D7%A4%D7%94--%D7%AA%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94/10845/%D7%A7%D7%A4%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/70/%D7%A7%D7%A4%D7%94--%D7%AA%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94/11595/%D7%A7%D7%A4%D7%A1%D7%95%D7%9C%D7%95%D7%AA-%D7%A7%D7%A4%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/70/%D7%A7%D7%A4%D7%94--%D7%AA%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94/10846/%D7%AA%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/70/%D7%A7%D7%A4%D7%94--%D7%AA%D7%94-%D7%95%D7%90%D7%91%D7%A7%D7%95%D7%AA-%D7%A9%D7%AA%D7%99%D7%94/11620/%D7%97%D7%9C%D7%99%D7%98%D7%95%D7%AA",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/10852/%D7%9E%D7%99%D7%9D-%D7%95%D7%A1%D7%95%D7%93%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11424/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%9E%D7%95%D7%92%D7%96%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/10851/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%A7%D7%9C%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11210/%D7%AA%D7%A8%D7%9B%D7%99%D7%96%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11209/%D7%91%D7%99%D7%A8%D7%94-%D7%95%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA-%D7%90%D7%A0%D7%A8%D7%92%D7%99%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/10850/%D7%99%D7%99%D7%A0%D7%95%D7%AA",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11384/%D7%95%D7%95%D7%93%D7%A7%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11385/%D7%A2%D7%A8%D7%A7-%D7%95%D7%90%D7%95%D7%96%D7%95",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11386/%D7%9C%D7%99%D7%A7%D7%A8-%D7%95%D7%A7%D7%95%D7%A7%D7%98%D7%99%D7%99%D7%9C",
+#                     "https://shop.hazi-hinam.co.il/catalog/79/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/11387/%D7%95%D7%95%D7%99%D7%A1%D7%A7%D7%99-%D7%95%D7%91%D7%A8%D7%A0%D7%93%D7%99"
+#
+#                 ]
+#             },
+#             {
+#                 "name": "חד פעמי",
+#                 "urls": [
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11270/%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%9D-%D7%97%D7%93-%D7%A4%D7%A2%D7%9E%D7%99%D7%99%D7%9D-%D7%9C%D7%91%D7%99%D7%A9%D7%95%D7%9C-%D7%95%D7%90%D7%A4%D7%99%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11271/%D7%A9%D7%A7%D7%99%D7%95%D7%AA-%D7%95%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%90%D7%A8%D7%99%D7%96%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11272/%D7%A0%D7%A8%D7%95%D7%AA-%D7%95%D7%92%D7%A4%D7%A8%D7%95%D7%A8%D7%99%D7%9D"
+#                 ]
+#             }
+#         ],
+#         "selectors": {
+#             "category": "catalog",
+#             "product": ".product-info[role='link']",
+#             "name": ".title",
+#             "price": ".price-regular"
+#         }
+#     },
+# {
+#         "name": "חצי חינם",
+#         "id": "hatzi_hinam",
+#         "categories": [
+#
+#             {
+#                 "name": "אחזקת הבית ובעלי חיים",
+#                 "urls": [
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11219/%D7%A0%D7%99%D7%99%D7%A8-%D7%95%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%95",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10813/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9B%D7%91%D7%99%D7%A1%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10814/%D7%9E%D7%A8%D7%9B%D7%9A-%D7%9B%D7%91%D7%99%D7%A1%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10815/%D7%9E%D7%A1%D7%99%D7%A8%D7%99-%D7%9B%D7%AA%D7%9E%D7%99%D7%9D-%D7%95%D7%A2%D7%96%D7%A8%D7%99-%D7%9B%D7%91%D7%99%D7%A1%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10816/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9B%D7%9C%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10817/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9E%D7%98%D7%91%D7%97",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10818/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%9B%D7%9C%D7%9C%D7%99",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10819/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%A8%D7%A6%D7%A4%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10820/%D7%A0%D7%99%D7%A7%D7%95%D7%99-%D7%90%D7%9E%D7%91%D7%98%D7%99%D7%94-%D7%95%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11199/%D7%94%D7%93%D7%91%D7%A8%D7%94-%D7%95%D7%90%D7%99%D7%A0%D7%A1%D7%98%D7%9C%D7%A6%D7%99%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10822/%D7%91%D7%99%D7%A9%D7%95%D7%9D-%D7%90%D7%95%D7%95%D7%99%D7%A8",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/10946/%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99-%D7%A0%D7%99%D7%A7%D7%95%D7%99",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11218/%D7%A6%D7%97%D7%A6%D7%95%D7%97-%D7%A0%D7%A2%D7%9C%D7%99%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/64/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F/11269/%D7%9E%D7%95%D7%A6%D7%A8%D7%99%D7%9D-%D7%97%D7%93-%D7%A4%D7%A2%D7%9E%D7%99%D7%99%D7%9D-%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%97",
+#                     "https://shop.hazi-hinam.co.il/catalog/128/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%A6%D7%99%D7%95%D7%93-%D7%9C%D7%91%D7%A2%D7%9C%D7%99-%D7%97%D7%99%D7%99%D7%9D/11410/%D7%9E%D7%96%D7%95%D7%9F-%D7%9C%D7%97%D7%AA%D7%95%D7%9C%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/128/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%A6%D7%99%D7%95%D7%93-%D7%9C%D7%91%D7%A2%D7%9C%D7%99-%D7%97%D7%99%D7%99%D7%9D/11411/%D7%9E%D7%96%D7%95%D7%9F-%D7%9C%D7%9B%D7%9C%D7%91%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/128/%D7%9E%D7%96%D7%95%D7%9F-%D7%95%D7%A6%D7%99%D7%95%D7%93-%D7%9C%D7%91%D7%A2%D7%9C%D7%99-%D7%97%D7%99%D7%99%D7%9D/11412/%D7%A6%D7%99%D7%95%D7%93-%D7%9C%D7%91%D7%A2%D7%9C%D7%99-%D7%97%D7%99%D7%99%D7%9D"
+#                 ]
+#             }
+#         ],
+#         "selectors": {
+#             "category": "catalog",
+#             "product": ".product-info[role='link']",
+#             "name": ".title",
+#             "price": ".price-regular"
+#         }
+#     },
+#     {
+#         "name": "חצי חינם",
+#         "id": "hatzi_hinam",
+#         "categories": [
+#             {
+#                 "name": "פארם ותינוקות",
+#                 "urls": [
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10824/%D7%A9%D7%9E%D7%A4%D7%95",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10825/%D7%9E%D7%A8%D7%9B%D7%9A",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10826/%D7%A1%D7%91%D7%95%D7%9F-%D7%A8%D7%97%D7%A6%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10827/%D7%93%D7%90%D7%95%D7%93%D7%95%D7%A8%D7%A0%D7%98-%D7%9C%D7%90%D7%99%D7%A9%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11409/%D7%93%D7%90%D7%95%D7%93%D7%95%D7%A8%D7%A0%D7%98-%D7%9C%D7%92%D7%91%D7%A8",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11599/%D7%94%D7%92%D7%A0%D7%94-%D7%9E%D7%94%D7%A9%D7%9E%D7%A9",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10828/%D7%AA%D7%9B%D7%A9%D7%99%D7%A8%D7%99%D7%9D-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%9C%D7%92%D7%99%D7%9C%D7%95%D7%97",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10829/%D7%9E%D7%A9%D7%97%D7%95%D7%AA-%D7%A9%D7%99%D7%A0%D7%99%D7%99%D7%9D-%D7%95%D7%9E%D7%99-%D7%A4%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10830/%D7%9E%D7%91%D7%A8%D7%A9%D7%95%D7%AA-%D7%A9%D7%99%D7%A0%D7%99%D7%99%D7%9D-%D7%95%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%D7%9D-%D7%93%D7%A0%D7%98%D7%9C%D7%99%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10831/%D7%A7%D7%95%D7%A1%D7%9E%D7%98%D7%99%D7%A7%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97-%D7%94%D7%A4%D7%A0%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10832/%D7%98%D7%99%D7%A4%D7%95%D7%97-%D7%95%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%A9%D7%99%D7%A2%D7%A8",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11277/%D7%A6%D7%91%D7%A2%D7%99-%D7%A9%D7%99%D7%A2%D7%A8",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/10947/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%A0%D7%A9%D7%99%D7%AA-%D7%95%D7%9E%D7%95%D7%A6%D7%A8%D7%99-%D7%A1%D7%A4%D7%99%D7%92%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11200/%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99-%D7%98%D7%99%D7%A4%D7%95%D7%97",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11201/%D7%98%D7%99%D7%A4%D7%95%D7%97-%D7%94%D7%92%D7%95%D7%A3",
+#                     "https://shop.hazi-hinam.co.il/catalog/68/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%94-%D7%95%D7%98%D7%99%D7%A4%D7%95%D7%97/11202/%D7%A2%D7%96%D7%A8%D7%94-%D7%A8%D7%90%D7%A9%D7%95%D7%A0%D7%94",
+#                     "https://shop.hazi-hinam.co.il/catalog/62/%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA-%D7%95%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA/10833/%D7%94%D7%99%D7%92%D7%99%D7%99%D7%A0%D7%AA-%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA",
+#                     "https://shop.hazi-hinam.co.il/catalog/62/%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA-%D7%95%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA/10834/%D7%9E%D7%96%D7%95%D7%9F-%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA",
+#                     "https://shop.hazi-hinam.co.il/catalog/62/%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA-%D7%95%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA/10812/%D7%97%D7%99%D7%AA%D7%95%D7%9C%D7%99%D7%9D-%D7%95%D7%9E%D7%92%D7%91%D7%95%D7%A0%D7%99%D7%9D",
+#                     "https://shop.hazi-hinam.co.il/catalog/62/%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA-%D7%95%D7%A4%D7%A2%D7%95%D7%98%D7%95%D7%AA/11179/%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99-%D7%AA%D7%99%D7%A0%D7%95%D7%A7%D7%95%D7%AA"
+#                 ]
+#             }
+#         ],
+#         "selectors": {
+#             "category": "catalog",
+#             "product": ".product-info[role='link']",
+#             "name": ".title",
+#             "price": ".price-regular"
+#         }
+#     },
     # {
     #     "name": "ויקטורי",
     #     "id": "viktory",
@@ -1260,27 +1439,331 @@ SUPERMARKETS = [
     #         "price": ".price"
     #     }
     # },
+    # {
+    #     "name": "ויקטורי",
+    #     "id": "viktory",
+    #     "categories": [
+    #         {
+    #             "name": "פארם ותינוקות",
+    #             "urls": [
+    #                 "https://www.victoryonline.co.il/categories/79572/products",
+    #                 "https://www.victoryonline.co.il/categories/95186/products",
+    #                 "https://www.victoryonline.co.il/categories/79574/products",
+    #                 "https://www.victoryonline.co.il/categories/79573/products",
+    #                 "https://www.victoryonline.co.il/categories/95797/products",
+    #                 "https://www.victoryonline.co.il/categories/95798/products"
+    #             ]
+    #         }
+    #     ],
+    #     "selectors": {
+    #         "category": ".category-menu-item",
+    #         "product": "sp-product",
+    #         "name": ".name",
+    #         "price": ".price"
+    #     }
+    # },
+    # {
+    #     "id": "tiv_taam",
+    #     "name": "טיב טעם",
+    #     "categories": [
+    #                 {
+    #                     "name": "ירקות ופירות טריים",
+    #                     "urls": [
+    #                         "https://www.tivtaam.co.il/categories/90066/products",
+    #                         "https://www.tivtaam.co.il/categories/90069/products",
+    #                         "https://www.tivtaam.co.il/categories/90073/products",
+    #                         "https://www.tivtaam.co.il/categories/120973/products"
+    #                     ]
+    #                 },
+    #                 {
+    #                     "name": "פירות יבשים, פיצוחים ואגוזים",
+    #                     "urls": [
+    #                         "https://www.tivtaam.co.il/categories/90079/products",
+    #                         "https://www.tivtaam.co.il/categories/90077/products",
+    #                         "https://www.tivtaam.co.il/categories/90080/products"
+    #                     ]
+    #                 },
+    #                 {
+    #                     "name": "תבלינים",
+    #                     "urls": [
+    #                         "https://www.tivtaam.co.il/categories/90252/products"
+    #                     ]
+    #                 }
+    #     ],
+    #     "selectors": {
+    #         "category": ".category-item",
+    #         "product": ".product-item",
+    #         "name": ".name",
+    #         "price": ".product-price"
+    #     }
+    # },
+  #   {
+  #       "id": "tiv_taam",
+  #       "name": "טיב טעם",
+  #       "categories": [
+  #           {
+  #               "name": "מוצרי חלב, תחליפים וביצים",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/90173/products",
+  #                   "https://www.tivtaam.co.il/categories/90176/products",
+  #                   "https://www.tivtaam.co.il/categories/90350/products",
+  #                   "https://www.tivtaam.co.il/categories/90355/products",
+  #               ]
+  #           },
+  #           {
+  #               "name": "סלטים רטבים וממרחים",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/90191/products",
+  #                   "https://www.tivtaam.co.il/categories/90121/products",
+  #                   "https://www.tivtaam.co.il/categories/90150/products",
+  #                   "https://www.tivtaam.co.il/categories/90157/products",
+  #               ]
+  #           },
+  #           {
+  #               "name": "עוף, בשר, נקניקים ודגים",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/90082/products",
+  #                   "https://www.tivtaam.co.il/categories/90083/products",
+  #                   "https://www.tivtaam.co.il/categories/90084/products",
+  #                   "https://www.tivtaam.co.il/categories/90085/products",
+  #                   "https://www.tivtaam.co.il/categories/90100/products",
+  #                   "https://www.tivtaam.co.il/categories/90107/products",
+  #
+  #               ]
+  #           }
+  #       ],
+  #       "selectors": {
+  #           "category": ".category-item",
+  #           "product": ".product-item",
+  #           "name": ".name",
+  #           "price": ".product-price"
+  #       }
+  #   },
     {
-        "name": "ויקטורי",
-        "id": "viktory",
+        "id": "tiv_taam",
+        "name": "טיב טעם",
         "categories": [
             {
-                "name": "פארם ותינוקות",
+                "name": "אורגני ובריאות",
                 "urls": [
-                    "https://www.victoryonline.co.il/categories/79572/products",
-                    "https://www.victoryonline.co.il/categories/95186/products",
-                    "https://www.victoryonline.co.il/categories/79574/products",
-                    "https://www.victoryonline.co.il/categories/79573/products",
-                    "https://www.victoryonline.co.il/categories/95797/products",
-                    "https://www.victoryonline.co.il/categories/95798/products"
+                    "https://www.tivtaam.co.il/categories/94410/products",
+                    "https://www.tivtaam.co.il/categories/90333/products",
+                    "https://www.tivtaam.co.il/categories/90342/products",
+                    "https://www.tivtaam.co.il/categories/96535/products"
+                ]
+            },
+            {
+                "name": "קפואים",
+                "urls": [
+                    "https://www.tivtaam.co.il/categories/90276/products",
+                    "https://www.tivtaam.co.il/categories/90277/products",
+                    "https://www.tivtaam.co.il/categories/90282/products",
+                    "https://www.tivtaam.co.il/categories/90283/products",
+                    "https://www.tivtaam.co.il/categories/90281/products",
+                    "https://www.tivtaam.co.il/categories/119730/products"
+                ]
+            },
+            {
+                "name": "שימורים",
+                "urls": [
+                    "https://www.tivtaam.co.il/categories/90135/products",
+
+                ]
+            },
+            {
+                "name": "אפייה ובישול",
+                "urls": [
+                    "https://www.tivtaam.co.il/categories/90184/products",
+                    "https://www.tivtaam.co.il/categories/90167/products",
+                    "https://www.tivtaam.co.il/categories/90225/products",
+                    "https://www.tivtaam.co.il/categories/90236/products"
                 ]
             }
         ],
         "selectors": {
-            "category": ".category-menu-item",
-            "product": "sp-product",
+            "category": ".category-item",
+            "product": ".product-item",
             "name": ".name",
-            "price": ".price"
+            "price": ".product-price"
+        }
+    },
+  #   {
+  #       "id": "tiv_taam",
+  #       "name": "טיב טעם",
+  #       "categories": [
+  #           {
+  #               "name": "אסייתי",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/92072/products"
+  #               ]
+  #           },
+  #           {
+  #               "name": "קטניות ודגנים",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/90199/products",
+  #                   "https://www.tivtaam.co.il/categories/90205/products",
+  #                   "https://www.tivtaam.co.il/categories/90210/products",
+  #                   "https://www.tivtaam.co.il/categories/90215/products",
+  #                   "https://www.tivtaam.co.il/categories/90221/products",
+  #                   "https://www.tivtaam.co.il/categories/90245/products",
+  #                   "https://www.tivtaam.co.il/categories/90144/products",
+  #                   "https://www.tivtaam.co.il/categories/90254/products",
+  #                   "https://www.tivtaam.co.il/categories/90255/products",
+  #                   "https://www.tivtaam.co.il/categories/90256/products"
+  #               ]
+  #           },
+  #           {
+  #               "name": "מתוקים וחטיפים",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/95874/products",
+  #                   "https://www.tivtaam.co.il/categories/90258/products",
+  #                   "https://www.tivtaam.co.il/categories/90261/products",
+  #                   "https://www.tivtaam.co.il/categories/90269/products",
+  #                   "https://www.tivtaam.co.il/categories/90271/products"
+  #               ]
+  #           }
+  #       ],
+  #       "selectors": {
+  #           "category": ".category-item",
+  #           "product": ".product-item",
+  #           "name": ".name",
+  #           "price": ".product-price"
+  #       }
+  #   },
+  #   {
+  #       "id": "tiv_taam",
+  #       "name": "טיב טעם",
+  #       "categories": [
+  #           {
+  #               "name": "משקאות",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/90285/products",
+  #                   "https://www.tivtaam.co.il/categories/90288/products",
+  #                   "https://www.tivtaam.co.il/categories/90292/products",
+  #                   "https://www.tivtaam.co.il/categories/90294/products",
+  #                   "https://www.tivtaam.co.il/categories/90297/products",
+  #                   "https://www.tivtaam.co.il/categories/90299/products",
+  #                   "https://www.tivtaam.co.il/categories/90303/products",
+  #                   "https://www.tivtaam.co.il/categories/90309/products",
+  #                   "https://www.tivtaam.co.il/categories/90315/products",
+  #                   "https://www.tivtaam.co.il/categories/90318/products"
+  #               ]
+  #           },
+  #           {
+  #               "name": "אחזקת הבית ובעלי חיים",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/92060/products",
+  #                   "https://www.tivtaam.co.il/categories/90434/products",
+  #                   "https://www.tivtaam.co.il/categories/90410/products",
+  #                   "https://www.tivtaam.co.il/categories/90415/products",
+  #                   "https://www.tivtaam.co.il/categories/90427/products",
+  #                   "https://www.tivtaam.co.il/categories/90440/products"
+  #               ]
+  #           }
+  #       ],
+  #       "selectors": {
+  #           "category": ".category-item",
+  #           "product": ".product-item",
+  #           "name": ".name",
+  #           "price": ".product-price"
+  #       }
+  #   },
+  #   {
+  #       "id": "tiv_taam",
+  #       "name": "טיב טעם",
+  #       "categories": [
+  #           {
+  #               "name": "חד פעמי",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/90420/products",
+  #                   "https://www.tivtaam.co.il/categories/92848/products",
+  #                   "https://www.tivtaam.co.il/categories/92849/products"
+  #               ]
+  #           },
+  #           {
+  #               "name": "פארם ותינוקות",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/90318/products",
+  #                   "https://www.tivtaam.co.il/categories/90365/products",
+  #                   "https://www.tivtaam.co.il/categories/90370/products",
+  #                   "https://www.tivtaam.co.il/categories/90376/products",
+  #                   "https://www.tivtaam.co.il/categories/90380/products",
+  #                   "https://www.tivtaam.co.il/categories/90390/products",
+  #                   "https://www.tivtaam.co.il/categories/90401/products",
+  #                   "https://www.tivtaam.co.il/categories/90404/products",
+  #                   "https://www.tivtaam.co.il/categories/102063/products"
+  #               ]
+  #           }
+  #       ],
+  #       "selectors": {
+  #           "category": ".category-item",
+  #           "product": ".product-item",
+  #           "name": ".name",
+  #           "price": ".product-price"
+  #       }
+  #   },
+  # {
+  #       "id": "tiv_taam",
+  #       "name": "טיב טעם",
+  #       "categories": [
+  #           {
+  #               "name": "משקאות",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/90285/products",
+  #                   "https://www.tivtaam.co.il/categories/90288/products",
+  #                   "https://www.tivtaam.co.il/categories/90292/products",
+  #                   "https://www.tivtaam.co.il/categories/90294/products",
+  #                   "https://www.tivtaam.co.il/categories/90297/products",
+  #                   "https://www.tivtaam.co.il/categories/90299/products",
+  #                   "https://www.tivtaam.co.il/categories/90303/products",
+  #                   "https://www.tivtaam.co.il/categories/90309/products",
+  #                   "https://www.tivtaam.co.il/categories/90315/products",
+  #                   "https://www.tivtaam.co.il/categories/90318/products"
+  #               ]
+  #           },
+  #           {
+  #               "name": "אחזקת הבית ובעלי חיים",
+  #               "urls": [
+  #                   "https://www.tivtaam.co.il/categories/92060/products",
+  #                   "https://www.tivtaam.co.il/categories/90434/products",
+  #                   "https://www.tivtaam.co.il/categories/90410/products",
+  #                   "https://www.tivtaam.co.il/categories/90415/products",
+  #                   "https://www.tivtaam.co.il/categories/90427/products",
+  #                   "https://www.tivtaam.co.il/categories/90440/products"
+  #               ]
+  #           }
+  #       ],
+  #       "selectors": {
+  #           "category": ".category-item",
+  #           "product": ".product-item",
+  #           "name": ".name",
+  #           "price": ".product-price"
+  #       }
+  #   },
+    {
+        "id": "tiv_taam",
+        "name": "טיב טעם",
+        "categories": [
+            {
+                "name": "פארם ותינוקות",
+                "urls": [
+                    "https://www.tivtaam.co.il/categories/90318/products",
+                    "https://www.tivtaam.co.il/categories/90365/products",
+                    "https://www.tivtaam.co.il/categories/90370/products",
+                    "https://www.tivtaam.co.il/categories/90376/products",
+                    "https://www.tivtaam.co.il/categories/90380/products",
+                    "https://www.tivtaam.co.il/categories/90390/products",
+                    "https://www.tivtaam.co.il/categories/90401/products",
+                    "https://www.tivtaam.co.il/categories/90404/products",
+                    "https://www.tivtaam.co.il/categories/102063/products"
+                ]
+            }
+        ],
+        "selectors": {
+            "category": ".category-item",
+            "product": ".product-item",
+            "name": ".name",
+            "price": ".product-price"
         }
     }
 ]

@@ -908,70 +908,113 @@ const FrozenPage: React.FC = () => {
       }}></i>
     </div>
 
-</div> {filterFrozenVegetables.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterFrozenVegetables}
-      categoryTitle="ירקות קפואים"
-      icon={<img alt="" src={importImage('frozen_vegetables_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+</div> 
+<div>
+{filterFrozenVegetables.length > 0 && (
+       <ProductsPage
+       products={filterFrozenVegetables}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>ירקות קפואים</span>
+           <img 
+             src={importImage('frozen_vegetables_icon.png')} 
+             alt="" 
+             style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
 )}
+  </div>
 
+  <div>
 {filterDoughsPizzasPastries.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterDoughsPizzasPastries}
-      categoryTitle="בצקים, פיצות ומאפים"
-      icon={<img alt="" src={importImage('doughs_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+       <ProductsPage
+       products={filterDoughsPizzasPastries}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>בצקים, פיצות ומאפים</span>
+           <img 
+             src={importImage('doughs_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
 )}
-
+  </div>
+  <div>
 {filterPreparedFoods.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterPreparedFoods}
-      categoryTitle="מאכלים מוכנים"
-      icon={<img alt="" src={importImage('prepared_foods_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+         <ProductsPage
+         products={filterPreparedFoods}
+         categoryTitle={
+           <div style={{ display: 'flex', alignItems: 'center' }}>
+             <span style={{ verticalAlign: 'middle' }}>מאכלים מוכנים</span>
+             <img 
+               src={importImage('prepared_foods_icon.png')} 
+               alt="" 
+               style={{ width: '60px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+             />
+           </div>
+         }
+         icon={null}
+         onIncrement={handleIncrement}
+         onDecrement={handleDecrement}
+         onSave={handleSave}
+       />
 )}
-
+  </div>
+  <div>
 {filterHerbsSpices.length > 0 && (
-  <div>
-    <ProductsPage
+      <ProductsPage
       products={filterHerbsSpices}
-      categoryTitle="עשבי תיבול ותבלינים"
-      icon={<img alt="" src={importImage('herbs_spices_icon.png')} />}
+      categoryTitle={
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <span style={{ verticalAlign: 'middle' }}>עשבי תיבול ותבלינים</span>
+          <img 
+            src={importImage('herbs_spices_icon.png')} 
+            alt="" 
+            style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          />
+        </div>
+      }
+      icon={null}
       onIncrement={handleIncrement}
       onDecrement={handleDecrement}
       onSave={handleSave}
     />
-  </div>
 )}
-
-{filterFrozenFruit.length > 0 && (
+  </div>
   <div>
-    <ProductsPage
-      products={filterFrozenFruit}
-      categoryTitle="פירות קפואים"
-      icon={<img alt="" src={importImage('frozen_fruit_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+{filterFrozenFruit.length > 0 && (
+       <ProductsPage
+       products={filterFrozenFruit}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>פירות קפואים</span>
+           <img 
+             src={importImage('frozen_fruit_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
 )}
+  </div>
 
     </div>
   );

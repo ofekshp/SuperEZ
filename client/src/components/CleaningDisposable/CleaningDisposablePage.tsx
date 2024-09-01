@@ -1841,143 +1841,242 @@ const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
    <div>
   {filterPaper.length > 0 && (
     <ProductsPage
-      products={filterPaper}
-      categoryTitle="נייר ומוצריו"
-      icon={<img alt="" src={importImage('paper_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterPaper}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>נייר ומוצריו</span>
+        <img 
+          src={importImage('paper_icon.png')} 
+          alt="" 
+          style={{ width: '60px', height: '45px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterLaundryProducts.length > 0 && (
     <ProductsPage
-      products={filterLaundryProducts}
-      categoryTitle="מוצרי כביסה"
-      icon={<img alt="" src={importImage('laundryproducts_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterLaundryProducts}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>מוצרי כביסה</span>
+        <img 
+          src={importImage('laundryproducts_icon.png')} 
+          alt="" 
+          style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterCleaningProducts.length > 0 && (
     <ProductsPage
-      products={filterCleaningProducts}
-      categoryTitle="ניקוי כלים"
-      icon={<img alt="" src={importImage('cleaningproducts_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterCleaningProducts}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>ניקוי כלים</span>
+        <img 
+          src={importImage('cleaningproducts_icon.png')} 
+          alt="" 
+          style={{ width: '40px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterKitchenCleaning.length > 0 && (
     <ProductsPage
-      products={filterKitchenCleaning}
-      categoryTitle="ניקוי מטבח"
-      icon={<img alt="" src={importImage('kitchen_cleaning_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterKitchenCleaning}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>ניקוי מטבח</span>
+        <img 
+          src={importImage('kitchen_cleaning_icon.png')} 
+          alt="" 
+          style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterGeneralCleaning.length > 0 && (
     <ProductsPage
-      products={filterGeneralCleaning}
-      categoryTitle="ניקוי כללי"
-      icon={<img alt="" src={importImage('general_cleaning_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterGeneralCleaning}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>ניקוי כללי</span>
+        <img 
+          src={importImage('general_cleaning_icon.png')} 
+          alt="" 
+          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterFloorCleaning.length > 0 && (
     <ProductsPage
-      products={filterFloorCleaning}
-      categoryTitle="ניקוי רצפה"
-      icon={<img alt="" src={importImage('floor_cleaning_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterFloorCleaning}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>ניקוי רצפה</span>
+        <img 
+          src={importImage('floor_cleaning_icon.png')} 
+          alt="" 
+          style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterBathroomToileCleaning.length > 0 && (
     <ProductsPage
-      products={filterBathroomToileCleaning}
-      categoryTitle="ניקוי אמבטיה ושירותים"
-      icon={<img alt="" src={importImage('bathroom_cleaning_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterBathroomToileCleaning}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>ניקוי אמבטיה ושירותים</span>
+        <img 
+          src={importImage('bathroom_cleaning_icon.png')} 
+          alt="" 
+          style={{ width: '80px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterPesticideProducts.length > 0 && (
     <ProductsPage
-      products={filterPesticideProducts}
-      categoryTitle="מוצרי הדברה ואינסטלציה"
-      icon={<img alt="" src={importImage('pesticide_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterPesticideProducts}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>מוצרי הדברה ואינסטלציה</span>
+        <img 
+          src={importImage('pesticide_icon.png')} 
+          alt="" 
+          style={{ width: '50px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterCleaningAccessories.length > 0 && (
     <ProductsPage
-      products={filterCleaningAccessories}
-      categoryTitle="אביזרי ניקוי"
-      icon={<img alt="" src={importImage('cleaning_accessories_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterCleaningAccessories}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>אביזרי ניקוי</span>
+        <img 
+          src={importImage('cleaning_accessories_icon.png')} 
+          alt="" 
+          style={{ width: '40px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterDisposableProducts.length > 0 && (
     <ProductsPage
-      products={filterDisposableProducts}
-      categoryTitle="מוצרים חד פעמיים"
-      icon={<img alt="" src={importImage('disposable_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterDisposableProducts}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>מוצרים חד פעמיים</span>
+        <img 
+          src={importImage('disposable_icon.png')} 
+          alt="" 
+          style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
 <div>
   {filterBagsPackagingProducts.length > 0 && (
     <ProductsPage
-      products={filterBagsPackagingProducts}
-      categoryTitle="שקיות ומוצרי אריזה"
-      icon={<img alt="" src={importImage('bag_packaging_icon.png')} />} 
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
+    products={filterBagsPackagingProducts}
+    categoryTitle={
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <span style={{ verticalAlign: 'middle' }}>שקיות ומוצרי אריזה</span>
+        <img 
+          src={importImage('bag_packaging_icon.png')} 
+          alt="" 
+          style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+        />
+      </div>
+    }
+    icon={null}
+    onIncrement={handleIncrement}
+    onDecrement={handleDecrement}
+    onSave={handleSave}
+  />
   )}
 </div>
 
