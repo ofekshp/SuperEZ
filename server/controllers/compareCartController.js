@@ -17,12 +17,12 @@ function calculateMatchScore(productName, dbProductName, irrelevantWordsInSite, 
   
   return matchRatio;
 }
-
 const compareCart = async (req, res) => {
   const { products } = req.body;
 
   try {
-    const irrelevantWordsInSite = ['טבסקו', 'בפאלו', 'קפוא','מים', 'ניקוי', 'ותמצית', 'תמצית', 'בתוספת', 'בריח', 'בניחוח', 'עם', 'ממרח', 'קלאסי', 'איטלקי', 'טרי', 'מהדרין']; // website
+    const irrelevantWordsInSite = ['regular','קפוא','וניחוח','&','-','/','+','מארז','מועשר', 'בפאלו', 'קפוא','מים', 'ניקוי','בתמצית', 'ותמצית', 'תמצית', 'בתוספת', 'בריח', 'בניחוח', 'עם', 'ממרח', 'קלאסי', 'איטלקי', 'טרי', 'מהדרין']; // website
+
     const irrelevantWordsInDb = ['תוספת','ווילי פוד','מקסימה','פיירי','אסם','שטראוס','טיב טעם','קפוא', 'להקפצה', 'יטבתה', 'רמי לוי', 'תנובה', 'של', 'עם', 'אריאל', 'מיכל', 'קלאסי', 'אנסקי', 'בניחוח', 'בריח']; // database
 
     const carts = [

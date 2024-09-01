@@ -942,72 +942,117 @@ const filterPackagedFruit = packagedfruit.filter(product =>
     </div>
 
 </div>
-    
+<div>
+
      {filterVegetables.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterVegetables}
-      categoryTitle="ירקות"
-      icon={<img alt="" src={importImage('vegetables_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+  <ProductsPage
+  products={vegetables}
+  categoryTitle={
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <span style={{ verticalAlign: 'middle' }}>ירקות</span>
+      <img 
+        src={importImage('vegetables.PNG')} 
+        alt="" 
+        style={{ width: '45px', height: '45px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+      />
+    </div>
+  }
+  icon={null}
+  onIncrement={handleIncrement}
+  onDecrement={handleDecrement}
+  onSave={handleSave}
+/>
 )}
+</div>
+<div>
 
 {filterPackagedPickedVegetables.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterPackagedPickedVegetables}
-      categoryTitle="ירקות ארוזים"
-      icon={<img alt="" src={importImage('packaged_vegetables_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+      <ProductsPage
+  products={filterPackagedPickedVegetables}
+  categoryTitle={
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <span style={{ verticalAlign: 'middle' }}>ירקות ארוזים</span>
+      <img 
+        src={importImage('packaged_vegetables.png')} 
+        alt="" 
+        style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+      />
+    </div>
+  }
+  icon={null}
+  onIncrement={handleIncrement}
+  onDecrement={handleDecrement}
+  onSave={handleSave}
+/>
 )}
+</div>
+<div>
 
 {filterHerbsSproutsMushrooms.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterHerbsSproutsMushrooms}
-      categoryTitle="עשבי תיבול, נבטים ופטריות"
-      icon={<img alt="" src={importImage('herbs_sprouts_mushrooms_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+        <ProductsPage
+        products={filterHerbsSproutsMushrooms}
+        categoryTitle={
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span style={{ verticalAlign: 'middle' }}>עשבי תיבול, נבטים ופטריות</span>
+            <img 
+              src={importImage('filterHerbsSproutsMushrooms.png')} 
+              alt="" 
+              style={{ width: '45px', height: '45px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+            />
+          </div>
+        }
+        icon={null}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onSave={handleSave}
+      />
 )}
+</div>
 
+<div>
 {filterFruits.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterFruits}
-      categoryTitle="פירות"
-      icon={<img alt="" src={importImage('fruits_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
-    />
-  </div>
+  <ProductsPage
+  products={fruits}
+  categoryTitle={
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <span style={{ verticalAlign: 'middle' }}>פירות</span>
+      <img 
+        src={importImage('fruits.PNG')} 
+        alt="" 
+        style={{ width: '40px', height: '40px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
+      />
+    </div>
+  }
+  icon={null}
+  onIncrement={handleIncrement}
+  onDecrement={handleDecrement}
+  onSave={handleSave}
+/>
 )}
+</div>
+<div>
 
 {filterPackagedFruit.length > 0 && (
-  <div>
-    <ProductsPage
-      products={filterPackagedFruit}
-      categoryTitle="פירות ארוזים"
-      icon={<img alt="" src={importImage('packaged_fruit_icon.png')} />}
-      onIncrement={handleIncrement}
-      onDecrement={handleDecrement}
-      onSave={handleSave}
+<ProductsPage
+products={filterPackagedFruit}
+categoryTitle={
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    <span style={{ verticalAlign: 'middle' }}>פירות ארוזים</span>
+    <img 
+      src={importImage('packaged_fruit.PNG')} 
+      alt="" 
+      style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle', borderRadius: '20%' }} 
     />
   </div>
+}
+icon={null}
+onIncrement={handleIncrement}
+onDecrement={handleDecrement}
+onSave={handleSave}
+/>
 )}
-  
+</div>
+
 
     </div>
   );
