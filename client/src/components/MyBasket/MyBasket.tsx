@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import './MyBasket.css';
 import CartService from '../../services/cart_service.ts';
 import UserService from '../../services/user_service.ts';
+import { toast } from "react-toastify";
 
 
 const MyBasket: React.FC = () => {
@@ -46,6 +47,19 @@ const MyBasket: React.FC = () => {
   };
 
   const handleSubmit = async () => {
+
+    if(isUserLoggedIn){
+    if (  !city  || !streetAndHouse || !floorNumber || !apartmentNumber ) {
+      toast.error("Please fill all the fields");
+      return;
+    }}
+    else{
+      if (!fullName || !email || !city || !phone || !streetAndHouse || !floorNumber || !apartmentNumber ) {
+        toast.error("Please fill all the fields");
+        return;
+
+    }}
+
     if (basketProducts.length === 0) {
       setErrorMessage("הסל ריק. אנא הוסף מוצרים לסל לפני ביצוע ההזמנה.");
       return;
