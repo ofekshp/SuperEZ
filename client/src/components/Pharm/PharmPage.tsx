@@ -530,7 +530,6 @@ const PharmPage: React.FC = () => {
 
 { name: "שטיפת פה אורביטול לילדים בטעם פירות אורביטול +8", image: importImage('orbitol_kids_8_mouthwash_fruit_flavor.jpg'), id: 17 },
   ];
-
   const initialToothbrushesdentalaccessories = [
     { name: "מברשת שיניים חשמלית נטענת", image: importImage('electric_toothbrush_advanced_power.png'), id: 17 },
     { name: "מברשת שיניים חשמלית נטענת לילדים", image: importImage('kids_electric_toothbrush_frozen_d100.png'), id: 17 },
@@ -587,8 +586,25 @@ const PharmPage: React.FC = () => {
     { name: "קרמה תרחיץ ניקוי לפנים לכל סוגי העור", image: importImage('crema_face_cleaning_lotion_all_skin_types.jpg'), id: 17 }
   ];
   const initialHaircarestyling = [
-    { name: "קרם לחות לשיער יבש מאוד ופגום עם חוחבה", image: importImage('moisturizer_for_very_dry_and_damaged_hair_with_guava.png') },
-  ];
+    { name: "קרם לחות לשיער חוחבה", image: importImage('natural_formula_jojoba.png'), id: 17 },
+    { name: "קרם לחות לשיער סיליקון", image: importImage('natural_formula_silicon.png'), id: 17 },
+    { name: "קרם לחות לשיער אלוורה", image: importImage('natural_formula_aloe_vera.png'), id: 17 },
+    { name: "קרם לחות מזינה עם שמן ארגן מרוקאי", image: importImage('natural_formula_argan.png'), id: 17 },
+    { name: "קרם לחות עם שמן אגוז מקדמיה", image: importImage('natural_formula_macadamia.png'), id: 17 },
+    { name: "לחות על בסיס מים", image: importImage('natural_formula_light_moisture.png'), id: 17 },
+    { name: "קרם לחות לשיער חלק", image: importImage('natural_formula_smooth.png'), id: 17 },
+    { name: "סרום אמפולה לשיער יבש", image: importImage('natural_formula_ampoule_serum.png'), id: 17 },
+    { name: "סרום קרטין לשיער", image: importImage('natural_formula_keratin_serum.png'), id: 17 },
+    { name: "קרם לחות לשיער מתולתל", image: importImage('careline_curl_cream.png'), id: 17 },
+    { name: "קרם לחות לשיער רגיל", image: importImage('careline_normal_hair_cream.png'), id: 17 },
+    { name: "קרם לחות לשיער יבש", image: importImage('careline_dry_hair_cream.png'), id: 17 },
+    { name: "קרם לחות לגבר", image: importImage('crema_men_moisturizer.png'), id: 17 },
+    { name: "ג'ל לעיצוב שיער", image: importImage('kef_extreme_hair_gel.png'), id: 17 },
+    { name: "ווקס", image: importImage('natural_formula_strong_shine_wax.png'), id: 17 },
+    { name: "מסכת קרטין", image: importImage('natural_formula_pure_keratin_mask.png'), id: 17 },
+    { name: "קרם חמצן 6%", image: importImage('indola_oxygen_cream_6.png'), id: 17 },
+    { name: "קרם חמצן 9%", image: importImage('indola_oxygen_cream_9.png'), id: 17 },
+    ];
 
   const initialFemininehygieneabsorbentproducts = [
     { name: "מגיני תחתון יאנג", image: importImage('kotex_young_normal.png'), id: 17 },
@@ -699,12 +715,19 @@ const PharmPage: React.FC = () => {
     { name: "מגבונים לחים לתינוק ללא בישום", image: importImage('perfect_baby_wipes_unscented_4pack.png'), id: 17 },
     { name: "מגבוני פנים לתינוק", image: importImage('kamil_blue_sensitive_face_wipes.png'), id: 17 },
     { name: "מגבונים לניקוי אף", image: importImage('kamil_blue_nose_wipes_trio.png'), id: 17 },
-    ];
+  ];
 
   initialShavingpreparationsaccessories.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCosmeticsfacialcare.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialFirstaid.sort((a, b) => a.name.localeCompare(b.name, 'he'));
-
+  initialDeodorantforwomen.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialDeodorantformen.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialToothbrushesdentalaccessories.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialHaircarestyling.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialFemininehygieneabsorbentproducts.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialCareaccessories.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialBodycare.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+  initialDiaperswipes.sort((a, b) => a.name.localeCompare(b.name, 'he'));
 
   const [shampoo, setShampoo] = useState<{ name: string; image: string | null; count: number }[]>(
     initialShampoo.map(item => {
@@ -1161,373 +1184,527 @@ const PharmPage: React.FC = () => {
 
     itemsToSave.forEach(item => addProduct(item));
   };
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+  const filterBathsoap = bathsoap.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterShampoo = shampoo.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterConditioner = conditioner.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterDeodorantforwomen = deodorantforwomen.filter(product =>
+    product.name.includes(searchTerm)
+  );
+  
+  const filterDeodorantformen = deodorantformen.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterSunprotection = sunprotection.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterShavingpreparationsaccessories = shavingpreparationsaccessories.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterToothpastesmouthwash = toothpastesmouthwash.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterToothbrushesdentalaccessories = toothbrushesdentalaccessories.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterCosmeticsfacialcare = cosmeticsfacialcare.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterHaircarestyling = haircarestyling.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterFemininehygieneabsorbentproducts = femininehygieneabsorbentproducts.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterCareaccessories = careaccessories.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterBodycare = bodycare.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterFirstaid = firstaid.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterCandlesmatches = candlesmatches.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+  const filterDiaperswipes = diaperswipes.filter(product =>
+    product.name.includes(searchTerm)
+  );
+
+
+  
+
   return (
-    <div>
+<div>
+  <div style={{
+    position: 'absolute',
+    marginTop: '100px',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+  }}>
+    <div style={{ position: 'relative' }}>
+      <input
+        type="text"
+        placeholder="חפש מוצר פארם/תינוקות"
+        value={searchTerm}
+        onChange={handleSearch}
+        style={{
+          width: '100%',
+      
+          padding: '5px 40px 5px 5px',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          textAlign: 'right',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        }}
+      />
+      <i className="fas fa-search" style={{
+        position: 'absolute',
+        right: '-30px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        color: '#aaa',
+        pointerEvents: 'none',
+      }}></i>
+    </div>
+
+</div> 
+<div>
+{filterBathsoap.length > 0 && (
+       <ProductsPage
+       products={filterBathsoap}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>סבוני רחצה</span>
+           <img 
+             src={importImage('soap_bottle_icon.png')} 
+             alt="" 
+             style={{ width: '50px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+
+  <div>
+{filterShampoo.length > 0 && (
+       <ProductsPage
+       products={filterShampoo}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>שמפו</span>
+           <img 
+             src={importImage('shampoo_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '50px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterConditioner.length > 0 && (
+         <ProductsPage
+         products={filterConditioner}
+         categoryTitle={
+           <div style={{ display: 'flex', alignItems: 'center' }}>
+             <span style={{ verticalAlign: 'middle' }}>מרכך</span>
+             <img 
+               src={importImage('conditioner_icon.png')} 
+               alt="" 
+               style={{ width: '20px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
+             />
+           </div>
+         }
+         icon={null}
+         onIncrement={handleIncrement}
+         onDecrement={handleDecrement}
+         onSave={handleSave}
+       />
+)}
+  </div>
+  <div>
+{filterDeodorantforwomen.length > 0 && (
       <ProductsPage
-        products={bathsoap}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '25px' }}>
-            <span style={{ verticalAlign: 'middle' }}>סבוני רחצה</span>
-            <img
-              src={importImage('soap_bottle_icon.png')}
-              alt=""
-              width="60" // Set a specific width
-              height="55" // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '0px', position: 'relative', top: '-5px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={shampoo}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '30px' }}>
-            <span style={{ verticalAlign: 'middle' }}>שמפו</span>
-            <img
-              src={importImage('shampoo_icon.png')}
-              alt=""
-              width="65" // Set a specific width
-              height="60" // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '-7px', position: 'relative', top: '-10px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={conditioner}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '12px' }}>
-            <span style={{ verticalAlign: 'middle' }}>מרכך</span>
-            <img
-              src={importImage('conditioner_icon.png')}
-              alt=""
-              width="22"  // Set a specific width
-              height="auto"  // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '10px', position: 'relative', top: '-7px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={deodorantforwomen}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '25px' }}>
-            <span style={{ verticalAlign: 'middle' }}>דאודורנט לנשים</span>
-            <img
-              src={importImage('deodorantforwomen_icon.png')}
-              alt=""
-              width="50"  // Set a specific width
-              height="55"
-              style={{ marginLeft: '-5px', position: 'relative', top: '-7px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={deodorantformen}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '15px' }}>
-            <span style={{ verticalAlign: 'middle' }}>דאודורנט לגברים</span>
-            <img
-              src={importImage('deodorantformen_green_icon.png')}
-              alt=""
-              width="auto"  // Set a specific width
-              height="40"
-              style={{ marginLeft: '8px', position: 'relative', top: '-5px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={sunprotection}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '30px' }}>
-            <span style={{ verticalAlign: 'middle' }}>הגנה מהשמש</span>
-            <img
-              src={importImage('sunprotection_icon.webp')}
-              alt=""
-              width="60"  // Set a specific width
-              height="55"
-              style={{ marginLeft: '-10px', position: 'relative', top: '-10px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={shavingpreparationsaccessories}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '25px' }}>
-            <span style={{ verticalAlign: 'middle' }}>אביזרי גילוח והסרת שיער</span>
-            <img
-              src={importImage('shaving_icon.png')}
-              alt=""
-              width="105"  // Set a specific width
-              height="auto"
-              style={{ marginLeft: '0px', position: 'relative', top: '-8px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={toothpastesmouthwash}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '30px' }}>
-            <span style={{ verticalAlign: 'middle' }}>משחות שיניים ומי פה</span>
-            <img
-              src={importImage('toothpastesmouthwash_icon.png')}
-              alt=""
-              width="65"  // Set a specific width
-              height="65"
-              style={{ marginLeft: '5px', position: 'relative', top: '-7px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={toothbrushesdentalaccessories}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '20px' }}>
-            <span style={{ verticalAlign: 'middle' }}>מברשות שיניים ואביזרי שיניים</span>
-            <img
-              src={importImage('toothbrushesdentalaccessories_icon.png')}
-              alt=""
-              width="80"  // Set a specific width
-              height="80"
-              style={{ marginLeft: '-30px', position: 'relative', top: '-10px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={cosmeticsfacialcare}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '22px' }}>
-            <span style={{ verticalAlign: 'middle' }}>קוסמטיקה וטיפוח הפנים</span>
-            <img
-              // src={importImage('cosmeticsfacialcare_icon.png')}
-              src={importImage('facial_skincare_icon.png')}
-              alt=""
-              width="55"  // Set a specific width
-              height="50"  // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '-2px', position: 'relative', top: '-3px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={haircarestyling}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '20px' }}>
-            <span style={{ verticalAlign: 'middle' }}>טיפוח ועיצוב שיער</span>
-            <img
-              src={importImage('hair_care_icon.png')}
-              alt=""
-              width="60"  // Set a specific width
-              height="auto"  // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '0px', position: 'relative', top: '-10px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={femininehygieneabsorbentproducts}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '22px' }}>
-            <span style={{ verticalAlign: 'middle' }}>היגיינה נשית ומוצרי ספיגה</span>
-            <img
-              src={importImage('feminine_hygiene_products_icon.png')}
-              alt=""
-              width="55"  // Set a specific width
-              height="auto"  // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '2px', position: 'relative', top: '-5px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={careaccessories}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '22px' }}>
-            <span style={{ verticalAlign: 'middle' }}>אביזרי טיפוח</span>
-            <img
-              src={importImage('careaccessories_icon.png')}
-              alt=""
-              width="75"  // Set a specific width
-              height="auto"  // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '0px', position: 'relative', top: '-5px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={bodycare}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '12px' }}>
-            <span style={{ verticalAlign: 'middle' }}>טיפוח גוף</span>
-            <img
-              src={importImage('bodycare_icon.png')}
-              alt=""
-              width="25"  // Set a specific width
-              height="auto"  // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '10px', position: 'relative', top: '-10px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      <ProductsPage
-        products={firstaid}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '18px' }}>
-            <span style={{ verticalAlign: 'middle' }}>עזרה ראשונה</span>
-            <img
-              src={importImage('firstaid_icon.png')}
-              alt=""
-              width="45"  // Set a specific width
-              height="auto"  // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '10px', position: 'relative', top: '3px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      {/* <ProductsPage
-        products={vitaminsnutritionalsupplements}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '17px' }}>
-            <span style={{ verticalAlign: 'middle' }}>ויטמינים ותוספי תזונה</span>
-            <img
-              src={importImage('vitamins_icon.png')}
-              alt=""
-              width="50"  // Set a specific width
-              height="auto"  // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '10px', position: 'relative', top: '-5px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      /> */}
-      {/* <ProductsPage
-        products={airperfume}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '35px' }}>
-            <span style={{ verticalAlign: 'middle' }}>בישום אוויר</span>
-            <img
-              src={importImage('air_freshener_icon.png')}
-              alt=""
-              width="60"  // Set a specific width
-              height="50"
-              style={{ marginLeft: '-7px', position: 'relative', top: '-8px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      /> */}
-      <ProductsPage
-        products={candlesmatches}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '25px' }}>
-            <span style={{ verticalAlign: 'middle' }}>נרות, תואמי הדלקה וגפרורים</span>
-            <img
-              src={importImage('candle_icon.png')}
-              alt=""
-              width="65" // Set a specific width
-              height="65" // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '-5px', position: 'relative', top: '-15px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-        <ProductsPage
-        products={diaperswipes}
-        categoryTitle={
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '25px' }}>
-            <span style={{ verticalAlign: 'middle' }}>חיתולים ומגבונים</span>
-            <img
-              src={importImage('diapers_icon.png')}
-              alt=""
-              width="65" // Set a specific width
-              height="65" // Set height to 'auto' to maintain aspect ratio
-              style={{ marginLeft: '-5px', position: 'relative', top: '-15px' }}  // Space between text and image , and Move the image up
-            />
-          </div>
-        }
-        icon={null}
-        onIncrement={handleIncrement}
-        onDecrement={handleDecrement}
-        onSave={handleSave}
-      />
-      {/* מזון וציוד לבעלי חיים */}
+      products={filterDeodorantforwomen}
+      categoryTitle={
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <span style={{ verticalAlign: 'middle' }}>דאודורנט לנשים</span>
+          <img 
+            src={importImage('deodorantforwomen_icon.png')} 
+            alt="" 
+            style={{ width: '40px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
+          />
+        </div>
+      }
+      icon={null}
+      onIncrement={handleIncrement}
+      onDecrement={handleDecrement}
+      onSave={handleSave}
+    />
+)}
+  </div>
+  <div>
+{filterDeodorantformen.length > 0 && (
+       <ProductsPage
+       products={filterDeodorantformen}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>דאודורנט לגברים</span>
+           <img 
+             src={importImage('deodorantformen_green_icon.png')} 
+             alt="" 
+             style={{ width: '40px', height: '40px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterSunprotection.length > 0 && (
+       <ProductsPage
+       products={filterSunprotection}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>הגנה מהשמש</span>
+           <img 
+             src={importImage('sunprotection_icon.webp')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterShavingpreparationsaccessories.length > 0 && (
+       <ProductsPage
+       products={filterShavingpreparationsaccessories}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>אביזרי גילוח והסרת שיער</span>
+           <img 
+             src={importImage('shaving_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterToothpastesmouthwash.length > 0 && (
+       <ProductsPage
+       products={filterToothpastesmouthwash}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>משחות שיניים ומי פה</span>
+           <img 
+             src={importImage('toothpastesmouthwash_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterToothbrushesdentalaccessories.length > 0 && (
+       <ProductsPage
+       products={filterToothbrushesdentalaccessories}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>מברשות שיניים ואביזרי שיניים</span>
+           <img 
+             src={importImage('toothbrushesdentalaccessories_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterCosmeticsfacialcare.length > 0 && (
+       <ProductsPage
+       products={filterCosmeticsfacialcare}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>קוסמטיקה וטיפוח הפנים</span>
+           <img 
+             src={importImage('facial_skincare_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterHaircarestyling.length > 0 && (
+       <ProductsPage
+       products={filterHaircarestyling}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>טיפוח ועיצוב השיער</span>
+           <img 
+             src={importImage('hair_care_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterFemininehygieneabsorbentproducts.length > 0 && (
+       <ProductsPage
+       products={filterFemininehygieneabsorbentproducts}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>היגיינה נשית ומוצרי ספיגה</span>
+           <img 
+             src={importImage('feminine_hygiene_products_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterCareaccessories.length > 0 && (
+       <ProductsPage
+       products={filterCareaccessories}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>אביזרי טיפוח</span>
+           <img 
+             src={importImage('careaccessories_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterBodycare.length > 0 && (
+       <ProductsPage
+       products={filterBodycare}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>טיפוח הגוף</span>
+           <img 
+             src={importImage('bodycare_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterFirstaid.length > 0 && (
+       <ProductsPage
+       products={filterFirstaid}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>עזרה ראשונה</span>
+           <img 
+             src={importImage('firstaid_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterCandlesmatches.length > 0 && (
+       <ProductsPage
+       products={filterCandlesmatches}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>נרות, תואמי הדלקה וגפרורים</span>
+           <img 
+             src={importImage('candle_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
+  <div>
+{filterDiaperswipes.length > 0 && (
+       <ProductsPage
+       products={filterDiaperswipes}
+       categoryTitle={
+         <div style={{ display: 'flex', alignItems: 'center' }}>
+           <span style={{ verticalAlign: 'middle' }}>חיתולים ומגבונים</span>
+           <img 
+             src={importImage('diapers_icon.png')} 
+             alt="" 
+             style={{ width: '60px', height: '60px', marginLeft: '5px', verticalAlign: 'middle' }} 
+           />
+         </div>
+       }
+       icon={null}
+       onIncrement={handleIncrement}
+       onDecrement={handleDecrement}
+       onSave={handleSave}
+     />
+)}
+  </div>
 
     </div>
   );
-}
+};
+
+  // return (
+  //   <div>
+
+  //     {/* <ProductsPage
+  //       products={vitaminsnutritionalsupplements}
+  //       categoryTitle={
+  //         <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '17px' }}>
+  //           <span style={{ verticalAlign: 'middle' }}>ויטמינים ותוספי תזונה</span>
+  //           <img
+  //             src={importImage('vitamins_icon.png')}
+  //             alt=""
+  //             width="50"  // Set a specific width
+  //             height="auto"  // Set height to 'auto' to maintain aspect ratio
+  //             style={{ marginLeft: '10px', position: 'relative', top: '-5px' }}  // Space between text and image , and Move the image up
+  //           />
+  //         </div>
+  //       }
+  //       icon={null}
+  //       onIncrement={handleIncrement}
+  //       onDecrement={handleDecrement}
+  //       onSave={handleSave}
+  //     /> */}
+  //     {/* <ProductsPage
+  //       products={airperfume}
+  //       categoryTitle={
+  //         <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '35px' }}>
+  //           <span style={{ verticalAlign: 'middle' }}>בישום אוויר</span>
+  //           <img
+  //             src={importImage('air_freshener_icon.png')}
+  //             alt=""
+  //             width="60"  // Set a specific width
+  //             height="50"
+  //             style={{ marginLeft: '-7px', position: 'relative', top: '-8px' }}  // Space between text and image , and Move the image up
+  //           />
+  //         </div>
+  //       }
+  //       icon={null}
+  //       onIncrement={handleIncrement}
+  //       onDecrement={handleDecrement}
+  //       onSave={handleSave}
+  //     /> */}
+
+  //     {/* מזון וציוד לבעלי חיים */}
+
+  //   </div>
+  // );
+
 export default PharmPage;
