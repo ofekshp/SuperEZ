@@ -946,7 +946,7 @@ const filterPackagedFruit = packagedfruit.filter(product =>
 
      {filterVegetables.length > 0 && (
   <ProductsPage
-  products={vegetables}
+  products={filterVegetables}
   categoryTitle={
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <span style={{ verticalAlign: 'middle' }}>ירקות</span>
@@ -1012,7 +1012,7 @@ const filterPackagedFruit = packagedfruit.filter(product =>
 <div>
 {filterFruits.length > 0 && (
   <ProductsPage
-  products={fruits}
+  products={filterFruits}
   categoryTitle={
     <div style={{ display: 'flex', alignItems: 'center' }}>
       <span style={{ verticalAlign: 'middle' }}>פירות</span>
