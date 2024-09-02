@@ -139,7 +139,7 @@ const Navbar: React.FC = () => {
           </li>
           <li>
             <Link to="/pharm" className="navbar-link">
-              פארם/בית
+              פארם/תינוקות
             </Link>
           </li>
           
