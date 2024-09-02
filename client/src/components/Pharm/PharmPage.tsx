@@ -385,8 +385,152 @@ const PharmPage: React.FC = () => {
   ];
 
   const initialToothpastesmouthwash = [
-    { name: "זוג משחת שיניים קולגייט טוטאל הלבנה", image: importImage('A_pair_of_colgate_total_whitening_toothpaste.png') },
+    // Colgate
+    { name: "זוג משחת שיניים קולגייט טוטאל הלבנה", image: importImage('toothpaste_whitening_duo.png'), id: 17 },
+    { name: "משחת אופטיק וויט אקספרט קומפליט", image: importImage('toothpaste_optic_white_expert_complete.png'), id: 17 },
+    { name: "משחת שיניים פסים מרעננים Cool Stripe", image: importImage('toothpaste_cool_stripe.png'), id: 17 },
+    { name: "משחת שיניים אופטיק וויט Optic white", image: importImage('toothpaste_optic_white.png'), id: 17 },
+    { name: "משחת שיניים אופטיק ווייט אקספרט", image: importImage('toothpaste_optic_white_expert.png'), id: 17 },
+    { name: "משחת שיניים סנסיטיב מולטי פרוטקשן", image: importImage('toothpaste_sensitive_multi_protection.png'), id: 17 },
+    { name: "משחת שיניים קולגייט טוטאל קלין מינט", image: importImage('toothpaste_total_clean_mint.png'), id: 17 },
+    { name: "משחת שיניים אופטיק וויט Optic white", image: importImage('toothpaste_optic_white.jpg'), id: 17 },
+    { name: "משחת שיניים קולגייט אופטיק וייט חימר ומינרלים", image: importImage('toothpaste_optic_white_clay_minerals.png'), id: 17 },
+    { name: "משחת שיניים קולגייט לסטינג וויט", image: importImage('toothpaste_lasting_white.png'), id: 17 },
+    { name: "משחת שיניים אופטיק וויט לאוהבי קפה, תה ולמעשנים", image: importImage('toothpaste_optic_white_coffee_tea_smokers.png'), id: 17 },
+    { name: "משחת שיניים לילדים לגילאי 6+ בטעם פירות", image: importImage('toothpaste_kids_6_plus_fruit_flavor.png'), id: 17 },
+    { name: "משחת שיניים טוטאל לגילאי 7-12", image: importImage('toothpaste_total_7_12_age.jpg'), id: 17 },
+    { name: "משחת שיניים Anti Tartar", image: importImage('toothpaste_anti_tartar.jpg'), id: 17 },
+    { name: "משחת שיניים קולגייט טוטאל פחם פעיל", image: importImage('toothpaste_total_active_charcoal.png'), id: 17 },
+    { name: "משחת שיניים אופטיק וייט עם פחם פעיל", image: importImage('toothpaste_optic_white_active_charcoal.jpg'), id: 17 },
+    { name: "משחת שיניים סמיילס לילדים בגילאי 2-5", image: importImage('toothpaste_smiles_kids_2_5_age.png'), id: 17 },
+    { name: "משחת שיניים לילדים +6 בטעם פירות עדין", image: importImage('toothpaste_kids_6_plus_gentle_fruit_flavor.png'), id: 17 },
+    { name: "משחת שיניים לילדים בטעם מנטה עדין לגיל +6", image: importImage('toothpaste_kids_6_plus_gentle_mint_flavor.png'), id: 17 },
+
+    // Sensodyne
+    { name: "משחת שיניים סנסודיין Dual Care להגנה כפולה", image: importImage('sensodyne_dual_care_dual_protection.jpg'), id: 17 },
+{ name: "משחת שיניים סנסודיין מנטה מרענן", image: importImage('sensodyne_mint_refreshing.png'), id: 17 },
+{ name: "משחת שיניים סנסודיין רפיד רליף לשיניים רגישות", image: importImage('sensodyne_rapid_relief_sensitive_teeth.jpg'), id: 17 },
+{ name: "משחת שיניים סנסודיין לשיקום והגנה", image: importImage('sensodyne_repair_and_protect.webp'), id: 17 },
+{ name: "משחת שיניים סנסודיין הגנה מלאה פלוס", image: importImage('sensodyne_complete_protection_plus.webp'), id: 17 },
+{ name: "משחת שיניים סנסודיין פרונמל לילדים גילאי 6-12", image: importImage('sensodyne_pronamel_kids_6_12_age.jpg'), id: 17 },
+{ name: "משחת שיניים סנסודיין רגישות וחניכיים", image: importImage('sensodyne_sensitivity_and_gums.jpg'), id: 17 },
+{ name: "משחת שיניים סנסודיין לשיקום והגנה מלבינה", image: importImage('sensodyne_repair_and_protect_whitening.jpg'), id: 17 },
+{ name: "משחת שיניים סנסודיין הלבנה עדינה", image: importImage('sensodyne_gentle_whitening.jpg'), id: 17 },
+{ name: "משחת שיניים סנסודיין להלבנה עם פחם ממקור טבעי", image: importImage('sensodyne_whitening_with_natural_charcoal.jpg'), id: 17 },
+{ name: "משחת שיניים סנסודיין רפיד רליף הלבנה", image: importImage('sensodyne_rapid_relief_whitening.png'), id: 17 },
+
+// Meridol
+{ name: "משחת שיניים מרידול", image: importImage('meridol_toothpaste.webp'), id: 17 },
+{ name: "משחת שיניים פרודונט אקספרט", image: importImage('meridol_parodontax_expert.png'), id: 17 },
+
+// Parodontax
+{ name: "משחת שיניים פרודונטקס אורגינל", image: importImage('parodontax_original.jpg'), id: 17 },
+{ name: "משחת שיניים פרודונטקס אקסטרה פרש", image: importImage('parodontax_extra_fresh.webp'), id: 17 },
+{ name: "משחת שיניים פרודונטקס מלבינה", image: importImage('parodontax_whitening.jpg'), id: 17 },
+{ name: "משחת שיניים פרודונטקס אולטרה קלין", image: importImage('parodontax_ultra_clean.jpg'), id: 17 },
+{ name: "משחת שיניים פרודונטקס ללא פלואוריד", image: importImage('parodontax_fluoride_free.jpg'), id: 17 },
+{ name: "משחת שיניים פרודונטקס הגנה מלאה והלבנה", image: importImage('parodontax_complete_protection_whitening.jpg'), id: 17 },
+{ name: "משחת שיניים פרודונטקס אקסטרה פרש הגנה מלאה", image: importImage('parodontax_extra_fresh_complete_protection.jpg'), id: 17 },
+{ name: "משחת שיניים בטעם צמחי ג'ינג'ר מנטה ואקליפטוס", image: importImage('parodontax_ginger_mint_eucalyptus.jpg'), id: 17 },
+
+// Orbitol
+{ name: "משחת שיניים Flouride and mint - מארז שלישיה", image: importImage('orbitol_flouride_mint_triple_pack.jpg'), id: 17 },
+{ name: "משחת שיניים לילדים בטעם מיץ ענבים עם פלואוריד למניעת עששת", image: importImage('orbitol_kids_sponge_bob_grape.jpg'), id: 17 },
+{ name: "משחת שיניים אורביטול - מארז שלישיה", image: importImage('orbitol_triple_pack.jpg'), id: 17 },
+{ name: "משחת שיניים לילדים בטעם תות שדה Kids Mate", image: importImage('orbitol_kids_mate_strawberry.jpg'), id: 17 },
+{ name: "משחת שיניים לילדים בטעם סוכריות ג'לי גילאי 2-6", image: importImage('orbitol_kids_jelly_candy_2_6_age.jpg'), id: 17 },
+{ name: "משחת שיניים לרעננות מתמשכת Protect & Fresh", image: importImage('orbitol_protect_fresh.jpg'), id: 17 },
+
+// elmex
+{ name: "משחת שיניים למניעת עששת", image: importImage('elmex_cavity_protection.jpg'), id: 17 },
+{ name: "משחת שיניים ג'וניור לגילאי 6-12", image: importImage('elmex_junior_6_12.jpg'), id: 17 },
+{ name: "משחת שיניים לילדים בגילאי 2-6", image: importImage('elmex_kids_2_6.png'), id: 17 },
+
+// Aquafresh
+{ name: "משחת שיניים אקווה פרש מנטה", image: importImage('aquafresh_mint.png'), id: 17 },
+{ name: "משחת שיניים אקווה פרש מנטה עדין", image: importImage('aquafresh_gentle_mint.png'), id: 17 },
+{ name: "משחת שיניים הגנה משולשת מנטה מרענן - שלישייה", image: importImage('triple_protection_fresh_mint_trio.jpg'), id: 17 },
+{ name: "משחת שיניים הגנה משולשת מנטה עדין - שלישייה", image: importImage('triple_protection_gentle_mint_trio.jpg'), id: 17 },
+
+{ name: "משחת שיניים לילדים בטעם ענבים", image: importImage('kids_grape_flavor.jpg'), id: 17 },
+{ name: "משחת שיניים לילדים בטעם מסטיק", image: importImage('kids_bubblegum_flavor.jpg'), id: 17 },
+
+{ name: "משחת שיניים טפטפים בטעם ענבים לגיל 2-6", image: importImage('tapata_grape_flavor_2_6.jpg'), id: 17 },
+{ name: "משחת שיניים סופרמן פירות מרענן לגילאי 2-6", image: importImage('superman_fresh_fruit_2_6.jpg'), id: 17 },
+{ name: "משחת שיניים ברבי בטעם פירות מרענן לגיל 2-6", image: importImage('barbie_fresh_fruit_2_6.jpg'), id: 17 },
+{ name: "משחת שיניים הלו קיטי בטעם ענבים לגיל 2-6", image: importImage('hello_kitty_grape_flavor_2_6.jpg'), id: 17 },
+{ name: "משחת שיניים ג'וניור מנטה מעודן לגילאי 6+", image: importImage('junior_gentle_mint_6plus.jpg'), id: 17 },
+
+{ name: "משחת שיניים מלבינה", image: importImage('whitening_toothpaste.jpg'), id: 17 },
+{ name: "משחת שיניים איורודית עם פלואוריד מן הטבע", image: importImage('ayurvedic_fluoride_toothpaste.jpg'), id: 17 },
+
+{ name: "שטיפת פה ליסטרין קול מינט בטעם מעודן", image: importImage('listerine_cool_mint.jpg'), id: 17 }, //
+
+{ name: "משחת שיניים להגנה מושלמת", image: importImage('perfect_protection_toothpaste.jpg'), id: 17 },
+
+{ name: "משחת שיניים 3D White להלבנה מושלמת", image: importImage('3d_white_whitening.jpg'), id: 17 },
+{ name: "משחת שיניים Gum & Enamel Repair - רעננות מוגברת", image: importImage('gum_enamel_repair_fresh.jpg'), id: 17 },
+{ name: "משחת שיניים Gum & Enamel Repair - להלבנה עדינה", image: importImage('gum_enamel_repair_whitening.jpg'), id: 17 },
+
+{ name: "משחת שיניים ומי פה בתכשיר אחד", image: importImage('toothpaste_mouthwash_combination.jpg'), id: 17 }, //
+
+{ name: "מי פה ליסטרין מנטה רענן", image: importImage('listerine_fresh_mint.jpg'), id: 17 }, //
+{ name: "שטיפת פה טוטאל קר בטעם מנטה צלול", image: importImage('total_care_crisp_mint.jpg'), id: 17 }, //
+{ name: "מי פה אדבנס וויט מנטה מסירה כתמים קשים", image: importImage('advance_white_tough_stains_mint.jpg'), id: 17 }, //
+{ name: "ליסטרין נטורל שטיפת פה בטעם מעודן", image: importImage('listerine_natural_gentle.jpg'), id: 17 }, //
+{ name: "ליסטרין שטיפת פה להגנה על החניכיים בטעם מעודן", image: importImage('listerine_gum_protection_gentle.jpg'), id: 17 }, //
+
+{ name: "שטיפת פה דנטלית לילדים בטעם ענבים", image: importImage('kids_dental_rinse_grape.png'), id: 17 },
+{ name: "מי פה שטיפה דנטלית להלבנת השיניים", image: importImage('dental_whitening_rinse.jpg'), id: 17 },
+{ name: "שטיפת פה לרעננות מתמשכת מנטה עדין Protect & Fresh", image: importImage('protect_fresh_mint.png'), id: 17 },
+{ name: "שטיפת פה שוקינג פרש", image: importImage('shocking_fresh_rinse.png'), id: 17 },
+{ name: "אורביטול מי-פה פרוטקטיב סולט", image: importImage('protective_salt_rinse.png'), id: 17 },
+
+//1 missing
+// Colgate
+{ name: "מי פה טוטאל מנטה לנשימה רעננה ו-12 שעות הגנה", image: importImage('mouthwash_total_fresh_breath_mint_12hr_protection.jpg'), id: 17 },
+{ name: "מי פה טוטאל מנטה עדינה 12 שעות הגנה", image: importImage('mouthwash_total_mild_mint_12hr_protection.jpg'), id: 17 },
+{ name: "מי פה קולגייט פלאקס מנטה עדין", image: importImage('mouthwash_colgate_plax_mild_mint.jpg'), id: 17 },
+{ name: "מי פה Plax Multi Protection מנטה מרענן", image: importImage('mouthwash_plax_multi_protection_fresh_mint.jpg'), id: 17 },
+{ name: "מי פה קולגייט אופטיק וויט Optic White", image: importImage('mouthwash_colgate_optic_white.jpg'), id: 17 },
+
+{ name: "שטיפת פה מסייעת לטיפול ולהתחדשות חניכיים רגישות", image: importImage('mouthwash_gum_care_sensitive.png'), id: 17 },
+
+{ name: "מי פה אקווה פרש מנטה מרענן", image: importImage('mouthwash_aquafresh_refreshing_mint.png'), id: 17 },
+{ name: "מי פה עם פלואוריד תיאדנט", image: importImage('mouthwash_fluoride_tayadent.jpg'), id: 17 },
+{ name: "מי פה פרו אקספרט להגנה מקצועית", image: importImage('mouthwash_pro_expert_professional_protection.png'), id: 17 },
+{ name: "מי פה להלבנה 3D White", image: importImage('mouthwash_3d_white_whitening.png'), id: 17 },
+{ name: "שטיפת פה להגנה מפני עששת", image: importImage('mouthwash_cavity_protection.png'), id: 17 },
+{ name: "שטיפת פה לשיניים רגישות", image: importImage('mouthwash_sensitive_teeth.jpg'), id: 17 },
+{ name: "מי פה סנסודיין להקלה על רגישות בטעם מנטה", image: importImage('mouthwash_sensodyne_mint_sensitive.jpg'), id: 17 },
+{ name: "מי פה פרודונטקס ללא אלכוהול בטעם מנטה עדין", image: importImage('mouthwash_parodontax_mild_mint_no_alcohol.png'), id: 17 },
+{ name: "זוג קולגייט משחת שיניים הגנה מקסימלית", image: importImage('colgate_max_protection_toothpaste_duo.png'), id: 17 },
+{ name: "זוג קולגייט משחת שיניים טוטל קלין מינט", image: importImage('colgate_total_clean_mint_toothpaste_duo.jpg'), id: 17 },
+{ name: "מארז זוג משחת שיניים מרידול", image: importImage('meridol_toothpaste_duo_pack.png'), id: 17 },
+{ name: "מי פה קולגייט טוטאל הגנה מפני אבן שן", image: importImage('mouthwash_colgate_total_tartar_protection.jpg'), id: 17 },
+{ name: "מרידול משחת שיניים להלבנה", image: importImage('meridol_whitening_toothpaste.png'), id: 17 },
+{ name: "משחת שיניים אורביטול פרוטקטיב סולט בטעם מנטה", image: importImage('orbitol_protective_salt_mint_toothpaste.jpg'), id: 17 },
+{ name: "משחת שיניים להלבנה עמוקה אופטיק וויט אוקסיג'ן", image: importImage('optic_white_oxygen_deep_whitening_toothpaste.png'), id: 17 },
+{ name: "משחת שיניים לילדים קולגייט ברבי", image: importImage('colgate_barbie_kids_toothpaste.png'), id: 17 },
+{ name: "משחת שיניים לילדים קולגייט מיניונים", image: importImage('colgate_minions_kids_toothpaste.png'), id: 17 },
+{ name: "משחת שיניים מלבינה + מברשת וקיסמים", image: importImage('white_glo_whitening_toothpaste_brush_picks.jpg'), id: 17 },
+{ name: "משחת שיניים מלבינה בטעם מנטה + מברשת שיניים", image: importImage('white_glo_whitening_mint_toothpaste_brush.jpg'), id: 17 },
+{ name: "משחת שיניים מלבינה להסרת כתמי קפה ותה + מברשת", image: importImage('white_glo_whitening_coffee_tea_stain_removal_toothpaste_brush.jpg'), id: 17 },
+{ name: "משחת שיניים מלבינה להסרת כתמים ופלאק +מברשת", image: importImage('white_glo_whitening_stain_plaque_removal_toothpaste_brush.jpg'), id: 17 },
+{ name: "משחת שיניים מלבינה למניעת ריח פה + מברשת", image: importImage('white_glo_whitening_bad_breath_prevention_toothpaste_brush.jpg'), id: 17 },
+{ name: "משחת שיניים מלבינה מכיל פחם פעיל + מברשת", image: importImage('white_glo_whitening_activated_charcoal_toothpaste_brush.jpg'), id: 17 },
+{ name: "משחת שיניים סנסודיין מלבינה רגישות וחניכיים", image: importImage('sensodyne_whitening_sensitive_gums_toothpaste.jpg'), id: 17 },
+
+{ name: "משחת שיניים קולגייט טוטל ג'ל לניקוי מרענן", image: importImage('colgate_total_gel_refreshing_clean_toothpaste.png'), id: 17 },
+{ name: "משחת שיניים קולגייט טוטל סנסטיב לשיניים רגישות", image: importImage('colgate_total_sensitive_teeth_toothpaste.png'), id: 17 },
+{ name: "משחת שיניים קולגייט להלבנה Advanced White", image: importImage('colgate_advanced_white_whitening_toothpaste.png'), id: 17 },
+{ name: "משחת שיניים קולגייט מקס וויט", image: importImage('colgate_max_white_toothpaste.png'), id: 17 },
+{ name: "משחת שיניים קולגייט מקס פרש למימד חדש של רעננות", image: importImage('colgate_max_fresh_toothpaste.png'), id: 17 },
+{ name: "משחת שיניים קולגייט פסים מרעננים Fresh Stripe", image: importImage('colgate_fresh_stripe_toothpaste.png'), id: 17 },
+
+{ name: "שטיפת פה אורביטול לילדים בטעם פירות אורביטול +8", image: importImage('orbitol_kids_8_mouthwash_fruit_flavor.jpg'), id: 17 },
   ];
+
   const initialToothbrushesdentalaccessories = [
     { name: "מברשת שיניים חשמלית נטענת", image: importImage('electric_toothbrush_advanced_power.png'), id: 17 },
     { name: "מברשת שיניים חשמלית נטענת לילדים", image: importImage('kids_electric_toothbrush_frozen_d100.png'), id: 17 },
@@ -560,6 +704,7 @@ const PharmPage: React.FC = () => {
   initialShavingpreparationsaccessories.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCosmeticsfacialcare.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialFirstaid.sort((a, b) => a.name.localeCompare(b.name, 'he'));
+
 
   const [shampoo, setShampoo] = useState<{ name: string; image: string | null; count: number }[]>(
     initialShampoo.map(item => {
