@@ -301,7 +301,8 @@ const PharmPage: React.FC = () => {
     { name: "דאודורנט ספריי קלאסי", image: importImage('titanium_classic_spray_titanium.png'), id: 17 },
     { name: "דאודורנט ספריי גולד", image: importImage('titanium_gold_spray_titanium.png'), id: 17 },
     { name: "רד דאודורנט ספריי", image: importImage('titanium_red_spray_titanium.png'), id: 17 },
-    { name: "דאודורנט ספריי קובלט דריי", image: importImage('cobalt_dry_spray_rexona.png'), id: 17 }  ];
+    { name: "דאודורנט ספריי קובלט דריי", image: importImage('cobalt_dry_spray_rexona.png'), id: 17 }
+  ];
 
   const initialSunprotection = [
     { name: "אולטרסול קרם הגנה לפנים SPF 30", image: importImage('ultrasol_face_cream_spf30.jpg'), id: 17 },
@@ -387,7 +388,24 @@ const PharmPage: React.FC = () => {
     { name: "זוג משחת שיניים קולגייט טוטאל הלבנה", image: importImage('A_pair_of_colgate_total_whitening_toothpaste.png') },
   ];
   const initialToothbrushesdentalaccessories = [
-    { name: "מברשת שיניים חשמלית עם סוללות אדבנס פאוור", image: importImage('electric_toothbrush_with_advance_power_batteries.jpeg') },
+    { name: "מברשת שיניים חשמלית נטענת", image: importImage('electric_toothbrush_advanced_power.png'), id: 17 },
+    { name: "מברשת שיניים חשמלית נטענת לילדים", image: importImage('kids_electric_toothbrush_frozen_d100.png'), id: 17 },
+    { name: "מברשת שיניים לילדים אקסטרא סופט 0-2", image: importImage('kids_toothbrush_extra_soft_0_2.jpg'), id: 17 },
+    { name: "מארז מברשות שיניים סופט", image: importImage('soft_toothbrush_pack_orbitol.png'), id: 17 },
+    { name: "מארז מברשות שיניים לילדים 2-8", image: importImage('kids_toothbrush_pack_2_8.png'), id: 17 },
+    { name: "מברשת שיניים סיבים רכים", image: importImage('soft_foam_toothbrush.png'), id: 17 },
+    { name: "מברשת שיניים פלקסי פחם", image: importImage('flexi_charcoal_brush.png'), id: 17 },
+    { name: "מברשת שיניים אקסטרה קלין", image: importImage('extra_clean_medium_pack_of_4.png'), id: 17 },
+    { name: "מברשת שיניים 360", image: importImage('360_sensitive_extra_soft_pair.png'), id: 17 },
+    { name: "מברשת שיניים לילדים 0-2", image: importImage('kids_toothbrush_stage_1_0_2.png'), id: 17 },
+    { name: "מברשת שיניים לילדים 3-5", image: importImage('kids_toothbrush_stage_2_3_5.png'), id: 17 },
+    { name: "מברשת שיניים לילדים 6-9", image: importImage('kids_toothbrush_6_9_soft.png'), id: 17 },
+    { name: "מברשת שיניים רגישות וחניכיים", image: importImage('sensodyne_sensitive_gums_brush.png'), id: 17 },
+    { name: "חוט דנטלי", image: importImage('oral_b_satin_floss.png'), id: 17 },
+    { name: "חוט דנטלי ללא שעווה", image: importImage('oral_b_unwaxed_floss.png'), id: 17 },
+    { name: "קיסמי שיניים מבקבוק", image: importImage('hostess_toothpicks_bottle.png'), id: 17 },
+    { name: "קיסמי שיניים דנטליים פלסטיק", image: importImage('hostess_dental_toothpicks.png'), id: 17 },
+    { name: "ראשי מברשת חשמלית", image: importImage('orbitol_pro_active_black_heads.png'), id: 17 },
   ];
   const initialCosmeticsfacialcare = [
     { name: "וזלין מיני לשפתיים ורוד עדין", image: importImage('vaseline_pink_mini_lips.jpg'), id: 17 },
@@ -427,14 +445,58 @@ const PharmPage: React.FC = () => {
   const initialHaircarestyling = [
     { name: "קרם לחות לשיער יבש מאוד ופגום עם חוחבה", image: importImage('moisturizer_for_very_dry_and_damaged_hair_with_guava.png') },
   ];
+
   const initialFemininehygieneabsorbentproducts = [
-    { name: "מגיני תחתון יאנג נורמל", image: importImage('young_normal_bottom_protectors.jpeg') },
+    { name: "מגיני תחתון יאנג", image: importImage('kotex_young_normal.png'), id: 17 },
+    { name: "מגיני תחתון נורמל", image: importImage('kotex_daily_normal.png'), id: 17 },
+    { name: "מגני תחתון פלוס לארג׳", image: importImage('carefree_plus_large.png'), id: 17 },
+    { name: "מגני תחתון אלוורה", image: importImage('carefree_airy_aloe.png'), id: 17 },
+    { name: "מגני תחתון מקסי לונג", image: importImage('carefree_maxi_long_perfumed.png'), id: 17 },
+    { name: "תחבושות לילה", image: importImage('always_maxi_thick_night.png'), id: 17 },
+    { name: "תחבושות נורמל", image: importImage('kotex_wings_normal.png'), id: 17 },
+    { name: "תחבושות סופר", image: importImage('kotex_wings_super.png'), id: 17 },
+    { name: "תחבושות יאנג", image: importImage('kotex_wings_young.png'), id: 17 },
+    { name: "תרחיץ ג'ל לשטיפה אינטימית", image: importImage('crema_intimate_wash.png'), id: 17 },
+    { name: "תחבושות לבריחת שתן סופר", image: importImage('depend_super.png'), id: 17 },
+    { name: "תחבושות לבריחת שתן נורמל", image: importImage('depend_normal.png'), id: 17 },
+    { name: "טמפונים עם מוליך נורמל", image: importImage('kotex_normal.png'), id: 17 },
+    { name: "טמפונים עם מוליך סופר", image: importImage('kotex_super.png'), id: 17 },
+    { name: "טמפונים עם מוליך מיני", image: importImage('kotex_mini.png'), id: 17 },
+    { name: "טמפונים מיני ללא מוליך", image: importImage('kotex_mini_pack.jpg'), id: 17 },
+    { name: "תחליב רחצה אינטימי קלאסיק", image: importImage('femina_classic.png'), id: 17 },
+    { name: "תחליב רחצה אינטימי אלוורה", image: importImage('femina_aloe.png'), id: 17 },
+    { name: "תחליב רחצה אינטימי חמוציות", image: importImage('femina_cranberry.png'), id: 17 },
+  { name: "תחליב רחצה אינטימי לנערות", image: importImage('femina_teens.png'), id: 17 },
+  { name: "תחליב רחצה אינטימי קוקוס", image: importImage('femina_coconut.png'), id: 17 },
+  { name: "מוס לשטיפה אינטימית יומיומית מכיל תה ירוק", image: importImage('carefree_green_tea_aloe.png'), id: 17 },
+  { name: "שטיפה אינטימית יומיומית מכיל תה ירוק ואלוורה", image: importImage('carefree_green_tea_aloe_wash.png'), id: 17 },
   ];
+
   const initialCareaccessories = [
-    { name: "מקלוני עץ", image: importImage('wooden_sticks.jpeg') },
-  ];
+  { name: "צימרוני עץ", image: importImage('wooden_cotton_swabs.png'), id: 17 },
+  { name: "צמרוני פלסטיק", image: importImage('plastic_cotton_swabs_500.png'), id: 17 },
+  { name: "מקלוני כותנה", image: importImage('cotton_sticks.png'), id: 17 },
+  { name: "פסי צמר גפן", image: importImage('cotton_strips.png'), id: 17 },
+  { name: "צמר גפן", image: importImage('cotton_clouds.png'), id: 17 },
+  { name: "פדים להסרת איפור", image: importImage('makeup_removal_pads.png'), id: 17 },
+  { name: "ספוג רחצה'", image: importImage('saki_massage_sponge.png'), id: 17 },
+  { name: "אצטון", image: importImage('acetone.png'), id: 17 },
+  { name: "מסיר לק", image: importImage('fragrant_nail_polish_remover.png'), id: 17 },
+  { name: "כובע רחצה", image: importImage('shower_cap.png'), id: 17 }, 
+ ];
+
   const initialBodycare = [
-    { name: "קרם לחות רב שימושי Soft", image: importImage('soft_multipurpose_moisturizer.jpeg') },
+    { name: "ג'ל אלוורה", image: importImage('aloe_vera_gel.png'), id: 17 },
+    { name: "קרם ידיים לעור יבש ", image: importImage('dr_fischer_intensive_hand_cream.png'), id: 17 },
+    { name: "קרם גוף מועשר בשמן אבוקדו", image: importImage('dr_fischer_body_cream_avocado.png'), id: 17 },
+    { name: "קרם גוף לגבר", image: importImage('vaseline_mens_body_cream.png'), id: 17 },
+    { name: "תחליב גוף להזנה עמוקה", image: importImage('vaseline_body_lotion.png'), id: 17 },
+    { name: "קרם גוף אלוורה", image: importImage('vaseline_aloe_body_cream.png'), id: 17 },
+    { name: "קרם גוף קרמה לבנדר אקליפטוס", image: importImage('crema_lavender_body_cream.png'), id: 17 },
+    { name: "קרם גוף מאסק", image: importImage('crema_musk_body_cream.png'), id: 17 },
+    { name: "קרם גוף קלאסי", image: importImage('crema_classic_body_cream.png'), id: 17 },
+    { name: "קרם ידיים שיאה קוקוי", image: importImage('crema_shea_kukui_hand_cream.png'), id: 17 },
+    { name: "קרם ידיים ורד וניל", image: importImage('crema_rose_vanilla_hand_cream.png'), id: 17 },
   ];
   const initialFirstaid = [
     { name: "אלכוג'ל לשמירה על הייגיינת הידיים", image: importImage('alcohol_gel_hand_hygiene.jpeg'), id: 17 },
@@ -458,12 +520,12 @@ const PharmPage: React.FC = () => {
     { name: "סנו די kids דוחה יתושים עם קמומיל", image: importImage('sano_kids_mosquito_repel_kamomil.jpg'), id: 17 }
 
   ];
-  const initialVitaminsnutritionalsupplements = [
-    { name: "בנפייבר סיבים תזונתיים אבקת דקסטרין חיטה", image: importImage('benefiber_dietary_fiber_wheat_dextrin_powder.jpeg') },
-  ];
-  const initialAirperfume = [
-    { name: "מבשם אוויר אריגים וארונות בניחוח מאסק", image: importImage('musk-scented_fabric_and_closet_air_freshener.jpeg') },
-  ];
+  // const initialVitaminsnutritionalsupplements = [
+  //   { name: "בנפייבר סיבים תזונתיים אבקת דקסטרין חיטה", image: importImage('benefiber_dietary_fiber_wheat_dextrin_powder.jpeg') },
+  // ];
+  // const initialAirperfume = [
+  //   { name: "מבשם אוויר אריגים וארונות בניחוח מאסק", image: importImage('musk-scented_fabric_and_closet_air_freshener.jpeg') },
+  // ];
   const initialCandlesmatches = [
     { name: "נר נשמה 26 שעות", image: importImage('ner_neshama_26_hours.jpg'), id: 17 },
     { name: "נר נשמה 48 שעות", image: importImage('ner_neshama_48_hours.jpg'), id: 17 },
@@ -482,6 +544,18 @@ const PharmPage: React.FC = () => {
     { name: "נרות במעטפת מתכתית", image: importImage('candles_metal_wrap.png'), id: 17 }
 
   ];
+  const initialDiaperswipes = [
+    { name: "חיתול מידה 1", image: importImage('huggies_extra_care_stage_1.png'), id: 17 },
+    { name: "חיתול מידה 2", image: importImage('huggies_extra_care_size_2.png'), id: 17 },
+    { name: "חיתול מידה 3", image: importImage('huggies_extra_care_size_3.png'), id: 17 },
+    { name: "חיתול מידה 4", image: importImage('huggies_extra_care_size_4.png'), id: 17 },
+    { name: "חיתול מידה 5", image: importImage('huggies_extra_care_size_5.png'), id: 17 },
+    { name: "משטח החתלה", image: importImage('huggies_changing_pads.png'), id: 17 },
+    { name: "מגבונים לחים לתינוק בניחוח עדין", image: importImage('perfect_baby_wipes_scented_4pack.png'), id: 17 },
+    { name: "מגבונים לחים לתינוק ללא בישום", image: importImage('perfect_baby_wipes_unscented_4pack.png'), id: 17 },
+    { name: "מגבוני פנים לתינוק", image: importImage('kamil_blue_sensitive_face_wipes.png'), id: 17 },
+    { name: "מגבונים לניקוי אף", image: importImage('kamil_blue_nose_wipes_trio.png'), id: 17 },
+    ];
 
   initialShavingpreparationsaccessories.sort((a, b) => a.name.localeCompare(b.name, 'he'));
   initialCosmeticsfacialcare.sort((a, b) => a.name.localeCompare(b.name, 'he'));
@@ -637,25 +711,25 @@ const PharmPage: React.FC = () => {
     })
   );
 
-  const [vitaminsnutritionalsupplements, setVitaminsnutritionalsupplements] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialVitaminsnutritionalsupplements.map(item => {
-      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
-      return {
-        ...item,
-        count: basketItem ? basketItem.quantity : 0,
-      };
-    })
-  );
+  // const [vitaminsnutritionalsupplements, setVitaminsnutritionalsupplements] = useState<{ name: string; image: string | null; count: number }[]>(
+  //   initialVitaminsnutritionalsupplements.map(item => {
+  //     const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  //     return {
+  //       ...item,
+  //       count: basketItem ? basketItem.quantity : 0,
+  //     };
+  //   })
+  // );
 
-  const [airperfume, setAirperfume] = useState<{ name: string; image: string | null; count: number }[]>(
-    initialAirperfume.map(item => {
-      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
-      return {
-        ...item,
-        count: basketItem ? basketItem.quantity : 0,
-      };
-    })
-  );
+  // const [airperfume, setAirperfume] = useState<{ name: string; image: string | null; count: number }[]>(
+  //   initialAirperfume.map(item => {
+  //     const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+  //     return {
+  //       ...item,
+  //       count: basketItem ? basketItem.quantity : 0,
+  //     };
+  //   })
+  // );
 
   const [candlesmatches, setCandlesmatches] = useState<{ name: string; image: string | null; count: number }[]>(
     initialCandlesmatches.map(item => {
@@ -667,9 +741,19 @@ const PharmPage: React.FC = () => {
     })
   );
 
+  const [diaperswipes, setDiaperswipes] = useState<{ name: string; image: string | null; count: number }[]>(
+    initialDiaperswipes.map(item => {
+      const basketItem = savedBasket.find((p: { name: string; quantity: number }) => p.name === item.name);
+      return {
+        ...item,
+        count: basketItem ? basketItem.quantity : 0,
+      };
+    })
+  );
+
   useEffect(() => {
     handleSave();
-  }, [shampoo, conditioner, bathsoap, deodorantforwomen, deodorantformen, sunprotection, shavingpreparationsaccessories, toothpastesmouthwash, toothbrushesdentalaccessories, cosmeticsfacialcare, haircarestyling, femininehygieneabsorbentproducts, careaccessories, bodycare, firstaid, vitaminsnutritionalsupplements, airperfume, candlesmatches]);
+  }, [shampoo, conditioner, bathsoap, deodorantforwomen, deodorantformen, sunprotection, shavingpreparationsaccessories, toothpastesmouthwash, toothbrushesdentalaccessories, cosmeticsfacialcare, haircarestyling, femininehygieneabsorbentproducts, careaccessories, bodycare, firstaid, candlesmatches,diaperswipes]);
 
   const handleIncrement = (name: string) => {
     setShampoo(shampoo.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
@@ -687,9 +771,10 @@ const PharmPage: React.FC = () => {
     setCareaccessories(careaccessories.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
     setBodycare(bodycare.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
     setFirstaid(firstaid.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
-    setVitaminsnutritionalsupplements(vitaminsnutritionalsupplements.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
-    setAirperfume(airperfume.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
+    // setVitaminsnutritionalsupplements(vitaminsnutritionalsupplements.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
+    // setAirperfume(airperfume.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
     setCandlesmatches(candlesmatches.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
+    setDiaperswipes(diaperswipes.map(item => item.name === name ? { ...item, count: item.count + 1 } : item));
   };
 
   const handleDecrement = (name: string) => {
@@ -858,29 +943,40 @@ const PharmPage: React.FC = () => {
       return item;
     }));
 
-    setVitaminsnutritionalsupplements(vitaminsnutritionalsupplements.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
-        if (newCount === 0) {
-          removeProduct(item.name);
-        }
-        return { ...item, count: newCount };
-      }
-      return item;
-    }));
+    // setVitaminsnutritionalsupplements(vitaminsnutritionalsupplements.map(item => {
+    //   if (item.name === name && item.count > 0) {
+    //     const newCount = item.count - 1;
+    //     if (newCount === 0) {
+    //       removeProduct(item.name);
+    //     }
+    //     return { ...item, count: newCount };
+    //   }
+    //   return item;
+    // }));
 
-    setAirperfume(airperfume.map(item => {
-      if (item.name === name && item.count > 0) {
-        const newCount = item.count - 1;
-        if (newCount === 0) {
-          removeProduct(item.name);
-        }
-        return { ...item, count: newCount };
-      }
-      return item;
-    }));
+    // setAirperfume(airperfume.map(item => {
+    //   if (item.name === name && item.count > 0) {
+    //     const newCount = item.count - 1;
+    //     if (newCount === 0) {
+    //       removeProduct(item.name);
+    //     }
+    //     return { ...item, count: newCount };
+    //   }
+    //   return item;
+    // }));
 
     setCandlesmatches(candlesmatches.map(item => {
+      if (item.name === name && item.count > 0) {
+        const newCount = item.count - 1;
+        if (newCount === 0) {
+          removeProduct(item.name);
+        }
+        return { ...item, count: newCount };
+      }
+      return item;
+    }));
+
+    setDiaperswipes(diaperswipes.map(item => {
       if (item.name === name && item.count > 0) {
         const newCount = item.count - 1;
         if (newCount === 0) {
@@ -910,9 +1006,10 @@ const PharmPage: React.FC = () => {
       ...careaccessories,
       ...bodycare,
       ...firstaid,
-      ...vitaminsnutritionalsupplements,
-      ...airperfume,
+      // ...vitaminsnutritionalsupplements,
+      // ...airperfume,
       ...candlesmatches,
+      ...diaperswipes,
     ];
 
     const itemsToSave = allItems.filter(item => item.count > 0).map(item => ({ ...item, quantity: item.count }));
@@ -1207,7 +1304,7 @@ const PharmPage: React.FC = () => {
         onDecrement={handleDecrement}
         onSave={handleSave}
       />
-      <ProductsPage
+      {/* <ProductsPage
         products={vitaminsnutritionalsupplements}
         categoryTitle={
           <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '17px' }}>
@@ -1225,8 +1322,8 @@ const PharmPage: React.FC = () => {
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
         onSave={handleSave}
-      />
-      <ProductsPage
+      /> */}
+      {/* <ProductsPage
         products={airperfume}
         categoryTitle={
           <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '35px' }}>
@@ -1244,7 +1341,7 @@ const PharmPage: React.FC = () => {
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
         onSave={handleSave}
-      />
+      /> */}
       <ProductsPage
         products={candlesmatches}
         categoryTitle={
@@ -1264,10 +1361,25 @@ const PharmPage: React.FC = () => {
         onDecrement={handleDecrement}
         onSave={handleSave}
       />
-
-
-      {/* תינוקות*/}
-
+        <ProductsPage
+        products={diaperswipes}
+        categoryTitle={
+          <div style={{ display: 'flex', alignItems: 'center', position: 'relative', left: '25px' }}>
+            <span style={{ verticalAlign: 'middle' }}>חיתולים ומגבונים</span>
+            <img
+              src={importImage('diapers_icon.png')}
+              alt=""
+              width="65" // Set a specific width
+              height="65" // Set height to 'auto' to maintain aspect ratio
+              style={{ marginLeft: '-5px', position: 'relative', top: '-15px' }}  // Space between text and image , and Move the image up
+            />
+          </div>
+        }
+        icon={null}
+        onIncrement={handleIncrement}
+        onDecrement={handleDecrement}
+        onSave={handleSave}
+      />
       {/* מזון וציוד לבעלי חיים */}
 
     </div>

@@ -22,11 +22,6 @@ const CleaningDisposablePage: React.FC = () => {
       id: 14,
     },
     {
-      name: "נייר טואלט דו שכבתי",
-      image: importImage("toilet_paper_32_pack.jpeg"),
-      id: 14,
-    },
-    {
       name: "נייר טואלט תלת שכבתי",
       image: importImage("silk_touch_toilet_paper_32_pack.jpeg"),
       id: 14,
@@ -358,8 +353,7 @@ const CleaningDisposablePage: React.FC = () => {
       image: importImage("sano_maxima_washing_machine_cleaner_500ml.jpeg"),
       id: 14,
     },
-  ];
-  
+  ]; 
 
   const initialCleaningproducts = [
     {
